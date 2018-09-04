@@ -58,9 +58,9 @@
                                 {{$v->user->username}}   
                             </td>
                             <td>
-                                
+                                @if($v->xxcate)
                                 {{$v->xxcate->name}}
-                                
+                                @endif
                             </td>
                             <td>{{$v['intro']}}</td>
                             <td><img src="{{$v['image']}}" width="80px" height="80px" alt=""></td>
