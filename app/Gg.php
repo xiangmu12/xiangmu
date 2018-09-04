@@ -13,7 +13,7 @@ class Gg extends Model
 
 	protected $table = 'guanggaos';
 
-	public function users()
+	public function user()
 	{
 		return $this->belongsTo('App\User');
 	}

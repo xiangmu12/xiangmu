@@ -4,8 +4,6 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js">
 </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
-
-
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -22,14 +20,16 @@
                             <input type="text" name="user_id" class="tpl-form-input" id="user-name" placeholder="{{$Gg['user_id']}}" value="">
                         </div>
                     </div>
-
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">分类 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">选择分类</label>
                         <div class="am-u-sm-9">
-                            <input type="text" name="xxcate_id" class="tpl-form-input" id="user-name" placeholder="{{$Gg['xxcate_id']}}" value="">
+                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="xxcate_id">
+                                @foreach($xxcate as $v)
+                                <option value="{{$v['id']}}" @if($Gg[ 'xxcate_id'] == $v['id']) selected @endif>{{$v['name']}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
-
                     <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品简介</label>
                         <div class="am-u-sm-9">
@@ -40,7 +40,6 @@
                         <label for="user-weibo" class="am-u-sm-3 am-form-label">商品图片 </label>
                         <div class="am-u-sm-9">
                             <div class="am-form-group am-form-file">
-
                                 <div class="tpl-form-file-img">
                                     <img src="{{$Gg['image']}}" alt="">
                                 </div>
@@ -53,10 +52,10 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">商品成色 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            <input type="radio" name="cheng" value="9成新">90% &nbsp;
-                            <input type="radio" name="cheng" value="9成新">80% &nbsp;
-                            <input type="radio" name="cheng" value="9成新">70% &nbsp;
-                            <input type="radio" name="cheng" value="9成新">50%
+                            <input type="radio" name="cheng" value="90%">90% &nbsp;
+                            <input type="radio" name="cheng" value="80%">80% &nbsp;
+                            <input type="radio" name="cheng" value="70%">70% &nbsp;
+                            <input type="radio" name="cheng" value="50%">50%
                         </div>
                     </div>
                     <div class="am-form-group">
@@ -76,14 +75,14 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">排序 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            <input type="text" name="orby" class="tpl-form-input" id="user-name" placeholder="" value="{{$Gg['orby']}}">
+                            <input type="text" name="orby" class="tpl-form-input" id="user-name" placeholder="" value="{{$Gg['orby']}}"> 
                         </div>
                     </div>
 
                     {{csrf_field()}}
                     {{ method_field('PUT') }}
-                    <div class="am-form-group">
-                        <div class="am-u-sm-9 am-u-sm-push-3">
+                    <div class="am-form-group ">
+                        <div class="am-u-sm-9 am-u-sm-push-3 ">
                             <button class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
                         </div>
                     </div>

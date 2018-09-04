@@ -4,8 +4,6 @@
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js">
 </script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
-
-
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -17,19 +15,21 @@
             <div class="tpl-form-body tpl-form-line">
                 <form class="am-form tpl-form-line-form" method="post" action="/guanggao" enctype="multipart/form-data">
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">发布人 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">发布ID <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="user_id" class="tpl-form-input" id="user-name" placeholder="">
                         </div>
                     </div>
-
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">小分类 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-phone" class="am-u-sm-3 am-form-label">选择分类<span class="tpl-form-line-small-title">Author</span></label>
                         <div class="am-u-sm-9">
-                            <input type="text" name="xxcate_id" class="tpl-form-input" id="user-name" placeholder="">
+                            <select data-am-selected="{searchBox: 1}" style="display: none;" name="xxcate_id">
+                                @foreach($xxcate as $v)
+                                <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
-
                     <div class="am-form-group">
                         <label class="am-u-sm-3 am-form-label">商品简介</label>
                         <div class="am-u-sm-9">
@@ -51,10 +51,10 @@
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">商品成色 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                            <input type="radio" name="cheng" value="90%">90% &nbsp;
-                            <input type="radio" name="cheng" value="80%">80% &nbsp;
-                            <input type="radio" name="cheng" value="70%">70% &nbsp;
-                            <input type="radio" name="cheng" value="50%">50%
+                            <input type="radio" name="cheng" value="1">1 &nbsp;
+                            <input type="radio" name="cheng" value="2">2 &nbsp;
+                            <input type="radio" name="cheng" value="3">3 &nbsp;
+                            <input type="radio" name="cheng" value="4">4
                         </div>
                     </div>
                     <div class="am-form-group">
@@ -63,21 +63,18 @@
                             <input type="text" name="money" class="tpl-form-input" id="user-name" placeholder="">
                         </div>
                     </div>
-
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">所在地 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="quyu" class="tpl-form-input" id="user-name" placeholder="">
                         </div>
                     </div>
-                    
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">排序 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="orby" class="tpl-form-input" id="user-name" placeholder="">
                         </div>
                     </div>
-
                     {{csrf_field()}}
                     <div class="am-form-group">
                         <div class="am-u-sm-9 am-u-sm-push-3">
@@ -86,7 +83,7 @@
                     </div>
                 </form>
                 <script>
-                var ue = UE.getEditor('editor');                
+                var ue = UE.getEditor('editor');
                 </script>
             </div>
         </div>
