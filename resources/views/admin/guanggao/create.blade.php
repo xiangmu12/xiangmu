@@ -1,4 +1,4 @@
-@extends('layouts.admin') @section('title') 广告添加 @endsection @section('title','广告添加') @section('content')
+@extends('layouts.admin') @section('title') 广告添加 @endsection @section('title','广告填') @section('content')
 <hr>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
 <script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js">
