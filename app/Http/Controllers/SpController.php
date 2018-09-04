@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\DCate;
 use App\Sp;
-
+use App\User;
+use App\XCate;
+use App\XxCate;
 use Illuminate\Http\Request;
 
 
@@ -19,11 +22,12 @@ class SpController extends Controller
         //
         //3
           //读取数据库 获取用户数据
+        $xxcate = XxCate::all();
         $shangpins = Sp::orderBy('id','desc')
             ->where('intro','like', '%'.request()->keywords.'%')
             ->paginate(3);
         //解析模板显示用户数据
-        return view('admin.shangpin.index',compact('shangpins'));
+        return view('admin.shangpin.index',compact('shangpins','xxcate'));
       
     }
 
@@ -34,7 +38,11 @@ class SpController extends Controller
      */
     public function create()
     {
-        return view('admin.shangpin.create');
+
+
+        $xxcate = XxCate::all();
+
+        return view('admin.shangpin.create',compact('xxcate'));
     }
 
     /**
@@ -49,12 +57,15 @@ class SpController extends Controller
 
           //2添加
         $shangpins = new Sp;
+      
         // $shangpins -> imgae = $request->imgae;
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
         $shangpins -> money = $request->money;
         $shangpins -> quyu = $request->quyu;
-
+        $shangpins -> quyu = $request->quyu;
+        $shangpins -> xxcate_id = $request ->xxcate_id;
+       
         //文件上传
         //检测是否有文件上传
             
@@ -65,9 +76,9 @@ class SpController extends Controller
         
 
         if ($shangpins -> save()) {
-            return redirect('shangpin')->with('success','添加成功');
+            return redirect('shangpin')->with('error','添加成功');
         }else{
-            return back()->with('error','添加失败');
+            return back()->with('success','添加失败');
         }
     }
 
