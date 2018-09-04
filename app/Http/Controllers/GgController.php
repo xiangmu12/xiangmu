@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\DCate;
 use App\Gg;
+use App\User;
+use App\XCate;
+use App\XxCate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GgController extends Controller
 {
@@ -14,12 +19,16 @@ class GgController extends Controller
      */
     public function index()
     {
+        //读取用户信息
+        
+        //dd($users);die;
+        $xxcate = XxCate::all();
         //读取数据库 获取用户数据
         $Gg = Gg::where('user_id','like', '%'.request()->keywords.'%')
             ->paginate(6);
             
         //解析模板显示用户数据
-        return view('admin.guanggao.index', ['Gg'=>$Gg]);
+        return view('admin.guanggao.index', ['Gg'=>$Gg,'xxcate'=>$xxcate]);
     }
 
     /**
@@ -29,9 +38,15 @@ class GgController extends Controller
      */
     public function create()
     {
-        //
+        //读取用户信息
+        $users = User::all();
+        //读取分类信息
+        $xxcate = XxCate::all();
+        // dd($xxcate);
+        // exit;
+        $dcate = DCate::all();
 
-        return view('admin.guanggao.create');
+        return view('admin.guanggao.create',['users'=>$users,'xxcate'=>$xxcate,'dcates'=>$dcate]);
     }
 
     /**
@@ -45,13 +60,13 @@ class GgController extends Controller
         //
         $Gg = new Gg; 
         $Gg -> user_id = $request ->user_id;
-        $Gg -> xxcate_id = $request ->xxcate_id;
         $Gg -> intro = $request ->intro;
         $Gg -> image = $request ->image;
         $Gg -> cheng = $request ->cheng;
         $Gg -> money = $request ->money;
         $Gg -> quyu = $request ->quyu;
         $Gg -> orby = $request ->orby;
+        $Gg -> xxcate_id = $request ->xxcate_id;
 
         if ($request->hasFile('image')) {
             $Gg->image = '/'.$request->image->store('uploads/'.date('Ymd'));
@@ -85,8 +100,9 @@ class GgController extends Controller
     {
         //获取用户的信息
         $Gg = Gg::findOrFail($id);
+        $xxcate = XxCate::all();
         //解析模板显示数据
-        return view('admin.guanggao.edit', ['Gg'=>$Gg]);
+        return view('admin.guanggao.edit', ['Gg'=>$Gg,'xxcate'=>$xxcate]);
     }
 
     /**
@@ -100,7 +116,7 @@ class GgController extends Controller
     {
         //获取广告的信息
         $Gg = Gg::findOrFail($id);
-
+        $xxcate = XxCate::all();
         //更新 
         $Gg -> intro = $request ->intro;
         $Gg -> xxcate_id = $request ->xxcate_id;
