@@ -44,6 +44,7 @@
                                 </th>
                                 <th class="table-id">ID</th>
                                 <th class="table-title">用户名</th>
+                                <th class="table-title">权限</th>
                                 <th class="table-set">操作</th>
                             </tr>
                         </thead>
@@ -55,6 +56,15 @@
                                 </td>
                                 <td>{{$v['id']}}</td>
                                 <td class="am-hide-sm-only">{{$v['username']}}</td>
+
+                                <td class="am-hide-sm-only">
+                                    @if($v['oradmin'] == 0)
+                                    普通用户
+                                    @else($v['oradmin'] == 1)
+                                    管理员
+                                    @endif
+
+                                </td>
                                 <td>
                                     <div class="am-btn-toolbar">
 
