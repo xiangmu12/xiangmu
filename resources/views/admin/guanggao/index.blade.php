@@ -60,6 +60,7 @@
                             <td>
                                 
                                 {{$v->xxcate->name}}
+
                                 
                             </td>
                             <td>{{$v['intro']}}</td>
