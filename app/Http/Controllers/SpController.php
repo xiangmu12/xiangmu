@@ -74,7 +74,7 @@ class SpController extends Controller
         }
 
         
-
+        
         if ($shangpins -> save()) {
             return redirect('shangpin')->with('error','添加成功');
         }else{

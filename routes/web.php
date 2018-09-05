@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
 
 //用户设置
 Route::resource('user','UserController');
@@ -42,4 +41,13 @@ Route::resource('paimai','PmController');
 
 //后台首页
 Route::get('/admin','AdminController@index');
+
+//前台页面
+Route::get('/', 'HomeController@index');
+
+//获取商品信息
+Route::get('/{id}.html','HomeController@sp');
+
+//获取所有分类信息
+Route::get('/dcateall','HomeController@cateall');
 

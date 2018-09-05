@@ -16,6 +16,10 @@ class XCate extends Model
 	public function dcate()
 	{
 
-		return $this->belongsTo('App\DCate');
+		return $this->belongsTo('App\DCate','id','dcate_id');
+	}
+	public function xxcate()
+	{
+		return $this->hasMany('App\XxCate','xcate_id','id');
 	}
 }

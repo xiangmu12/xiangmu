@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\DCate;
+use App\Sp;
+use App\XCate;
+use App\XxCate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,7 +17,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $dcate = DCate::all();
+        $xcate = XCate::all();
+        $xxcate = XxCate::all();
+        $shangpin = Sp::all();
+        
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin'));
     }
 
     /**
@@ -81,4 +90,27 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function sp($id)
+    {
+        $shangpin = Sp::where('id',$id)->get();
+        $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
+
+        return view('home.shangpinone',compact('shangpin','shangpins'));
+    }
+
+    public function cateall(Request $request)
+    {
+
+        if(!empty($request->xxcate_id)){
+             $shangpin = Sp::where('xxcate_id', $request->xxcate_id)->orderBy('id','desc')->get();
+        }
+        if(empty($request->xxcate_id)){
+           $shangpin = Sp::all(); 
+        }
+        
+        $xxcate = Xxcate::all();
+        return view('home.cateall',compact('shangpin','xxcate'));;
+    }
+
 }
