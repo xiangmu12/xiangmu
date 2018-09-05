@@ -136,27 +136,16 @@
         </ul>
     </li>
 </ul>
-
-<<<<<<< HEAD
 <ul class="tpl-left-nav-menu">
     <li class="tpl-left-nav-item">
         <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
             <span>活动管理</span>
-=======
-
-<ul class="tpl-left-nav-menu">
-  <li class="tpl-left-nav-item">
-        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
-            <i class="am-icon-wpforms"></i>
-            <span>拍卖管理</span>
->>>>>>> 2a2e1c01d0db7c18f99a87fd9e46f3226c8104b0
             <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none">
             <li>
-<<<<<<< HEAD
-                <a href="/huodong/create">
+                  <a href="/huodong/create">
                     <i class="am-icon-angle-right"></i>
                     <span>活动发布</span>
                     <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
@@ -164,7 +153,25 @@
                 <a href="/huodong">
                     <i class="am-icon-angle-right"></i>
                     <span>活动列表</span>
-=======
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+
+
+<ul class="tpl-left-nav-menu">
+  <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>拍卖管理</span>
+
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none">
+            <li>
+
                 <a href="/paimai/create">
                     <i class="am-icon-angle-right"></i>
                     <span>拍卖添加</span>
@@ -173,14 +180,11 @@
                 <a href="/paimai">
                     <i class="am-icon-angle-right"></i>
                     <span>拍卖列表</span>
->>>>>>> 2a2e1c01d0db7c18f99a87fd9e46f3226c8104b0
+
                 </a>
             </li>
         </ul>
     </li>
 </ul>
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 2a2e1c01d0db7c18f99a87fd9e46f3226c8104b0
