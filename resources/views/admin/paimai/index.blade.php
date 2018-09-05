@@ -63,7 +63,10 @@
                                 <td>{{$v['id']}}</td>
                                 <td class="am-hide-sm-only"><img width="80" src="{{$v['image']}}"></td>
                                 <td>{{$v['intro']}}</td>
-                                <td>{{$v['cheng']}}</td>
+                                <td>@if($v['cheng'] == 0)非全新
+                                     @else
+                                    全新 @endif
+                                </td>
                                 <td>{{$v['money']}}</td>
                                 <td>{{$v['jmoney']}}</td>
                                 <td>{{$v['opentime']}}</td>

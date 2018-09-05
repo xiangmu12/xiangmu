@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Sp;
+use App\XxCate;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -81,4 +83,37 @@ class HomeController extends Controller
     {
         //
     }
+
+    public function fabu()
+    {
+        $xxcate = XxCate::all();
+        return view('home.fabuxianzhi.index',compact('xxcate'));
+    }
+
+    public function fabuchuli(Request $request)
+    {
+        $shangpins = new Sp;
+      
+        $shangpins -> title = $request->title;
+        $shangpins -> intro = $request->intro;
+        $shangpins -> cheng = $request->cheng;
+        $shangpins -> xxcate_id = $request ->xxcate_id;
+        $shangpins -> money = $request->money;
+        $shangpins -> province = $request->province;
+        $shangpins -> city = $request->city;
+        $shangpins -> area = $request->area;
+
+        if ($request->hasFile('image')) {
+            $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
+
+         if ($shangpins -> save()) {
+            return redirect('/')->with('error','添加成功');
+        }else{
+            return back()->with('success','添加失败');
+        }
+        
+    }
+
+
 }

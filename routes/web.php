@@ -43,3 +43,8 @@ Route::resource('paimai','PmController');
 //后台首页
 Route::get('/admin','AdminController@index');
 
+
+
+Route::get('/fabu','HomeController@fabu');
+
+Route::post('/fabu','HomeController@fabuchuli');
