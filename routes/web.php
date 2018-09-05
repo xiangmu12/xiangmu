@@ -13,6 +13,9 @@
 
 Route::get('/', 'HomeController@index');
 
+Route::get('collection', 'HomeController@list');
+Route::get('/delete/{id}', 'HomeController@xiajia');
+
 //用户设置
 Route::resource('user','UserController');
 

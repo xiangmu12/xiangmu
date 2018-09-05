@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Sp;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.index');
+        $shangpin = Sp::all();
+
+        return view('home.index',['shangpin'=>$shangpin]);
     }
 
     /**
@@ -80,5 +84,30 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+
+    }
+
+
+    public function list()
+    {
+        $shangpin = new Sp;
+        // dd($shangpin);die;
+        $shangpin = Sp::get();
+       $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+       
+        // dd($res);die;
+        return view('home.wdxz.collection',compact('shang','pin','shangpin'));
+    }
+
+    public function xiajia($id)
+    {
+        $shangpin = Sp::findOrFail($id);
+
+        if($shangpin->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败!');
+        }
     }
 }

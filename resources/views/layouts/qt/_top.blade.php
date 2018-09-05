@@ -22,24 +22,24 @@
 							</a>
 						</li>
 						<li class="site-nav--has-dropdown" aria-haspopup="true">
-							<a href="collection.html" class="site-nav__link">
+							<a href="collection" class="site-nav__link">
 								<span>我的闲置</span>
 								<span class="icon icon-arrow-down" aria-hidden="true"></span>
 							</a>
+							@foreach($shangpin as $v)
 							<ul class="site-nav__dropdown">
 								<li>
-								<a href="collection.html" class="site-nav__link">出售中(0)</a>
+								<a href="collection" class="site-nav__link">出售中(
+								{{$shang}}
+								)</a>
 								</li>
 								<li>
-								<a href="collection.html" class="site-nav__link">交易中(0)</a>
-								</li>
-								<li>
-								<a href="collection.html" class="site-nav__link">新留言(0)</a>
-								</li>
-								<li>
-								<a href="collection.html" class="site-nav__link">新会话(0)</a>
+								<a href="collection.html" class="site-nav__link">交易中(
+									{{$pin}}
+								)</a>
 								</li>
 							</ul>
+							@endforeach
 						</li>
 					</ul>
 					<script>

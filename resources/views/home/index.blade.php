@@ -599,7 +599,7 @@
 						<div class="sidebar-collections">
 							<div class="sdcollections-title sb-title">
 								<i class="fa fa-list"></i>
-								<span>All Collections</span>
+								<span>萨达撒大家撒</span>
 							</div>
 							<div class="sdcollections-content">
 								<ul class="sdcollections-list">

@@ -50,12 +50,10 @@
                     </div>
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">商品成色 <span class="tpl-form-line-small-title"></span></label>
-                        <div class="am-u-sm-9">
-                            <input type="radio" name="cheng" value="1">1 &nbsp;
-                            <input type="radio" name="cheng" value="2">2 &nbsp;
-                            <input type="radio" name="cheng" value="3">3 &nbsp;
-                            <input type="radio" name="cheng" value="4">4
-                        </div>
+                        <select data-am-selected="{searchBox: 1}" name="cheng" style="display: none;">
+                                <option value="1">全新</option>
+                                <option value="0">非全新</option>
+                             </select>
                     </div>
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">价格 <span class="tpl-form-line-small-title"></span></label>
