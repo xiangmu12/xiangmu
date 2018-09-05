@@ -13,6 +13,14 @@
 
 Route::get('/', 'HomeController@index');
 
+//前台降价页面
+Route::get('/jiang', 'HomeController@jiang');
+
+
+Route::get('/gou/{id}/gou', 'HomeController@gou');
+
+Route::get('/', 'HomeController@index');
+
 //用户设置
 Route::resource('user','UserController');
 

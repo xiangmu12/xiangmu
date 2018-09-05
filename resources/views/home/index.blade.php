@@ -13,8 +13,8 @@
 	<!-- Helpers ================================================== -->
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="Home Market - Responsive HTML5 theme">
-	<meta property="og:image" content="//assets/assets/images/logo.png">
-	<meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
+	<meta property="og:image" content="/assets/assets/images/logo.png">
+	<meta property="og:image:secure_url" content="/assets/assets/images/logo.png">
 	<meta property="og:url" content="#">
 	<meta property="og:site_name" content="Home Market Red">
 	<meta name="twitter:site" content="@">

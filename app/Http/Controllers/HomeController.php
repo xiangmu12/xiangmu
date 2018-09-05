@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Sp;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -56,7 +57,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+       
     }
 
     /**
@@ -80,5 +82,20 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function jiang()
+    {   
+          $sps = Sp::all();
+
+        return view('home.jiang',compact('sps'));
+    }
+
+
+     public function gou($id)
+    {   
+         return 'qwe';
+
     }
 }
