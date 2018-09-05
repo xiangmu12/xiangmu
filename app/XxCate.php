@@ -15,7 +15,7 @@ class XxCate extends Model
 
 	public function xcate()
 	{
-		return $this->belongsTo('App\XCate','id','xcate_id');
+		return $this->belongsTo('App\XCate','xcate_id','id');
 	}
 
 	public function shangpin()

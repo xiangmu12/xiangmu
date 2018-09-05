@@ -1,17 +1,16 @@
 @extends('layouts.admin') 
-@section('title') 用户添加 @endsection 
-@section('title','用户添加') 
+@section('title') 拍卖添加 @endsection 
+@section('title','拍卖添加') 
 
 @section('content')
 <hr>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<link href="/ueditor/datedropper.css" rel="stylesheet" type ="text/css"/>
-<script src="/ueditor/datedropper.js"> </script> 
+
+
 
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
-            <span class="am-icon-code"></span> 用户添加
+            <span class="am-icon-code"></span> 拍卖添加
         </div>
     </div>
     <div class="tpl-block">
@@ -42,12 +41,10 @@
                         <label for="user-phone" class="am-u-sm-3 am-form-label">成色</label>
                         <div class="am-u-sm-9">
                             <select data-am-selected="{searchBox: 1}" name="cheng" style="display: none;">
-                                <option value="90%">90%</option>
-                                <option value="80%">80%</option>
-                                <option value="70%">70%</option>
-                                <option value="60%">60%</option>
-                               
-                            </select>
+
+                                <option value="0" @if($paimai['cheng'] == 0) selected @endif>非全新</option>
+                                <option value="1" @if($paimai['cheng'] == 1) selected @endif>全新</option>
+                             </select>
                         </div>
                     </div>
                     
@@ -59,6 +56,8 @@
                         </div>
                     </div> 
 
+                   
+
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">加价幅度<span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
@@ -67,8 +66,6 @@
                     </div>
 
                     
-                    
-
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">开拍时间<span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">

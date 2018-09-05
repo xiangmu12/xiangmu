@@ -51,8 +51,8 @@ class PmController extends Controller
         $paimai -> cheng = $request->cheng;
         $paimai -> money = $request->money;
         $paimai -> jmoney = $request->jmoney;
-        $paimai -> opentime = $opentime = date('Y-m-d H:i',strtotime($request->opentime));
-        $paimai -> overtime = $overtime = date('Y-m-d H:i',strtotime($request->overtime));
+        $paimai -> opentime = date('Y-m-d H:i',strtotime($request->opentime));
+        $paimai -> overtime = date('Y-m-d H:i',strtotime($request->overtime));
         $paimai -> user_id = $request->user_id;
         $paimai -> xxcate_id = $request->xxcate_id;
        
@@ -61,8 +61,6 @@ class PmController extends Controller
         
         if($request->hasFile('image')){
              $paimai->image ='/'.$request->image->store('uploads/'.date('Ymd'));
-        }else{
-            echo 11;
         }
 
         if($paimai -> save()){
@@ -114,8 +112,8 @@ class PmController extends Controller
         $paimai -> cheng = $request->cheng;
         $paimai -> money = $request->money;
         $paimai -> jmoney = $request->jmoney;
-        $paimai -> opentime = $request->opentime;
-        $paimai -> overtime = $request->overtime;
+        $paimai -> opentime = date('Y-m-d H:i',strtotime($request->opentime));
+        $paimai -> overtime = date('Y-m-d H:i',strtotime($request->overtime));
         $paimai -> user_id = $request->user_id;
         $paimai -> xxcate_id = $request->xxcate_id;
 

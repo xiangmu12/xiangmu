@@ -12,6 +12,14 @@
 */
 
 
+//前台降价页面
+Route::get('/jiang', 'HomeController@jiang');
+
+
+Route::get('/gou/{id}/gou', 'HomeController@gou');
+
+Route::get('/', 'HomeController@index');
+
 //用户设置
 Route::resource('user','UserController');
 
@@ -42,6 +50,7 @@ Route::resource('paimai','PmController');
 //后台首页
 Route::get('/admin','AdminController@index');
 
+
 //前台页面
 Route::get('/', 'HomeController@index');
 
@@ -51,3 +60,24 @@ Route::get('/{id}.html','HomeController@sp');
 //获取所有分类信息
 Route::get('/dcateall','HomeController@cateall');
 
+
+/**
+ * 前台
+ */
+//登陆页面
+Route::get('/login','HomeController@login');
+
+//登陆操作
+Route::post('/login','HomeController@dologin');
+
+//退出登入
+Route::get('/logout','HomeController@logout');
+
+//用户注册
+
+
+
+
+Route::get('/fabu','HomeController@fabu');
+
+Route::post('/fabu','HomeController@fabuchuli');
