@@ -43,3 +43,19 @@ Route::resource('paimai','PmController');
 //后台首页
 Route::get('/admin','AdminController@index');
 
+
+/**
+ * 前台
+ */
+//登陆页面
+Route::get('/login','HomeController@login');
+
+//登陆操作
+Route::post('/login','HomeController@dologin');
+
+//退出登入
+Route::get('/logout','HomeController@logout');
+
+//用户注册
+
+
