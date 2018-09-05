@@ -11,7 +11,6 @@ class Sp extends Model
 
 	protected $dates = ['deleted_at'];
 	protected $table = 'shangpins';
-
 	public function users()
 	{
 		return $this->belongsTo('App\User');

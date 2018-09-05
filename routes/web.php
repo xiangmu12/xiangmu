@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/admin', 'AdminController@index');
+Route::get('/', 'HomeController@index');
 
 //用户设置
 Route::resource('user','UserController');
