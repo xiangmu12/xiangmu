@@ -51,3 +51,26 @@ Route::resource('paimai','PmController');
 //后台首页
 Route::get('/admin','AdminController@index');
 
+
+<<<<<<< HEAD
+/**
+ * 前台
+ */
+//登陆页面
+Route::get('/login','HomeController@login');
+
+//登陆操作
+Route::post('/login','HomeController@dologin');
+
+//退出登入
+Route::get('/logout','HomeController@logout');
+
+//用户注册
+
+
+=======
+
+Route::get('/fabu','HomeController@fabu');
+
+Route::post('/fabu','HomeController@fabuchuli');
+>>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227

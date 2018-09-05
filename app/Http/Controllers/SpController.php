@@ -162,4 +162,5 @@ class SpController extends Controller
             return redirect('shangpin')->with('error','删除失败');
         }
     }
+
 }

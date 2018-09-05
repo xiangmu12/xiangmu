@@ -2,8 +2,18 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Sp;
+=======
+<<<<<<< HEAD
+use App\User;
+=======
+use App\Sp;
+use App\XxCate;
+>>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
+>>>>>>> be590d0f9b19399c7fccd3b266d1eefa0f6ee2e3
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
@@ -13,8 +23,9 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home.index');
+    {   
+        $user = User::all();
+        return view('home.index',['user'=>$user]);
     }
 
     /**
@@ -84,6 +95,7 @@ class HomeController extends Controller
         //
     }
 
+<<<<<<< HEAD
 
     public function jiang()
     {   
@@ -98,4 +110,87 @@ class HomeController extends Controller
          return 'qwe';
 
     }
+=======
+<<<<<<< HEAD
+
+
+     //登陆
+    public function login()
+    {
+        return view('home.user.login');
+
+    }
+
+    //登录操作
+    public function dologin(Request $request)
+    {
+        //获取用户的数据
+        $user = User::where('username',$request->username)->first();
+        // dd($user);
+        
+        if(!$user){
+            return back()->with('error','登录失败');
+        }
+
+        //校验密码
+        if(Hash::check($request->password, $user->password)){
+            //写入session
+            session(['username'=>$user->username, 'id'=>$user->id]);
+            return redirect('/')->with('success','登录成功');
+        }else{
+            return back()->with('error','登录失败');
+        }
+    }
+
+
+    //退出登入
+    public function logout(Request $request)
+    {
+        //
+        $request->session()->flush();
+
+        return redirect('/login')->with('success','退出成功');
+    }
+
+
+    //用户注册
+    public function zhuce()
+    {
+       
+    }
+=======
+    public function fabu()
+    {
+        $xxcate = XxCate::all();
+        return view('home.fabuxianzhi.index',compact('xxcate'));
+    }
+
+    public function fabuchuli(Request $request)
+    {
+        $shangpins = new Sp;
+      
+        $shangpins -> title = $request->title;
+        $shangpins -> intro = $request->intro;
+        $shangpins -> cheng = $request->cheng;
+        $shangpins -> xxcate_id = $request ->xxcate_id;
+        $shangpins -> money = $request->money;
+        $shangpins -> province = $request->province;
+        $shangpins -> city = $request->city;
+        $shangpins -> area = $request->area;
+
+        if ($request->hasFile('image')) {
+            $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
+
+         if ($shangpins -> save()) {
+            return redirect('/')->with('error','添加成功');
+        }else{
+            return back()->with('success','添加失败');
+        }
+        
+    }
+
+
+>>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
+>>>>>>> be590d0f9b19399c7fccd3b266d1eefa0f6ee2e3
 }
