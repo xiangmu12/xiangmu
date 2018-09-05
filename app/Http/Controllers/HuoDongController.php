@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\HuoDong;
 use Illuminate\Http\Request;
 
 class HuoDongController extends Controller
@@ -13,7 +14,12 @@ class HuoDongController extends Controller
      */
     public function index()
     {
-        //
+        //读取数据库 获取用户数据
+        $huodongs = HuoDong::orderBy('id','desc')
+            ->where('title','like', '%'.request()->keywords.'%')
+            ->paginate(10);
+        //解析模板显示用户数据
+        return view('admin.huodong.index', ['huodongs'=>$huodongs]);
     }
 
     /**
@@ -23,7 +29,7 @@ class HuoDongController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.huodong.create');
     }
 
     /**
@@ -34,7 +40,19 @@ class HuoDongController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $huodong = new HuoDong;
+        
+        $huodong -> title = $request -> title;
+        $huodong -> content = $request -> content;
+        $huodong -> opentime = date('Y-m-d H:i:s',strtotime($request->opentime));
+        $huodong -> overtime = date('Y-m-d H:i:s',strtotime($request->overtime));
+
+        if($huodong->save()){
+            return back()->with('success','发布活动成功');
+        }else{
+            return back()->with('error','发布活动失败');
+        }
     }
 
     /**
@@ -56,7 +74,10 @@ class HuoDongController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $huodong = HuoDong::findOrFail($id);
+        //解析模板显示数据
+        return view('admin.huodong.edit', ['huodong'=>$huodong]);
     }
 
     /**
@@ -68,7 +89,18 @@ class HuoDongController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $huodong = HuoDong::findOrFail($id);
+        
+        $huodong -> title = $request -> title;
+        $huodong -> content = $request -> content;
+        $huodong -> opentime = $request->opentime;
+        $huodong -> overtime = $request->overtime;
+
+        if($huodong->save()){
+            return redirect('/huodong')->with('success','修改活动成功');
+        }else{
+            return back()->with('error','修改活动失败');
+        }
     }
 
     /**
@@ -79,6 +111,12 @@ class HuoDongController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $huodong = HuoDong::findOrFail($id);
+
+        if($huodong->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }

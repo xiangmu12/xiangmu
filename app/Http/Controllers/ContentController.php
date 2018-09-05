@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class ContentController extends Controller
@@ -23,7 +24,9 @@ class ContentController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::get();
+      
+        return view('admin.content.create', ['users'=>$users]);
     }
 
     /**
