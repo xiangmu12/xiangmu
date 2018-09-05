@@ -70,7 +70,15 @@
                             </td>
                             <td>{{$v['intro']}}</td>
                             
-                            <td>{{$v['cheng']}}</td>
+                            <td>
+                                @if($v['cheng'] == 0)
+                                全新
+                                @else
+                                非全新
+                                @endif
+
+
+                            </td>
                             
                             <td class="am-hide-sm-only">{{$v->xxcate['name']}}</td>
                             <td>

@@ -17,8 +17,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="lookbook.html" class="site-nav__link">
-								<span>发布闲置</span>								
+							<a href="/fabu" class="site-nav__link">
+								<span>发布闲置</span>			
 							</a>
 						</li>
 						<li class="site-nav--has-dropdown" aria-haspopup="true">
@@ -30,7 +30,9 @@
 							<ul class="site-nav__dropdown">
 								<li>
 								<a href="collection" class="site-nav__link">出售中(
-								{{$shang}}
+									
+										{{$shang}}
+									
 								)</a>
 								</li>
 								<li>

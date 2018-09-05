@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Sp;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\DCate;
+use App\Sp;
+use App\XCate;
+use App\XxCate;
+use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class HomeController extends Controller
 {
@@ -14,11 +20,24 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $shangpin = Sp::all();
 
-        return view('home.index',['shangpin'=>$shangpin]);
+    {
+
+
+        $dcate = DCate::all();
+        $xcate = XCate::all();
+        $xxcate = XxCate::all();
+        $shangpin = Sp::all();
+        $user = User::all();
+         $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin'));
+
+
+
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -60,7 +79,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+       
     }
 
     /**
@@ -90,7 +110,7 @@ class HomeController extends Controller
 
     public function list()
     {
-        $shangpin = new Sp;
+        
         // dd($shangpin);die;
         $shangpin = Sp::get();
        $shang = Sp::where('orlogin','0')->count();
@@ -110,4 +130,125 @@ class HomeController extends Controller
             return back()->with('error','删除失败!');
         }
     }
+
+
+    public function sp($id)
+    {
+        $shangpin = Sp::where('id',$id)->get();
+        $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
+
+        return view('home.shangpinone',compact('shangpin','shangpins'));
+    }
+
+    public function cateall(Request $request)
+    {
+
+        if(!empty($request->xxcate_id)){
+             $shangpin = Sp::where('xxcate_id', $request->xxcate_id)->orderBy('id','desc')->get();
+        }
+        if(empty($request->xxcate_id)){
+           $shangpin = Sp::all(); 
+        }
+        
+        $xxcate = Xxcate::all();
+        return view('home.cateall',compact('shangpin','xxcate'));;
+    }
+
+
+
+    public function jiang()
+    {   
+          $sps = Sp::all();
+
+        return view('home.jiang',compact('sps'));
+    }
+
+
+     public function gou($id)
+    {   
+         return 'qwe';
+
+    }
+
+
+
+     //登陆
+    public function login()
+    {
+        return view('home.user.login');
+
+    }
+
+    //登录操作
+    public function dologin(Request $request)
+    {
+        //获取用户的数据
+        $user = User::where('username',$request->username)->first();
+        // dd($user);
+        
+        if(!$user){
+            return back()->with('error','登录失败');
+        }
+
+        //校验密码
+        if(Hash::check($request->password, $user->password)){
+            //写入session
+            session(['username'=>$user->username, 'id'=>$user->id]);
+            return redirect('/')->with('success','登录成功');
+        }else{
+            return back()->with('error','登录失败');
+        }
+    }
+
+
+    //退出登入
+    public function logout(Request $request)
+    {
+        //
+        $request->session()->flush();
+
+        return redirect('/login')->with('success','退出成功');
+    }
+
+
+    //用户注册
+    public function zhuce()
+    {
+       
+    }
+
+    public function fabu()
+    {
+        $xxcate = XxCate::all();
+        return view('home.fabuxianzhi.index',compact('xxcate'));
+    }
+
+    public function fabuchuli(Request $request)
+    {
+        $shangpins = new Sp;
+      
+        $shangpins -> title = $request->title;
+        $shangpins -> intro = $request->intro;
+        $shangpins -> cheng = $request->cheng;
+        $shangpins -> xxcate_id = $request ->xxcate_id;
+        $shangpins -> money = $request->money;
+        $shangpins -> province = $request->province;
+        $shangpins -> city = $request->city;
+        $shangpins -> area = $request->area;
+
+        if ($request->hasFile('image')) {
+            $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
+
+         if ($shangpins -> save()) {
+            return redirect('/')->with('error','添加成功');
+        }else{
+            return back()->with('success','添加失败');
+        }
+        
+    }
+
+
+
+
 }

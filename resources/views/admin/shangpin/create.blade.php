@@ -35,10 +35,9 @@
                            <select class="first" data-am-selected="{searchBox: 1}" name="cheng">
 
 
-                            <option value="90%" name="cheng">90%</option>        
-                            <option value="80%" name="cheng">80%</option>        
-                            <option value="70%" name="cheng">70%</option>        
-                            <option value="60%" name="cheng">60%</option>        
+                            <option value="0">全新</option>        
+                            <option value="1">非全新</option>        
+                               
                             </select>
 
                         </div>
