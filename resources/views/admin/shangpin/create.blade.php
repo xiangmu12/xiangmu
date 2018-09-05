@@ -18,7 +18,7 @@
                         <label for="user-name" class="am-u-sm-3 am-form-label">商品图片 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="file" name="image" class="tpl-form-input" id="user-name" placeholder="">
-                           
+
                         </div>
                     </div>
 
@@ -29,27 +29,37 @@
                             
                         </div>
                     </div>
-
-                    
-
-                     <div class="am-form-group">
+                    <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">成色 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                           <input type="radio" name="cheng" value="9成">9成
-                           <input type="radio" name="cheng" value="8成">8成
-                           <input type="radio" name="cheng" value="7成">7成
-                           <input type="radio" name="cheng" value="6成">6成
-                            
+                           <select class="first" data-am-selected="{searchBox: 1}" name="cheng">
+
+
+                            <option value="90%" name="cheng">90%</option>        
+                            <option value="80%" name="cheng">80%</option>        
+                            <option value="70%" name="cheng">70%</option>        
+                            <option value="60%" name="cheng">60%</option>        
+                            </select>
+
                         </div>
                     </div>
 
-
-
                     <div class="am-form-group">
+                         <label for="user-phone" class="am-u-sm-3 am-form-label">选择分类<span class="tpl-form-line-small-title">Author</span></label>
+                           <div class="am-u-sm-9">
+                                <select data-am-selected="{searchBox: 1}" style="display: none;" name="xxcate_id">
+                                @foreach($xxcate as $v)
+                                    <option value="{{$v['id']}}">{{$v['name']}}</option>
+                                    @endforeach
+                                  </select>
+                             </div>
+                     </div>
+
+                         <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">价格 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="money" class="tpl-form-input" id="user-name" placeholder="">
-                            
+
                         </div>
                     </div>
 
@@ -57,11 +67,11 @@
                         <label for="user-name" class="am-u-sm-3 am-form-label">三级联动 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="quyu" class="tpl-form-input" id="user-name" placeholder="">
-                            
+
                         </div>
                     </div>
 
-					{{csrf_field()}}
+                    {{csrf_field()}}
                     <div class="am-form-group">
                         <div class="am-u-sm-9 am-u-sm-push-3">
                             <button class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>

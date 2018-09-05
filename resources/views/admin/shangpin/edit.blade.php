@@ -35,11 +35,15 @@
                      <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">成色 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
-                           <input type="radio" name="cheng">9成
-                           <input type="radio" name="cheng">8成
-                           <input type="radio" name="cheng">7成
-                           <input type="radio" name="cheng">6成
-                            
+                           <select class="first" data-am-selected="{searchBox: 1}" name="cheng">
+
+
+                            <option value="90%" name="cheng">90%</option>        
+                            <option value="80%" name="cheng">80%</option>        
+                            <option value="70%" name="cheng">70%</option>        
+                            <option value="60%" name="cheng">60%</option>        
+                            </select>
+
                         </div>
                     </div>
 

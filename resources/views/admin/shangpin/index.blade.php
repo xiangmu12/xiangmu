@@ -48,9 +48,13 @@
                             <th class="table-title">图片</th>
                             <th class="table-title">商品简介</th>
                             <th class="table-title">成色</th>
+                            <th class="table-title">小小类</th>
+                            <th class="table-title">用户名</th>
+                           
+
                             <th class="table-title">价格</th>
                             <th class="table-title">所在地</th>
-
+                             <th class="table-title">是否交易</th>
                             <th class="table-set">操作</th>
                         </tr>
                     </thead>
@@ -65,9 +69,22 @@
                                 <img src="{{$v['image']}}" width="70px" height="70px"> 
                             </td>
                             <td>{{$v['intro']}}</td>
+                            
                             <td>{{$v['cheng']}}</td>
+                            
+                            <td class="am-hide-sm-only">{{$v->xxcate['name']}}</td>
+                            <td>
+                                    @if($v->user)
+                                {{$v->user->username}}
+                                    @endif
+                            </td>
                             <td>{{$v['money']}}</td>
                             <td>{{$v['quyu']}}</td>
+                            <td>
+                                @if($v['orlogin'] == 0)
+                                没有交易
+                                @endif
+                            </td>
                             <td>
                                 <div class="am-btn-toolbar">
                                     <div class="am-btn-group am-btn-group-xs">

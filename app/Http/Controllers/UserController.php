@@ -100,6 +100,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->sfenz= $request->sfenz;
         $user->phone = $request->phone;
+        $user->oradmin = $request->oradmin;
 
         
         if($user -> save()){

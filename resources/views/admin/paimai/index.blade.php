@@ -6,8 +6,9 @@
         </div>
         <div class="tpl-portlet-input tpl-fz-ml">
             <div class="portlet-input input-small input-inline">
-                
-
+                <div class="input-icon right">
+                    <i class="am-icon-search"></i>
+                    <input type="text" class="form-control form-control-solid" placeholder="搜索..."> </div>
             </div>
         </div>
     </div>
@@ -16,7 +17,7 @@
             <div class="am-u-sm-12 am-u-md-6">
                 <div class="am-btn-toolbar">
                     <div class="am-btn-group am-btn-group-xs">
-                        <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> <a href="/user/create" style="color:white">新增</a></button>
+                        <button type="button" class="am-btn am-btn-default am-btn-success"><span class="am-icon-plus"></span> 新增</button>
                         <button type="button" class="am-btn am-btn-default am-btn-danger"><span class="am-icon-trash-o"></span> 删除</button>
                     </div>
                 </div>
@@ -35,7 +36,7 @@
         </div>
         <div class="am-g">
             <div class="am-u-sm-12">
-                <!-- <form class="am-form"> -->
+                <form class="am-form">
                     <table class="am-table am-table-striped am-table-hover table-main">
                         <thead>
                             <tr>
@@ -43,47 +44,40 @@
                                     <input type="checkbox" class="tpl-table-fz-check">
                                 </th>
                                 <th class="table-id">ID</th>
-                                <th class="table-title">用户名</th>
-                                <th class="table-title">权限</th>
+                                <th class="table-title">商品图</th>
+                                <th class="table-title">简介</th>
+                                <th class="table-title">成色</th>
+                                <th class="table-title">起拍价格</th>
+                                <th class="table-title">加价幅度</th>
+                                <th class="table-title">开拍时间</th>
+                                <th class="table-title">结束时间</th>
                                 <th class="table-set">操作</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($users as $v)
+                            @foreach($paimais as $v) 
                             <tr>
                                 <td>
                                     <input type="checkbox">
                                 </td>
                                 <td>{{$v['id']}}</td>
-                                <td class="am-hide-sm-only">{{$v['username']}}</td>
-
-                                <td class="am-hide-sm-only">
-                                    @if($v['oradmin'] == 0)
-                                    普通用户
-                                    @else($v['oradmin'] == 1)
-                                    管理员
-                                    @endif
-
-                                </td>
-                                <td>
+                                <td class="am-hide-sm-only"><img width="80" src="{{$v['image']}}"></td>
+                                <td>{{$v['intro']}}</td>
+                                <td>{{$v['cheng']}}</td>
+                                <td>{{$v['money']}}</td>
+                                <td>{{$v['jmoney']}}</td>
+                                <td>{{$v['opentime']}}</td>
+                                <td>{{$v['overtime']}}</td>
+                                <td> 
                                     <div class="am-btn-toolbar">
-
-
-                                        <form action="/user/{{$v['id']}}/edit" method="get">
-                                            <div class="am-btn-group am-btn-group-xs">
-                                                <button class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</button>
-                                                
-                                            </div>
-                                        </form>
-
-
-                                        <form action="/user/{{$v['id']}}" method="post">
-                                            {{csrf_field()}}{{method_field('DELETE')}}
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                        </form>
-
-                                    </div>
-
+                                       <div class="am-btn-group am-btn-group-xs">
+                                        <form action="" method="get">
+                                           <a style="float:left" href="/paimai/{{$v['id']}}/edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span>编辑</a>
+                                        </form></div>                                           
+                                         <form style="float:left" action="/paimai/{{$v['id']}}" method="post">
+                                           <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o">{{csrf_field()}}
+                                           {{method_field('DELETE')}}</span>删除</button>
+                                           </div></form>
                                 </td>
                             </tr>
                             @endforeach
@@ -139,13 +133,11 @@
 					</style>
                     <div class="am-cf">
                         <div class="am-fr">
-                            {{ $users->appends(request()->all())->links() }}
+                            {{ $paimais->appends(request()->all())->links() }}
                         </div>
                     </div>
                     <hr>
-
-                <!-- </form> -->
-
+                </form>
             </div>
         </div>
     </div>

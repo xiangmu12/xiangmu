@@ -63,6 +63,14 @@
                         </div>
                     </div>
 
+                    <div class="am-form-group">
+                        <label for="user-name" class="am-u-sm-3 am-form-label">权限 <span class="tpl-form-line-small-title"></span></label>
+                        <div class="am-u-sm-9">
+                            <input type="radio" name="oradmin" class="tpl-form-input" id="user-name" placeholder="" value="0">普通用户
+                            <input type="radio" name="oradmin" class="tpl-form-input" id="user-name" placeholder="" value="1">管理员
+                        </div>
+                    </div>
+
 
 					{{csrf_field()}}{{method_field('PUT')}}
                     <div class="am-form-group">
