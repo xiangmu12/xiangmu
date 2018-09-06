@@ -29,8 +29,8 @@ class HomeController extends Controller
         $xxcate = XxCate::all();
         $shangpin = Sp::all();
         $user = User::all();
-         $shang = Sp::where('orlogin','0')->count();
-       $pin = Sp::where('orlogin','1')->count();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
         return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin'));
 
 
@@ -136,8 +136,9 @@ class HomeController extends Controller
     {
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
-
-        return view('home.shangpinone',compact('shangpin','shangpins'));
+                $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
     }
 
     public function cateall(Request $request)
@@ -149,18 +150,20 @@ class HomeController extends Controller
         if(empty($request->xxcate_id)){
            $shangpin = Sp::all(); 
         }
-        
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
         $xxcate = Xxcate::all();
-        return view('home.cateall',compact('shangpin','xxcate'));;
+        return view('home.cateall',compact('shangpin','xxcate','shang','pin'));;
     }
 
 
 
     public function jiang()
     {   
-          $sps = Sp::all();
-
-        return view('home.jiang',compact('sps'));
+        $sps = Sp::all();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        return view('home.jiang',compact('sps','shang','pin'));
     }
 
 
@@ -219,14 +222,16 @@ class HomeController extends Controller
 
     public function fabu()
     {
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
-        return view('home.fabuxianzhi.index',compact('xxcate'));
+        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin'));
     }
 
     public function fabuchuli(Request $request)
     {
         $shangpins = new Sp;
-      
+        
         $shangpins -> title = $request->title;
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
