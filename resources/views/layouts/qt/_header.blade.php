@@ -475,7 +475,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="grid__item small--one-whole two-eighths medium-down--hide">
+				<div class="grid__item small--one-whole two-eighths medium-down--hide">
 						<ul class="link-list">
 							<li class="track-order">
 								<a href="store-location.html">

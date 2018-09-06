@@ -108,6 +108,7 @@ class HomeController extends Controller
     }
 
 
+    //我的闲置
     public function list()
     {
         
@@ -136,7 +137,8 @@ class HomeController extends Controller
     {
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
-                $shang = Sp::where('orlogin','0')->count();
+
+        $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
     }
@@ -158,8 +160,10 @@ class HomeController extends Controller
 
 
 
+
     public function jiang()
     {   
+
         $sps = Sp::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
@@ -252,8 +256,4 @@ class HomeController extends Controller
         }
         
     }
-
-
-
-
 }
