@@ -1,8 +1,7 @@
-         @include('layouts.qt._header')
+        @include('layouts.qt._header')
         @show
         @include('layouts.qt._top') @show
         <hr>
-       
                 <div><span style="margin-left:100px">商品信息</span><span style="margin-left:100px">商品图片</span><span style="margin-left:100px">商品标题</span><span style="margin-left:150px">商品价格</span><span style="margin-left:90px">商品成色</span><span style="margin-left:100px">商品操作</span></div>
                 <hr>
                 @foreach($shangpin as $v)

@@ -22,20 +22,14 @@ class HomeController extends Controller
     public function index()
 
     {
-
-
         $dcate = DCate::all();
         $xcate = XCate::all();
         $xxcate = XxCate::all();
         $shangpin = Sp::all();
         $user = User::all();
-         $shang = Sp::where('orlogin','0')->count();
-       $pin = Sp::where('orlogin','1')->count();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
         return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin'));
-
-
-
-
     }
 
 
@@ -110,12 +104,10 @@ class HomeController extends Controller
 
     public function list()
     {
-        
         // dd($shangpin);die;
         $shangpin = Sp::get();
-       $shang = Sp::where('orlogin','0')->count();
-       $pin = Sp::where('orlogin','1')->count();
-       
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
         // dd($res);die;
         return view('home.wdxz.collection',compact('shang','pin','shangpin'));
     }
@@ -136,8 +128,9 @@ class HomeController extends Controller
     {
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
-
-        return view('home.shangpinone',compact('shangpin','shangpins'));
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
     }
 
     public function cateall(Request $request)
@@ -158,7 +151,7 @@ class HomeController extends Controller
 
     public function jiang()
     {   
-          $sps = Sp::all();
+        $sps = Sp::all();
 
         return view('home.jiang',compact('sps'));
     }
@@ -247,8 +240,4 @@ class HomeController extends Controller
         }
         
     }
-
-
-
-
 }

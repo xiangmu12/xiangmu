@@ -20,7 +20,9 @@ Route::get('/gou/{id}/gou', 'HomeController@gou');
 
 Route::get('/', 'HomeController@index');
 
+//我的闲置
 Route::get('collection', 'HomeController@list');
+//闲置下架
 Route::get('/delete/{id}', 'HomeController@xiajia');
 
 //用户设置
