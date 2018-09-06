@@ -484,7 +484,7 @@
 								</a>
 							</li>
 							
-							@if(!Session::get('username'))
+							@if(!Session::get('id'))
 								
 								<li class="header-account">
 									<i class="fa fa-user"></i>
@@ -497,7 +497,7 @@
 
 							@endif
 							
-							@if(Session::get('username'))
+							@if(Session::get('id'))
 							<li class="header-account">
 									<img src="" alt="">
 									<a href="#">{{Session::get('username')}}</a>
@@ -506,8 +506,6 @@
 
 							</li>
 							@endif
-
-
 							<li class="header-cart">
 								<a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
 									<i class="fa fa-shopping-basket"></i>
