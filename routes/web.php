@@ -12,16 +12,9 @@
 */
 
 
-//前台降价页面
-Route::get('/jiang', 'HomeController@jiang');
 
 
-Route::get('/gou/{id}/gou', 'HomeController@gou');
 
-Route::get('/', 'HomeController@index');
-
-Route::get('collection', 'HomeController@list');
-Route::get('/delete/{id}', 'HomeController@xiajia');
 
 //用户设置
 Route::resource('user','UserController');
@@ -54,6 +47,7 @@ Route::resource('paimai','PmController');
 Route::get('/admin','AdminController@index');
 
 
+
 //前台页面
 Route::get('/', 'HomeController@index');
 
@@ -64,9 +58,20 @@ Route::get('/{id}.html','HomeController@sp');
 Route::get('/dcateall','HomeController@cateall');
 
 
+
 /**
  * 前台
  */
+
+ //前台首页
+Route::get('/', 'HomeController@index');
+
+//前台降降降页面
+Route::get('/jiang', 'HomeController@jiang');
+
+//前台分类页面
+Route::get('/collection', 'HomeController@list');
+
 //登陆页面
 Route::get('/login','HomeController@login');
 
@@ -78,9 +83,38 @@ Route::get('/logout','HomeController@logout');
 
 //用户注册
 
-
-
 //发布闲置
 Route::get('/fabu','HomeController@fabu');
-
 Route::post('/fabu','HomeController@fabuchuli');
+
+//下架闲置
+Route::get('/delete/{id}', 'HomeController@xiajia');
+
+//关于我们
+Route::get('/women','HomeController@women');
+
+
+//购物车
+Route::resource('car','CarController');
+
+//合作伙伴
+Route::resource('huoban','HbController');
+
+//举报管理
+Route::get('/jubao/{id}','HomeController@jubao');
+Route::post('/jubao','HomeController@jubaologin');
+
+//订单管理
+Route::resource('ding','DingController');
+
+//收货地址管理
+Route::resource('huo','HuoController');
+
+//商品标签
+Route::resource('tag','TagController');
+
+//评论管理
+Route::resource('pinglun','PlController');
+
+
+

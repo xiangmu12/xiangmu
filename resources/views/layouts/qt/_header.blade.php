@@ -475,7 +475,9 @@
 							</div>
 						</div>
 					</div>
-						<div class="grid__item small--one-whole two-eighths medium-down--hide">
+
+				<div class="grid__item small--one-whole two-eighths medium-down--hide">
+
 						<ul class="link-list">
 							<li class="track-order">
 								<a href="store-location.html">
@@ -582,13 +584,7 @@
 										  </script>
 								</div>
 							</li>
-							<li class="header-cart">
-								<a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-									<i class="fa fa-shopping-basket"></i>
-									<span id="CartCount">3</span>
-									<span class="name">Shopping Cart</span>
-								</a>
-							</li>
+							
 						</ul>
 					</div>
 				</div>       

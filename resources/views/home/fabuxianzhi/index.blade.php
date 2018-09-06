@@ -83,7 +83,7 @@
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>添加愿望清单</a></span>
 												</div>
 
-												<div class="grid__item product-info-right three-eighths .col-md-5" style="position:absolute;left:1300px;top:400px">
+												<div class="grid__item product-info-right three-eighths .col-md-5" style="position:absolute;left:1300px;top:420px">
 													<div class="product-extrainfo .col-md-5" >
 														<ul>
 															<li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-shield fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">保证<span class="sub">质量检查</span></span></li>
