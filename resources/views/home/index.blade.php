@@ -38,7 +38,6 @@
 
 														<li class="list-title">
 																{{$value['name']}}
-																
 																	@foreach($xxcate as $val)
 																	@if($value['id'] == $val['xcate_id'])
 																	@if($v['id'] == $value['dcate_id'])
@@ -554,15 +553,6 @@
 						<div id="quick-shop-image" class="product-image-wrapper">
 							<div id="featuted-image" class="main-image featured">
 								<img class="img-zoom img-responsive image-fly" src="/assets/assets/images/demo1_qs_480x480.jpg" data-zoom-image="/assets/assets/images/demo1_qs_480x480.jpg" alt="">
-							</div>
-							<div id="gallery_main_qs" class="product-image-thumb scroll scroll-mini">
-								<div class="qs-vertical-slider product-single__thumbnails">
-										<a class="image-thumb active thumb__element"><img src="/assets/assets/images/demo1_qs1_100x100.jpg" alt="" /></a>
-										<a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs2_100x100.jpg" alt="" /></a>
-										<a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs3_100x100.jpg" alt="" /></a>
-										<a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs4_100x100.jpg" alt="" /></a>
-										<a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs5_100x100.jpg" alt="" /></a>										
-								</div>
 							</div>
 							<div class="vertical-slider product-single__thumbnails" style="opacity: 0;">
 							</div>
