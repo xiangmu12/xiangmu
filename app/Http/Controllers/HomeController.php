@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+
 use App\User;
-=======
+
 use App\Sp;
 use App\XxCate;
->>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -90,7 +90,7 @@ class HomeController extends Controller
         //
     }
 
-<<<<<<< HEAD
+
 
 
      //登陆
@@ -137,7 +137,7 @@ class HomeController extends Controller
     {
        
     }
-=======
+
     public function fabu()
     {
         $xxcate = XxCate::all();
@@ -170,5 +170,5 @@ class HomeController extends Controller
     }
 
 
->>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
+
 }
