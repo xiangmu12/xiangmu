@@ -41,10 +41,10 @@
                         <label for="user-phone" class="am-u-sm-3 am-form-label">成色</label>
                         <div class="am-u-sm-9">
                             <select data-am-selected="{searchBox: 1}" name="cheng" style="display: none;">
-
                                 <option value="0" @if($paimai['cheng'] == 0) selected @endif>非全新</option>
                                 <option value="1" @if($paimai['cheng'] == 1) selected @endif>全新</option>
                              </select>
+
                         </div>
                     </div>
                     

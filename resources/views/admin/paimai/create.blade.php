@@ -45,8 +45,11 @@
                         <label for="user-phone" class="am-u-sm-3 am-form-label">成色</label>
                         <div class="am-u-sm-9">
                             <select data-am-selected="{searchBox: 1}" name="cheng" style="display: none;">
+
+
                                 <option value="0">非全新</option>
                                 <option value="1">全新</option>
+
                              </select>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
 
 @section('content')
 <hr>
-<div class="tpl-portlet-components">
+<div class="tpl-portlet-components" >
     <div class="portlet-title">
         <div class="caption font-green bold">
             <span class="am-icon-code">二级分类添加</span> 
@@ -18,7 +18,7 @@
                     <div class="am-form-group">
                          <label for="user-phone" class="am-u-sm-3 am-form-label">选择分类<span class="tpl-form-line-small-title">Author</span></label>
                             <div class="am-u-sm-9">
-                                <select data-am-selected="{searchBox: 1}" style="display: none;" name="dcate_id">
+                                <select data-am-selected="{searchBox: 1}" style="display: none;" name="dcate_id"  >
                                     @foreach($dcates as $v)
                                         <option value="{{$v['id']}}">{{$v['name']}}</option>
                                     @endforeach
