@@ -478,11 +478,11 @@
 				<div class="grid__item small--one-whole two-eighths medium-down--hide">
 						<ul class="link-list">
 							<li class="track-order">
-								<a href="store-location.html">
+								<a href="/weizhi">
 									<i class="fa fa-map-marker"></i>
-									<span class="name">商店地址</span>
+									<span class="name">公司位置</span>
 								</a>
-							</li>
+                            </li>
 							
 							@if(!Session::get('id'))
 								
