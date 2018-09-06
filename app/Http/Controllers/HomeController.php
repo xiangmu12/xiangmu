@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use App\Sp;
-=======
-<<<<<<< HEAD
 use App\User;
-=======
+
 use App\Sp;
 use App\XxCate;
->>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
->>>>>>> be590d0f9b19399c7fccd3b266d1eefa0f6ee2e3
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -95,7 +89,7 @@ class HomeController extends Controller
         //
     }
 
-<<<<<<< HEAD
+
 
     public function jiang()
     {   
@@ -110,8 +104,7 @@ class HomeController extends Controller
          return 'qwe';
 
     }
-=======
-<<<<<<< HEAD
+
 
 
      //登陆
@@ -158,7 +151,7 @@ class HomeController extends Controller
     {
        
     }
-=======
+
     public function fabu()
     {
         $xxcate = XxCate::all();
@@ -191,6 +184,5 @@ class HomeController extends Controller
     }
 
 
->>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
->>>>>>> be590d0f9b19399c7fccd3b266d1eefa0f6ee2e3
+
 }

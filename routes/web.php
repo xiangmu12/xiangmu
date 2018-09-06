@@ -19,7 +19,7 @@ Route::get('/jiang', 'HomeController@jiang');
 
 Route::get('/gou/{id}/gou', 'HomeController@gou');
 
-Route::get('/', 'HomeController@index');
+
 
 //用户设置
 Route::resource('user','UserController');
@@ -52,7 +52,7 @@ Route::resource('paimai','PmController');
 Route::get('/admin','AdminController@index');
 
 
-<<<<<<< HEAD
+
 /**
  * 前台
  */
@@ -68,9 +68,9 @@ Route::get('/logout','HomeController@logout');
 //用户注册
 
 
-=======
+
 
 Route::get('/fabu','HomeController@fabu');
 
 Route::post('/fabu','HomeController@fabuchuli');
->>>>>>> a67ed52dfab094b9eb4ca6c45fcd3f4824ad6227
+
