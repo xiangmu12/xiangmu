@@ -38,7 +38,6 @@
 
 														<li class="list-title">
 																{{$value['name']}}
-																
 																	@foreach($xxcate as $val)
 																	@if($value['id'] == $val['xcate_id'])
 																	@if($v['id'] == $value['dcate_id'])

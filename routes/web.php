@@ -16,6 +16,8 @@
 
 
 
+
+
 //用户设置
 Route::resource('user','UserController');
 
@@ -69,7 +71,7 @@ Route::get('/', 'HomeController@index');
 //前台降降降页面
 Route::get('/jiang', 'HomeController@jiang');
 
-//前台分类页面
+//我的闲置
 Route::get('/collection', 'HomeController@list');
 
 //登陆页面
