@@ -80,7 +80,7 @@ Route::get('/logout','HomeController@logout');
 
 
 
-
+//发布闲置
 Route::get('/fabu','HomeController@fabu');
 
 Route::post('/fabu','HomeController@fabuchuli');
