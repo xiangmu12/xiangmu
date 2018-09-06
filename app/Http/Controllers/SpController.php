@@ -74,11 +74,11 @@ class SpController extends Controller
         }
 
         
-
+        
         if ($shangpins -> save()) {
-            return redirect('shangpin')->with('error','添加成功');
+            return redirect('shangpin')->with('success','添加成功');
         }else{
-            return back()->with('success','添加失败');
+            return back()->with('error','添加失败');
         }
     }
 
@@ -157,9 +157,9 @@ class SpController extends Controller
         // dd($id);
          if ($shangpins->delete()) {
             
-            return back()->with('error','删除成功');
+            return back()->with('success','删除成功');
         }else{
-            return redirect('shangpin')->with('success','删除失败');
+            return redirect('shangpin')->with('error','删除失败');
         }
     }
 

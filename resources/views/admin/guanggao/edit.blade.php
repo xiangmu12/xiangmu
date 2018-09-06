@@ -15,7 +15,7 @@
             <div class="tpl-form-body tpl-form-line">
                 <form class="am-form tpl-form-line-form" method="post" action="/guanggao/{{$Gg['id']}}" enctype="multipart/form-data">
                     <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">发布人 <span class="tpl-form-line-small-title"></span></label>
+                        <label for="user-name" class="am-u-sm-3 am-form-label">发布ID <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
                             <input type="text" name="user_id" class="tpl-form-input" id="user-name" placeholder="{{$Gg['user_id']}}" value="">
                         </div>
@@ -51,12 +51,18 @@
                     </div>
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">商品成色 <span class="tpl-form-line-small-title"></span></label>
-                        <div class="am-u-sm-9">
-                            <input type="radio" name="cheng" value="90%">90% &nbsp;
-                            <input type="radio" name="cheng" value="80%">80% &nbsp;
-                            <input type="radio" name="cheng" value="70%">70% &nbsp;
-                            <input type="radio" name="cheng" value="50%">50%
-                        </div>
+                        <select data-am-selected="{searchBox: 1}" name="cheng" style="display: none;">
+                                <option value="1"
+                                @if($Gg['cheng'] ==1)
+                                selected
+                                @endif 
+                                >非全新</option>
+                                <option value="0"
+                                @if($Gg['cheng'] ==0)
+                                selected
+                                @endif
+                                >全新</option>
+                             </select>
                     </div>
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">价格 <span class="tpl-form-line-small-title"></span></label>

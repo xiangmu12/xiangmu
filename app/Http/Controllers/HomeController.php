@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 
+
 use App\User;
-
+use Illuminate\Support\Facades\DB;
+use App\DCate;
 use App\Sp;
+use App\XCate;
 use App\XxCate;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 
 class HomeController extends Controller
 {
@@ -19,10 +22,24 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+
+    {
+
+
+        $dcate = DCate::all();
+        $xcate = XCate::all();
+        $xxcate = XxCate::all();
+        $shangpin = Sp::all();
         $user = User::all();
-        return view('home.index',['user'=>$user]);
+         $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin'));
+
+
+
+
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -64,7 +81,8 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+       
     }
 
     /**
@@ -88,8 +106,77 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+
     }
 
+
+    //我的闲置
+    public function list()
+    {
+        
+        // dd($shangpin);die;
+        $shangpin = Sp::get();
+       $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+       
+        // dd($res);die;
+        return view('home.wdxz.collection',compact('shang','pin','shangpin'));
+    }
+
+    public function xiajia($id)
+    {
+        $shangpin = Sp::findOrFail($id);
+
+        if($shangpin->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败!');
+        }
+    }
+
+
+    public function sp($id)
+    {
+        $shangpin = Sp::where('id',$id)->get();
+        $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
+        $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
+    }
+
+    public function cateall(Request $request)
+    {
+
+        if(!empty($request->xxcate_id)){
+             $shangpin = Sp::where('xxcate_id', $request->xxcate_id)->orderBy('id','desc')->get();
+        }
+        if(empty($request->xxcate_id)){
+           $shangpin = Sp::all(); 
+        }
+        
+        $xxcate = Xxcate::all();
+        $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+        return view('home.cateall',compact('shangpin','xxcate','shang','pin'));;
+    }
+
+
+
+
+    public function jiang()
+    {   
+          $sps = Sp::all();
+          $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+        return view('home.jiang',compact('sps','shang','pin'));
+    }
+
+
+     public function gou($id)
+    {   
+         return 'qwe';
+
+    }
 
 
 
@@ -103,6 +190,7 @@ class HomeController extends Controller
     //登录操作
     public function dologin(Request $request)
     {
+        
         //获取用户的数据
         $user = User::where('username',$request->username)->first();
         // dd($user);
@@ -135,13 +223,16 @@ class HomeController extends Controller
     //用户注册
     public function zhuce()
     {
-       
+        return view('home.user.zhuce');
     }
+
 
     public function fabu()
     {
         $xxcate = XxCate::all();
-        return view('home.fabuxianzhi.index',compact('xxcate'));
+        $shang = Sp::where('orlogin','0')->count();
+       $pin = Sp::where('orlogin','1')->count();
+        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin'));
     }
 
     public function fabuchuli(Request $request)
@@ -168,7 +259,5 @@ class HomeController extends Controller
         }
         
     }
-
-
 
 }

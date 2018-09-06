@@ -35,8 +35,8 @@
                            <select class="first" data-am-selected="{searchBox: 1}" name="cheng">
 
 
-                            <option value="0" name="cheng">全新</option>        
-                            <option value="1" name="cheng">非全新</option>        
+                            <option value="0">全新</option>        
+                            <option value="1">非全新</option>        
                                
                             </select>
 
