@@ -255,4 +255,10 @@ class HomeController extends Controller
         }
         
     }
+
+    //位置
+     public function weizhi()
+    {
+       return view('home.weizhi');
+    }
 }

@@ -18,6 +18,9 @@ Route::get('/jiang', 'HomeController@jiang');
 
 Route::get('/gou/{id}/gou', 'HomeController@gou');
 
+//位置
+Route::get('/weizhi', 'HomeController@weizhi');
+
 
 
 Route::get('collection', 'HomeController@list');
