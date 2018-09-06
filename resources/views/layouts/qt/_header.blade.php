@@ -214,140 +214,40 @@
     <div id="CartDrawer" class="drawer drawer--right fancybox-margin">
         <div class="drawer__header">
             <div class="drawer__title h3">
-                Shopping Cart
+                购物车
             </div>
             <div class="drawer__close js-drawer-close">
                 <button type="button" class="icon-fallback-text">
                     <span class="icon icon-x" aria-hidden="true"></span>
-                    <span class="fallback-text">"Close Cart"</span>
+                    <span class="fallback-text"></span>
                 </button>
             </div>
         </div>
         <div id="CartContainer">
             <form action="./cart.html" method="post" novalidate="" class="cart ajaxcart">
+                @foreach($shangpin as $v)
                 <div class="ajaxcart__inner">
-                    <div class="ajaxcart__product">
-                        <div class="ajaxcart__row" data-line="1">
-                            <div class="grid">
-                                <div class="grid__item one-quarter">
-                                    <a href="product.html" class="ajaxcart__product-image"><img src="/assets/assets/images/demo1_cart1.jpg" alt=""></a>
-                                </div>
-                                <div class="grid__item three-quarters">
-                                    <p>
-                                        <a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-                                        <span class="ajaxcart__product-meta">S / Red</span>
-                                    </p>
-                                    <div class="grid--full display-table">
-                                        <div class="grid__item">
-                                            <div class="ajaxcart__qty">
-                                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="8772444163" data-qty="0" data-line="1">
-                                                    <span class="icon icon-minus" aria-hidden="true"></span>
-                                                    <span class="fallback-text">−</span>
-                                                </button>
-                                                <input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="8772444163" data-line="1" aria-label="quantity" pattern="[0-9]*">
-                                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="8772444163" data-line="1" data-qty="2">
-                                                    <span class="icon icon-plus" aria-hidden="true"></span>
-                                                    <span class="fallback-text">+</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <span class="money" data-currency-usd="$34.00 USD" data-currency="USD">$34.00 USD</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="ajaxcart__product">
                         <div class="ajaxcart__row" data-line="2">
                             <div class="grid">
                                 <div class="grid__item one-quarter">
-                                    <a href="product.html" class="ajaxcart__product-image"><img src="/assets/assets/images/demo1_cart2.jpg" alt=""></a>
+                                    <a href="product.html" class="ajaxcart__product-image"><img src="{{$v['image']}}" alt=""></a>
                                 </div>
                                 <div class="grid__item three-quarters">
                                     <p>
-                                        <a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-                                        <span class="ajaxcart__product-meta">Medium / Pink</span>
+                                        <a href="product.html" class="ajaxcart__product-name">标题:{{$v['title']}}</a>
+                                        <span class="ajaxcart__product-meta">成色:{{$v['cheng']}}</span>
                                     </p>
-                                    <div class="grid--full display-table">
-                                        <div class="grid__item">
-                                            <div class="ajaxcart__qty">
-                                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="10722484483" data-qty="0" data-line="2">
-                                                    <span class="icon icon-minus" aria-hidden="true"></span>
-                                                    <span class="fallback-text">−</span>
-                                                </button>
-                                                <input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="10722484483" data-line="2" aria-label="quantity" pattern="[0-9]*">
-                                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="10722484483" data-line="2" data-qty="2">
-                                                    <span class="icon icon-plus" aria-hidden="true"></span>
-                                                    <span class="fallback-text">+</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <span class="money" data-currency-usd="$100.00 USD" data-currency="USD">$100.00 USD</span>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="ajaxcart__product">
-                        <div class="ajaxcart__row" data-line="3">
-                            <div class="grid">
-                                <div class="grid__item one-quarter">
-                                    <a href="product.html" class="ajaxcart__product-image"><img src="/assets/assets/images/demo1_cart3.jpg" alt=""></a>
-                                </div>
-                                <div class="grid__item three-quarters">
-                                    <p>
-                                        <a href="product.html" class="ajaxcart__product-name">Demo Product Sample</a>
-                                        <span class="ajaxcart__product-meta">XS / Black</span>
-                                    </p>
-                                    <div class="grid--full display-table">
-                                        <div class="grid__item">
-                                            <div class="ajaxcart__qty">
-                                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--minus icon-fallback-text" data-id="8772462979" data-qty="0" data-line="3">
-                                                    <span class="icon icon-minus" aria-hidden="true"></span>
-                                                    <span class="fallback-text">−</span>
-                                                </button>
-                                                <input type="text" name="updates[]" class="ajaxcart__qty-num" value="1" min="0" data-id="8772462979" data-line="3" aria-label="quantity" pattern="[0-9]*">
-                                                <button type="button" class="ajaxcart__qty-adjust ajaxcart__qty--plus icon-fallback-text" data-id="8772462979" data-line="3" data-qty="2">
-                                                    <span class="icon icon-plus" aria-hidden="true"></span>
-                                                    <span class="fallback-text">+</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <div class="grid__item">
-                                            <span class="money" data-currency-usd="$89.00 USD" data-currency="USD">$89.00 USD</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <label for="CartSpecialInstructions">Special instructions for seller</label>
-                        <textarea name="note" class="input-full" id="CartSpecialInstructions"></textarea>
                     </div>
                 </div>
-                <div class="ajaxcart__footer">
-                    <div class="grid--full">
-                        <div class="grid__item title-total">
-                            <p>
-                                Subtotal
-                            </p>
-                        </div>
-                        <div class="grid__item price-total">
-                            <p>
-                                <span class="money" data-currency-usd="$223.00 USD" data-currency="USD">$223.00 USD</span>
-                            </p>
-                        </div>
-                    </div>
-                    <p class="text-center">
-                        Shipping &amp; taxes calculated at checkout
-                    </p>
+               
+                @endforeach
+                 <div class="ajaxcart__footer">
                     <button type="button" class="btn btn--full cart__shoppingcart" name="shoppingCart" onclick="location.href='./cart.html'">
-                        Shopping Cart → </button>
+                        购物车 → </button>
                     <button type="submit" class="btn btn2 btn--full cart__checkout" name="checkout">
                         Check Out → </button>
                 </div>
@@ -567,15 +467,80 @@
                     </script>
                 </div>
                 </li>
-                <li class="header-cart">
-                    <a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-									<i class="fa fa-shopping-basket"></i>
-									<span id="CartCount">3</span>
-									<span class="name">Shopping Cart</span>
-								</a>
-                </li>
-                </ul>
+               
             </div>
+    </div>
+    </div>
+    </div>
+    <div id="recover-password" style="display:none;">
+        <h3>Reset your password</h3>
+        <p class="note">
+            We will send you an email to reset your password.
+        </p>
+        <form method="post" action="recover.html" accept-charset="UTF-8">
+            <input type="hidden" value="recover_customer_password" name="form_type">
+            <input type="hidden" name="utf8" value="✓">
+            <p>
+                <label for="recover-email" class="label">Email</label>
+            </p>
+            <input type="email" value="" size="30" name="email" id="recover-email" class="text">
+            <div class="action_bottom">
+                <input class="btn btn2" type="submit" value="Submit">
+                <a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
+            </div>
+            <p class="close">
+                <a href="#" onclick="$.fancybox.close();">Close</a>
+            </p>
+        </form>
+    </div>
+    <div id="create_accountBox" style="display:none;">
+        <h3>Create Account</h3>
+        <div class="form-vertical">
+            <form method="post" action="./account.html" id="create_customer" accept-charset="UTF-8">
+                <input type="hidden" value="create_customer" name="form_type">
+                <input type="hidden" name="utf8" value="✓">
+                <label for="FirstName" class="hidden-label">First Name</label>
+                <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
+                <label for="LastName" class="hidden-label">Last Name</label>
+                <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
+                <label for="Email" class="hidden-label">Email</label>
+                <input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email">
+                <label for="CreatePassword" class="hidden-label">Password</label>
+                <input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
+                <p>
+                    <input type="submit" value="Create" class="btn btn2 btn--full">
+                </p>
+                <p>
+                    <span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
+                </p>
+                <p class="close">
+                    <a href="#" onclick="$.fancybox.close();">Close</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script>
+    function showRecoverPasswordForm() {
+        $('#recover-password').css("display", 'block');
+        $('#lightboxlogin').css("display", 'none');
+        $('#create_accountBox').css("display", 'none');
+    }
+
+    function hideRecoverPasswordForm() {
+        $('#recover-password').css("display", 'none');
+        $('#lightboxlogin').css("display", 'block');
+        $('#create_accountBox').css("display", 'none');
+    }
+
+    function showCreateAccountForm() {
+        $('#recover-password').css("display", 'none');
+        $('#lightboxlogin').css("display", 'none');
+        $('#create_accountBox').css("display", 'block');
+    }
+    </script>
+    </div>
+    
+    </div>
     </div>
     </div>
     </header>

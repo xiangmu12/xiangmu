@@ -19,7 +19,7 @@ class DCate extends Model
 	}
 	public function xcate()
 	{
-		return $this->hasMany('App\XCate','id','dcate_id');
+		return $this->hasMany('App\XCate','dcate_id','id');
 	}
 	 
 }
