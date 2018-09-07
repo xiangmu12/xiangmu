@@ -131,3 +131,10 @@ Route::resource('tag','TagController');
 //评论管理
 Route::resource('pinglun','PlController');
 
+//个人中心
+Route::get('/geren','GrzhongController@geren');
+
+//个人订单
+Route::get('/gerendingdan','GrzhongController@gerendingdan');
+Route::post('/grdingdan','GrzhongController@grdingdan');
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 
 use App\DCate;
+use App\Ding;
 use App\Jubao;
 use App\Sp;
 use App\User;
@@ -243,6 +244,7 @@ class HomeController extends Controller
         $shangpins -> province = $request->province;
         $shangpins -> city = $request->city;
         $shangpins -> area = $request->area;
+        $shangpins -> user_id = session('id');
 
         if ($request->hasFile('image')) {
             $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));

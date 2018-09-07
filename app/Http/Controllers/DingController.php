@@ -52,7 +52,7 @@ class DingController extends Controller
         $ding->zhifu = $request->zhifu;
         $ding->title = $sp->title;
         $ding->kuaidi = $request->kuaidi;
-        $ding->user_id = 1;
+        $ding->user_id = session('id');
         $ding->shangpin_id = $sp->spid;
         $ding->shouhuo_id = $request->shouhuo_id;
          if($ding->save()){
