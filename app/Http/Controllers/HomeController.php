@@ -219,10 +219,11 @@ class HomeController extends Controller
 
     public function fabu()
     {
+        $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin'));
+        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin','shangpin'));
     }
 
     public function fabuchuli(Request $request)

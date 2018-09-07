@@ -90,9 +90,9 @@
 													<button type="submit" name="addche" id="AddToCart" class="btn">
 													<span id="AddToCartText">加入购物车</span>
 													</button>
-													<button type="submit" name="add" id="AddToCart" class="btn">
+													<a href="/dingdan/{{$shangpin[0]['id']}}" type="submit" name="add" id="AddToCart" class="btn">
 													<span id="AddToCartText">立即购买</span>
-													</button>
+													</a>
 												</form>
 												<div class="add-to-wishlist">
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>加入到愿望清单</a></span>

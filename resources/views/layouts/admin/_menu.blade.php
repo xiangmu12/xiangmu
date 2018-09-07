@@ -212,5 +212,44 @@
         </ul>
     </li>
 </ul>
+<ul class="tpl-left-nav-menu">
+  <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>订单管理</span>
 
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none">
+            <li>
+
+                <a href="/dingdan">
+                    <i class="am-icon-angle-right"></i>
+                    <span>订单列表</span>
+
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
+<ul class="tpl-left-nav-menu">
+  <li class="tpl-left-nav-item">
+        <a href="javascript:;" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>收货地址管理</span>
+
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+        <ul class="tpl-left-nav-sub-menu" style="display: none">
+            <li>
+
+                <a href="/huo">
+                    <i class="am-icon-angle-right"></i>
+                    <span>收地址列表</span>
+
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
 

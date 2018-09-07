@@ -110,7 +110,7 @@ Route::get('/jubao/{id}','HomeController@jubao');
 Route::post('/jubao','HomeController@jubaologin');
 
 //订单管理
-Route::resource('ding','DingController');
+Route::resource('dingdan','DingController');
 
 //收货地址管理
 Route::resource('huo','HuoController');
@@ -120,6 +120,11 @@ Route::resource('tag','TagController');
 
 //评论管理
 Route::resource('pinglun','PlController');
+
+
+
+
+
 
 
 
