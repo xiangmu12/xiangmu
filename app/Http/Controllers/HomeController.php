@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+
+
 use App\DCate;
+use App\Jubao;
 use App\Sp;
+use App\User;
 use App\XCate;
 use App\XxCate;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -182,6 +185,7 @@ class HomeController extends Controller
     //登录操作
     public function dologin(Request $request)
     {
+        
         //获取用户的数据
         $user = User::where('username',$request->username)->first();
         // dd($user);
@@ -214,8 +218,9 @@ class HomeController extends Controller
     //用户注册
     public function zhuce()
     {
-       
+        return view('home.user.zhuce');
     }
+
 
     public function fabu()
     {
@@ -251,9 +256,38 @@ class HomeController extends Controller
         
     }
 
+
     //位置
      public function weizhi()
     {
        return view('home.weizhi');
     }
+
+
+    //举报
+    public function jubao($id)
+    {   
+      
+        return view('home.jubao.report',compact('id'));
+
+    }
+
+
+    //举报中
+    public function jubaologin(Request $request)
+    {
+        $shangpin = new Jubao;
+        
+        $shangpin -> shangpin_id = $request->shangpin_id;
+        $shangpin -> content = $request->content;
+
+        if ($shangpin -> save()) {
+            return back()->with('error','添加成功');
+        }else{
+            return back()->with('success','添加失败');
+        }
+    }
+
+
+
 }
