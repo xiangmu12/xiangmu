@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use App\DCate;
+use App\Pl;
 use App\Sp;
+use App\Tag;
+use App\User;
 use App\XCate;
 use App\XxCate;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -126,7 +128,8 @@ class HomeController extends Controller
 
 
     public function sp($id)
-    {
+    {   
+
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
 
@@ -141,13 +144,22 @@ class HomeController extends Controller
         if(!empty($request->xxcate_id)){
              $shangpin = Sp::where('xxcate_id', $request->xxcate_id)->orderBy('id','desc')->get();
         }
-        if(empty($request->xxcate_id)){
-           $shangpin = Sp::all(); 
+
+        //标签跳商品
+        if(!empty($request->tag_id)){
+             $tag = Tag::findOrFail($request->tag_id);
+             $shangpin = $tag->shangpins()->paginate(10);
         }
+
+         if(empty($request->xxcate_id ) && empty($request->tag_id)){
+           $shangpin = Sp::all(); 
+        } 
+        
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = Xxcate::all();
-        return view('home.cateall',compact('shangpin','xxcate','shang','pin'));;
+        $tags = Tag::all();
+        return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags'));
     }
 
 
@@ -219,16 +231,19 @@ class HomeController extends Controller
 
     public function fabu()
     {
+        $shangpin = Sp::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin'));
+        $tags = Tag::all();
+        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags'));
     }
 
     public function fabuchuli(Request $request)
     {
         $shangpins = new Sp;
-        
+
+
         $shangpins -> title = $request->title;
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
@@ -238,15 +253,24 @@ class HomeController extends Controller
         $shangpins -> city = $request->city;
         $shangpins -> area = $request->area;
 
+
         if ($request->hasFile('image')) {
             $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));
         }
 
-         if ($shangpins -> save()) {
-            return redirect('/')->with('error','添加成功');
+         if($shangpins -> save()){
+            try{
+                $res = $shangpins->tags()->sync($request->tag_id);
+            }catch(\Exception $e){
+                return back()->with('error','添加失败');
+            }
+
+            return redirect('/')->with('success','添加成功');
         }else{
-            return back()->with('success','添加失败');
+            return back()->with('error','添加失败');
         }
-        
+
     }
+
+    
 }
