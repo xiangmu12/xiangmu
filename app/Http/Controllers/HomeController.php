@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
+use App\Car;
 use App\DCate;
 use App\Sp;
+use App\User;
 use App\XCate;
 use App\XxCate;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -26,10 +27,12 @@ class HomeController extends Controller
         $xcate = XCate::all();
         $xxcate = XxCate::all();
         $shangpin = Sp::all();
+        $gw = Car::all();
         $user = User::all();
+        $users = Session()->get('id');
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin'));
     }
 
 
@@ -98,7 +101,6 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
-
     }
 
 
@@ -107,10 +109,12 @@ class HomeController extends Controller
     {
         // dd($shangpin);die;
         $shangpin = Sp::get();
+        $gw = Car::all();
+        $users = Session()->get('id');
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         // dd($res);die;
-        return view('home.wdxz.collection',compact('shang','pin','shangpin'));
+        return view('home.wdxz.collection',compact('shang','gw','pin','shangpin','users'));
     }
 
     public function xiajia($id)
@@ -127,12 +131,13 @@ class HomeController extends Controller
 
     public function sp($id)
     {
+        $users = Session()->get('id');
+        $gw = Car::all();
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
-
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
+        return view('home.shangpinone',compact('shangpin','shangpins','gw','shang','pin','users'));
     }
 
     public function cateall(Request $request)
@@ -160,13 +165,6 @@ class HomeController extends Controller
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         return view('home.jiang',compact('sps','shang','pin'));
-
-    }
-
-
-     public function gou($id)
-    {   
-         return 'qwe';
 
     }
 

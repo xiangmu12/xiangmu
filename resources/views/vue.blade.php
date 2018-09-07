@@ -41,25 +41,36 @@ body {
                 @foreach($gw as $v) @if($v['user_id'] == $users)
                 <tr class="cart__row table__section" style="margin-left: 50px">
                     <td data-label="Quantity">
+                        <div class="cart-checkbox " style="float:center">
                             <input class="J_CheckBoxItem" type="checkbox" id="gouwuche" name="duo[]" value="goumai" @change = change>
+
+                            <label for="J_CheckBox_616577491345"></label>
+                        </div>
                     </td>
                     <td class="product-name" data-label="Product" style="width:400px;">
                         <div class="img_item">
-                            <img src="{{$v['image']}}" width="66px" height="66px" alt="商品图片未获取">
+                            <a href="product.html" class="cart__image">
+                                        <img src="{{$v['image']}}" width="66px" height="66px" alt="商品图片未获取">
+                                        </a>
                         </div>
                         <p class="product-title">
                             <a href="product.html" style="margin-left: 20px">
-                            <h6>商品标题：{{$v['title']}}</h6></a>
+                                <h6>商品标题：{{$v['title']}}</h6></a>
                         </p>
                         <div class="variant">
                             <small style="margin-left: 20px">成色：{{$v['cheng']}}</small>
                         </div>
                     </td>
                     <td data-label="Price">
-                        <span class="money">$ {{$v['money']}} .00</span>
+                        <span class="h5">
+                                    <span class="money">$ {{$v['money']}} .00</span>
+                        </span>
                     </td>
+                    
                     <td data-label="Total" class="text-center">
+                        <div class="td-inner" style="float:center">
                             <a href="/che/{{$v['id']}}" class="btn btn2">移除</a>
+                        </div>
                     </td>
                     @endif @endforeach
                 </tr>

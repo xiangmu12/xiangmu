@@ -61,6 +61,8 @@
 											</span>
 										</div>
 										<div class="product-description" itemprop="description">
+											<h4>商品标题：<b>{{$shangpin[0]['title']}}</b></h4>
+											
 											<h4>商品简介</h4>
 											{{$shangpin[0]['intro']}}
 										</div>
@@ -74,7 +76,7 @@
 											<meta itemprop="priceCurrency" content="USD">
 											<link itemprop="availability" href="http://schema.org/InStock">
 											<div class="product-action ">
-												<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+												<form action="/car" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
 													<div class="selector-wrapper">
 														商品地址: <b>{{$shangpin[0]['quyu']}}</b>
 													</div>
@@ -87,12 +89,13 @@
 													<hr>
 													<span class="visually-hidden">Regular price</span>
 													<span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD">${{$shangpin[0]['money']}}</span></span>
-													<button type="submit" name="addche" id="AddToCart" class="btn">
+													<a href="/car/{{$shangpin[0]['id']}}" type="submit" name="addche" id="AddToCart" class="btn">
 													<span id="AddToCartText">加入购物车</span>
-													</button>
+													</a>
 													<button type="submit" name="add" id="AddToCart" class="btn">
 													<span id="AddToCartText">立即购买</span>
 													</button>
+													{{csrf_field()}}
 												</form>
 												<div class="add-to-wishlist">
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>加入到愿望清单</a></span>

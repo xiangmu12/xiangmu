@@ -26,13 +26,11 @@
 								<span>我的闲置</span>
 								<span class="icon icon-arrow-down" aria-hidden="true"></span>
 							</a>
-							@foreach($shangpin as $v)
+							
 							<ul class="site-nav__dropdown">
 								<li>
-								<a href="collection" class="site-nav__link">出售中(
-									
+								<a href="collection" class="site-nav__link">出售中(					
 										{{$shang}}
-									
 								)</a>
 								</li>
 								<li>
@@ -41,7 +39,7 @@
 								)</a>
 								</li>
 							</ul>
-							@endforeach
+							
 						</li>
 					</ul>
 					<script>
