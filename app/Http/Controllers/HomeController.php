@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+
 use App\DCate;
+use App\Jubao;
 use App\Sp;
 use App\User;
+
 use App\WoMen;
+
 use App\XCate;
 use App\XxCate;
 use Illuminate\Http\Request;
@@ -184,6 +188,7 @@ class HomeController extends Controller
     //登录操作
     public function dologin(Request $request)
     {
+        
         //获取用户的数据
         $user = User::where('username',$request->username)->first();
         // dd($user);
@@ -216,11 +221,13 @@ class HomeController extends Controller
     //用户注册
     public function zhuce()
     {
-       
+        return view('home.user.zhuce');
     }
 
+
     public function fabu()
-    {   
+    {
+
         $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
@@ -253,11 +260,13 @@ class HomeController extends Controller
         
     }
 
+
     //位置
      public function weizhi()
     {
        return view('home.weizhi');
     }
+
 
 
     //关于我们 
@@ -334,4 +343,30 @@ class HomeController extends Controller
         return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
         
     }
+    //举报
+    public function jubao($id)
+    {   
+      
+        return view('home.jubao.report',compact('id'));
+
+    }
+
+
+    //举报中
+    public function jubaologin(Request $request)
+    {
+        $shangpin = new Jubao;
+        
+        $shangpin -> shangpin_id = $request->shangpin_id;
+        $shangpin -> content = $request->content;
+
+        if ($shangpin -> save()) {
+            return back()->with('error','添加成功');
+        }else{
+            return back()->with('success','添加失败');
+        }
+    }
+
+
+
 }
