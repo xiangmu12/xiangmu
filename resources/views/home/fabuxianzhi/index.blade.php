@@ -196,6 +196,9 @@
 									<li>
 										<a href="#"><span>Online support</span></a>
 									</li>
+									<li>
+										<a href="#"><span>合作伙伴</span></a>
+									</li>
 								</ul>
 								<ul class="grid__item one-half">
 									<li>
@@ -213,6 +216,10 @@
 									<li>
 									<a href="#"><span>Manufacturers</span></a>
 									</li>
+									<li>
+									<a href="#"><span>合作伙伴</span></a>
+									</li>
+
 								</ul>
 							</div>
 						</div>

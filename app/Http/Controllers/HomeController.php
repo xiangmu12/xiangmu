@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 
 
-use App\User;
-use Illuminate\Support\Facades\DB;
 use App\DCate;
+use App\Jubao;
 use App\Sp;
+use App\User;
 use App\XCate;
 use App\XxCate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -223,6 +224,7 @@ class HomeController extends Controller
 
     public function fabu()
     {
+        $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
@@ -260,5 +262,32 @@ class HomeController extends Controller
     {
        return view('home.weizhi');
     }
+
+
+    //举报
+    public function jubao($id)
+    {   
+      
+        return view('home.jubao.report',compact('id'));
+
+    }
+
+
+    //举报中
+    public function jubaologin(Request $request)
+    {
+        $shangpin = new Jubao;
+        
+        $shangpin -> shangpin_id = $request->shangpin_id;
+        $shangpin -> content = $request->content;
+
+        if ($shangpin -> save()) {
+            return back()->with('error','添加成功');
+        }else{
+            return back()->with('success','添加失败');
+        }
+    }
+
+
 
 }

@@ -93,6 +93,7 @@
 													<button type="submit" name="add" id="AddToCart" class="btn">
 													<span id="AddToCartText">立即购买</span>
 													</button>
+													<a href="/jubao/{{$shangpin[0]['id']}}">举报该商品</a>
 												</form>
 												<div class="add-to-wishlist">
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>加入到愿望清单</a></span>
