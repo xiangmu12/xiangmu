@@ -11,7 +11,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="todays-deals.html" class="site-nav__link">
+							<a href="jiang" class="site-nav__link">
 								<span>降降降</span>
 								<span class="special_label sale_label">促销</span>
 							</a>

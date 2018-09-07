@@ -157,7 +157,7 @@
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								lipeishi
 							</div>
 							<div class="fi-content">
 								<ul class="group_information">

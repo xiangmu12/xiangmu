@@ -48,6 +48,12 @@ Route::resource('shangpin','SpController');
 //拍卖管理
 Route::resource('paimai','PmController');
 
+//关于我们
+Route::get('/admin/gy','HomeController@gy');
+//关于我们修改
+Route::post('/admin/gy','HomeController@xiu');
+
+
 //后台首页
 Route::get('/admin','AdminController@index');
 
@@ -97,6 +103,8 @@ Route::get('/delete/{id}', 'HomeController@xiajia');
 
 //关于我们
 Route::get('/women','HomeController@women');
+//发货 退货
+Route::get('/wo/tui','HomeController@tui');
 
 
 //购物车

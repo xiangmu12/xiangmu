@@ -301,14 +301,18 @@
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								关于我们
 							</div>
 							<div class="fi-content">
+								@foreach($women as $v)
 								<ul class="group_information">
-									<li><i class="fa fa-map-marker"></i> 474 Ontario St Toronto, ON M4X 1M7 Canada</li>
-									<li><i class="fa fa-phone"></i> (+1234)56789xxx</li>
-									<li><i class="fa fa-envelope"></i> tadathemes@gmail.com</li>
+									<li><i class="fa fa-map-marker"></i> {{$v['dizhi']}}</li>
+									<li><i class="fa fa-phone"></i> {{$v['phone']}}</li>
+									<li><i class="fa fa-envelope"></i> {{$v['email']}}</li>
+									<li>举报电话</i> ： {{$v['juphone']}}</li>
+									<li>网络文化经营许可证</i> ： {{$v['zheng']}}</li>
 								</ul>
+								@endforeach
 							</div>
 							<div class="fi-content inline-list social-icons">
 								<a href="index.html" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
@@ -321,26 +325,28 @@
 						</div>
 						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								Information
+								信息
 							</div>
 							<div class="fi-content">
+								@foreach($women as $v)
 								<ul class="grid__item one-half">
 									<li>
-										<a href="about-us.html"><span>About us</span></a>
+										<a href="/women"><span>关于我们</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Shipping &amp; Returns</span></a>
+										<a href="/wo/tui"><span>{{$v['question']}}</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Privacy</span></a>
+										<a href="/wo/tui"><span>{{$v['songtui']}}</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Conditions</span></a>
+										<a href="#"><span>{{$v['juphone']}}</span></a>
 									</li>
 									<li>
 										<a href="#"><span>Online support</span></a>
 									</li>
 								</ul>
+									
 								<ul class="grid__item one-half">
 									<li>
 										<a href="account.html"><span>My Account</span></a>
@@ -462,9 +468,10 @@
 					<div class="grid">
 						<div class="grid__item footer-copyright one-half small--one-whole medium--one-whole small--text-center">
 							<p>
-								© 2016 Home Market - Red. All rights Reserved
+								© 2018 {{$v['banquan']}} . 版权所有
 							</p>
 						</div>
+						@endforeach
 						<div class="grid__item footer-payment one-half small--one-whole medium--one-whole small--text-center">
 							<div id="widget-payment">
 								<ul id="payments" class="list-inline animated">

@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use App\DCate;
 use App\Sp;
+use App\User;
+use App\WoMen;
 use App\XCate;
 use App\XxCate;
-use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 
@@ -22,6 +23,7 @@ class HomeController extends Controller
     public function index()
 
     {
+        $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
         $xxcate = XxCate::all();
@@ -29,7 +31,7 @@ class HomeController extends Controller
         $user = User::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
     }
 
 
@@ -218,11 +220,12 @@ class HomeController extends Controller
     }
 
     public function fabu()
-    {
+    {   
+        $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin'));
+        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin','shangpin'));
     }
 
     public function fabuchuli(Request $request)
@@ -254,5 +257,81 @@ class HomeController extends Controller
      public function weizhi()
     {
        return view('home.weizhi');
+    }
+
+
+    //关于我们 
+    public function gy()
+    {
+            //读取表中的数据
+       
+        $women = WoMen::first();
+        return view('admin.gy',compact('women'));
+    }
+
+    /*
+    保存设置  关于我们  后台
+    */
+    public function xiu(Request $request)
+    {
+ 
+    $women = WoMen::first();
+
+      if (!$women) {
+          $women = new WoMen;
+      }
+      
+      $women -> dizhi = $request->dizhi;
+      $women -> phone = $request->phone;
+      $women -> email = $request->email;
+      $women -> songtui = $request->songtui;
+      $women -> question = $request->question;
+      $women -> banquan = $request->banquan;
+      $women -> zheng = $request->zheng;
+      $women -> juphone = $request->juphone;
+       if ($women -> save()) {
+            return back()->with('success','设置成功');
+        }else{
+            return back()->with('error','设置失败');
+        }
+
+    }
+
+    /*
+        前台页面 关于我们
+    */
+
+      public function women()
+    {
+
+         $women = WoMen::all();
+        $dcate = DCate::all();
+        $xcate = XCate::all();
+        $xxcate = XxCate::all();
+        $shangpin = Sp::all();
+        $user = User::all();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
+        
+    }
+
+
+    /*
+    退货发货
+    */
+      public function tui()
+    {
+
+         $women = WoMen::all();
+        $dcate = DCate::all();
+        $xcate = XCate::all();
+        $xxcate = XxCate::all();
+        $shangpin = Sp::all();
+        $user = User::all();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
+        
     }
 }

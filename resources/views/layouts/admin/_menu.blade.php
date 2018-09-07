@@ -210,6 +210,14 @@
                 </a>
             </li>
         </ul>
+
+         <li class="tpl-left-nav-item">
+        <a href="/admin/gy" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>关于我们</span>
+        </a>
+    </li>
+
     </li>
 </ul>
 
