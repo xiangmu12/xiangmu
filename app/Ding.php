@@ -12,6 +12,10 @@ class Ding extends Model
 	protected $dates = ['deleted_at'];
 	public function user()
 	{
-		return $this->belongsTo('App\User');
+		return $this->belongsTo('App\User','user_id','id');
+	}
+	public function huo()
+	{
+		return $this->hasone('App\Huo','id','shouhuo_id');
 	}
 }

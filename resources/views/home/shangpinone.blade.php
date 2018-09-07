@@ -90,10 +90,14 @@
 													<button type="submit" name="addche" id="AddToCart" class="btn">
 													<span id="AddToCartText">加入购物车</span>
 													</button>
-													<button type="submit" name="add" id="AddToCart" class="btn">
+													<a href="/dingdan/{{$shangpin[0]['id']}}" type="submit" name="add" id="AddToCart" class="btn">
 													<span id="AddToCartText">立即购买</span>
-													</button>
+													
+													</a>
+
+													
 													<a href="/jubao/{{$shangpin[0]['id']}}">举报该商品</a>
+
 												</form>
 												<div class="add-to-wishlist">
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>加入到愿望清单</a></span>
@@ -167,64 +171,26 @@
 									<div class="tab-panel fade " id="customerreview">
 										<div id="shopify-product-reviews" data-id="3008529923">
 											<div class="spr-container">
-												<div class="spr-header">
-													<h2 class="spr-header-title">Customer Reviews</h2>
-													<div class="spr-summary" itemscope="" itemtype="http://data-vocabulary.org/Review-aggregate">
-														<meta itemprop="itemreviewed" content="Corporis suscipit laboriosam">
-														<meta itemprop="votes" content="0">
-														<span itemprop="rating" itemscope="" itemtype="http://data-vocabulary.org/Rating" class="spr-starrating spr-summary-starrating">
-														<meta itemprop="average" content="0.0">
-														<meta itemprop="best" content="5">
-														<meta itemprop="worst" content="1">
-														<i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i>
-														</span>
-														<span class="spr-summary-caption">
-														No reviews yet </span>
-														<span class="spr-summary-actions">
-														<a href="#" class="spr-summary-actions-newreview" onclick="SPR.toggleForm(3008529923);return false">Write a review</a>
-														</span>
-													</div>
-												</div>
+												<h2 class="spr-header-title">留言</h2>
 												<div class="spr-content">
 													<div class="spr-form" id="form_3008529923" style="">
-														<form method="post" action="#" id="new-review-form_3008529923" class="new-review-form" onsubmit="SPR.submitForm(this);return false;">
-															<input type="hidden" name="review[rating]"><input type="hidden" name="product_id" value="3008529923">
-															<h3 class="spr-form-title">Write a review</h3>
-															<fieldset class="spr-form-contact">
-																<div class="spr-form-contact-name">
-																	<label class="spr-form-label" for="review_author_3008529923">Name</label>
-																	<input class="spr-form-input spr-form-input-text " id="review_author_3008529923" type="text" name="review[author]" value="" placeholder="Enter your name">
-																</div>
-																<div class="spr-form-contact-email">
-																	<label class="spr-form-label" for="review_email_3008529923">Email</label>
-																	<input class="spr-form-input spr-form-input-email " id="review_email_3008529923" type="email" name="review[email]" value="" placeholder="john.smith@example.com">
-																</div>
-															</fieldset>
-															<fieldset class="spr-form-review">
-																<div class="spr-form-review-rating">
-																	<label class="spr-form-label" for="review[rating]">Rating</label>
-																	<div class="spr-form-input spr-starrating ">
-																		<a href="#" onclick="SPR.setRating(this);return false;" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="1">&nbsp;</a>
-																		<a href="#" onclick="SPR.setRating(this);return false;" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="2">&nbsp;</a>
-																		<a href="#" onclick="SPR.setRating(this);return false;" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="3">&nbsp;</a>
-																		<a href="#" onclick="SPR.setRating(this);return false;" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="4">&nbsp;</a>
-																		<a href="#" onclick="SPR.setRating(this);return false;" class="spr-icon spr-icon-star spr-icon-star-empty" data-value="5">&nbsp;</a>
-																	</div>
-																</div>
-																<div class="spr-form-review-title">
+														<div class="spr-form-review-title">
+
 																	<label class="spr-form-label" for="review_title_3008529923">Review Title</label>
-																	<input class="spr-form-input spr-form-input-text " id="review_title_3008529923" type="text" name="review[title]" value="" placeholder="Give your review a title">
-																</div>
+																	<ul>
+																		
+																	</ul>
+														</div>
+														<form method="post" action="/pinglun" id="new-review-form_3008529923" class="new-review-form" >
+															
 																<div class="spr-form-review-body">
 																	<label class="spr-form-label" for="review_body_3008529923">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
 																	<div class="spr-form-input">
-																		<textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="review[body]" rows="10" placeholder="Write your comments here"></textarea>
+																		<textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
 																	</div>
+																	{{csrf_field()}}
 																</div>
-															</fieldset>
-															<fieldset class="spr-form-actions">
-																<input type="submit" class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">
-															</fieldset>
+																<button  class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">留言</button>
 														</form>
 													</div>
 													<div class="spr-reviews" id="reviews_3008529923" style="display: none">

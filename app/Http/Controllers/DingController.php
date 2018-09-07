@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Ding;
+use App\Huo;
+use App\Sp;
 use Illuminate\Http\Request;
 
 class DingController extends Controller
@@ -13,7 +16,12 @@ class DingController extends Controller
      */
     public function index()
     {
-        //
+        //读取数据库 获取用户数据
+        $dings = Ding::orderBy('id','desc')
+            ->where('title','like', '%'.request()->keywords.'%')
+            ->paginate(10);
+        
+        return view('admin.ding.index',compact('dings'));
     }
 
     /**
@@ -23,7 +31,7 @@ class DingController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +42,26 @@ class DingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $ding = new Ding;
+        $huo = Huo::findOrFail($request->shouhuo_id);
+        $sp = Sp::findOrFail($request->spid);
+        $ding->title = $sp->title;
+        $ding->image = $sp->image;
+        $ding->cheng = $sp->cheng;
+        $ding->money = $sp->money;
+        $ding->zhifu = $request->zhifu;
+        $ding->title = $sp->title;
+        $ding->kuaidi = $request->kuaidi;
+        $ding->user_id = 1;
+        $ding->shangpin_id = $sp->spid;
+        $ding->shouhuo_id = $request->shouhuo_id;
+         if($ding->save()){
+            return redirect('/dingdan')->with('success','订单提交成功');
+        }else{
+            return back()->with('error','订单提交失败');
+        }
+       
+
     }
 
     /**
@@ -45,7 +72,13 @@ class DingController extends Controller
      */
     public function show($id)
     {
-        //
+         $shangpin = Sp::all();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        $shangpinone = Sp::findOrFail($id);
+        $huo = Huo::orderBy('id','desc')->take(3)->get();
+        // $huo = Huo::all();
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo'));
     }
 
     /**
@@ -56,7 +89,8 @@ class DingController extends Controller
      */
     public function edit($id)
     {
-        //
+         $dingdan = Ding::findOrFail($id);
+         return view('admin.ding.edit', compact('dingdan'));
     }
 
     /**
@@ -68,7 +102,20 @@ class DingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+         $ding = Ding::findOrFail($id);
+         $huo = Huo::findOrFail($ding->shouhuo_id);
+        //更新
+        $ding->title = $request->title;
+        $ding->kuaidi = $request->kuaidi; 
+        $ding->province = $request->province;
+        $ding->city = $request->city;
+        $ding->area = $request->area;
+        $huo ->name = $request->name;
+        if($ding->save() && $huo->save()){
+            return redirect('/dingdan')->with('success','更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
     }
 
     /**
@@ -79,6 +126,12 @@ class DingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $ding = Ding::findOrFail($id);
+
+        if($ding->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }

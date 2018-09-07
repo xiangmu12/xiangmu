@@ -182,77 +182,86 @@
                                                 <p class="h6 product-title">
                                                     <a href="product.html">{{$va['intro']}}~ 
 														@if($va['cheng'] == 0) 全新 @else 非全新 @endif</a>
-                                                </p>
-                                                <p class="product-price">
-                                                    <strong>On Sale</strong>
-                                                    <span class="money" data-currency-usd="$19.99">${{$va['money']}}</span>
-                                                    <span class="visually-hidden">Regular price</span>
-                                                    <s><span class="money" data-currency-usd="$24.99">${{$va['money']}}</span></s>
-                                                </p>
-                                                <ul class="action-button">
-                                                    <li class="add-to-cart-form">
-                                                        <form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
-                                                            <div class="effect-ajax-cart">
-                                                                <input type="hidden" name="quantity" value="1">
-                                                                <button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="购买">
-                                                                    <span id="AddToCartText"><i class="fa fa-shopping-cart"></i> 立即购买 </span>
-                                                                </button>
-                                                            </div>
-                                                        </form>
-                                                    </li>
-                                                    <li class="wishlist">
-                                                        <a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-                                                    </li>
-                                                    <li class="email">
-                                                        <a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-                                                    </li>
-                                            </div>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    @endif @endif @endif @endforeach @endforeach @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid__item one-quarter bh-right small--one-whole medium--one-whole">
-                        <div class="brands-area">
-                            <ul class="brands-elements">
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand1_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand2_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand3_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand4_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand5_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand6_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand7_123x64.png" alt=""></a>
-                                </li>
-                                <li class="">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_brand8_123x64.png" alt=""></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="banner-area">
-                            <a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endforeach
-</main>
+													</p>
+													<p class="product-price">
+														<strong>On Sale</strong>
+														<span class="money" data-currency-usd="$19.99">${{$va['money']}}</span>
+														<span class="visually-hidden">Regular price</span>
+														<s><span class="money" data-currency-usd="$24.99">${{$va['money']}}</span></s>
+													</p>
+													<ul class="action-button">
+														<li class="add-to-cart-form">
+															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
+																<div class="effect-ajax-cart">
+																	<input type="hidden" name="quantity" value="1">
+																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="购买">
+																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> 立即购买 </span>
+																	</button>
+																</div>
+															</form>
+														</li>
+														<li class="wishlist">
+															<a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
+														</li>
+														<li class="email">
+															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
+														</li>
+														</div>
+													</ul>
+												</div>
+											</div> 
+											@endif
+											@endif
+											@endif
+											@endforeach
+											@endforeach
+											@endforeach
+									
+										</div>	
+									</div>											           
+								</div>
+							</div>
+							<div class="grid__item one-quarter bh-right small--one-whole medium--one-whole">
+								<div class="brands-area">
+									<ul class="brands-elements">
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand1_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand2_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand3_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand4_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand5_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand6_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand7_123x64.png" alt=""></a>
+										</li>
+										<li class="">
+											<a href="collection.html"><img src="/assets/assets/images/demo1_brand8_123x64.png" alt=""></a>
+										</li>         
+									</ul>
+								</div>
+								<div class="banner-area">
+									<a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			@endforeach	
+		</main>
+
+		@include('layouts.qt._floor')
 <!-- Footer -->
 <footer class="site-footer">
     <div class="grid__item footer_newsletter">
@@ -263,236 +272,218 @@
                 <span class="input-group-btn">
 						<input type="submit" class="btn" name="subscribe" id="subscribe" value="subscribe">
 						</span>
-            </form>
-        </div>
-    </div>
-    <div class="grid__item footer_information">
-        <div class="wrapper">
-            <div class="grid-uniform">
-                <div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
-                    <div class="fi-title">
-                        About us
-                    </div>
-                    <div class="fi-content">
-                        <ul class="group_information">
-                            <li><i class="fa fa-map-marker"></i> 474 Ontario St Toronto, ON M4X 1M7 Canada</li>
-                            <li><i class="fa fa-phone"></i> (+1234)56789xxx</li>
-                            <li><i class="fa fa-envelope"></i> tadathemes@gmail.com</li>
-                        </ul>
-                    </div>
-                    <div class="fi-content inline-list social-icons">
-                        <a href="index.html" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-                        <a href="index.html" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-                        <a href="index.html" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-                        <a href="index.html" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-                        <a href="index.html" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-                        <a href="index.html" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-                    </div>
-                </div>
-                <div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
-                    <div class="fi-title">
-                        Information
-                    </div>
-                    <div class="fi-content">
-                        <ul class="grid__item one-half">
-                            <li>
-                                <a href="about-us.html"><span>About us</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>Shipping &amp; Returns</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>Privacy</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>Conditions</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>Online support</span></a>
-                            </li>
-                        </ul>
-                        <ul class="grid__item one-half">
-                            <li>
-                                <a href="account.html"><span>My Account</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>Order History</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>Help &amp; FAQs</span></a>
-                            </li>
-                            <li>
-                                <a href="#"><span>举报商品</span></a>
-                            </li>
-                            <li>
-                                <a href="/hezuo/hz"><span>合作伙伴</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fi-tags grid__item one-quarter small--one-whole medium--one-whole">
-                    <div class="fi-title">
-                        Product Tags
-                    </div>
-                    <div class="fi-content">
-                        <ul>
-                            <li><a href="#">100 - 200</a></li>
-                            <li><a href="#">200 - 300</a></li>
-                            <li><a href="#">300 - 400</a></li>
-                            <li><a href="#">400 - 500</a></li>
-                            <li><a href="#">BB</a></li>
-                            <li><a href="#">Blue</a></li>
-                            <li><a href="#">Body Care</a></li>
-                            <li><a href="#">Gucci</a></li>
-                            <li><a href="#">Hair Care</a></li>
-                            <li><a href="#">Hamilton</a></li>
-                            <li><a href="#">Mackup</a></li>
-                            <li><a href="#">Omega</a></li>
-                            <li><a href="#">Perfumes</a></li>
-                            <li><a href="#">Red</a></li>
-                            <li><a href="#">Skin Care</a></li>
-                            <li><a thref="#">Tissot</a></li>
-                            <li><a href="#">Under 100</a></li>
-                            <li><a href="#">White</a></li>
-                            <li><a href="#">Yellow</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="fi-block grid__item one-quarter small--one-whole medium--one-whole">
-                    <div class="fi-title">
-                        Recent Post
-                    </div>
-                    <ul class="fi-content post-element">
-                        <li>
-                            <div class="post-title">
-                                <a href="article.html">Quisque porta felis est ut malesuada lorem dignissim</a>
-                            </div>
-                            <div class="post-author">
-                                by <span class="author">Tada Theme</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="post-title">
-                                <a href="article.html">Section 1.10.33 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC</a>
-                            </div>
-                            <div class="post-author">
-                                by <span class="author">Tada Theme</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="grid__item footer_product_categories">
-        <div class="wrapper">
-            <div class="fi-title">
-                Product Categories
-            </div>
-            <div class="fi-content">
-                <ul class="product_categories_list">
-                    <li class="pc-items">
-                        <a href="collection.html">Beauty &amp; Health</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Book</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Camera - Camcorder</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Clothing</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Home Appliances</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Homelife</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Kids &amp; Baby</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Smartphones &amp; Cell Phones</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Sport &amp; Outdoor</a>
-                    </li>
-                    <li class="pc-items">
-                        <a href="collection.html">Stationery</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="grid__item footer_copyright">
-        <div class="wrapper">
-            <div class="grid">
-                <div class="grid__item footer-copyright one-half small--one-whole medium--one-whole small--text-center">
-                    <p>
-                        © 2016 Home Market - Red. All rights Reserved
-                    </p>
-                </div>
-                <div class="grid__item footer-payment one-half small--one-whole medium--one-whole small--text-center">
-                    <div id="widget-payment">
-                        <ul id="payments" class="list-inline animated">
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="Visa"><a href="index.html" class="icons visa"><i class="fa fa-cc-visa"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="Mastercard"><a href="index.html" class="icons mastercard"><i class="fa fa-cc-mastercard"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="American Express"><a href="index.html" class="icons amex"><i class="fa fa-cc-amex"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="Paypal"><a href="index.html" class="icons paypal"><i class="fa fa-cc-paypal"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="Google Wallet"><a href="index.html" class="icons gw"><i class="fa fa-google-wallet"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="Discover"><a href="index.html" class="icons dsc"><i class="fa fa-cc-discover"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="Diners Club"><a href="index.html" class="icons dc"><i class="fa fa-cc-diners-club"></i></a></li>
-                            <li class="tada" data-toggle="tooltip" data-placement="top" title="JCB"><a href="index.html" class="icons jcb"><i class="fa fa-cc-jcb"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-    $(function() {
-        $(".fi-title").click(function() {
-            $(this).toggleClass('opentab');
-        });
-    });
-    </script>
-</footer>
-</div>
-<div id="scroll-to-top" title="Scroll to Top" class="off">
-    <i class="fa fa-caret-up"></i>
-</div>
-<!--div id="newsletter_popup" class="modal in fade" style="display: none;">
-		<div class="nl-wraper-popup tada-hidden">
-			<div class="nl-wraper-popup-inner">
-				<form action="#" method="post" name="mc-embedded-subscribe-form" target="_blank">
-					<div class="newsletter-popup-content">
-						<div class="top-area">
-							<span class="head-text1">Subscribe to our Newsletter &amp; receive a coupon for</span>
-							<span class="head-text2">10% off</span>
-						</div>
-						<div class="bottom-area">
-							<div class="group_input">
-								<input class="form-control" type="email" name="EMAIL" placeholder="Your Email address">
-								<button class="btn" type="submit">Get 10% off</button>
+					</form>
+				</div>
+			</div>
+			<div class="grid__item footer_information">
+				<div class="wrapper">
+					<div class="grid-uniform">
+						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
+							<div class="fi-title">
+								关于我们
 							</div>
-							<span class="bottom-explain">We will send you a discount code after you confirm your email address.</span>
-						</div>
-						<div class="nl-social">
+							<div class="fi-content">
+								@foreach($women as $v)
+								<ul class="group_information">
+									<li><i class="fa fa-map-marker"></i> {{$v['dizhi']}}</li>
+									<li><i class="fa fa-phone"></i> {{$v['phone']}}</li>
+									<li><i class="fa fa-envelope"></i> {{$v['email']}}</li>
+									<li>举报电话</i> ： {{$v['juphone']}}</li>
+									<li>网络文化经营许可证</i> ： {{$v['zheng']}}</li>
+								</ul>
+								@endforeach
+							</div>
 							<div class="fi-content inline-list social-icons">
-								<a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-								<a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-								<a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-								<a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-								<a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-								<a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
+								<a href="index.html" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
+								<a href="index.html" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
+								<a href="index.html" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
+								<a href="index.html" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
+								<a href="index.html" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
+								<a href="index.html" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
+							</div>
+						</div>
+						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
+							<div class="fi-title">
+								信息
+							</div>
+							<div class="fi-content">
+								@foreach($women as $v)
+								<ul class="grid__item one-half">
+									<li>
+										<a href="/women"><span>关于我们</span></a>
+									</li>
+									<li>
+										<a href="/wo/tui"><span>{{$v['question']}}</span></a>
+									</li>
+									<li>
+										<a href="/wo/tui"><span>{{$v['songtui']}}</span></a>
+									</li>
+									<li>
+										<a href="#"><span>{{$v['juphone']}}</span></a>
+									</li>
+									<li>
+										<a href="#"><span>Online support</span></a>
+									</li>
+								</ul>
+									
+								<ul class="grid__item one-half">
+									<li>
+										<a href="account.html"><span>My Account</span></a>
+									</li>
+									<li>
+									<a href="#"><span>Order History</span></a>
+									</li>
+									<li>
+									<a href="#"><span>Help &amp; FAQs</span></a>
+									</li>
+									<li>
+									<a href="contact-us.html"><span>Contact us</span></a>
+									</li>
+									<li>
+									<a href="#"><span>Manufacturers</span></a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="fi-tags grid__item one-quarter small--one-whole medium--one-whole">
+							<div class="fi-title">
+								Product Tags
+							</div>
+							<div class="fi-content">
+								<ul>
+									<li><a href="#">100 - 200</a></li>
+									<li><a href="#">200 - 300</a></li>
+									<li><a href="#">300 - 400</a></li>
+									<li><a href="#">400 - 500</a></li>
+									<li><a href="#">BB</a></li>
+									<li><a href="#">Blue</a></li>
+									<li><a href="#">Body Care</a></li>
+									<li><a href="#">Gucci</a></li>
+									<li><a href="#">Hair Care</a></li>
+									<li><a href="#">Hamilton</a></li>
+									<li><a href="#">Mackup</a></li>
+									<li><a href="#">Omega</a></li>
+									<li><a href="#">Perfumes</a></li>
+									<li><a href="#">Red</a></li>
+									<li><a href="#">Skin Care</a></li>
+									<li><a thref="#">Tissot</a></li>
+									<li><a href="#">Under 100</a></li>
+									<li><a href="#">White</a></li>
+									<li><a href="#">Yellow</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="fi-block grid__item one-quarter small--one-whole medium--one-whole">
+							<div class="fi-title">
+								Recent Post
+							</div>
+							<ul class="fi-content post-element">
+								<li>
+								<div class="post-title">
+									<a href="article.html">Quisque porta felis est ut malesuada lorem dignissim</a>
+								</div>
+								<div class="post-author">
+									by <span class="author">Tada Theme</span>
+								</div>
+								</li>
+								<li>
+								<div class="post-title">
+									<a href="article.html">Section 1.10.33 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC</a>
+								</div>
+								<div class="post-author">
+									by <span class="author">Tada Theme</span>
+								</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid__item footer_product_categories">
+				<div class="wrapper">
+					<div class="fi-title">
+						Product Categories
+					</div>
+					<div class="fi-content">
+						<ul class="product_categories_list">
+							<li class="pc-items">
+							<a href="collection.html">Beauty &amp; Health</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Book</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Camera - Camcorder</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Clothing</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Home Appliances</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Homelife</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Kids &amp; Baby</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Smartphones &amp; Cell Phones</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Sport &amp; Outdoor</a>
+							</li>
+							<li class="pc-items">
+							<a href="collection.html">Stationery</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid__item footer_copyright">
+				<div class="wrapper">
+					<div class="grid">
+						<div class="grid__item footer-copyright one-half small--one-whole medium--one-whole small--text-center">
+							<p>
+								© 2018 {{$v['banquan']}} . 版权所有
+							</p>
+						</div>
+						@endforeach
+						<div class="grid__item footer-payment one-half small--one-whole medium--one-whole small--text-center">
+							<div id="widget-payment">
+								<ul id="payments" class="list-inline animated">
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="Visa"><a href="index.html" class="icons visa"><i class="fa fa-cc-visa"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="Mastercard"><a href="index.html" class="icons mastercard"><i class="fa fa-cc-mastercard"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="American Express"><a href="index.html" class="icons amex"><i class="fa fa-cc-amex"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="Paypal"><a href="index.html" class="icons paypal"><i class="fa fa-cc-paypal"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="Google Wallet"><a href="index.html" class="icons gw"><i class="fa fa-google-wallet"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="Discover"><a href="index.html" class="icons dsc"><i class="fa fa-cc-discover"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="Diners Club"><a href="index.html" class="icons dc"><i class="fa fa-cc-diners-club"></i></a></li>
+									<li class="tada" data-toggle="tooltip" data-placement="top" title="JCB"><a href="index.html" class="icons jcb"><i class="fa fa-cc-jcb"></i></a></li>
+								</ul>
 							</div>
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
-		</div>
-	</div-->
+			
+			<script type="text/javascript">
+			  $(function () {
+				$(".fi-title").click(function(){
+				  $(this).toggleClass('opentab');
+				});
+			  });
+			</script>         
+		</footer>
+	</div>
+
+	<div id="scroll-to-top" title="Scroll to Top" class="off">
+		<i class="fa fa-caret-up"></i>
+	</div>
+
+  
 <script>
 var tada_index, tada_autosearchcomplete, tada_swiftype, tada_ads, tada_adsspeed, tada_slideshowtime, tada_block1gallery = false,
     tada_block1product = false,
@@ -601,3 +592,4 @@ jQuery(document).ready(function($) {
 });
 </script>
 </body>
+

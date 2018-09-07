@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Sp;
+use App\Tag;
+use App\XxCate;
 use Illuminate\Http\Request;
 
 class TagController extends Controller
@@ -13,7 +16,12 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+         //读取数据库 获取用户数据
+        $tags = Tag::orderBy('id','desc')
+            ->where('name','like', '%'.request()->keywords.'%')
+            ->paginate(10);
+        //解析模板显示用户数据
+        return view('admin.tag.index', ['tags'=>$tags]);
     }
 
     /**
@@ -22,8 +30,12 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        //
+    { 
+
+        $tags = Tag::all();
+
+        return view('admin.tag.create',['tags'=>$tags]);
+         
     }
 
     /**
@@ -34,7 +46,15 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tags = new Tag;
+
+        $tags->name = $request->name;
+
+        if($tags->save()){
+            return redirect('/tag')->with('success','添加标签成功');
+        }else{
+            return back()->with('error','添加标签失败');
+        }
     }
 
     /**
@@ -45,7 +65,7 @@ class TagController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +76,10 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
+         //获取用户的信息
+        $tags = Tag::findOrFail($id);
+        //解析模板显示数据
+        return view('admin.tag.edit', ['tags'=>$tags]);
     }
 
     /**
@@ -68,7 +91,18 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //获取用户的信息
+        $tags = Tag::findOrFail($id);
+
+        //更新
+        $tags ->name = $request->name;
+
+        if($tags->save()){
+            return redirect('/tag')->with('success','更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
+
     }
 
     /**
@@ -79,6 +113,14 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tags = Tag::findOrFail($id);
+
+        if($tags->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
+
+   
 }

@@ -5,13 +5,13 @@
 
 		<!-- Main Content -->
     	<main class="main-content">
-			<div class="breadcrumb-wrapper">
+			<div class="breadcrumb-wrapper" style="background-image:url(/ueditor/images/3.jpg);>
 				<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-					<a href="index.html" title="Back to the frontpage">Home</a>
+					<a href="/" title="Back to the frontpage">首页</a>
 					<span aria-hidden="true">&rsaquo;</span>
-					<span>Products Detail Page</span>
+					<span>发布闲置</span>
 				</nav>
-				<h1 class="section-header__title">Products Detail Page</h1>
+				<h1 class="section-header__title">发布闲置</h1>
 			</div>
 			<div class="wrapper">
 				<div class="grid--rev col-md-5" >
@@ -54,6 +54,14 @@
 												</div></br></br>
 
 												<div class="selector-wrapper">
+														标签:&nbsp;<select class="single-option-selector" name="tag_id" data-option="option1" id="productSelect-option-0">
+															@foreach($tags as $v)
+																 <option value="{{$v['id']}}">{{$v['name']}}</option>
+															@endforeach
+														</select>
+												</div></br></br>
+
+												<div class="selector-wrapper">
 														价格:&nbsp;<input type="text" name="money">
 												</div></br></br>
 
@@ -83,7 +91,7 @@
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>添加愿望清单</a></span>
 												</div>
 
-												<div class="grid__item product-info-right three-eighths .col-md-5" style="position:absolute;left:1300px;top:420px">
+												<div class="grid__item product-info-right three-eighths .col-md-5" style="position:absolute;left:1300px;top:450px">
 													<div class="product-extrainfo .col-md-5" >
 														<ul>
 															<li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-shield fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">保证<span class="sub">质量检查</span></span></li>
@@ -157,7 +165,7 @@
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								lipeishi
 							</div>
 							<div class="fi-content">
 								<ul class="group_information">
