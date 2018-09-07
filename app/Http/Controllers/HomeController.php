@@ -100,8 +100,14 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jubao = Jubao::find($id);
+        $jubao -> delete();
 
+        if($jubao -> delete()){
+          return redirect('/jubao')->with('success','删除成功');  
+        }else{
+             return back()->with('error','删除失败');   
+        }
     }
 
 
@@ -218,8 +224,28 @@ class HomeController extends Controller
     //用户注册
     public function zhuce()
     {
+
         return view('home.user.zhuce');
     }
+
+    //注册
+    public function register(Request $request)
+    {
+
+        $user = new User;
+
+        $user -> username = $request->username;
+        $user -> password = Hash::make($request->password);
+        $user -> phone = $request->phone;
+
+
+        if($user -> save()){
+            return redirect('/')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
+    }
+
 
 
     public function fabu()

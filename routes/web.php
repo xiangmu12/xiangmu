@@ -93,6 +93,7 @@ Route::get('/logout','HomeController@logout');
 Route::get('/zhuce','HomeController@zhuce');
 
 //注册提交
+Route::post('/zhuce','HomeController@register');
 
 //发布闲置
 Route::get('/fabu','HomeController@fabu');
@@ -103,6 +104,8 @@ Route::get('/delete/{id}', 'HomeController@xiajia');
 
 //关于我们
 Route::get('/women','HomeController@women');
+
+Route::get('/juba/{id}','HomeController@destroy');
 
 //合作
 Route::get('hezuo/hz','HbController@hezuo');
