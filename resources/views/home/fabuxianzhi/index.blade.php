@@ -165,7 +165,7 @@
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								lipeishi
 							</div>
 							<div class="fi-content">
 								<ul class="group_information">
@@ -204,6 +204,9 @@
 									<li>
 										<a href="#"><span>Online support</span></a>
 									</li>
+									<li>
+										<a href="#"><span>合作伙伴</span></a>
+									</li>
 								</ul>
 								<ul class="grid__item one-half">
 									<li>
@@ -221,6 +224,10 @@
 									<li>
 									<a href="#"><span>Manufacturers</span></a>
 									</li>
+									<li>
+									<a href="#"><span>合作伙伴</span></a>
+									</li>
+
 								</ul>
 							</div>
 						</div>
