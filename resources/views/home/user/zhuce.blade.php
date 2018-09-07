@@ -26,7 +26,7 @@
     </div>
     <div class="register_content clearfix" style="background:url('/dengru/img/logo.jpg') no-repeat 0 138px;">
         <input type="hidden" value="" id="iserror">
-        <form action="/register/user/second/valid?" id="my_from" method="post">
+        <form action="/zhuce"  method="post">
             <div class="register_box myfr">
                 <div class="title clearfix">
                     <span class="myfl"></span>
@@ -34,59 +34,326 @@
                     <input type="hidden" value="1" name="memberType" id="registeruser_type">
                     <span class="myfr"></span>
                 </div>
-                <input type="text" placeholder="请输入您的用户名，支持手机号" name="nick" class="username" value="" maxlength="20" />
+                <input type="text" placeholder="请输入您的用户名，支持手机号" name="username" value="" maxlength="20" />
                 <p class="username_error"></p>
                 <input type="password" style="color: #666;" placeholder="请输入您的密码" name="password" class="password" maxlength="16" value="" />
                 <p class="password_error"></p>
-                <input type="password" style="color: #666;" placeholder="请重复您的密码" name="password1" class="password_again" maxlength="16" />
+                <input type="password" style="color: #666;" placeholder="请重复您的密码" name="repassword" class="password_again" maxlength="16" />
                 <p class="password_again_error"></p>
                 <input type="text" placeholder="请输入手机号" name="phone" maxlength="11" class="phone_num" value="" />
-                <p class="phone_num_error"></p>
-                <div class="photo_code clearfix">
-                    <input type="text" class="myfl" name="captchaCode" placeholder="请输入图片验证码" maxlength="4" />
-                    <img src="" class="myfr" />
-                </div>
-                <p class="photo_code_error"></p>
-                <div class="clearfix message_code_box">
-                    <input type="text" class="message_code myfl" name="validCode" maxlength="6" placeholder="请输入短信验证码" value="" />
-                    <a href="javascript:;" class="message_code_btn myfr">发送验证码</a>
-                    <span class="message_code_again"><em>60</em>秒重发</span> </div>
-                <p class="message_code_error"></p>
-                <input type="text" class="qq_num" name="qq" maxlength="15" placeholder="请输入您正在使用的QQ号" value="">
-                <p class="qq_num_error">6</p>
-                <!-- <select name="channel" class="source" style="-webkit-appearance: none;appearance: none;color: #666;">
-                    <option value="5">百度搜索</option>
-                    <option value="6">360搜索</option>
-                    <option value="7">搜狗搜索</option>
-                    <option value="2">朋友介绍</option>
-                    <option value="4">通过QQ</option>
-                    <option value="8">通过微信</option>
-                    <option value="3">其他来源</option>
-                </select> -->
-                <p class="source_error">7</p>
+                
                 <div class="my_agreement">
                     <input type="checkbox" name="agreement" value="1" checked>我已仔细阅读并同意接受
                     <a href="" target="_blank">《用户使用协议》</a>
                 </div>
                 <p class="source_error">8</p>
-                <a href="javascript:;" class="submit_btn">注册</a>
-                <!--短信的token-->
-                <input type="hidden" name="token" value="47016a045c820bc2857e84547b11a380" id="tonkenNum">
+                <button type="submit" class="submit_btn">注册</button>
+             {{csrf_field()}}
+               
             </div>
         </form>
+
+        <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        /** 
+
+        1. 布局 
+
+        2. 绑定事件 
+
+        获得焦点 
+
+        丧失焦点事件 
+
+        表单提交事件 
+
+        */
+
+        var CUSER = false;
+
+        var CPHONE = false;
+
+        var CPASS = false;
+
+        var CREPASS = false;
+
+        //用户名 
+
+        $('input[name=username]').focus(function() {
+
+            //边框颜色 
+
+            $(this).addClass('active');
+
+            //提示语显示 
+
+            $(this).next().show().html('输入8~18位字母数字下划线');
+
+        }).blur(function() {
+
+            //移出激活状态的class active 
+
+            $(this).removeClass('active');
+
+            //正则判断 
+
+            var v = $(this).val();
+
+            //声明正则 
+
+            var reg = /^\w{8,18}$/;
+
+            //判断 
+
+            if (!reg.test(v)) {
+
+                //边框 
+
+                $(this).addClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:red">格式不正确</span>').show();
+
+                CUSER = false;
+
+            } else {
+
+                var input = $(this);
+
+                //发送 AJAX 请求检测用户名是否已经存在 
+
+                // $.post('./check-user-exists.php', {username: v}, function(data){ 
+
+                // }) 
+
+                $.ajax({
+
+                    url: '/check-user-exists.php',
+
+                    type: 'post',
+
+                    data: { username: v },
+
+                    success: function(data) {
+
+                        if (data != '1') {
+
+                            //边框 
+
+                            input.addClass('error');
+
+                            //文字提醒 
+
+                            input.next().html('<span style="color:red">该用户名太受欢迎, 请换一个!!</span>').show();
+
+                            CUSER = false;
+
+                        } else {
+
+                            input.removeClass('error');
+
+                            input.next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+
+                            CUSER = true;
+
+                        }
+
+                    },
+
+                    async: false
+
+                })
+
+            }
+
+        })
+
+        //手机号 
+
+        $('input[name=phone]').focus(function() {
+
+            //边框颜色 
+
+            $(this).addClass('active');
+
+            //提示语显示 
+
+            $(this).next().show().html('输入您的手机号');
+
+        }).blur(function() {
+
+            $(this).removeClass('active');
+
+            //获取用户的输入值 
+
+            var v = $('input[name=phone]').val();
+
+            //正则 
+
+            var reg = /^1\d{10}$/;
+
+            if (!reg.test(v)) {
+
+                //边框 
+
+                $(this).addClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:red">格式不正确</span>').show();
+
+                CPHONE = false;
+
+            } else {
+
+                //边框 
+
+                $(this).removeClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+
+                CPHONE = true;
+
+            }
+
+        })
+
+        //密码 
+
+        $('input[name=password]').focus(function() {
+
+            //边框颜色 
+
+            $(this).addClass('active');
+
+            //提示语显示 
+
+            $(this).next().show().html('6~20非空白字符');
+
+        }).blur(function() {
+
+            $(this).removeClass('active');
+
+            //获取用户的输入值 
+
+            var v = $(this).val();
+
+            //正则 
+
+            var reg = /^\S{6,20}$/;
+
+            if (!reg.test(v)) {
+
+                //边框 
+
+                $(this).addClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:red">格式不正确</span>').show();
+
+                CPASS = false;
+
+            } else {
+
+                //边框 
+
+                $(this).removeClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+
+                CPASS = true;
+
+            }
+
+        })
+
+        //确认密码 
+
+        $('input[name=repassword]').focus(function() {
+
+            //边框颜色 
+
+            $(this).addClass('active');
+
+            //提示语显示 
+
+            $(this).next().show().html('再次输入密码');
+
+        }).blur(function() {
+
+            $(this).removeClass('active');
+
+            //获取用户的输入值 
+
+            var v = $(this).val();
+
+            if (v != $('input[name=password]').val()) {
+
+                //边框 
+
+                $(this).addClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:red">两次密码不一致</span>').show();
+
+                CREPASS = false;
+
+            } else {
+
+                //边框 
+
+                $(this).removeClass('error');
+
+                //文字提醒 
+
+                $(this).next().html('<span style="color:green;font-size:16px;font-weight:bold">&nbsp;&nbsp;√</span>').show();
+
+                CREPASS = true;
+
+            }
+
+        })
+
+        //表单的提交事件 
+
+        $('form').submit(function() {
+
+            //触发错误提醒 
+
+            $('input').trigger('blur');
+
+            console.log(CUSER);
+
+            //判断输入值是否都正确 
+
+            if (CUSER && CPASS && CPHONE && CREPASS) {
+
+                return true;
+
+            } else {
+
+                return false;
+
+            }
+
+        });
+        </script>
     </div>
     <!--错误提示-->
-    <div class="normal_pop pop_password" id="pop_load">
+    <!-- <div class="normal_pop pop_password" id="pop_load">
         <h3>提示</h3>
         <p class="error" style="font-size: 20px;line-height: 24px;margin: 40px 0 36px;color: #666;">注册失败，请稍后再试</p>
         <i id="true_btn" class="layui-layer-close">确定</i>
-    </div>
+    </div> -->
     <div class="register_bottom">Copright &nbsp;&nbsp;CP17003883号-1 &nbsp;&nbsp;版权所有</div>
 </body>
-<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
-<script type="text/javascript" charset="UTF-8" src="js/jquery.form.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/layer.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/web_method/method.js~v=2"></script>
-<script type="text/javascript" charset="UTF-8" src="js/login_register/user_register.js~v=10"></script>
+
 
 </html>

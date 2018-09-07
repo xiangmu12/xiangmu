@@ -48,6 +48,12 @@ Route::resource('shangpin','SpController');
 //拍卖管理
 Route::resource('paimai','PmController');
 
+//关于我们
+Route::get('/admin/gy','HomeController@gy');
+//关于我们修改
+Route::post('/admin/gy','HomeController@xiu');
+
+
 //后台首页
 Route::get('/admin','AdminController@index');
 
@@ -93,6 +99,7 @@ Route::get('/logout','HomeController@logout');
 Route::get('/zhuce','HomeController@zhuce');
 
 //注册提交
+Route::post('/zhuce','HomeController@register');
 
 //发布闲置
 Route::get('/fabu','HomeController@fabu');
@@ -103,6 +110,10 @@ Route::get('/delete/{id}', 'HomeController@xiajia');
 
 //关于我们
 Route::get('/women','HomeController@women');
+//发货 退货
+Route::get('/wo/tui','HomeController@tui');
+
+Route::get('/juba/{id}','HomeController@destroy');
 
 //合作
 Route::get('hezuo/hz','HbController@hezuo');
@@ -131,10 +142,12 @@ Route::resource('tag','TagController');
 //评论管理
 Route::resource('pinglun','PlController');
 
+
 //个人中心
 Route::get('/geren','GrzhongController@geren');
 
 //个人订单
 Route::get('/gerendingdan','GrzhongController@gerendingdan');
 Route::post('/grdingdan','GrzhongController@grdingdan');
+
 

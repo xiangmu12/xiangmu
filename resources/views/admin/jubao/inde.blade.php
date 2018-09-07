@@ -1,4 +1,4 @@
-@extends('layouts.admin') @section('title','合作列表') @section('content')
+@extends('layouts.admin') @section('title','举报列表') @section('content')
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -42,7 +42,7 @@
                                 <th class="table-check">
                                     <input type="checkbox" class="tpl-table-fz-check">
                                 </th>
-                                <th class="table-id">sID</th>
+                                <th class="table-id">ID</th>
                                 <th class="table-id">商品ID</th>
                                 <th class="table-title">举报内容</th>
                                 <th class="table-set">操作</th>
@@ -60,18 +60,17 @@
                                 
                                 
                                 <td>
-                                    <div class="am-btn-toolbar">
-
-
-
-                                        <form action="" method="post">
-                                            {{csrf_field()}}{{method_field('DELETE')}}
+                                <div class="am-btn-toolbar">
+                                    <div class="am-btn-group am-btn-group-xs">
+                                        <form style="float:left" action="/juba/{{$v['id']}}" method="get">
+                                            {{method_field('DELETE')}}
+                                            {{csrf_field()}}
                                             <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
                                         </form>
 
                                     </div>
-
-                                </td>
+                                </div>
+                            </td>
                             </tr>
                            @endforeach
                         </tbody>

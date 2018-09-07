@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Pl;
 use Illuminate\Http\Request;
 
 class PlController extends Controller
@@ -14,6 +15,7 @@ class PlController extends Controller
     public function index()
     {
         //
+        echo 111;
     }
 
     /**
@@ -24,6 +26,7 @@ class PlController extends Controller
     public function create()
     {
         //
+        echo 222;
     }
 
     /**
@@ -35,6 +38,18 @@ class PlController extends Controller
     public function store(Request $request)
     {
         //
+        $pinglun = new Pl;
+
+        $pinglun -> content = $request->content;
+        $pinglun -> user_id = Session()->get('id');
+
+       
+        if ( $pinglun->save()) {
+            return back()->with('success','留言成功');
+        }else{
+             return back()->with('error','留言失败');
+        }
+        
     }
 
     /**
@@ -46,6 +61,7 @@ class PlController extends Controller
     public function show($id)
     {
         //
+        echo 111;
     }
 
     /**
@@ -57,6 +73,7 @@ class PlController extends Controller
     public function edit($id)
     {
         //
+        echo 111;
     }
 
     /**
@@ -69,6 +86,7 @@ class PlController extends Controller
     public function update(Request $request, $id)
     {
         //
+        echo 111;
     }
 
     /**
@@ -80,5 +98,6 @@ class PlController extends Controller
     public function destroy($id)
     {
         //
+        echo 111;
     }
 }

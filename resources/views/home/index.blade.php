@@ -182,7 +182,6 @@
                                                 <p class="h6 product-title">
                                                     <a href="product.html">{{$va['intro']}}~ 
 														@if($va['cheng'] == 0) 全新 @else 非全新 @endif</a>
-<<<<<<< HEAD
 													</p>
 													<p class="product-price">
 														<strong>On Sale</strong>
