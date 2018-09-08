@@ -500,13 +500,19 @@
 							@if(Session::get('id'))
 							<li class="header-account">
 
+
 									<img src="{{$user[0]['pic']}}" width="40px" alt="">
+
 									<a href="#">{{Session::get('username')}}</a>
 									<a href="/logout">退出</a>
 
 
+							</li><li class="header-account">
+									<i class="fa fa-user"></i>
+									<a href="/geren">个人中心</a>
 							</li>
 							@endif
+							
 							<li class="header-cart">
 								<a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
 									<i class="fa fa-shopping-basket"></i>
@@ -582,13 +588,7 @@
 										  </script>
 								</div>
 							</li>
-							<li class="header-cart">
-								<a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-									<i class="fa fa-shopping-basket"></i>
-									<span id="CartCount">3</span>
-									<span class="name">Shopping Cart</span>
-								</a>
-							</li>
+							
 						</ul>
 					</div>
 				</div>       

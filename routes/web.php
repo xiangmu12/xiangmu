@@ -143,3 +143,21 @@ Route::resource('tag','TagController');
 Route::resource('pinglun','PlController');
 
 
+//个人中心
+Route::get('/geren','GrzhongController@geren');
+
+//个人订单
+Route::get('/gerendingdan','GrzhongController@gerendingdan');
+Route::post('/grdingdan','GrzhongController@grdingdan');
+//收货地址
+Route::get('/shdz','GrzhongController@shouhuodizhi');
+Route::post('/shdz','GrzhongController@shouhuodz');
+
+//测试
+Route::get('/test','GrzhongController@test');
+
+//用户中心
+Route::get('/wode','GrzhongController@wode');
+
+//修改用户中心
+Route::post('/wode','GrzhongController@wodegai');

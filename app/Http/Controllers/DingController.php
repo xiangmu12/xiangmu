@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Ding;
 use App\Huo;
 use App\Sp;
+use App\Tag;
+use App\WoMen;
 use Illuminate\Http\Request;
 
 class DingController extends Controller
@@ -52,7 +54,7 @@ class DingController extends Controller
         $ding->zhifu = $request->zhifu;
         $ding->title = $sp->title;
         $ding->kuaidi = $request->kuaidi;
-        $ding->user_id = 1;
+        $ding->user_id = session('id');
         $ding->shangpin_id = $sp->spid;
         $ding->shouhuo_id = $request->shouhuo_id;
          if($ding->save()){
@@ -72,13 +74,15 @@ class DingController extends Controller
      */
     public function show($id)
     {
-         $shangpin = Sp::all();
+        $tags = Tag::all();
+        $women = WoMen::all();
+        $shangpin = Sp::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $shangpinone = Sp::findOrFail($id);
         $huo = Huo::orderBy('id','desc')->take(3)->get();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo'));
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women'));
     }
 
     /**

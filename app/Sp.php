@@ -25,4 +25,9 @@ class Sp extends Model
 	{
 		 return $this->belongsToMany('App\Tag');
 	}
+
+	public function pingluns()
+	{
+		 return $this->hasMany('App\Pl','shangpin_id','id');
+	}
 }
