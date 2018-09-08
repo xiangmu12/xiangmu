@@ -133,13 +133,16 @@ class HomeController extends Controller
 
     public function sp($id)
     {   
+        $shangpinss = Sp::findOrFail($id);
+        $pingluns = $shangpinss->pingluns()->get();
+
 
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
 
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
+        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin','shangpinss','pingluns'));
     }
 
     public function cateall(Request $request)
@@ -267,6 +270,7 @@ class HomeController extends Controller
         $shangpins -> province = $request->province;
         $shangpins -> city = $request->city;
         $shangpins -> area = $request->area;
+        $shangpins -> user_id = Session()->get('id');
 
 
         if ($request->hasFile('image')) {

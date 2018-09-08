@@ -130,11 +130,7 @@
 										<li class="payment"><a href="#payment" data-toggle="tab">付款</a></li>
 										<li class="reviews"><a href="#customerreview" data-toggle="tab">客户评论</a></li>
 									</ul>
-									<div class="tab-panel active" id="desc">
-										<p>
-											Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet consectetur adipiscing elitos.X
-										</p>
-									</div>
+									
 									<div class="tab-panel fade " id="size">
 										<h2>保修信息</h2>
 										<p>
@@ -145,20 +141,16 @@
 有限终身保修
 有限终身保修适用于沙发，沙发，爱情座椅，软垫椅子，沙发椅，滑雪板和枕木中使用的所有框架。Ashley Furniture Industries，Inc。向原始零售购买者保证这些组件不会出现材料制造缺陷。
 										</p>
-										<p>
-											Frames Used In Upholstered and Leather Products<br>
-											Limited Lifetime Warranty<br>
-											 A Limited Lifetime Warranty applies to all frames used in sofas, couches, love seats, upholstered chairs, ottomans, sectionals, and sleepers. Ashley Furniture Industries,Inc. warrants these components to you, the original retail purchaser, to be free from material manufacturing defects.
-										</p>
+										
 									</div>
 									<div class="tab-panel fade " id="delivery">
 										<h2>运输与交付</h2>
 		在您购买之前，了解您计划放置家具的区域的尺寸是有帮助的。您还应该测量家具通过的任何门道和走廊，以便到达最终目的地。
 										<h5>运输</h5>
-										 Shopify Shop要求所有产品在您带回家之前都要经过适当的检查，以确保没有任何意外。我们的团队很乐意打开所有包裹并协助检查过程。然后，我们将重新封装安全运输包裹。我们鼓励所有客户携带家具垫或毯子，以便在运输过程中保护物品以及绳索或系带。Shopify Shop对于离开商店或运输途中发生的损坏不承担任何责任。购买者有责任确保拾取正确的物品并保持良好状态。
+										 要求所有产品在您带回家之前都要经过适当的检查，以确保没有任何意外。我们的团队很乐意打开所有包裹并协助检查过程。然后，我们将重新封装安全运输包裹。我们鼓励所有客户携带家具垫或毯子，以便在运输过程中保护物品以及绳索或系带。对于离开商店或运输途中发生的损坏不承担任何责任。购买者有责任确保拾取正确的物品并保持良好状态。
 										<h5>交付</h5>
-										 客户可以选择最适合其日程安排的下一个可用交付日。但是，为了尽可能有效地路线停靠，Shopify Shop将提供时间范围。客户将无法选择时间。我们会在您预定的时间范围之前通知您。请确保当时有责任的成年人（18岁或以上）回家。
-在准备交付时，请移除现有的家具，图片，镜子，配件等，以防止损坏。同时确保您希望放置家具的区域没有任何旧家具和任何其他可能妨碍交付团队通道的物品。Shopify Shop将提供，组装和设置您购买的新家具，并从您家中取出所有包装材料。我们的送货工作人员不得移动您现有的家具或其他家居用品。送货人员将尝试以安全和受控的方式交付所购买的物品，但如果他们认为会损坏产品或家庭，则不会尝试放置家具。送货人员无法移除门，提升家具或携带超过3层楼梯的家具。
+										 客户可以选择最适合其日程安排的下一个可用交付日。但是，为了尽可能有效地路线停靠，将提供时间范围。客户将无法选择时间。我们会在您预定的时间范围之前通知您。请确保当时有责任的成年人（18岁或以上）回家。
+在准备交付时，请移除现有的家具，图片，镜子，配件等，以防止损坏。同时确保您希望放置家具的区域没有任何旧家具和任何其他可能妨碍交付团队通道的物品。将提供，组装和设置您购买的新家具，并从您家中取出所有包装材料。我们的送货工作人员不得移动您现有的家具或其他家居用品。送货人员将尝试以安全和受控的方式交付所购买的物品，但如果他们认为会损坏产品或家庭，则不会尝试放置家具。送货人员无法移除门，提升家具或携带超过3层楼梯的家具。
 									</div>
 									<div class="tab-panel fade " id="payment">
 										<h2>支付信息</h2>
@@ -172,14 +164,18 @@
 										<div id="shopify-product-reviews" data-id="3008529923">
 											<div class="spr-container">
 												<h2 class="spr-header-title">留言</h2>
+												<div>如遇到以下情况可能是诈骗行为：<span style="color:red">1.宝贝价格异常低；2.卖家要求QQ沟通；3.卖家要求直接汇款。</span> 寻求防骗经验。</div>
 												<div class="spr-content">
 													<div class="spr-form" id="form_3008529923" style="">
 														<div class="spr-form-review-title">
-
-																	<label class="spr-form-label" for="review_title_3008529923">Review Title</label>
-																	<ul>
-																		
+																	@foreach($pingluns as $v)
+																	<img src="{{$v->user->pic}}" style="width:45px;height:45px;margin:10px;float:left;border-radius:70%">	
+																	<ul style="margin:0px;">
+																		<p>{{$v->user->username}}</p>
+																		<p>{{$v['content']}}</p><br><br>
+																		@endforeach
 																	</ul>
+																	
 														</div>
 														<form method="post" action="/pinglun" id="new-review-form_3008529923" class="new-review-form" >
 															
@@ -188,6 +184,7 @@
 																	<div class="spr-form-input">
 																		<textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
 																	</div>
+																	<input type="hidden" name="shangpin_id" value="{{$shangpinss->id}}">
 																	{{csrf_field()}}
 																</div>
 																<button  class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">留言</button>

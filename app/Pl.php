@@ -14,8 +14,5 @@ class Pl extends Model
 	{
 		return $this->belongsTo('App\User');
 	}
-	public function shangpin()
-	{
-		return $this->belongsTo('App\Sp');
-	}
+	
 }

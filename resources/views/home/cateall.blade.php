@@ -133,7 +133,7 @@
 									<div class="filter-tag-group" >	
 											<ul id="cfc1" class="collapse in" >
 												@foreach($tags as $v)
-												<li><a href="/dcateall?tag_id={{$v['id']}}" ><span class="fe-checkbox"></span>{{$v['name']}}</a></li>
+												<li><a href="/cateall?tag_id={{$v['id']}}" ><span class="fe-checkbox"></span>{{$v['name']}}</a></li>
 												@endforeach
 											</ul>
 																	
