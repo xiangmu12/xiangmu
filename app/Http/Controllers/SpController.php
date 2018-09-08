@@ -7,6 +7,7 @@ use App\Sp;
 use App\User;
 use App\XCate;
 use App\XxCate;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 
 
@@ -65,7 +66,7 @@ class SpController extends Controller
         $shangpins -> quyu = $request->quyu;
         $shangpins -> quyu = $request->quyu;
         $shangpins -> xxcate_id = $request ->xxcate_id;
-       
+        $shangpins -> user_id = Session('id');
         //文件上传
         //检测是否有文件上传
             

@@ -160,7 +160,7 @@
                 <tr>
                     <td valign="top" class="cdcMenu" id="advert">
                         <!-- /zh_cn/general/etc/cdcMenu.shtml Start -->
-                        <div class="logo"><img src="" width="120" height="42" alt="xianyu.com" /></div>
+                        <div class="logo">xianyu.com</div>
                        
                         <!-- /zh_cn/general/etc/cdcMenu.shtml End -->
                     </td>
