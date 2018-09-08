@@ -475,47 +475,44 @@
 							</div>
 						</div>
 					</div>
-				<div class="grid__item small--one-whole two-eighths medium-down--hide">
+					<div class="grid__item small--one-whole two-eighths medium-down--hide">
 						<ul class="link-list">
 							<li class="track-order">
-								<a href="/weizhi">
+								<a href="store-location.html">
 									<i class="fa fa-map-marker"></i>
-									<span class="name">公司位置</span>
+									<span class="name">Store Location</span>
 								</a>
-                            </li>
-							
-							@if(!Session::get('id'))
-								
-								<li class="header-account">
-									<i class="fa fa-user"></i>
-									<a href="/login">请登入</a>
-									<a href="/zhuce">免费注册</a>
-
-
 							</li>
-
-
-							@endif
-							
-							@if(Session::get('id'))
 							<li class="header-account">
-									<img src="" alt="">
-									<a href="#">{{Session::get('username')}}</a>
-									<a href="/logout">退出</a>
-
-
-							</li>
-							@endif
-							<li class="header-cart">
-								<a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
-									<i class="fa fa-shopping-basket"></i>
-									<span id="CartCount">3</span>
-									<span class="name">购物车</span>
+								<a href="#loginBox" id="login_link">
+									<i class="fa fa-user"></i>
+									<span class="name">My Account</span>
 								</a>
-							</li>
-							
-						</ul>
-					</div>
+								<div id="loginBox" class="loginLightbox" style="display:none;">
+									<div id="lightboxlogin">
+										<form method="post" action="./login.html" id="customer_login" accept-charset="UTF-8">
+											<input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="✓">
+											<div id="bodyBox">
+												<h3>Login</h3>
+												<label for="CustomerEmail" class="hidden-label">Email</label>
+												<input type="email" name="customer[email]" id="CustomerEmail" class="input-full" placeholder="Email">
+												<label for="CustomerPassword" class="hidden-label">Password</label>
+												<input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full" placeholder="Password">
+												<input type="submit" class="btn btn2 btn--full" value="Sign In">
+												<div>
+													<p class="forgot">
+														<a href="#recover" onclick="showRecoverPasswordForm();return false;" id="RecoverPassword">Forgot your password?</a>
+													</p>
+													<p class="create">
+														<a href="#create_accountBox" onclick="showCreateAccountForm();return false;" id="CreateAccountPassword">Create New Account</a>
+													</p>
+												</div>
+												<p>
+													<a href="#" onclick="$.fancybox.close();">Close</a>
+												</p>
+											</div>
+										</form>
+									</div>
 									<div id="recover-password" style="display:none;">
 										<h3>Reset your password</h3>
 										<p class="note">
@@ -592,3 +589,5 @@
 				</div>       
 			</div>
 		</header>
+
+		
