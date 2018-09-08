@@ -28,6 +28,7 @@ class HomeController extends Controller
     public function index()
 
     {
+        $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
@@ -36,7 +37,7 @@ class HomeController extends Controller
         $user = User::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags'));
     }
 
 
@@ -140,13 +141,14 @@ class HomeController extends Controller
 
     public function sp($id)
     {   
-
+        $tags = Tag::all();
+        $women = WoMen::all();
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
 
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
+        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin','tags','women'));
     }
 
     public function cateall(Request $request)
@@ -165,12 +167,12 @@ class HomeController extends Controller
          if(empty($request->xxcate_id ) && empty($request->tag_id)){
            $shangpin = Sp::all(); 
         } 
-        
+        $women = WoMen::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = Xxcate::all();
         $tags = Tag::all();
-        return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags'));
+        return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags','women'));
     }
 
 
@@ -178,11 +180,12 @@ class HomeController extends Controller
 
     public function jiang()
     {   
-
+        $tags = Tag::all();
+        $women = WoMen::all();
         $sps = Sp::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.jiang',compact('sps','shang','pin'));
+        return view('home.jiang',compact('sps','shang','pin','tags','women'));
 
     }
 
@@ -264,13 +267,14 @@ class HomeController extends Controller
 
     public function fabu()
     {
-
+        $women = WoMen::all();
+        $tags = Tag::all();
         $shangpin = Sp::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
         $tags = Tag::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags'));
+        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags','women'));
 
 
         $shangpin = Sp::get();

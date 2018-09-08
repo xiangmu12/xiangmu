@@ -87,25 +87,9 @@
 							</div>
 							<div class="fi-content">
 								<ul>
-									<li><a href="#">100 - 200</a></li>
-									<li><a href="#">200 - 300</a></li>
-									<li><a href="#">300 - 400</a></li>
-									<li><a href="#">400 - 500</a></li>
-									<li><a href="#">BB</a></li>
-									<li><a href="#">Blue</a></li>
-									<li><a href="#">Body Care</a></li>
-									<li><a href="#">Gucci</a></li>
-									<li><a href="#">Hair Care</a></li>
-									<li><a href="#">Hamilton</a></li>
-									<li><a href="#">Mackup</a></li>
-									<li><a href="#">Omega</a></li>
-									<li><a href="#">Perfumes</a></li>
-									<li><a href="#">Red</a></li>
-									<li><a href="#">Skin Care</a></li>
-									<li><a thref="#">Tissot</a></li>
-									<li><a href="#">Under 100</a></li>
-									<li><a href="#">White</a></li>
-									<li><a href="#">Yellow</a></li>
+									@foreach($tags as $v)
+									<li><a href="#">{{$v['name']}}</a></li>
+									@endforeach
 								</ul>
 							</div>
 						</div>

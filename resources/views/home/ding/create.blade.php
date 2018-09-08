@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/ding/static/css/checkout.css" />
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
+   
     <!--收货地址body部分开始-->
     <div class="border_top_cart">
         <script type="text/javascript">
