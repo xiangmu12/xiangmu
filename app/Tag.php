@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tag extends Model
 {
     use SoftDeletes;
-    protected $table = 'tags';
+    
 	protected $dates = ['deleted_at'];
+
+	public function shangpins()
+	{
+		 return $this->belongsToMany('App\Sp','sp_tag','tag_id','sp_id');
+	}
 	
 }

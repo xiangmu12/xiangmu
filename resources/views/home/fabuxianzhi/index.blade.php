@@ -1,31 +1,31 @@
-		@include('layouts.qt.header')
+		@include('layouts.qt._header')
+		@include('layouts.qt._top')
 		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 	<script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
 
 		<!-- Main Content -->
     	<main class="main-content">
-			<div class="breadcrumb-wrapper">
+			<div class="breadcrumb-wrapper" style="background-image:url(/ueditor/images/3.jpg);>
 				<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-					<a href="index.html" title="Back to the frontpage">Home</a>
+					<a href="/" title="Back to the frontpage">首页</a>
 					<span aria-hidden="true">&rsaquo;</span>
-					<span>Products Detail Page</span>
+					<span>发布闲置</span>
 				</nav>
-				<h1 class="section-header__title">Products Detail Page</h1>
+				<h1 class="section-header__title">发布闲置</h1>
 			</div>
 			<div class="wrapper">
-				<div class="grid--rev">
+				<div class="grid--rev col-md-5" >
 					<div class="grid__item">
 						<div itemscope="" itemtype="http://schema.org/Product">
 							<div class="product-single">
-								<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+								<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" stylr="background-image:url(/ueditor/images/1.jpg)">
 											<meta itemprop="priceCurrency" content="USD">
 											<link itemprop="availability" href="http://schema.org/InStock">
 											
-											
+												
 												<form action="/fabu" method="post"  id="contact_form" class="contact-form"  enctype="multipart/form-data">
 													标题:<input style="width:300px;" type="text" id="ContactFormName" class="input-full" name="title"  autocapitalize="words" value=""></br></br>
 													<label for="productSelect-option-0">描述:</label><textarea cols="100" name="intro"></textarea></br></br>
-													
 													<div class="am-form-group">
 								                       <div class="am-u-sm-9">
 								                            <div class="am-form-group am-form-file">
@@ -48,6 +48,14 @@
 												<div class="selector-wrapper">
 														分类:&nbsp;<select class="single-option-selector" name="xxcate_id" data-option="option1" id="productSelect-option-0">
 															@foreach($xxcate as $v)
+																 <option value="{{$v['id']}}">{{$v['name']}}</option>
+															@endforeach
+														</select>
+												</div></br></br>
+
+												<div class="selector-wrapper">
+														标签:&nbsp;<select class="single-option-selector" name="tag_id" data-option="option1" id="productSelect-option-0">
+															@foreach($tags as $v)
 																 <option value="{{$v['id']}}">{{$v['name']}}</option>
 															@endforeach
 														</select>
@@ -83,8 +91,8 @@
 													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>添加愿望清单</a></span>
 												</div>
 
-												<div class="grid__item product-info-right three-eighths" style="position:absolute;left:1300px;top:530px">
-													<div class="product-extrainfo" >
+												<div class="grid__item product-info-right three-eighths .col-md-5" style="position:absolute;left:1300px;top:450px">
+													<div class="product-extrainfo .col-md-5" >
 														<ul>
 															<li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-shield fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">保证<span class="sub">质量检查</span></span></li>
 															<li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-truck fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">所有产品<span class="sub">免费送货</span></span></li>
@@ -136,6 +144,7 @@
 							
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</main>
@@ -156,7 +165,7 @@
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								lipeishi
 							</div>
 							<div class="fi-content">
 								<ul class="group_information">
@@ -195,6 +204,9 @@
 									<li>
 										<a href="#"><span>Online support</span></a>
 									</li>
+									<li>
+										<a href="#"><span>合作伙伴</span></a>
+									</li>
 								</ul>
 								<ul class="grid__item one-half">
 									<li>
@@ -212,6 +224,10 @@
 									<li>
 									<a href="#"><span>Manufacturers</span></a>
 									</li>
+									<li>
+									<a href="#"><span>合作伙伴</span></a>
+									</li>
+
 								</ul>
 							</div>
 						</div>

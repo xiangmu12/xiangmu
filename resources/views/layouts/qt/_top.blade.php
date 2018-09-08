@@ -5,13 +5,13 @@
 					<!-- begin site-nav -->
 					<ul class="site-nav" id="AccessibleNav">
 						<li class="site-nav--active">
-							<a href="index.html" class="site-nav__link">
+							<a href="/" class="site-nav__link">
 								<span>首页</span>
 								<span class="special_label new_label">New</span>
 							</a>
 						</li>
 						<li>
-							<a href="todays-deals.html" class="site-nav__link">
+							<a href="jiang" class="site-nav__link">
 								<span>降降降</span>
 								<span class="special_label sale_label">促销</span>
 							</a>
@@ -29,8 +29,10 @@
 							
 							<ul class="site-nav__dropdown">
 								<li>
-								<a href="collection" class="site-nav__link">出售中(					
+								<a href="collection" class="site-nav__link">出售中(		
+											
 										{{$shang}}
+								
 								)</a>
 								</li>
 								<li>

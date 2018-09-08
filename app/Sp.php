@@ -20,4 +20,9 @@ class Sp extends Model
 	{
 		return $this->belongsTo('App\XxCate');
 	}
+
+	public function tags()
+	{
+		 return $this->belongsToMany('App\Tag');
+	}
 }

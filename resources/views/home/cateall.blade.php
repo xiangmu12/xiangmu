@@ -1,4 +1,4 @@
-﻿		@include('layouts.qt._header')
+﻿			@include('layouts.qt._header')
 		@show
 		@include('layouts.qt._top')
 		@show
@@ -21,7 +21,7 @@
 						<header class="section-header section-grid">
 							<div class="section-header__right section-sorting">
 								<div class="form-horizontal">
-									<label for="SortBy">Sort by</label>
+									<label for="SortBy"></label>
 									<select name="SortBy" id="SortBy">
 										<option value="manual">Featured</option>
 										<option value="best-selling">Best Selling</option>
@@ -127,91 +127,17 @@
 										@endforeach
 								</ul>
 							</div>
-							<div class="sb-wrapper shop-by" data-animate="" data-delay="0">
+							<div class="sb-wrapper shop-by" data-animate="" data-delay="0" >
 								<h6 class="sb-title">Shop By</h6>
-								<div class="shop-by-content" id="tags-filter-content">
-									<div class="filter-tag-group">	
-										<div class="tag-group" id="coll-filter-4">
-											<p class="title cfc4" data-toggle="collapse" data-target="#cfc4">
-												Color<span class="ficon"><i class="fa fa-minus"></i></span>
-											</p>
-											<ul id="cfc4" class="collapse in color_filter">
-												<li class="swatch-tag "><span style="background-color: red; background-image: url('/assets/assets/images/red.png');"><a href="collection.html"></a></span></li>
-												<li class="swatch-tag "><span style="background-color: blue; background-image: url('/assets/assets/images/blue.png');"><a href="collection.html"></a></span></li>
-												<li class="swatch-tag white-color"><span style="background-color: white; background-image: url('/assets/assets/images/white.png');"><a href="collection.html"></a></span></li>
-												<li class="swatch-tag "><span style="background-color: blue; background-image: url('/assets/assets/images/blue.png');"><a href="collection.html"></a></span></li>
-												<li class="swatch-tag "><span style="background-color: yellow; background-image: url('/assets/assets/images/yellow.png');"><a href="collection.html"></a></span></li>
+								<div class="shop-by-content" id="tags-filter-content" >
+									<div class="filter-tag-group" >	
+											<ul id="cfc1" class="collapse in" >
+												@foreach($tags as $v)
+												<li><a href="/dcateall?tag_id={{$v['id']}}" ><span class="fe-checkbox"></span>{{$v['name']}}</a></li>
+												@endforeach
 											</ul>
-										</div>									
-										<div class="tag-group" id="coll-filter-1">
-											<p class="title cfc1" data-toggle="collapse" data-target="#cfc1">
-												Price<span class="ficon"><i class="fa fa-minus"></i></span>
-											</p>
-											<ul id="cfc1" class="collapse in">
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Under 100</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> 100 - 200</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> 200 - 300</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> 300 - 400</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> 400 - 500</a></li>
-											</ul>
-										</div>										
-										<div class="tag-group" id="coll-filter-2">
-											<p class="title cfc2" data-toggle="collapse" data-target="#cfc2">
-												Brands<span class="ficon"><i class="fa fa-minus"></i></span>
-											</p>
-											<ul id="cfc2" class="collapse in">
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Omega</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Gucci</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Tissot</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Hamilton</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> BB</a></li>
-											</ul>
-										</div>										
-										<div class="tag-group" id="coll-filter-3">
-											<p class="title cfc3" data-toggle="collapse" data-target="#cfc3">
-												Type<span class="ficon"><i class="fa fa-minus"></i></span>
-											</p>
-											<ul id="cfc3" class="collapse in">
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Skin Care</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Mackup</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Body Care</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Hair Care</a></li>
-												<li><a href="collection.html"><span class="fe-checkbox"></span> Perfumes</a></li>
-											</ul>
-										</div>										
-									</div>	
-									<script>
-										$(function () {
-										  $("#cfc1").on("hide.bs.collapse", function(){
-											$(".cfc1 span").html('<i class="fa fa-plus"></i>');
-										  });
-										  $("#cfc1").on("show.bs.collapse", function(){
-											$(".cfc1 span").html('<i class="fa fa-minus"></i>');
-										  });
-										  $("#cfc2").on("hide.bs.collapse", function(){
-											$(".cfc2 span").html('<i class="fa fa-plus"></i>');
-										  });
-										  $("#cfc2").on("show.bs.collapse", function(){
-											$(".cfc2 span").html('<i class="fa fa-minus"></i>');
-										  });
-										  $("#cfc3").on("hide.bs.collapse", function(){
-											$(".cfc3 span").html('<i class="fa fa-plus"></i>');
-										  });
-										  $("#cfc3").on("show.bs.collapse", function(){
-											$(".cfc3 span").html('<i class="fa fa-minus"></i>');
-										  });
-										  $("#cfc4").on("hide.bs.collapse", function(){
-											$(".cfc4 span").html('<i class="fa fa-plus"></i>');
-										  });
-										  $("#cfc4").on("show.bs.collapse", function(){
-											$(".cfc4 span").html('<i class="fa fa-minus"></i>');
-										  }); 
-										  
-										  $(".tag-group .title").click(function(){
-											$(this).toggleClass("open");
-										  });
-										});
-									  </script>									
+																	
+										</div>					
 								</div>
 							</div>
 							<div class="sb-wrapper featured-product-wrapper clearfix" data-animate="" data-delay="0">
@@ -473,28 +399,9 @@
 							</div>
 							<div class="fi-content">
 								<ul>
-									<li><a href="#">100 - 200</a></li>
-									<li><a href="#">200 - 300</a></li>
-									<li><a href="#">300 - 400</a></li>
-									<li><a href="#">400 - 500</a></li>
-									<li><a href="#">BB</a></li>
-									<li><a href="#">Blue</a></li>
-									<li><a href="#">Body Care</a></li>
-									<li><a href="#">Gucci</a></li>
-									<li><a href="#">Hair Care</a></li>
-									<li><a href="#">Hamilton</a></li>
-									<li><a href="#">Mackup</a></li>
-									<li><a href="#">Omega</a></li>
-									<li><a href="#">Perfumes</a></li>
-									<li><a href="#">Red</a></li>
-									<li><a href="#">Skin Care</a></li>
-									<li><a thref="#">Tissot</a></li>
-									<li><a href="#">Under 100</a></li>
-									<li><a href="#">White</a></li>
-									<li><a href="#">Yellow</a></li>
-									<li><a href="#">abc</a></li>
-									<li><a href="#">bootstrap</a></li>
-									<li><a href="#">cell phone</a></li>
+									@foreach($tags as $v)
+									<li><a href="#">{{$v['name']}}</a></li>
+									@endforeach
 								</ul>
 							</div>
 						</div>

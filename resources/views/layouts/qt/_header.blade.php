@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html class="supports-js supports-no-touch supports-csstransforms supports-csstransforms3d supports-fontface">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
-    <title>Home Market - Responsive HTML5 theme – Red version</title>
-    <!-- Font ================================================== -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Home Market - Responsive HTML5 theme – Red version</title>
+	<!-- Font ================================================== -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"> 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
-    <!-- Font ================================================== -->
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
+	<!-- Font ================================================== -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700"> 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
-    <!-- Helpers ================================================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Home Market - Responsive HTML5 theme">
-    <meta property="og:image" content="//assets/assets/images/logo.png">
-    <meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
-    <meta property="og:url" content="#">
-    <meta property="og:site_name" content="Home Market Red">
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:card" content="summary">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- CSS ================================================== -->
-    <link href="/assets/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/assets/css/font-awesome.min.css">
-    <link href="/assets/assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/swatch.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/flexslider.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/timber.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/home_market.global.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/home_market.style.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
-    <!-- JS ================================================== -->
-    <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+	<!-- Helpers ================================================== -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Home Market - Responsive HTML5 theme">
+	<meta property="og:image" content="//assets/assets/images/logo.png">
+	<meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
+	<meta property="og:url" content="#">
+	<meta property="og:site_name" content="Home Market Red">
+	<meta name="twitter:site" content="@">
+	<meta name="twitter:card" content="summary">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- CSS ================================================== -->
+	<link href="/assets/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="/assets/assets/css/font-awesome.min.css">
+	<link href="/assets/assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/swatch.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/flexslider.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/timber.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/home_market.global.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/home_market.style.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
+	<!-- JS ================================================== -->
+	<script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>	
+	<script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
@@ -304,75 +303,76 @@
                 </div>
             </div>
         </div>
-        <!-- Main Header -->
-        <header class="site-header">
-            <div class="wrapper">
-                <div id="main-header" class="grid--full grid--table">
-                    <div class="grid__item small--one-whole medium--one-whole two-eighths">
-                        <h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
+       
+		<header class="site-header">
+			<div class="wrapper">
+				<div id="main-header" class="grid--full grid--table">
+					<div class="grid__item small--one-whole medium--one-whole two-eighths">
+						<h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
 						<a href="index.html" itemprop="url" class="site-header__logo-link">
 							<img src="/assets/assets/images/9bcbb5b9e830471c8b4701228203abe9.PNG" alt="Home Market Red" itemprop="logo">
 						</a>
 						</h1>
-                    </div>
-                    <div class="grid__item small--one-whole medium--one-whole four-eighths mobile-bottom">
-                        <div class="large--hide medium-down--show navigation-icon">
-                            <div class="grid">
-                                <div class="grid__item one-half">
-                                    <div class="site-nav--mobile">
-                                        <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
-                                            <span class="icon icon-hamburger" aria-hidden="true"></span>
-                                            <span class="fallback-text">Menu</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="site-header__search">
-                            <form action="./search.html" method="get" class="input-group search-bar">
-                                <div class="collections-selector">
-                                    <select class="single-option-selector" data-option="collection-option" id="collection-option" name="collection">
-                                        <option value="all">All Collections</option>
-                                        <option value="beauty-health">Beauty &amp; Health</option>
-                                        <option value="book">Book</option>
-                                        <option value="camera">Camera - Camcorder</option>
-                                        <option value="clothing">Clothing</option>
-                                        <option value="appliances">Home Appliances</option>
-                                        <option value="homelife">Homelife</option>
-                                        <option value="kids-baby">Kids &amp; Baby</option>
-                                        <option value="smartphones">Smartphones &amp; Cell Phones</option>
-                                        <option value="sport">Sport &amp; Outdoor</option>
-                                        <option value="stationery">Stationery</option>
-                                    </select>
-                                </div>
-                                <input type="hidden" name="type" value="product">
-                                <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field st-default-search-input" aria-label="Search our store">
-                                <span class="input-group-btn">
+					</div>
+					<div class="grid__item small--one-whole medium--one-whole four-eighths mobile-bottom">
+						<div class="large--hide medium-down--show navigation-icon">
+							<div class="grid">
+								<div class="grid__item one-half">
+									<div class="site-nav--mobile">
+										<button type="button" class="icon-fallback-text site-nav__link js-drawer-open-left" aria-controls="NavDrawer" aria-expanded="false">
+										<span class="icon icon-hamburger" aria-hidden="true"></span>
+										<span class="fallback-text">Menu</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="site-header__search">
+							<form action="./search.html" method="get" class="input-group search-bar">
+								<div class="collections-selector">
+									<select class="single-option-selector" data-option="collection-option" id="collection-option" name="collection">
+										<option value="all">All Collections</option>
+										<option value="beauty-health">Beauty &amp; Health</option>
+										<option value="book">Book</option>
+										<option value="camera">Camera - Camcorder</option>
+										<option value="clothing">Clothing</option>
+										<option value="appliances">Home Appliances</option>
+										<option value="homelife">Homelife</option>
+										<option value="kids-baby">Kids &amp; Baby</option>
+										<option value="smartphones">Smartphones &amp; Cell Phones</option>
+										<option value="sport">Sport &amp; Outdoor</option>
+										<option value="stationery">Stationery</option>
+									</select>
+								</div>
+								<input type="hidden" name="type" value="product">
+								<input type="search" name="q" value="" placeholder="Search our store" class="input-group-field st-default-search-input" aria-label="Search our store">
+								<span class="input-group-btn">
 								<button type="submit" class="btn icon-fallback-text">
 								<i class="fa fa-search"></i>
 								<span class="fallback-text">Search</span>
-                                </button>
-                                </span>
-                            </form>
-                        </div>
-                        <div class="large--hide medium-down--show navigation-cart">
-                            <div class="grid__item text-right">
-                                <div class="site-nav--mobile">
-                                    <a href="cart.html" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
+								</button>
+								</span>
+							</form>
+						</div>
+						<div class="large--hide medium-down--show navigation-cart">
+							<div class="grid__item text-right">
+								<div class="site-nav--mobile">
+									<a href="cart.html" class="js-drawer-open-right site-nav__link" aria-controls="CartDrawer" aria-expanded="false">
 									<span class="icon-fallback-text">
 									<span class="icon icon-cart" aria-hidden="true"></span>
 									<span class="fallback-text">Shopping Cart</span>
 									</span>
 									</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="grid__item small--one-whole two-eighths medium-down--hide">
-                        <ul class="link-list">
-                            <li class="track-order">
-                                <a href="store-location.html">
+								</div>
+							</div>
+						</div>
+					</div>
+				<div class="grid__item small--one-whole two-eighths medium-down--hide">
+						<ul class="link-list">
+							<li class="track-order">
+								<a href="/weizhi">
 									<i class="fa fa-map-marker"></i>
+
 									<span class="name">商店地址</span>
 								</a>
                             </li>
@@ -419,129 +419,32 @@
                             </p>
                         </form>
                     </div>
-                    <div id="create_accountBox" style="display:none;">
-                        <h3>Create Account</h3>
-                        <div class="form-vertical">
-                            <form method="post" action="./account.html" id="create_customer" accept-charset="UTF-8">
-                                <input type="hidden" value="create_customer" name="form_type">
-                                <input type="hidden" name="utf8" value="✓">
-                                <label for="FirstName" class="hidden-label">First Name</label>
-                                <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
-                                <label for="LastName" class="hidden-label">Last Name</label>
-                                <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
-                                <label for="Email" class="hidden-label">Email</label>
-                                <input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email">
-                                <label for="CreatePassword" class="hidden-label">Password</label>
-                                <input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
-                                <p>
-                                    <input type="submit" value="Create" class="btn btn2 btn--full">
-                                </p>
-                                <p>
-                                    <span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
-                                </p>
-                                <p class="close">
-                                    <a href="#" onclick="$.fancybox.close();">Close</a>
-                                </p>
-                            </form>
-                        </div>
-                    </div>
-                    <script>
-                    function showRecoverPasswordForm() {
-                        $('#recover-password').css("display", 'block');
-                        $('#lightboxlogin').css("display", 'none');
-                        $('#create_accountBox').css("display", 'none');
-                    }
-
-                    function hideRecoverPasswordForm() {
-                        $('#recover-password').css("display", 'none');
-                        $('#lightboxlogin').css("display", 'block');
-                        $('#create_accountBox').css("display", 'none');
-                    }
-
-                    function showCreateAccountForm() {
-                        $('#recover-password').css("display", 'none');
-                        $('#lightboxlogin').css("display", 'none');
-                        $('#create_accountBox').css("display", 'block');
-                    }
-                    </script>
-                </div>
-                </li>
-               
-            </div>
-    </div>
-    </div>
-    </div>
-    <div id="recover-password" style="display:none;">
-        <h3>Reset your password</h3>
-        <p class="note">
-            We will send you an email to reset your password.
-        </p>
-        <form method="post" action="recover.html" accept-charset="UTF-8">
-            <input type="hidden" value="recover_customer_password" name="form_type">
-            <input type="hidden" name="utf8" value="✓">
-            <p>
-                <label for="recover-email" class="label">Email</label>
-            </p>
-            <input type="email" value="" size="30" name="email" id="recover-email" class="text">
-            <div class="action_bottom">
-                <input class="btn btn2" type="submit" value="Submit">
-                <a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
-            </div>
-            <p class="close">
-                <a href="#" onclick="$.fancybox.close();">Close</a>
-            </p>
-        </form>
-    </div>
-    <div id="create_accountBox" style="display:none;">
-        <h3>Create Account</h3>
-        <div class="form-vertical">
-            <form method="post" action="./account.html" id="create_customer" accept-charset="UTF-8">
-                <input type="hidden" value="create_customer" name="form_type">
-                <input type="hidden" name="utf8" value="✓">
-                <label for="FirstName" class="hidden-label">First Name</label>
-                <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
-                <label for="LastName" class="hidden-label">Last Name</label>
-                <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
-                <label for="Email" class="hidden-label">Email</label>
-                <input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email">
-                <label for="CreatePassword" class="hidden-label">Password</label>
-                <input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
-                <p>
-                    <input type="submit" value="Create" class="btn btn2 btn--full">
-                </p>
-                <p>
-                    <span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
-                </p>
-                <p class="close">
-                    <a href="#" onclick="$.fancybox.close();">Close</a>
-                </p>
-            </form>
-        </div>
-    </div>
-    <script>
-    function showRecoverPasswordForm() {
-        $('#recover-password').css("display", 'block');
-        $('#lightboxlogin').css("display", 'none');
-        $('#create_accountBox').css("display", 'none');
-    }
-
-    function hideRecoverPasswordForm() {
-        $('#recover-password').css("display", 'none');
-        $('#lightboxlogin').css("display", 'block');
-        $('#create_accountBox').css("display", 'none');
-    }
-
-
-    function showCreateAccountForm() {
-        $('#recover-password').css("display", 'none');
-        $('#lightboxlogin').css("display", 'none');
-        $('#create_accountBox').css("display", 'block');
-    }
-    </script>
-    </div>
-    
-    </div>
-    </div>
-    </div>
-    </header>
+                   
+                 
+                    
+									<script>
+											function showRecoverPasswordForm() {
+											  $('#recover-password').css("display",'block');
+											  $('#lightboxlogin').css("display",'none');
+											  $('#create_accountBox').css("display",'none');
+											}
+											function hideRecoverPasswordForm() {
+											  $('#recover-password').css("display",'none');
+											  $('#lightboxlogin').css("display",'block');
+											  $('#create_accountBox').css("display",'none');
+											}
+											function showCreateAccountForm(){
+											  $('#recover-password').css("display",'none');
+											  $('#lightboxlogin').css("display",'none');
+											  $('#create_accountBox').css("display",'block');
+											}
+										  </script>
+								</div>
+							</li>
+					
+						</ul>
+					</div>
+				</div>       
+			</div>
+		</header>
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Huo;
 use Illuminate\Http\Request;
 
 class HuoController extends Controller
@@ -13,7 +14,10 @@ class HuoController extends Controller
      */
     public function index()
     {
-        //
+        $huo = Huo::orderBy('id','desc')
+            ->where('name','like', '%'.request()->keywords.'%')
+            ->paginate(10);
+        return view('admin.huo.index',compact('huo'));
     }
 
     /**
@@ -34,7 +38,22 @@ class HuoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         
+         $huo = new Huo;
+        
+        $huo-> name = $request -> name;
+        $huo-> intro = $request -> intro;
+        $huo-> tag = $request -> tag;
+        $huo-> phone = $request -> phone;
+        $huo-> province = $request -> province;
+        $huo-> city = $request -> city;
+        $huo-> area = $request -> area;
+
+        if($huo->save()){
+            return back()->with('success','添加收货地址成功');
+        }else{
+            return back()->with('error','添加收货地址失败');
+        }
     }
 
     /**
@@ -45,7 +64,9 @@ class HuoController extends Controller
      */
     public function show($id)
     {
-        //
+        
+
+        
     }
 
     /**
@@ -56,7 +77,8 @@ class HuoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $huo = Huo::findOrFail($id);
+         return view('admin.huo.edit', compact('huo'));
     }
 
     /**
@@ -68,7 +90,21 @@ class HuoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $huo = Huo::findOrFail($id);
+        
+        $huo-> name = $request -> name;
+        $huo-> intro = $request -> intro;
+        $huo-> tag = $request -> tag;
+        $huo-> phone = $request -> phone;
+        $huo-> province = $request -> province;
+        $huo-> city = $request -> city;
+        $huo-> area = $request -> area;
+
+        if($huo->save()){
+            return redirect('/huo')->with('success','修改成功');
+        }else{
+            return back()->with('error','修改失败');
+        }
     }
 
     /**
@@ -79,6 +115,12 @@ class HuoController extends Controller
      */
     public function destroy($id)
     {
-        //
+         $huo = Huo::findOrFail($id);
+
+        if($huo->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }

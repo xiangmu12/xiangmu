@@ -41,7 +41,7 @@ body {
                 @foreach($gw as $v) @if($v['user_id'] == $users)
                 <tr class="cart__row table__section" style="margin-left: 50px">
                     <td data-label="Quantity">
-                            <input class="J_CheckBoxItem" type="checkbox" id="gouwuche" name="duo[]" value="goumai" @change = change>
+                            <input class="J_CheckBoxItem" type="checkbox" id="gouwuche" name="duo[]" value="goumai" @change = change erro="{{$v['money']}}">
                     </td>
                     <td class="product-name" data-label="Product" style="width:400px;">
                         <div class="img_item">
@@ -58,6 +58,7 @@ body {
                     <td data-label="Price">
                         <span class="money">$ {{$v['money']}} .00</span>
                     </td>
+
                     <td data-label="Total" class="text-center">
                             <a href="/che/{{$v['id']}}" class="btn btn2">移除</a>
                     </td>
@@ -69,17 +70,33 @@ body {
         <div class="grid cart__row" style="">
             <div class="grid__item text-right one-third small--one-whole" style="padding-right: 120px;float:right">
                 <p>
-                    <span class="cart__subtotal-title" style="font-size: 20px">金额：{{$v['money']}}</span>
-                    <span class="h3 cart__subtotal"><span class="money"></span></span>
+                    <span class="cart__subtotal-title" id="qwe" style="font-size: 20px">金额：</span>
+                    
                 </p>
                 <a href="/dingdan" class="btn btn2" value="结算">结算</a>
                 <a href="/" class="btn">返回</a>
             </div>
         </div>
     </form>
+                    <script type="text/javascript">
+                            var c = 0;
+                        $('input[type=checkbox]').click(function(){  
+                            if (this.checked == true) {
+                            var a = $(this).attr('erro');
+                            var b = parseInt(a);
+                            var d = c += b;
+                        }else if(this.checked == false){
+                            this.checked == true;
+                            var a = $(this).attr('erro');
+                            var b = parseInt(a);
+                            var d = c -= b;
+                        }
+                        $('#qwe').html('金额：'+c+'元');
+                    })
+                       
+                        
+                        
+                    </script>
 </div>
 <img style="margin-left:600px" src="//gtd.alicdn.com/tps/i2/T1Q2BUXaxFXXXXXXXX-32-32.gif" class="find-similar-loading">
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript"> 
-
-</script>
