@@ -499,7 +499,8 @@
 							
 							@if(Session::get('id'))
 							<li class="header-account">
-									<img src="" alt="">
+
+									<img src="{{$user[0]['pic']}}" width="40px" alt="">
 									<a href="#">{{Session::get('username')}}</a>
 									<a href="/logout">退出</a>
 
