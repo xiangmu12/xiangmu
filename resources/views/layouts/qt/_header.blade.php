@@ -377,7 +377,7 @@
                             <li class="header-account">
 
 
-                                    <img src="{{$users[0]['pic']}}" width="40px" alt="">
+                                    <img src="{{session::get('pic')}}" width="40px" alt="">
 
                                     <a href="#">{{Session::get('username')}}</a>
                                 <a href="/logout">退出</a>
