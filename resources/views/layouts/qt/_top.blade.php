@@ -5,7 +5,7 @@
 					<!-- begin site-nav -->
 					<ul class="site-nav" id="AccessibleNav">
 						<li class="site-nav--active">
-							<a href="index.html" class="site-nav__link">
+							<a href="/" class="site-nav__link">
 								<span>首页</span>
 								<span class="special_label new_label">New</span>
 							</a>

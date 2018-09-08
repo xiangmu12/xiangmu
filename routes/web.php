@@ -99,6 +99,7 @@ Route::get('/logout','HomeController@logout');
 Route::get('/zhuce','HomeController@zhuce');
 
 //注册提交
+Route::post('/zhuce','HomeController@register');
 
 //发布闲置
 Route::get('/fabu','HomeController@fabu');
@@ -111,6 +112,8 @@ Route::get('/delete/{id}', 'HomeController@xiajia');
 Route::get('/women','HomeController@women');
 //发货 退货
 Route::get('/wo/tui','HomeController@tui');
+
+Route::get('/juba/{id}','HomeController@destroy');
 
 //合作
 Route::get('hezuo/hz','HbController@hezuo');
@@ -139,3 +142,22 @@ Route::resource('tag','TagController');
 //评论管理
 Route::resource('pinglun','PlController');
 
+
+//个人中心
+Route::get('/geren','GrzhongController@geren');
+
+//个人订单
+Route::get('/gerendingdan','GrzhongController@gerendingdan');
+Route::post('/grdingdan','GrzhongController@grdingdan');
+//收货地址
+Route::get('/shdz','GrzhongController@shouhuodizhi');
+Route::post('/shdz','GrzhongController@shouhuodz');
+
+//测试
+Route::get('/test','GrzhongController@test');
+
+//用户中心
+Route::get('/wode','GrzhongController@wode');
+
+//修改用户中心
+Route::post('/wode','GrzhongController@wodegai');

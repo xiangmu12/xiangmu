@@ -58,8 +58,16 @@ class User extends Authenticatable
         return $this->hasMany('App\Gg');
     }
 
+
+    //与评论关系 一对多
+    public function pingluns()
+    {
+        return $this->hasMany('App\Pl');
+    }
+
     public function huo()
     {
         return $this->hasMany('App\Huo','user_id','id');
+
     }
 }

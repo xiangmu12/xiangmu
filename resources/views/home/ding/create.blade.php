@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/ding/static/css/checkout.css" />
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
+   
     <!--收货地址body部分开始-->
     <div class="border_top_cart">
         <script type="text/javascript">
@@ -37,7 +37,7 @@
         </script>
         <div class="container">
             <div class="checkout-box" >
-                <form id="checkoutForm" action="/dingdan" method="post">
+                <form id="checkoutForm" action="/grdingdan" method="post">
                     <div class="checkout-box-bd ">
                         <!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
                         <input type="hidden" name="Checkout[addressState]" id="addrState" value="0">

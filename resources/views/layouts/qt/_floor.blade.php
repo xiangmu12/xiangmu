@@ -1,11 +1,11 @@
 <!-- Footer -->
-		<footer class="site-footer">       
-			<div class="grid__item footer_newsletter">
-				<div class="wrapper">
-					<h3><i class="fa fa-envelope"></i> Make sure you don't miss interesting happenings by joining our newsletter program</h3>
-					<form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-						<input type="email" value="" placeholder="Enter your email here ..." name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com">
-						<span class="input-group-btn">
+<footer class="site-footer">
+    <div class="grid__item footer_newsletter">
+        <div class="wrapper">
+            <h3><i class="fa fa-envelope"></i> Make sure you don't miss interesting happenings by joining our newsletter program</h3>
+            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
+                <input type="email" value="" placeholder="Enter your email here ..." name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com">
+                <span class="input-group-btn">
 						<input type="submit" class="btn" name="subscribe" id="subscribe" value="subscribe">
 						</span>
 					</form>
@@ -16,14 +16,18 @@
 					<div class="grid-uniform">
 						<div class="fi-about-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								About us
+								关于我们
 							</div>
 							<div class="fi-content">
+								@foreach($women as $v)
 								<ul class="group_information">
-									<li><i class="fa fa-map-marker"></i> 474 Ontario St Toronto, ON M4X 1M7 Canada</li>
-									<li><i class="fa fa-phone"></i> (+1234)56789xxx</li>
-									<li><i class="fa fa-envelope"></i> tadathemes@gmail.com</li>
+									<li><i class="fa fa-map-marker"></i> {{$v['dizhi']}}</li>
+									<li><i class="fa fa-phone"></i> {{$v['phone']}}</li>
+									<li><i class="fa fa-envelope"></i> {{$v['email']}}</li>
+									<li>举报电话</i> ： {{$v['juphone']}}</li>
+									<li>网络文化经营许可证</i> ： {{$v['zheng']}}</li>
 								</ul>
+								@endforeach
 							</div>
 							<div class="fi-content inline-list social-icons">
 								<a href="index.html" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
@@ -36,26 +40,28 @@
 						</div>
 						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								Information
+								信息
 							</div>
 							<div class="fi-content">
+								@foreach($women as $v)
 								<ul class="grid__item one-half">
 									<li>
-										<a href="about-us.html"><span>About us</span></a>
+										<a href="/women"><span>关于我们</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Shipping &amp; Returns</span></a>
+										<a href="/wo/tui"><span>{{$v['question']}}</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Privacy</span></a>
+										<a href="/wo/tui"><span>{{$v['songtui']}}</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Conditions</span></a>
+										<a href="#"><span>{{$v['juphone']}}</span></a>
 									</li>
 									<li>
 										<a href="#"><span>Online support</span></a>
 									</li>
 								</ul>
+									
 								<ul class="grid__item one-half">
 									<li>
 										<a href="account.html"><span>My Account</span></a>
@@ -81,25 +87,9 @@
 							</div>
 							<div class="fi-content">
 								<ul>
-									<li><a href="#">100 - 200</a></li>
-									<li><a href="#">200 - 300</a></li>
-									<li><a href="#">300 - 400</a></li>
-									<li><a href="#">400 - 500</a></li>
-									<li><a href="#">BB</a></li>
-									<li><a href="#">Blue</a></li>
-									<li><a href="#">Body Care</a></li>
-									<li><a href="#">Gucci</a></li>
-									<li><a href="#">Hair Care</a></li>
-									<li><a href="#">Hamilton</a></li>
-									<li><a href="#">Mackup</a></li>
-									<li><a href="#">Omega</a></li>
-									<li><a href="#">Perfumes</a></li>
-									<li><a href="#">Red</a></li>
-									<li><a href="#">Skin Care</a></li>
-									<li><a thref="#">Tissot</a></li>
-									<li><a href="#">Under 100</a></li>
-									<li><a href="#">White</a></li>
-									<li><a href="#">Yellow</a></li>
+									@foreach($tags as $v)
+									<li><a href="#">{{$v['name']}}</a></li>
+									@endforeach
 								</ul>
 							</div>
 						</div>
@@ -177,9 +167,10 @@
 					<div class="grid">
 						<div class="grid__item footer-copyright one-half small--one-whole medium--one-whole small--text-center">
 							<p>
-								© 2016 Home Market - Red. All rights Reserved
+								© 2018 {{$v['banquan']}} . 版权所有
 							</p>
 						</div>
+						@endforeach
 						<div class="grid__item footer-payment one-half small--one-whole medium--one-whole small--text-center">
 							<div id="widget-payment">
 								<ul id="payments" class="list-inline animated">
@@ -212,145 +203,112 @@
 		<i class="fa fa-caret-up"></i>
 	</div>
 
-    <!--div id="newsletter_popup" class="modal in fade" style="display: none;">
-		<div class="nl-wraper-popup tada-hidden">
-			<div class="nl-wraper-popup-inner">
-				<form action="#" method="post" name="mc-embedded-subscribe-form" target="_blank">
-					<div class="newsletter-popup-content">
-						<div class="top-area">
-							<span class="head-text1">Subscribe to our Newsletter &amp; receive a coupon for</span>
-							<span class="head-text2">10% off</span>
-						</div>
-						<div class="bottom-area">
-							<div class="group_input">
-								<input class="form-control" type="email" name="EMAIL" placeholder="Your Email address">
-								<button class="btn" type="submit">Get 10% off</button>
-							</div>
-							<span class="bottom-explain">We will send you a discount code after you confirm your email address.</span>
-						</div>
-						<div class="nl-social">
-							<div class="fi-content inline-list social-icons">
-								<a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-								<a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-								<a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-								<a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-								<a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-								<a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div-->    
-    
-    <script>
-		var tada_index,tada_autosearchcomplete,tada_swiftype,tada_ads,tada_adsspeed,tada_slideshowtime,tada_block1gallery=false,tada_block1product=false, tada_newsletter=false;
-		  tada_index=1;
-		  tada_ads=1;
-		  tada_adsspeed=5000;
-		  tada_slideshowtime = 30000;
-		  tada_block1gallery = true;
-		  tada_block1product = true;
-		  tada_newsletter = true;
-    </script>
   
-	<script src="/assets/assets/js/modernizr.min.js" type="text/javascript"></script>
-	<script src="/assets/assets/js/timber.js" type="text/javascript"></script>
-  
-	<div id="quick-shop-modal" class="modal quick-shop" style="display:none;">
-		<div class="modal-dialog fadeIn">
-			<div class="modal-content">
-				<div class="modal-body">
-					<div class="quick-shop-modal-bg">
-					</div>
-					<div class="grid__item one-half qs-product-image">
-						<div id="quick-shop-image" class="product-image-wrapper">
-							<div id="featuted-image" class="main-image featured">
-								<img class="img-zoom img-responsive image-fly" src="/assets/assets/images/demo1_qs_480x480.jpg" data-zoom-image="/assets/assets/images/demo1_qs_480x480.jpg" alt="">
-							</div>
-							<div class="vertical-slider product-single__thumbnails" style="opacity: 0;">
-							</div>
-						</div>
-					</div>
-					<div class="grid__item one-half qs-product-information">
-						<div id="quick-shop-container">
-							<h3 id="quick-shop-title"><a href="product.html">Corporis suscipit laboriosam</a></h3>
-							<div class="rating-star">
-								<span class="shopify-product-reviews-badge" data-id="3008529923"></span>
-							</div>
-							<div class="description">
-								<div id="quick-shop-description" class="text-left">
-									<p>
-										Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet conse...
-									</p>
-								</div>
-							</div>
-							<form action="#" method="post" class="variants" id="AddToCartForm" enctype="multipart/form-data">
-								<div id="quick-shop-price-container" class="detail-price">
-									<span class="price"><span class="money">$89.00</span></span>
-								</div>
-								<div class="quantity-wrapper clearfix">
-									<label class="wrapper-title">Quantity</label>
-									<div class="wrapper">
-										<span class="qty-down" title="Decrease" data-src="#qs-quantity">
+<script>
+var tada_index, tada_autosearchcomplete, tada_swiftype, tada_ads, tada_adsspeed, tada_slideshowtime, tada_block1gallery = false,
+    tada_block1product = false,
+    tada_newsletter = false;
+tada_index = 1;
+tada_ads = 1;
+tada_adsspeed = 5000;
+tada_slideshowtime = 30000;
+tada_block1gallery = true;
+tada_block1product = true;
+tada_newsletter = true;
+</script>
+<script src="/assets/assets/js/modernizr.min.js" type="text/javascript"></script>
+<script src="/assets/assets/js/timber.js" type="text/javascript"></script>
+<div id="quick-shop-modal" class="modal quick-shop" style="display:none;">
+    <div class="modal-dialog fadeIn">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="quick-shop-modal-bg">
+                </div>
+                <div class="grid__item one-half qs-product-image">
+                    <div id="quick-shop-image" class="product-image-wrapper">
+                        <div id="featuted-image" class="main-image featured">
+                            <img class="img-zoom img-responsive image-fly" src="/assets/assets/images/demo1_qs_480x480.jpg" data-zoom-image="/assets/assets/images/demo1_qs_480x480.jpg" alt="">
+                        </div>
+                        <div class="vertical-slider product-single__thumbnails" style="opacity: 0;">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item one-half qs-product-information">
+                    <div id="quick-shop-container">
+                        <h3 id="quick-shop-title"><a href="product.html">Corporis suscipit laboriosam</a></h3>
+                        <div class="rating-star">
+                            <span class="shopify-product-reviews-badge" data-id="3008529923"></span>
+                        </div>
+                        <div class="description">
+                            <div id="quick-shop-description" class="text-left">
+                                <p>
+                                    Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet conse...
+                                </p>
+                            </div>
+                        </div>
+                        <form action="#" method="post" class="variants" id="AddToCartForm" enctype="multipart/form-data">
+                            <div id="quick-shop-price-container" class="detail-price">
+                                <span class="price"><span class="money">$89.00</span></span>
+                            </div>
+                            <div class="quantity-wrapper clearfix">
+                                <label class="wrapper-title">Quantity</label>
+                                <div class="wrapper">
+                                    <span class="qty-down" title="Decrease" data-src="#qs-quantity">
 										<i class="fa fa-minus"></i>
 										</span>
-										<input type="text" id="qs-quantity" size="5" class="item-quantity" name="quantity" value="1">
-										<span class="qty-up" title="Increase" data-src="#qs-quantity">
+                                    <input type="text" id="qs-quantity" size="5" class="item-quantity" name="quantity" value="1">
+                                    <span class="qty-up" title="Increase" data-src="#qs-quantity">
 										<i class="fa fa-plus"></i>
 										</span>
-									</div>
-								</div>
-								<div id="quick-shop-variants-container" class="variants-wrapper" style="display: block;">
-									<div class="selector-wrapper">
-										<label for="#quick-shop-variants-3008529731-option-0">Size</label>
-										<select class="single-option-selector" data-option="option1" id="#quick-shop-variants-3008529731-option-0">
-											<option value="XS">XS</option>
-											<option value="S">S</option>
-											<option value="M">M</option>
-											<option value="L">L</option>
-											<option value="XL">XL</option>
-										</select>
-									</div>
-									<div class="selector-wrapper">
-										<label for="#quick-shop-variants-3008529731-option-1">Color</label>
-										<select class="single-option-selector" data-option="option2" id="#quick-shop-variants-3008529731-option-1">
-											<option value="Black">Black</option>
-											<option value="Red">Red</option>
-											<option value="Green">Green</option>
-											<option value="Blue">Blue</option>
-											<option value="White">White</option>
-										</select>
-									</div>
-								</div>
-								<div class="others-bottom">
-									<input id="AddToCart" class="btn btn-1 small add-to-cart" type="submit" name="add" value="Buy Now">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<script type="text/javascript">	  
-	  jQuery(document).ready(function($) {  
-		if($('.quantity-wrapper').length){
-		  $('.quantity-wrapper').on('click', '.qty-up', function() {
-			var $this = $(this);
-			var qty = $this.data('src');
-			$(qty).val(parseInt($(qty).val()) + 1);
-		  });
-		  $('.quantity-wrapper').on('click', '.qty-down', function() {
-			var $this = $(this);
-			var qty = $this.data('src');
-			if(parseInt($(qty).val()) > 1)
-			  $(qty).val(parseInt($(qty).val()) - 1);
-		  });
-		}	 			 
-	  });
-	</script>
-	
+                                </div>
+                            </div>
+                            <div id="quick-shop-variants-container" class="variants-wrapper" style="display: block;">
+                                <div class="selector-wrapper">
+                                    <label for="#quick-shop-variants-3008529731-option-0">Size</label>
+                                    <select class="single-option-selector" data-option="option1" id="#quick-shop-variants-3008529731-option-0">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                    </select>
+                                </div>
+                                <div class="selector-wrapper">
+                                    <label for="#quick-shop-variants-3008529731-option-1">Color</label>
+                                    <select class="single-option-selector" data-option="option2" id="#quick-shop-variants-3008529731-option-1">
+                                        <option value="Black">Black</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Green">Green</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="White">White</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="others-bottom">
+                                <input id="AddToCart" class="btn btn-1 small add-to-cart" type="submit" name="add" value="Buy Now">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    if ($('.quantity-wrapper').length) {
+        $('.quantity-wrapper').on('click', '.qty-up', function() {
+            var $this = $(this);
+            var qty = $this.data('src');
+            $(qty).val(parseInt($(qty).val()) + 1);
+        });
+        $('.quantity-wrapper').on('click', '.qty-down', function() {
+            var $this = $(this);
+            var qty = $this.data('src');
+            if (parseInt($(qty).val()) > 1)
+                $(qty).val(parseInt($(qty).val()) - 1);
+        });
+    }
+});
+</script>
 </body>

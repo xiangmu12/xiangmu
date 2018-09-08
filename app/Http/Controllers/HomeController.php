@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 
 use App\DCate;
-use App\Jubao;
+use App\Ding;
+use App\Pl;
 use App\Sp;
+use App\Tag;
 use App\User;
-
+use App\Jubao;
 use App\WoMen;
-
 use App\XCate;
 use App\XxCate;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class HomeController extends Controller
     public function index()
 
     {
+        $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
@@ -35,7 +37,7 @@ class HomeController extends Controller
         $user = User::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags'));
     }
 
 
@@ -103,8 +105,14 @@ class HomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jubao = Jubao::find($id);
+        $jubao -> delete();
 
+        if($jubao -> delete()){
+          return redirect('/jubao')->with('success','删除成功');  
+        }else{
+             return back()->with('error','删除失败');   
+        }
     }
 
 
@@ -132,13 +140,15 @@ class HomeController extends Controller
 
 
     public function sp($id)
-    {
+    {   
+        $tags = Tag::all();
+        $women = WoMen::all();
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
 
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin'));
+        return view('home.shangpinone',compact('shangpin','shangpins','shang','pin','tags','women'));
     }
 
     public function cateall(Request $request)
@@ -147,13 +157,22 @@ class HomeController extends Controller
         if(!empty($request->xxcate_id)){
              $shangpin = Sp::where('xxcate_id', $request->xxcate_id)->orderBy('id','desc')->get();
         }
-        if(empty($request->xxcate_id)){
-           $shangpin = Sp::all(); 
+
+        //标签跳商品
+        if(!empty($request->tag_id)){
+             $tag = Tag::findOrFail($request->tag_id);
+             $shangpin = $tag->shangpins()->paginate(10);
         }
+
+         if(empty($request->xxcate_id ) && empty($request->tag_id)){
+           $shangpin = Sp::all(); 
+        } 
+        $women = WoMen::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = Xxcate::all();
-        return view('home.cateall',compact('shangpin','xxcate','shang','pin'));;
+        $tags = Tag::all();
+        return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags','women'));
     }
 
 
@@ -161,11 +180,12 @@ class HomeController extends Controller
 
     public function jiang()
     {   
-
+        $tags = Tag::all();
+        $women = WoMen::all();
         $sps = Sp::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.jiang',compact('sps','shang','pin'));
+        return view('home.jiang',compact('sps','shang','pin','tags','women'));
 
     }
 
@@ -221,24 +241,55 @@ class HomeController extends Controller
     //用户注册
     public function zhuce()
     {
+
         return view('home.user.zhuce');
     }
+
+    //注册
+    public function register(Request $request)
+    {
+
+        $user = new User;
+
+        $user -> username = $request->username;
+        $user -> password = Hash::make($request->password);
+        $user -> phone = $request->phone;
+
+
+        if($user -> save()){
+            return redirect('/')->with('success','添加成功');
+        }else{
+            return back()->with('error','添加失败');
+        }
+    }
+
 
 
     public function fabu()
     {
+        $women = WoMen::all();
+        $tags = Tag::all();
+        $shangpin = Sp::all();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        $xxcate = XxCate::all();
+        $tags = Tag::all();
+        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags','women'));
+
 
         $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $xxcate = XxCate::all();
         return view('home.fabuxianzhi.index',compact('xxcate','shang','pin','shangpin'));
+
     }
 
     public function fabuchuli(Request $request)
     {
         $shangpins = new Sp;
-        
+
+
         $shangpins -> title = $request->title;
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
@@ -247,18 +298,29 @@ class HomeController extends Controller
         $shangpins -> province = $request->province;
         $shangpins -> city = $request->city;
         $shangpins -> area = $request->area;
+        $shangpins -> user_id = session('id');
+
 
         if ($request->hasFile('image')) {
             $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));
         }
 
-         if ($shangpins -> save()) {
-            return redirect('/')->with('error','添加成功');
+         if($shangpins -> save()){
+            try{
+                $res = $shangpins->tags()->sync($request->tag_id);
+            }catch(\Exception $e){
+                return back()->with('error','添加失败');
+            }
+
+            return redirect('/')->with('success','添加成功');
         }else{
-            return back()->with('success','添加失败');
+            return back()->with('error','添加失败');
         }
-        
+
     }
+
+
+    
 
 
     //位置
@@ -366,6 +428,7 @@ class HomeController extends Controller
             return back()->with('success','添加失败');
         }
     }
+
 
 
 
