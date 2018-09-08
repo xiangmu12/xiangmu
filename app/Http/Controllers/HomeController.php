@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\DCate;
+use App\Ding;
 use App\Pl;
 use App\Sp;
 use App\Tag;
@@ -27,6 +28,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
@@ -38,7 +40,7 @@ class HomeController extends Controller
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
 
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin','women'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin','women','tags'));
     }
 
 
@@ -145,17 +147,20 @@ class HomeController extends Controller
 
 
     public function sp($id)
-
     {
         $users = Session()->get('id');
         $gw = Car::all();
-
-   
         $shangpin = Sp::where('id',$id)->get();
         $shangpins = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.shangpinone',compact('shangpin','shangpins','gw','shang','pin','users'));
+        $shangpinss = Sp::findOrFail($id);
+        $pingluns = $shangpinss->pingluns()->get();
+        $tags = Tag::all();
+        $women = WoMen::all();
+
+        return view('home.shangpinone',compact('shangpin','shangpins','gw','shang','pin','users','women','tags','shangpinss','pingluns'));
+        
     }
 
     public function cateall(Request $request)
@@ -174,12 +179,13 @@ class HomeController extends Controller
          if(empty($request->xxcate_id ) && empty($request->tag_id)){
            $shangpin = Sp::all(); 
         } 
-        
-       $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+     
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        $women = WoMen::all();
         $xxcate = Xxcate::all();
         $tags = Tag::all();
-        return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags'));
+        return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags','women'));
     }
 
 
@@ -187,11 +193,12 @@ class HomeController extends Controller
 
     public function jiang()
     {   
-
+        $tags = Tag::all();
+        $women = WoMen::all();
         $sps = Sp::all();
-       $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.jiang',compact('sps','shang','pin'));
+        return view('home.jiang',compact('sps','shang','pin','tags','women'));
 
     }
 
@@ -268,27 +275,21 @@ class HomeController extends Controller
     {
         $users = Session()->get('id');
         $gw = Car::all();
-        $shangpin = Sp::all();
-     $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
-        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        $xxcate = XxCate::all();
+        $women = WoMen::all();
         $tags = Tag::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags','gw','users'));
-
-
-        $shangpin = Sp::get();
+        $shangpin = Sp::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $xxcate = XxCate::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shang','pin','shangpin'));
+        $tags = Tag::all();
 
+
+        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags','gw','users','women'));
     }
 
     public function fabuchuli(Request $request)
     {
         $shangpins = new Sp;
-
-
         $shangpins -> title = $request->title;
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
@@ -299,7 +300,6 @@ class HomeController extends Controller
         $shangpins -> area = $request->area;
         $shangpins -> user_id = Session()->get('id');
         $users = Session()->get('id');
-
 
         if ($request->hasFile('image')) {
             $shangpins->image = '/'.$request->image->store('uploads/'.date('Ymd'));

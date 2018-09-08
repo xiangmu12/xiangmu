@@ -145,6 +145,7 @@ Route::resource('pinglun','PlController');
 //加入购物车
 Route::resource('car', 'CarController');
 
+
 //购物车
 Route::resource('gouwuche','CarController');
 
@@ -159,3 +160,24 @@ Route::get('/che/{id}','CarController@che');
 
 //订单页
 Route::get('dingdan', 'CarController@dingdan');
+
+//个人中心
+Route::get('/geren','GrzhongController@geren');
+
+//个人订单
+Route::get('/gerendingdan','GrzhongController@gerendingdan');
+
+Route::post('/grdingdan','GrzhongController@grdingdan');
+//收货地址
+Route::get('/shdz','GrzhongController@shouhuodizhi');
+Route::post('/shdz','GrzhongController@shouhuodz');
+
+//测试
+Route::get('/test','GrzhongController@test');
+
+//用户中心
+Route::get('/wode','GrzhongController@wode');
+
+//修改用户中心
+Route::post('/wode','GrzhongController@wodegai');
+
