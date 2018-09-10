@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\DCate;
 use App\Sp;
+use App\Sp_tag;
 use App\User;
 use App\XCate;
 use App\XxCate;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 
 class SpController extends Controller
@@ -153,10 +155,11 @@ class SpController extends Controller
     public function destroy($id)
     {
         //
-         $shangpins = Sp::find($id);
+        $shangpins = Sp::find($id);
+        $sp = DB::table('sp_tag')->where('sp_id',$id)->delete();
         
         // dd($id);
-         if ($shangpins->delete()) {
+         if ($shangpins->delete() && $sp) {
             
             return back()->with('success','删除成功');
         }else{

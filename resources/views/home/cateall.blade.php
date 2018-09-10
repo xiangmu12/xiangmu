@@ -60,10 +60,19 @@
 														<div class="quickview">
 															<div class="product-ajax-cart hidden-xs hidden-sm">
 																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a href="#quick-shop-modal" class="btn quick_shop">
+																	<a  id="asd" href="#" class="btn quick_shop">
 																		<i class="fa fa-eye" title="Quick View"></i>																
 																	</a>
 																</div>
+																<script>
+																		$('#asd').click(function{
+																			$.ajax({
+																				url:'/ajax',
+
+																			})
+																		})
+
+																</script>
 															</div>
 														</div>
 													</div>
@@ -133,7 +142,7 @@
 									<div class="filter-tag-group" >	
 											<ul id="cfc1" class="collapse in" >
 												@foreach($tags as $v)
-												<li><a href="/cateall?tag_id={{$v['id']}}" ><span class="fe-checkbox"></span>{{$v['name']}}</a></li>
+												<li><a href="/dcateall?tag_id={{$v['id']}}" ><span class="fe-checkbox"></span>{{$v['name']}}</a></li>
 												@endforeach
 											</ul>
 																	

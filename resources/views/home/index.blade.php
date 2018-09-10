@@ -1,7 +1,9 @@
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
 <main class="main-content">
+    <div></div>
+    <div style="float:right">111111111111111111111111111</div>
     <div class="wrapper">
-        <div id="top-home-blocks" class="grid--full grid--table">
+         <div id="top-home-blocks" class="grid--full grid--table">
             <div class="grid__item one-quarter shop-by-collections medium-down--hide">
                 <div class="sidebar-collections">
                     <div class="sdcollections-title sb-title">

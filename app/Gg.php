@@ -18,7 +18,6 @@ class Gg extends Model
 		return $this->belongsTo('App\User');
 	}
 
-	
 	public function xxcate()
 	{
 		return $this->belongsTo('App\XxCate');

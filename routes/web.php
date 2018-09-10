@@ -48,6 +48,9 @@ Route::resource('shangpin','SpController');
 //拍卖管理
 Route::resource('paimai','PmController');
 
+//友链管理
+Route::resource('youlian','YoulianController');
+
 //关于我们
 Route::get('/admin/gy','HomeController@gy');
 //关于我们修改
