@@ -6,7 +6,7 @@
                 <div class="sidebar-collections">
                     <div class="sdcollections-title sb-title">
                         <i class="fa fa-list"></i>
-                        <span>萨达撒大家撒</span>
+                        <span>主题市场</span>
                     </div>
                     <div class="sdcollections-content">
                         <ul class="sdcollections-list">

@@ -501,7 +501,7 @@
 							<li class="header-account">
 
 
-									<img src="{{$user[0]['pic']}}" width="40px" alt="">
+									<img src="{{Session::get('pic')}}" width="40px" alt="">
 
 									<a href="#">{{Session::get('username')}}</a>
 									<a href="/logout">退出</a>
@@ -561,7 +561,7 @@
 													<input type="submit" value="Create" class="btn btn2 btn--full">
 												</p>
 												<p>
-													<span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
+													<span><a class="btn" href="#" onclick="hideRecoverPasswordForm(); return false;">Back to Login</a></span>
 												</p>
 												<p class="close">
 													<a href="#" onclick="$.fancybox.close();">Close</a>
