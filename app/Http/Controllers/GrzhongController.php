@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use App\Ding;
 use App\Huo;
 use App\Sp;
 use App\Tag;
-use App\WoMen;
 use App\User;
+use App\WoMen;
 use Illuminate\Http\Request;
 
 class GrzhongController extends Controller
@@ -18,9 +19,10 @@ class GrzhongController extends Controller
         $tags = Tag::all();
         $women = WoMen::all();
         $shangpin = Sp::get();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
-       return view('home.grzx.index',compact('shangpin','shang','pin','women','tags'));
+        $gw = Car::all();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+       return view('home.grzx.index',compact('shangpin','shang','pin','women','tags','gw'));
     }
 
     //我的订单
@@ -30,8 +32,8 @@ class GrzhongController extends Controller
         $women = WoMen::all();
     	$di = Ding::where('user_id','=',session('id'))->where('title','like', '%'.request()->keywords.'%')->paginate(8);
         $shangpin = Sp::get();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
        return view('home.grzx.gerendd',compact('shangpin','shang','pin','di','tags','women'));
     }
 
@@ -60,14 +62,15 @@ class GrzhongController extends Controller
     //收货地址
     public function shouhuodizhi()
     {
+        $gw = Car::all();
         $huo = Huo::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $di = Ding::where('user_id','=',session('id'))->where('title','like', '%'.request()->keywords.'%')->paginate(8);
         $shangpin = Sp::get();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
-       return view('home.grzx.shouhuodizhi',compact('shangpin','shang','pin','di','tags','women','huo'));
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+       return view('home.grzx.shouhuodizhi',compact('shangpin','shang','pin','di','tags','women','huo','gw'));
     }
 
     public function shouhuodz(Request $request)
@@ -99,19 +102,21 @@ class GrzhongController extends Controller
         $women = WoMen::all();
         $di = Ding::where('user_id','=',session('id'))->where('title','like', '%'.request()->keywords.'%')->paginate(8);
         $shangpin = Sp::get();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
        return view('wel',compact('shangpin','shang','pin','di','tags','women','huo'));
     }
 
     //前台用户中心修改
     public function wode()
-    {    $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
+    {   
+        $gw = Car::all();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $women = WoMen::all();
-         $tags = Tag::all();
-         $user = User::find(\Session::get('id'));
-        return view('home.wod.yonh',compact('pin','shang','women','tags','user'));
+        $tags = Tag::all();
+        $user = User::find(\Session::get('id'));
+        return view('home.wod.yonh',compact('pin','gw','shang','women','tags','user'));
     }
 
     public function wodegai(Request $request)

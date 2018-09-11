@@ -225,7 +225,7 @@
         </div>
         <div id="CartContainer">
             <form action="./cart.html" method="post" novalidate="" class="cart ajaxcart">
-                @foreach($gw as $v) @if($v['user_id'] == $users)
+                @foreach($gw as $v) @if($v['user_id'] == Session::get('id'))
                 <div class="ajaxcart__inner">
                     <div class="ajaxcart__product">
                         <div class="ajaxcart__row" data-line="2">

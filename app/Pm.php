@@ -9,9 +9,10 @@ class Pm extends Model
 {
     use SoftDeletes;
 
+    protected $table = 'paimais';
 	protected $dates = ['deleted_at'];
 
-	protected $table = 'paimais';
+	
 
 	public function xxcate()
 	{
@@ -21,5 +22,15 @@ class Pm extends Model
 	public function users()
 	{
 		return $this->belongsTo('App\User');
+	}
+
+	public function pingluns()
+	{
+		 return $this->hasMany('App\Pl','shangpin_id','id');
+	}
+
+	public function pmliebiao()
+	{
+		return $this->belongsTo('App\Pml');
 	}
 }

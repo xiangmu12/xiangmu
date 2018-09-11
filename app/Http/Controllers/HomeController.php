@@ -127,7 +127,7 @@ class HomeController extends Controller
         $shangpin = Sp::get();
         $gw = Car::all();
         $users = Session()->get('id');
-       $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         // dd($res);die;
         return view('home.wdxz.collection',compact('shang','gw','pin','shangpin','users'));
@@ -196,9 +196,10 @@ class HomeController extends Controller
         $tags = Tag::all();
         $women = WoMen::all();
         $sps = Sp::all();
+        $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.jiang',compact('sps','shang','pin','tags','women'));
+        return view('home.jiang',compact('sps','shang','pin','tags','women','gw'));
 
     }
 
@@ -375,13 +376,13 @@ class HomeController extends Controller
       public function women()
     {
 
-         $women = WoMen::all();
+        $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
         $xxcate = XxCate::all();
         $shangpin = Sp::all();
         $user = User::all();
-    $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
         
