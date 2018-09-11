@@ -18,12 +18,11 @@ class CarController extends Controller
      */
     public function index()
     {
-        $users = Session()->get('id');
         // $shangpin = Sp::all();
         $gw = Car::all();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
-        return view('home.gouwuche',compact('gw','shang','pin','users'));
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        return view('home.gouwuche',compact('gw','shang','pin'));
         }
    
 
@@ -57,10 +56,7 @@ class CarController extends Controller
     //执行添加购物车
     public function show($id)
     {
-        
-          
-            
-                if(!empty(User::findOrFail(session('id'))->car->where('shangpin_id',$id)->first())){
+          if(!empty(User::findOrFail(session('id'))->car->where('shangpin_id',$id)->first())){
                     return redirect('/gouwuche')->with('success','此商品已存在');
                 }else{
                     $car = new Car;
@@ -80,10 +76,6 @@ class CarController extends Controller
                         }
              
                 }
-           
-        
-
-        
         // dd($car);
     }
 

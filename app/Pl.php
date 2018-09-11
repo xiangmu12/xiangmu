@@ -15,4 +15,5 @@ class Pl extends Model
 		return $this->belongsTo('App\User');
 	}
 	
+	
 }

@@ -184,3 +184,19 @@ Route::get('/wode','GrzhongController@wode');
 //修改用户中心
 Route::post('/wode','GrzhongController@wodegai');
 
+//发布拍卖
+Route::get('fbpm','PmController@pm');
+
+Route::post('mai','PmController@mai');
+
+//拍卖会场
+Route::get('pmhc','PmController@pmhc');
+
+//拍卖详情页
+Route::get('/xtrttq/{id}','PmController@xq');
+
+//竞拍
+Route::post('/pai','PmController@jingpai');
+
+//我的拍卖
+Route::get('/wdpm','PmController@wdpm');
