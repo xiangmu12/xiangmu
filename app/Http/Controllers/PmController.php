@@ -168,17 +168,16 @@ class PmController extends Controller
     {
         $mai = new Pm;
         $mai -> intro = $request->intro;
-        $mai -> image = $request->image;
         $mai -> cheng = $request->cheng;
         $mai -> money = $request->money;
         $mai -> jmoney = $request->money;
         $mai -> opentime = $request->opentime;
         $mai -> overtime = $request->overtime;
+        $mai -> image = $request->image;
 
-
-        // dd($mai);
-        if($request->hasFile('image')){
-             $mai->image ='/'.$request->image->store('uploads/'.date('Ymd'));
+        // dd($request->hasFile('image'));
+       if ($request->hasFile('image')) {
+            $mai->image = '/'.$request->image->store('uploads/'.date('Ymd'));
         }
 
         if($mai -> save()){
@@ -186,7 +185,6 @@ class PmController extends Controller
         }else{
             return back()->with('error','添加失败');
         }
-        // return '2345';
     }
 
     //拍卖会场
@@ -216,16 +214,13 @@ class PmController extends Controller
         $pingluns = $shangpinss->pingluns()->get();
         $pmliebiao = Pml::all();
         $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
-        // dd($shangpinss);
-        // $endmoney = array_column(array($pmliebiao), 'endmoney');
-        // dd($endmoney);
+
         return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone'));
     }
 
     //竞拍
     public function jingpai(Request $request)
     {
-        // dd($request->endmoney);
         $gw = Car::all();
         $jingpai = new Pml;
         $jingpai->uuser_id = session('id');
@@ -253,10 +248,7 @@ class PmController extends Controller
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $pmliebiao = Pml::get();
         $paimai = Pm::all();
-        // $lie = DB::table('pmliebiao')->pluck('endmoney');
-        // $pmliebiao = Pml::where('uuser_id',session('id'))->get();
-        // dd($lie);
-        // dd($paimai);
+
         return view('home.wdpm',compact('gw','shang','pin','pmliebiao','paimai'));
     }
 }

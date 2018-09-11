@@ -431,6 +431,4 @@ class HomeController extends Controller
     }
 
 
-
-
 }

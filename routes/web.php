@@ -57,7 +57,6 @@ Route::post('/admin/gy','HomeController@xiu');
 //后台首页
 Route::get('/admin','AdminController@index');
 
-
 //举报后台显示
 Route::get('/jubao','AdminController@inde');
 
@@ -145,21 +144,12 @@ Route::resource('pinglun','PlController');
 //加入购物车
 Route::resource('car', 'CarController');
 
-
 //购物车
 Route::resource('gouwuche','CarController');
-
-//AJAX
-// Route::post('/ajax', 'GgController@ajax');
-
-
 
 Route::get('/che/{id}','CarController@che');
 
 
-
-//订单页
-Route::get('dingdan', 'CarController@dingdan');
 
 //个人中心
 Route::get('/geren','GrzhongController@geren');

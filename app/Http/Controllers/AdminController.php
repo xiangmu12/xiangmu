@@ -21,4 +21,11 @@ class AdminController extends Controller
     	$jubao = Jubao::get();
     	return view('admin.jubao.inde',compact('jubao'));
     }
+
+
+    public function gw()
+    {
+        return view('admin.gw');
+    }
+
 }

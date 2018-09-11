@@ -28,13 +28,14 @@ class GrzhongController extends Controller
     //我的订单
     public function gerendingdan()
     {
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
     	$di = Ding::where('user_id','=',session('id'))->where('title','like', '%'.request()->keywords.'%')->paginate(8);
         $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-       return view('home.grzx.gerendd',compact('shangpin','shang','pin','di','tags','women'));
+       return view('home.grzx.gerendd',compact('shangpin','shang','pin','gw','di','tags','women'));
     }
 
      public function grdingdan(Request $request)
