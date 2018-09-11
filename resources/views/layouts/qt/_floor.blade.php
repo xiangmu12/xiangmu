@@ -24,8 +24,8 @@
 									<li><i class="fa fa-map-marker"></i> {{$v['dizhi']}}</li>
 									<li><i class="fa fa-phone"></i> {{$v['phone']}}</li>
 									<li><i class="fa fa-envelope"></i> {{$v['email']}}</li>
-									<li>举报电话</i> ： {{$v['juphone']}}</li>
-									<li>网络文化经营许可证</i> ： {{$v['zheng']}}</li>
+									<li>举报电话</i> {{$v['juphone']}}</li>
+									<li>网络文化经营许可证</i>{{$v['zheng']}}</li>
 								</ul>
 								@endforeach
 							</div>
