@@ -13,7 +13,7 @@
     <div class="tpl-block">
         <div class="am-g">
             <div class="tpl-form-body tpl-form-line">
-                <form class="am-form tpl-form-line-form" method="post" action="/user/{{$user['id']}}">
+                <form class="am-form tpl-form-line-form" method="post" action="/user/{{$user['id']}}" enctype="multipart/form-data">
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">用 户 名 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">

@@ -95,25 +95,16 @@
 						</div>
 						<div class="fi-block grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								Recent Post
+								友情链接
 							</div>
 							<ul class="fi-content post-element">
+								@foreach($youlians as $v)
 								<li>
 								<div class="post-title">
-									<a href="article.html">Quisque porta felis est ut malesuada lorem dignissim</a>
-								</div>
-								<div class="post-author">
-									by <span class="author">Tada Theme</span>
+									<a href="http://{{$v['url']}}">{{$v['name']}} {{$v['url']}}</a>
 								</div>
 								</li>
-								<li>
-								<div class="post-title">
-									<a href="article.html">Section 1.10.33 of de Finibus Bonorum et Malorum, written by Cicero in 45 BC</a>
-								</div>
-								<div class="post-author">
-									by <span class="author">Tada Theme</span>
-								</div>
-								</li>
+								@endforeach
 							</ul>
 						</div>
 					</div>

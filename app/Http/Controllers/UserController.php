@@ -48,11 +48,20 @@ class UserController extends Controller
         $user -> username = $request->username;
         $user -> password = Hash::make($request->password);
         $user -> email = $request->email;
-        $user -> pic = $request->pic;
         $user -> name = $request->name;
         $user -> sfenz = $request->sfenz;
         $user -> phone = $request->phone;
         
+
+
+        //文件上传
+        //检测是否有文件上传
+            
+        if ($request->hasFile('pic')) {
+            $user->pic = '/'.$request->pic->store('uploads/'.date('Ymd'));
+        }
+
+
         if($user -> save()){
 
             $jifen ->user_id = $user->id;
@@ -99,13 +108,19 @@ class UserController extends Controller
         $user = User::find($id);
         $user->username = $request->username; 
         $user->email = $request->email;
-        $user->pic = $request->pic;
         $user->name = $request->name;
         $user->sfenz= $request->sfenz;
         $user->phone = $request->phone;
         $user->oradmin = $request->oradmin;
-
         
+        //文件上传
+        //检测是否有文件上传
+            
+        if ($request->hasFile('pic')) {
+            $user->pic = '/'.$request->pic->store('uploads/'.date('Ymd'));
+        }
+
+
         if($user -> save()){
             return redirect('/user')->with('success','修改成功');
         }else{
