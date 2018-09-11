@@ -161,8 +161,6 @@ Route::get('/che/{id}','CarController@che');
 
 
 
-//订单页
-Route::get('dingdan', 'CarController@dingdan');
 
 //个人中心
 Route::get('/geren','GrzhongController@geren');
