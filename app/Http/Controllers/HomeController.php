@@ -381,7 +381,7 @@ class HomeController extends Controller
 
       public function women()
     {
-
+        $gw = Car::all();
         $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
@@ -390,7 +390,7 @@ class HomeController extends Controller
         $user = User::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
+        return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw'));
         
     }
 
@@ -400,7 +400,7 @@ class HomeController extends Controller
     */
       public function tui()
     {
-
+        $gw = Car::all();
          $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
@@ -409,7 +409,7 @@ class HomeController extends Controller
         $user = User::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women'));
+        return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw'));
         
     }
     //举报

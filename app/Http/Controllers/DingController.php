@@ -8,6 +8,7 @@ use App\Huo;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\Youlian;
 use Illuminate\Http\Request;
 
 class DingController extends Controller
@@ -75,6 +76,7 @@ class DingController extends Controller
      */
     public function show($id)
     {
+        $youlians = Youlian::all();
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -84,7 +86,7 @@ class DingController extends Controller
         $shangpinone = Sp::findOrFail($id);
         $huo = Huo::orderBy('id','desc')->take(3)->get();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw'));
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians'));
     }
 
     /**

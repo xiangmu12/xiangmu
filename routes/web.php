@@ -152,8 +152,7 @@ Route::resource('car', 'CarController');
 //购物车
 Route::resource('gouwuche','CarController');
 
-//AJAX
-// Route::post('/ajax', 'GgController@ajax');
+
 
 
 
@@ -161,8 +160,7 @@ Route::get('/che/{id}','CarController@che');
 
 
 
-//订单页
-Route::get('dingdan', 'CarController@dingdan');
+
 
 //个人中心
 Route::get('/geren','GrzhongController@geren');

@@ -168,7 +168,6 @@ class PmController extends Controller
     {
         $mai = new Pm;
         $mai -> intro = $request->intro;
-        $mai -> image = $request->image;
         $mai -> cheng = $request->cheng;
         $mai -> money = $request->money;
         $mai -> jmoney = $request->money;
@@ -176,7 +175,8 @@ class PmController extends Controller
         $mai -> overtime = $request->overtime;
 
 
-        // dd($mai);
+
+        // dd($request->hasFile('image'));
         if($request->hasFile('image')){
              $mai->image ='/'.$request->image->store('uploads/'.date('Ymd'));
         }
@@ -205,8 +205,8 @@ class PmController extends Controller
     //拍卖详情页
     public function xq($id)
     {
+        $pm = Pm::all();
         $gw = Car::all();
-        $pm = Pm::get();
         $shangpin = Sp::all();
         $women = WoMen::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
@@ -216,9 +216,7 @@ class PmController extends Controller
         $pingluns = $shangpinss->pingluns()->get();
         $pmliebiao = Pml::all();
         $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
-        // dd($shangpinss);
-        // $endmoney = array_column(array($pmliebiao), 'endmoney');
-        // dd($endmoney);
+
         return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone'));
     }
 

@@ -86,13 +86,15 @@
                                             @if($pmlone)
                                             <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$pmlone->endmoney}}">{{$pmlone->endmoney}}</span></span>
                                             @endif
-                                            @if(!$pmlone->endmoney) 
+                                            @if(!$pmlone) 
                                             <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$shangpinss['money']}}">{{$shangpinss['money']}}</span></span>
 
                                             @endif
                                             <span class="visually-hidden">Regular price</span>
                                             <input type="hidden" name="shangpinid" value="{{$shangpinss['id']}}">
+                                           @if($pmliebiao)
                                             <input type="hidden" name="endmoney" id="yincang" value="{{$pmliebiao[0]['endmoney']}}">
+                                           @endif
                                             <button class="spr-button spr-button-primary button button-primary btn btn-primary" id="butt" value="竞拍">竞拍</button>
                                             {{csrf_field()}}
                                             <script type="text/javascript">
