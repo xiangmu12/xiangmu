@@ -32,7 +32,7 @@ class Sp extends Model
 
 	public function pingluns()
 	{
-		 return $this->hasMany('App\Pl','shangpin_id','id');
+		return $this->hasMany('App\Pl','shangpin_id','id');
 	}
 
 
