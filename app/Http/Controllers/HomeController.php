@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 
+use App\Car;
 use App\DCate;
 use App\Ding;
+use App\Jubao;
 use App\Pl;
 use App\Sp;
 use App\Tag;
 use App\User;
-use App\Jubao;
 use App\WoMen;
 use App\XCate;
 use App\XxCate;
@@ -28,6 +29,7 @@ class HomeController extends Controller
     public function index()
 
     {
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
@@ -37,7 +39,7 @@ class HomeController extends Controller
         $user = User::all();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw'));
     }
 
 

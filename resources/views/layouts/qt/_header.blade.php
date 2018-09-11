@@ -33,12 +33,12 @@
 	<link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
 	<link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
 	<!-- JS ================================================== -->
-	<script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>	
+	<!-- <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>	
 	<script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
 	<script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
 	<script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
-	<script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script> -->
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
@@ -505,11 +505,12 @@
 
 
 							</li>
-							@endif
 							<li class="header-account">
 									<i class="fa fa-user"></i>
 									<a href="/geren">个人中心</a>
 							</li>
+							@endif
+							
 							<li class="header-cart">
 								<a href="cart.html" class="site-header__cart-toggle js-drawer-open-right" aria-controls="CartDrawer" aria-expanded="false">
 									<i class="fa fa-shopping-basket"></i>

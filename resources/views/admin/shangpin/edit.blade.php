@@ -3,6 +3,9 @@
 @section('title','发表商品列表添加') 
 
 @section('content')
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
+
 <hr>
 <div class="tpl-portlet-components">
     <div class="portlet-title">
@@ -67,10 +70,11 @@
                     </div>
 
                      <div class="am-form-group">
-                        <label for="user-name" class="am-u-sm-3 am-form-label">三级联动 <span class="tpl-form-line-small-title"></span></label>
-                        <div class="am-u-sm-9">
-                            <input type="text" name="quyu" value="{{$shangpins['quyu']}}" class="tpl-form-input" id="user-name" placeholder="">
-                            
+                         <label for="user-name" class="am-u-sm-3 am-form-label">城市<span class="tpl-form-line-small-title"></span></label>
+                        <div class="am-u-sm-9" id="city_china">
+                        <select style="width:60px;float:left" class="province" name="province" id=""></select>
+                        <select class="city" style="width:60px;float:left;background:white" name="city" id=""></select>
+                        <select class="area" style="width:60px;float:left;background:white" name="area" id=""></select>
                         </div>
                     </div>
 
@@ -86,4 +90,11 @@
         </div>
     </div>
 </div>
+ <script>
+                        var urlChina = '/ueditor/liandong/js/cityData.min.json';
+                        $.cxSelect.defaults.url = urlChina;
+                        $('#city_china').cxSelect({
+                            selects: ['province', 'city', 'area']
+                        });
+                    </script>
 @endsection

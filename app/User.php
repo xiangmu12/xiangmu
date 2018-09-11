@@ -70,4 +70,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Huo','user_id','id');
 
     }
+
+    public function shoucangs()
+    {
+        return $this->belongsToMany('App\Sc','user_shangpin','shangpin_id','user_id');
+    }
 }

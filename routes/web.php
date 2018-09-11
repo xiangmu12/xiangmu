@@ -161,3 +161,9 @@ Route::get('/wode','GrzhongController@wode');
 
 //修改用户中心
 Route::post('/wode','GrzhongController@wodegai');
+
+//logo管理
+Route::resource('logo','LogoController');
+
+//收藏管理
+Route::resource('shoucang','ScController');
