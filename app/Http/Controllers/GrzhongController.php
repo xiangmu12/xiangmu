@@ -6,9 +6,10 @@ use App\Ding;
 use App\Huo;
 use App\Sp;
 use App\Tag;
-use App\WoMen;
 use App\User;
+use App\WoMen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GrzhongController extends Controller
 {
@@ -114,6 +115,7 @@ class GrzhongController extends Controller
         return view('home.wod.yonh',compact('pin','shang','women','tags','user'));
     }
 
+     //前台用户中心修改
     public function wodegai(Request $request)
     {
           $user = User::first();
@@ -140,4 +142,5 @@ class GrzhongController extends Controller
             return back()->with('error','修改失败');
         }
     }
+
 }

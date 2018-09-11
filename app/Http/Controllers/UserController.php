@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jifen;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -43,7 +44,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = new User;
-
+        $jifen = new Jifen;
         $user -> username = $request->username;
         $user -> password = Hash::make($request->password);
         $user -> email = $request->email;
@@ -51,9 +52,11 @@ class UserController extends Controller
         $user -> name = $request->name;
         $user -> sfenz = $request->sfenz;
         $user -> phone = $request->phone;
-
-
+        
         if($user -> save()){
+
+            $jifen ->user_id = $user->id;
+            $jifen->save();
             return redirect('/user')->with('success','添加成功');
         }else{
             return back()->with('error','添加失败');

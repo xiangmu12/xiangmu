@@ -161,3 +161,4 @@ Route::get('/wode','GrzhongController@wode');
 
 //修改用户中心
 Route::post('/wode','GrzhongController@wodegai');
+
