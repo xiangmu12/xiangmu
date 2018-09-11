@@ -3,17 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Jubao;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index()
     {
-    	return view('admin');
+    	$user = User::find(\Session::get('id'));
+    	return view('admin',compact('user'));
+
     }
 
     public function inde()
     {
+    	
     	$jubao = Jubao::get();
     	return view('admin.jubao.inde',compact('jubao'));
     }

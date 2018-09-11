@@ -1,28 +1,24 @@
-﻿	@include('layouts.qt._header')
-		@show
-		@include('layouts.qt._top')
-		@show
-    
-		<main class="main-content">
-			<div class="breadcrumb-wrapper">
-				<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-					<a href="/" title="Back to the frontpage">首页</a>
-					<span aria-hidden="true">&rsaquo;</span>
-					<span>商品详情页</span>
-				</nav>
-				<h1 class="section-header__title">商品详情页</h1>
-			</div>
-			<div class="wrapper">
-				<div class="grid--rev">
-					<div class="grid__item">
-						<div itemscope="" itemtype="http://schema.org/Product">
-							<div class="product-single">
-								<div class="grid__item large--one-half text-center">
-									<div class="product-single__photos" id="ProductPhoto">
-										<img src="{{$shangpin[0]['image']}}" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971" height="500" width="500">
-									</div>
-									<!-- 商品图片 -->
-									<!-- <ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
+﻿ @include('layouts.qt._header') @show @include('layouts.qt._top') @show
+<main class="main-content">
+    <div class="breadcrumb-wrapper">
+        <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+            <a href="/" title="Back to the frontpage">首页</a>
+            <span aria-hidden="true">&rsaquo;</span>
+            <span>商品详情页</span>
+        </nav>
+        <h1 class="section-header__title">商品详情页</h1>
+    </div>
+    <div class="wrapper">
+        <div class="grid--rev">
+            <div class="grid__item">
+                <div itemscope="" itemtype="http://schema.org/Product">
+                    <div class="product-single">
+                        <div class="grid__item large--one-half text-center">
+                            <div class="product-single__photos" id="ProductPhoto">
+                                <img src="{{$shangpin[0]['image']}}" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971" height="500" width="500">
+                            </div>
+                            <!-- 商品图片 -->
+                            <!-- <ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
 										<li class="thumb__element">
 											<a href="/assets/assets/images/demo1_detail1_135x135.jpg" class="product-single__thumbnail">
 												<img src="/assets/assets/images/demo1_detail1_135x135.jpg" alt="Corporis suscipit laboriosam">
@@ -49,61 +45,62 @@
 											</a>
 										</li>										
 									</ul> -->
-								</div>
-								<div class="grid__item large--one-half">
-									<div class="product-info-left grid__item five-eighths">
-										<h1 itemprop="name">商品详情</h1>
-										<div class="rating-star">
-											<span class="spr-badge" id="spr_badge_3008529923" data-rating="0.0">
+                        </div>
+                        <div class="grid__item large--one-half">
+                            <div class="product-info-left grid__item five-eighths">
+                                <h1 itemprop="name">商品详情</h1>
+                                <div class="rating-star">
+                                    <span class="spr-badge" id="spr_badge_3008529923" data-rating="0.0">
 											<span class="spr-starrating spr-badge-starrating"><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i><i class="spr-icon spr-icon-star-empty" style=""></i></span>
-											<span class="spr-badge-caption">
+                                    <span class="spr-badge-caption">
 											No reviews </span>
-											</span>
-										</div>
-										<div class="product-description" itemprop="description">
-											<h4>商品简介</h4>
-											{{$shangpin[0]['intro']}}
-										</div>
-										<div class="product-vendor">
-											商品所有者: <b>{{$shangpin[0]->user['name']}}</b>
-										</div>
-										<div class="product-type">
-											商品类型: <b>{{$shangpin[0]->xxcate['name']}}</b>
-										</div>
-										<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-											<meta itemprop="priceCurrency" content="USD">
-											<link itemprop="availability" href="http://schema.org/InStock">
-											<div class="product-action ">
-												<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
-													<div class="selector-wrapper">
-														商品地址: <b>{{$shangpin[0]['quyu']}}</b>
-													</div>
-													<div class="selector-wrapper">
-														成色: <b>@if ($shangpin[0]['cheng'] == 0 )全新 @else 非全新@endif</b>
-													</div>
-													<select name="id" id="productSelect" class="product-single__variants hide" style="display: none;">
-														<option selected="selected" data-sku="" value="8772462979">XS / Black - $89.00 USD</option>
-													</select>
-													<hr>
-													<span class="visually-hidden">Regular price</span>
-													<span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD">${{$shangpin[0]['money']}}</span></span>
-													<button type="submit" name="addche" id="AddToCart" class="btn">
+                                    </span>
+                                </div>
+                                <div class="product-description" itemprop="description">
+                                    <h4>商品标题：<b>{{$shangpin[0]['title']}}</b></h4>
+                                    <h4>商品简介</h4> {{$shangpin[0]['intro']}}
+                                </div>
+                                <div class="product-vendor">
+                                    商品所有者: <b>{{$shangpin[0]->user['name']}}</b>
+                                </div>
+                                <div class="product-type">
+                                    商品类型: <b>{{$shangpin[0]->xxcate['name']}}</b>
+                                </div>
+                                <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                    <meta itemprop="priceCurrency" content="USD">
+                                    <link itemprop="availability" href="http://schema.org/InStock">
+                                    <div class="product-action ">
+                                        <form action="/car" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+                                            <div class="selector-wrapper">
+                                                商品地址: <b>{{$shangpin[0]['quyu']}}</b>
+                                            </div>
+                                            <div class="selector-wrapper">
+                                                成色: <b>@if ($shangpin[0]['cheng'] == 0 )全新 @else 非全新@endif</b>
+                                            </div>
+                                            <select name="id" id="productSelect" class="product-single__variants hide" style="display: none;">
+                                                <option selected="selected" data-sku="" value="8772462979">XS / Black - $89.00 USD</option>
+                                            </select>
+                                            <hr>
+                                            <span class="visually-hidden">Regular price</span>
+                                            <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD">${{$shangpin[0]['money']}}</span></span>
+                                            <a href="/car/{{$shangpin[0]['id']}}" type="submit" name="addche" id="AddToCart" class="btn">
 													<span id="AddToCartText">加入购物车</span>
-													</button>
-													<a href="/dingdan/{{$shangpin[0]['id']}}" type="submit" name="add" id="AddToCart" class="btn">
+													</a>
+                                            <p></p>
+                                            {{csrf_field()}}
+                                            </button>
+                                            <a href="/dingdan/{{$shangpin[0]['id']}}" type="submit" name="add" id="AddToCart" class="btn">
 													<span id="AddToCartText">立即购买</span>
 													
 													</a>
-
-													
-													<a href="/jubao/{{$shangpin[0]['id']}}">举报该商品</a>
-
-												</form>
-												<div class="add-to-wishlist">
-													<span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>加入到愿望清单</a></span>
-												</div>
-											</div>
-										</div>
+                                            <a href="/jubao/{{$shangpin[0]['id']}}" class="btn">举报该商品</a>
+                                        </form>
+                                        <div class="add-to-wishlist">
+                                            <span class="non-user" data-toggle="tooltip" data-placement="right" title="To use the Wish-list, you must Login or Register"><a href="http://demo.tadathemes.com/account/login"><i class="fa fa-heart"></i>加入到愿望清单</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                               
 			<!-- 分享 -->
 									</div>
 									<div class="grid__item product-info-right three-eighths">
@@ -202,7 +199,7 @@
 					  </script>
 								<div id="product-additional-information">
 									<div class="related-products">
-										<h1 class="feature-title"><span>You may also like</span></h1>
+										<h1 class="feature-title"><span>商品列表</span></h1>
 										<ul class="related-products-items grid-uniform">
 											@foreach($shangpins as $v)
 											<li class="realted-element">
@@ -213,18 +210,18 @@
 															<a href="/{{$v['id']}}.html">
 																<img src="{{$v['image']}}" alt="Demo Product Sample">
 															</a>
-															<div class="quickview">
-																<div class="product-ajax-cart hidden-xs hidden-sm">
-																	<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																		<a href="#quick-shop-modal" class="btn quick_shop">
+                                                    <div class="quickview">
+                                                        <div class="product-ajax-cart hidden-xs hidden-sm">
+                                                            <div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
+                                                                <a href="#quick-shop-modal" class="btn quick_shop">
 																			<i class="fa fa-eye" title="Quick View"></i>																
 																		</a>
-																	</div>
-																</div>
-															</div>
-														</div>
-														<div class="rating-star">
-															<span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="rating-star">
+                                                    <span class="spr-badge" id="spr_badge_3008529987" data-rating="0.0">
 																<span class="spr-starrating spr-badge-starrating">
 																	<i class="spr-icon spr-icon-star-empty" style=""></i>
 																	<i class="spr-icon spr-icon-star-empty" style=""></i>
@@ -232,48 +229,171 @@
 																	<i class="spr-icon spr-icon-star-empty" style=""></i>
 																	<i class="spr-icon spr-icon-star-empty" style=""></i>
 																</span>
-																<span class="spr-badge-caption">No reviews </span>
-															</span>
-														</div>
-														<p class="h6 product-title">
-															<a href="product.html">{{$v['intro']}}~ 
+                                                    <span class="spr-badge-caption">No reviews </span>
+                                                    </span>
+                                                </div>
+                                                <p class="h6 product-title">
+                                                    <a href="product.html">{{$v['intro']}}~ 
 														@if($v['cheng'] == 0) 全新 @else 非全新 @endif</a>
-														</p>
-														<p class="product-price">
-															<strong>On Sale</strong>
-															<span class="money" data-currency-usd="$19.99">${{$v['money']}}</span>
-															<span class="visually-hidden">Regular price</span>
-															<s><span class="money" data-currency-usd="$24.99">${{$v['money']}}</span></s>
-														</p>
-														<ul class="action-button">
-															<li class="add-to-cart-form">
-																<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
-																	<div class="effect-ajax-cart">
-																		<input type="hidden" name="quantity" value="1">
-																		<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
-																			<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> 立即购买 </span>
-																		</button>
-																	</div>
-																</form>
-															</li>
-															<li class="wishlist">
-																<a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
-															</li>
-															<li class="email">
-																<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-															</li>
-														</ul>
-													</div>
-												</div>
-											</li>
-											@endforeach
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</main>
+                                                </p>
+                                                <p class="product-price">
+                                                    <strong>On Sale</strong>
+                                                    <span class="money" data-currency-usd="$19.99">${{$v['money']}}</span>
+                                                    <span class="visually-hidden">Regular price</span>
+                                                    <s><span class="money" data-currency-usd="$24.99">${{$v['money']}}</span></s>
+                                                </p>
+                                                <ul class="action-button">
+                                                    <li class="add-to-cart-form">
+                                                        <form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">
+                                                            <div class="effect-ajax-cart">
+                                                                <input type="hidden" name="quantity" value="1">
+                                                                <button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="Buy Now">
+                                                                    <span id="AddToCartText"><i class="fa fa-shopping-cart"></i> 立即购买 </span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </li>
+                                                    <li class="wishlist">
+                                                        <a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
+                                                    </li>
+                                                    <li class="email">
+                                                        <a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</div>
+<div id="scroll-to-top" title="Scroll to Top" class="off">
+    <i class="fa fa-caret-up"></i>
+</div>
+<script>
+var tada_index, tada_autosearchcomplete, tada_swiftype, tada_ads, tada_adsspeed, tada_slideshowtime, tada_block1gallery = false,
+    tada_block1product = false,
+    tada_newsletter = false;
+tada_index = 1;
+tada_ads = 1;
+tada_adsspeed = 5000;
+tada_slideshowtime = 30000;
+tada_block1gallery = true;
+tada_block1product = true;
+tada_newsletter = true;
+</script>
+<script src="/assets/assets/js/modernizr.min.js" type="text/javascript"></script>
+<script src="/assets/assets/js/timber.js" type="text/javascript"></script>
+<div id="quick-shop-modal" class="modal quick-shop" style="display:none;">
+    <div class="modal-dialog fadeIn">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="quick-shop-modal-bg">
+                </div>
+                <div class="grid__item one-half qs-product-image">
+                    <div id="quick-shop-image" class="product-image-wrapper">
+                        <div id="featuted-image" class="main-image featured">
+                            <img class="img-zoom img-responsive image-fly" src="/assets/assets/images/demo1_qs_480x480.jpg" data-zoom-image="/assets/assets/images/demo1_qs_480x480.jpg" alt="">
+                        </div>
+                        <div id="gallery_main_qs" class="product-image-thumb scroll scroll-mini">
+                            <div class="qs-vertical-slider product-single__thumbnails">
+                                <a class="image-thumb active thumb__element"><img src="/assets/assets/images/demo1_qs1_100x100.jpg" alt="" /></a>
+                                <a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs2_100x100.jpg" alt="" /></a>
+                                <a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs3_100x100.jpg" alt="" /></a>
+                                <a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs4_100x100.jpg" alt="" /></a>
+                                <a class="image-thumb thumb__element"><img src="/assets/assets/images/demo1_qs5_100x100.jpg" alt="" /></a>
+                            </div>
+                        </div>
+                        <div class="vertical-slider product-single__thumbnails" style="opacity: 0;">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item one-half qs-product-information">
+                    <div id="quick-shop-container">
+                        <h3 id="quick-shop-title"><a href="product.html">Corporis suscipit laboriosam</a></h3>
+                        <div class="rating-star">
+                            <span class="shopify-product-reviews-badge" data-id="3008529923"></span>
+                        </div>
+                        <div class="description">
+                            <div id="quick-shop-description" class="text-left">
+                                <p>
+                                    Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet conse...
+                                </p>
+                            </div>
+                        </div>
+                        <form action="#" method="post" class="variants" id="AddToCartForm" enctype="multipart/form-data">
+                            <div id="quick-shop-price-container" class="detail-price">
+                                <span class="price"><span class="money">$89.00</span></span>
+                            </div>
+                            <div class="quantity-wrapper clearfix">
+                                <label class="wrapper-title">Quantity</label>
+                                <div class="wrapper">
+                                    <span class="qty-down" title="Decrease" data-src="#qs-quantity">
+										<i class="fa fa-minus"></i>
+										</span>
+                                    <input type="text" id="qs-quantity" size="5" class="item-quantity" name="quantity" value="1">
+                                    <span class="qty-up" title="Increase" data-src="#qs-quantity">
+										<i class="fa fa-plus"></i>
+										</span>
+                                </div>
+                            </div>
+                            <div id="quick-shop-variants-container" class="variants-wrapper" style="display: block;">
+                                <div class="selector-wrapper">
+                                    <label for="#quick-shop-variants-3008529731-option-0">Size</label>
+                                    <select class="single-option-selector" data-option="option1" id="#quick-shop-variants-3008529731-option-0">
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                    </select>
+                                </div>
+                                <div class="selector-wrapper">
+                                    <label for="#quick-shop-variants-3008529731-option-1">Color</label>
+                                    <select class="single-option-selector" data-option="option2" id="#quick-shop-variants-3008529731-option-1">
+                                        <option value="Black">Black</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Green">Green</option>
+                                        <option value="Blue">Blue</option>
+                                        <option value="White">White</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="others-bottom">
+                                <input id="AddToCart" class="btn btn-1 small add-to-cart" type="submit" name="add" value="Buy Now">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    if ($('.quantity-wrapper').length) {
+        $('.quantity-wrapper').on('click', '.qty-up', function() {
+            var $this = $(this);
+            var qty = $this.data('src');
+            $(qty).val(parseInt($(qty).val()) + 1);
+        });
+        $('.quantity-wrapper').on('click', '.qty-down', function() {
+            var $this = $(this);
+            var qty = $this.data('src');
+            if (parseInt($(qty).val()) > 1)
+                $(qty).val(parseInt($(qty).val()) - 1);
+        });
+    }
+});
+</script>
+
 		@include('layouts.qt._floor')
+

@@ -59,20 +59,12 @@
 														</a>
 														<div class="quickview">
 															<div class="product-ajax-cart hidden-xs hidden-sm">
-																<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-																	<a  id="asd" href="#" class="btn quick_shop">
+																<div id="asd" data-handle="consequuntur-magni-dolores" class="tan quick_shop-div">
+																	<a  href="#" class="btn quick_shop">
 																		<i class="fa fa-eye" title="Quick View"></i>																
 																	</a>
 																</div>
-																<script>
-																		$('#asd').click(function{
-																			$.ajax({
-																				url:'/ajax',
-
-																			})
-																		})
-
-																</script>
+																
 															</div>
 														</div>
 													</div>

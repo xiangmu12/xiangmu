@@ -58,6 +58,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Gg');
     }
 
+    public  function car()
+    {
+        return $this->hasMany('App\Car','user_id','id');
+    }
+
 
     //与评论关系 一对多
     public function pingluns()
@@ -68,6 +73,7 @@ class User extends Authenticatable
     public function huo()
     {
         return $this->hasMany('App\Huo','user_id','id');
+
 
     }
 }

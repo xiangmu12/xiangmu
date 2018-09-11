@@ -44,6 +44,7 @@
                                 </th>
                                 <th class="table-id">ID</th>
                                 <th class="table-title">用户名</th>
+                                <th class="table-title">头像</th>
                                 <th class="table-title">权限</th>
                                 <th class="table-set">操作</th>
                             </tr>
@@ -56,7 +57,7 @@
                                 </td>
                                 <td>{{$v['id']}}</td>
                                 <td class="am-hide-sm-only">{{$v['username']}}</td>
-
+                                 <td><img src="{{$v['pic']}}" width="60px" height="60px" alt=""></td>
                                 <td class="am-hide-sm-only">
                                     @if($v['oradmin'] == 0)
                                     普通用户
