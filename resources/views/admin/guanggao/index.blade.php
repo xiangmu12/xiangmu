@@ -55,7 +55,7 @@
                             </td>
                             <td>{{$v['id']}}</td>
                             <td>  
-                                {{$v->user->username}}   
+                               {{$v->user->username}}
                             </td>
                             <td>
                                 @if($v->xxcate)

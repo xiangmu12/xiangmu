@@ -2,15 +2,19 @@
 
 namespace App;
 
+use Doctrine\DBAL\Schema\Schema;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Sp extends Model
-{
-    use SoftDeletes;
+{	
+	
+	use SoftDeletes;
 
-	protected $dates = ['deleted_at'];
 	protected $table = 'shangpins';
+	protected $dates = ['deleted_at'];
+
+
 	public function user()
 	{
 		return $this->belongsTo('App\User');
@@ -28,6 +32,14 @@ class Sp extends Model
 
 	public function pingluns()
 	{
-		 return $this->hasMany('App\Pl','shangpin_id','id');
+		return $this->hasMany('App\Pl','shangpin_id','id');
 	}
+
+
+    /**
+     * 需要被转换成日期的属性。
+     *
+     * @var array
+     */
+
 }

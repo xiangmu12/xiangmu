@@ -54,10 +54,6 @@ Route::group(['middleware'=>'admin'],function(){
 	//拍卖管理
 	Route::resource('paimai','PmController');
 
-	//关于我们
-	Route::get('/admin/gy','HomeController@gy');
-	//关于我们修改
-	Route::post('/admin/gy','HomeController@xiu');
 	//后台首页
 	Route::get('/admin','AdminController@index');
 
@@ -79,9 +75,14 @@ Route::get('/{id}.html','HomeController@sp');
 //获取所有分类信息
 Route::get('/dcateall','HomeController@cateall');
 
+//关于我们
+Route::get('/admin/gy','HomeController@gy');
 
+//关于我们修改
+Route::post('/admin/gy','HomeController@xiu');
 
-
+//友链管理
+Route::resource('youlian','YoulianController');
 /**
  * 前台
  */
@@ -167,8 +168,6 @@ Route::get('/che/{id}','CarController@che');
 
 
 
-//订单页
-Route::get('dingdan', 'CarController@dingdan');
 
 //个人中心
 Route::get('/geren','GrzhongController@geren');
@@ -189,4 +188,22 @@ Route::get('/wode','GrzhongController@wode');
 
 //修改用户中心
 Route::post('/wode','GrzhongController@wodegai');
+
+
+//发布拍卖
+Route::get('fbpm','PmController@pm');
+
+Route::post('mai','PmController@mai');
+
+//拍卖会场
+Route::get('pmhc','PmController@pmhc');
+
+//拍卖详情页
+Route::get('/xtrttq/{id}','PmController@xq');
+
+//竞拍
+Route::post('/pai','PmController@jingpai');
+
+//我的拍卖
+Route::get('/wdpm','PmController@wdpm');
 

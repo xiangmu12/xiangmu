@@ -49,7 +49,7 @@ class PlController extends Controller
         $pinglun -> shangpin_id = $request->shangpin_id;
 
        
-        if ( $pinglun->save()) {
+        if ($pinglun->save()) {
             return back()->with('success','留言成功');
         }else{
              return back()->with('error','留言失败');

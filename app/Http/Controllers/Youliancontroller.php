@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Car;
-use App\Sp;
-use App\User;
-use Illuminate\Contracts\Session\Session;
+use App\Youlian;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Schema;
 
-class CarController extends Controller
+class Youliancontroller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,13 +14,12 @@ class CarController extends Controller
      */
     public function index()
     {
-        // $shangpin = Sp::all();
-        $gw = Car::all();
-        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
-        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.gouwuche',compact('gw','shang','pin'));
-        }
-   
+        //
+        $youlians = Youlian::orderBy('id','desc')
+            ->where('name','like', '%'.request()->keywords.'%')
+            ->paginate(10);
+        return view('admin.youlian.index',compact('youlians'));
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -34,6 +29,7 @@ class CarController extends Controller
     public function create()
     {
         //
+        return view('admin.youlian.create');
     }
 
     /**
@@ -44,7 +40,16 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-       
+        //
+        $youlian = new Youlian;
+        $youlian -> name = $request->name;
+        $youlian -> url = $request->url;
+
+        if($youlian->save()){
+            return redirect('/youlian')->with('success','添加成功');  
+        }else{
+             return back()->with('error','添加失败');   
+        }
     }
 
     /**
@@ -53,30 +58,9 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    //执行添加购物车
     public function show($id)
     {
-          if(!empty(User::findOrFail(session('id'))->car->where('shangpin_id',$id)->first())){
-                    return redirect('/gouwuche')->with('success','此商品已存在');
-                }else{
-                    $car = new Car;
-                    $sp = Sp::findOrFail($id);
-                    $car->title = $sp->title;
-                    $car->image = $sp->image;
-                    $car->cheng = $sp->cheng;
-                    $car->money = $sp->money;
-                    $car->shangpin_id = $sp->id;
-                    $car->user_id = session('id'); 
-                    
-                    if ($car ->save()) {
-                        
-                        return redirect('/gouwuche')->with('success','成功');
-                        }else{
-                            return redirect('/gouwuche')->with('success','成功');
-                        }
-             
-                }
-        // dd($car);
+        //
     }
 
     /**
@@ -88,6 +72,9 @@ class CarController extends Controller
     public function edit($id)
     {
         //
+        $youlians = Youlian::findOrFail($id);
+        //解析模板显示数据
+        return view('admin.youlian.edit', ['youlians'=>$youlians]);
     }
 
     /**
@@ -100,6 +87,17 @@ class CarController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $youlians = Youlian::findOrFail($id);
+
+        //更新
+        $youlians->name = $request->name;
+        $youlians->url = $request->url;
+
+        if($youlians->save()){
+            return redirect('/youlian')->with('success','更新成功');
+        }else{
+            return back()->with('error','更新失败');
+        }
     }
 
     /**
@@ -110,19 +108,13 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        
-    }
+        //
+        $youlians = Youlian::findOrFail($id);
 
-
-    public function che($id)
-    {
-        $shan = Car::findOrFail($id);
-        if($shan->delete()){
+        if($youlians->delete()){
             return back()->with('success','删除成功');
         }else{
             return back()->with('error','删除失败');
         }
     }
-
-   
 }

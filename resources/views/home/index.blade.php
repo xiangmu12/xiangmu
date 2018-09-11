@@ -1,7 +1,17 @@
+
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
 <main class="main-content">
+    <div></div>
+    @foreach($gg as $v)
+    <div  id="guanle" class="guanle" style="float:right;position:fixed;left:50px;width:200px;"><img src="{{$v['image']}}"><button id="guanbi" class="guanbi" style="float:right;font-size:10px;color:#aaa">X关闭</button></div>
+    @endforeach
+    <script>
+        $('.guanbi').click(function(){
+            $('.guanle').css('display','none')
+        });
+    </script>
     <div class="wrapper">
-        <div id="top-home-blocks" class="grid--full grid--table">
+         <div id="top-home-blocks" class="grid--full grid--table">
             <div class="grid__item one-quarter shop-by-collections medium-down--hide">
                 <div class="sidebar-collections">
                     <div class="sdcollections-title sb-title">

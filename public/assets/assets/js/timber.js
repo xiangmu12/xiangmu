@@ -723,13 +723,7 @@ timber.Drawers = (function () {
   return Drawer;
 })();
 
-timber.quickView = function() {
-  $(".quick_shop").fancybox({
-    openEffect	: 'elastic',
-    closeEffect	: 'elastic'
-  });
-  $.fancybox.update();
-};
+
 
 timber.googlemaps = function() {
   if(jQuery().gMap){

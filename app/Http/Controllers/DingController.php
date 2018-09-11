@@ -8,6 +8,7 @@ use App\Huo;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\Youlian;
 use Illuminate\Http\Request;
 
 class DingController extends Controller
@@ -83,8 +84,9 @@ class DingController extends Controller
         $pin = Sp::where('orlogin','1')->count();
         $shangpinone = Sp::findOrFail($id);
         $huo = Huo::orderBy('id','desc')->take(3)->get();
+        $youlians = Youlian::all();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','gw','shangpinone','huo','tags','women'));
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians'));
     }
 
     /**

@@ -23,7 +23,6 @@
 <script type="text/javascript" src="/ding/static/js/jquery_cart.js"></script>
 <link rel="stylesheet" type="text/css" href="/ding/static/css/checkout.css" />
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
 <link href="/gryh/css/style_5.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="/gryh/js/transport_jquery_4.js"></script>
@@ -32,8 +31,7 @@
  <link href="/ding/static/css/public.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="/ding/static/css/base.css" />
     <script type="text/javascript" src="/ding/static/js/jquery_cart.js"></script>
-    <link rel="stylesheet" type="text/css" href="/ding/static/css/checkout.css" />
-
+    <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
 
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
 <body>
