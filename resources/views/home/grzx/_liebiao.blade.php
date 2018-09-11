@@ -35,6 +35,7 @@
                             
                             <li> <a href="http://weipin.ecshop119.com/user.php?act=track_packages"> 跟踪包裹</a></li>
                             <li style="border-bottom: 0px none;"> <a href="http://weipin.ecshop119.com/user.php?act=account_log"> 资金管理</a></li>
+                             <li> <a href="/jifen">我的积分</a></li>
                         </ul>
                     </dd>
                 </dl>

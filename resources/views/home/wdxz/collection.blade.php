@@ -5,6 +5,7 @@
                 <div><span style="margin-left:100px">商品信息</span><span style="margin-left:100px">商品图片</span><span style="margin-left:100px">商品标题</span><span style="margin-left:150px">商品价格</span><span style="margin-left:90px">商品成色</span><span style="margin-left:100px">商品操作</span></div>
                 <hr>
                 @foreach($shangpin as $v)
+                @if($v['user_id'] == $users)
                 <div id="J_ItemHolder_616577491345" class="item-holder" style="height:80px">
                     <div id="J_Item_616577491345" class="J_ItemBody item-body clearfix item-act  first-item   " style="margin-top:30px;margin-left:100px;height:80px">
                         <ul class="item-content clearfix">
@@ -42,5 +43,6 @@
                 </div>
                 <hr>
                 <hr>
+                @endif
                 @endforeach
                 <img style="margin-left:600px" src="//gtd.alicdn.com/tps/i2/T1Q2BUXaxFXXXXXXXX-32-32.gif" class="find-similar-loading">

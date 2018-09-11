@@ -40,11 +40,16 @@ class PlController extends Controller
         //
         $pinglun = new Pl;
 
+        if(Session()->get('username') == null){
+            return back();
+        }
+
         $pinglun -> content = $request->content;
         $pinglun -> user_id = Session()->get('id');
+        $pinglun -> shangpin_id = $request->shangpin_id;
 
        
-        if ( $pinglun->save()) {
+        if ($pinglun->save()) {
             return back()->with('success','留言成功');
         }else{
              return back()->with('error','留言失败');

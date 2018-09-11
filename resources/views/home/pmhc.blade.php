@@ -1,15 +1,7 @@
-
 @include('layouts.qt._header')
 		@show
 		@include('layouts.qt._top')
 		@show
-
-		<!-- Main Header -->
-		
-
-
-
-
 		<main class="main-content">
 			
 			<div class="wrapper">
@@ -17,15 +9,14 @@
 					<div class="grid__item">
 						<div class="page-content">      
 							<div class="sale-products grid-uniform-category">
-								@foreach($sps as $v)
+								@foreach($mai as $v)
 								<div class="grid__item large--one-fifth medium--one-quarter">
 									<div class="grid__item_wrapper">
 										<div class="grid__image product-image">
 											<input type="hidden" name="id" value="{{$v['id']}}">
-											<a href="/{{$v['id']}}.html">
-												<img src="{{$v['image']}}" alt="Demo Product Sample">
-											</a>
-											<span class="sale-icon">20%</span>
+												<a href="/xtrttq/{{$v['id']}}">
+												<img src="{{$v['image']}}" alt="图片加载不完全" width="200px" height="300px">
+												</a>
 											<div class="quickview">
 												<div class="product-ajax-cart hidden-xs hidden-sm">
 													<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
@@ -49,7 +40,7 @@
 											</span>
 										</div>
 										<p class="h6 product-title">
-											<a href="product.html">演示产品样本</a>
+											<a href="product.html">{{$v['intro']}}</a>
 										</p>
 										<p class="product-price">
 											<strong>On Sale</strong>
@@ -57,12 +48,10 @@
 											<span class="visually-hidden">Regular price</span>
 											<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
 										</p>
-										<div class="list-mode-description">
-											{{$v['intro']}}
-										</div>
+									
 										<ul class="action-button">
-											<li class="add-to-cart-form">
-												<form action="/gou/{{$v['id']}}/gou" method="get" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">					{{csrf_field()}}		
+											<!-- <li class="add-to-cart-form">
+												<form action="/gou/{id}/gou" method="get" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">					{{csrf_field()}}		
 													<div class="effect-ajax-cart">
 														<input type="hidden" name="quantity" value="1">
 														<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="立即购买">
@@ -70,7 +59,7 @@
 														</button>
 													</div>
 												</form>
-											</li>
+											</li> -->
 											<li class="wishlist">
 												<a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
 											</li>
@@ -81,10 +70,6 @@
 									</div>
 								</div> 
 								@endforeach
-
-								
-
-
 							</div>
 						</div>
 					</main>

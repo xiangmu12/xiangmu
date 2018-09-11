@@ -26,7 +26,6 @@ class GgController extends Controller
         //读取数据库 获取用户数据
         $Gg = Gg::where('user_id','like', '%'.request()->keywords.'%')
             ->paginate(6);
-            
         //解析模板显示用户数据
         return view('admin.guanggao.index', ['Gg'=>$Gg,'xxcate'=>$xxcate]);
     }
@@ -153,4 +152,10 @@ class GgController extends Controller
             return back()->with('error','删除失败');
         }
     }
+
+    // public function ajax()
+    // {
+    //     $a = $_POST[];
+    //     return $a;
+    // }
 }
