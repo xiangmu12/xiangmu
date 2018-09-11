@@ -14,6 +14,7 @@ class AdminController extends Controller
     public function index()
     {
     	$user = User::find(\Session::get('id'));
+
     	return view('admin',compact('user'));
 
     }
@@ -70,7 +71,7 @@ class AdminController extends Controller
     public function logout(Request $request)
     {
         //
-        $request->session()->flush();
+        $request->Session()->flush();
 
         return redirect('/admin/login')->with('success','退出成功');
     }

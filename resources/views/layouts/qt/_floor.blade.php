@@ -58,7 +58,7 @@
 										<a href="#"><span>{{$v['juphone']}}</span></a>
 									</li>
 									<li>
-										<a href="#"><span>Online support</span></a>
+										<a href="/hezuo/hz"><span>合作伙伴</span></a>
 									</li>
 								</ul>
 									

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use App\Ding;
 use App\Huo;
 use App\Sp;
 use App\Tag;
-use App\WoMen;
 use App\User;
+use App\WoMen;
 use Illuminate\Http\Request;
 
 class GrzhongController extends Controller
@@ -15,24 +16,26 @@ class GrzhongController extends Controller
     //个人中心
     public function geren()
     {
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-       return view('home.grzx.index',compact('shangpin','shang','pin','women','tags'));
+       return view('home.grzx.index',compact('shangpin','gw','shang','pin','women','tags'));
     }
 
     //我的订单
     public function gerendingdan()
     {
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
     	$di = Ding::where('user_id','=',session('id'))->where('title','like', '%'.request()->keywords.'%')->paginate(8);
         $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-       return view('home.grzx.gerendd',compact('shangpin','shang','pin','di','tags','women'));
+       return view('home.grzx.gerendd',compact('shangpin','gw','shang','pin','di','tags','women'));
     }
 
      public function grdingdan(Request $request)
@@ -60,6 +63,7 @@ class GrzhongController extends Controller
     //收货地址
     public function shouhuodizhi()
     {
+        $gw = Car::all();
         $huo = Huo::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -67,11 +71,12 @@ class GrzhongController extends Controller
         $shangpin = Sp::get();
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
-       return view('home.grzx.shouhuodizhi',compact('shangpin','shang','pin','di','tags','women','huo'));
+       return view('home.grzx.shouhuodizhi',compact('shangpin','gw','shang','pin','di','tags','women','huo'));
     }
 
     public function shouhuodz(Request $request)
     {
+        $gw = Car::all();
         $ding = new Ding;
         $huo = Huo::findOrFail($request->shouhuo_id);
         $sp = Sp::findOrFail($request->spid);
@@ -106,12 +111,14 @@ class GrzhongController extends Controller
 
     //前台用户中心修改
     public function wode()
-    {    $shang = Sp::where('orlogin','0')->count();
+    {   
+        $gw = Car::all();
+        $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $women = WoMen::all();
          $tags = Tag::all();
          $user = User::find(\Session::get('id'));
-        return view('home.wod.yonh',compact('pin','shang','women','tags','user'));
+        return view('home.wod.yonh',compact('pin','shang','women','tags','gw','user'));
     }
 
     public function wodegai(Request $request)

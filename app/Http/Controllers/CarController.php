@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
+use App\Sp;
+use App\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 
 class CarController extends Controller
 {
@@ -13,8 +18,14 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $users = Session()->get('id');
+        // $shangpin = Sp::all();
+        $gw = Car::all();
+        $shang = Sp::where('orlogin','0')->count();
+        $pin = Sp::where('orlogin','1')->count();
+        return view('home.gouwuche',compact('gw','shang','pin','users'));
+        }
+   
 
     /**
      * Show the form for creating a new resource.
@@ -34,7 +45,7 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
@@ -43,9 +54,37 @@ class CarController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //执行添加购物车
     public function show($id)
     {
-        //
+        
+          
+            
+                if(!empty(User::findOrFail(session('id'))->car->where('shangpin_id',$id)->first())){
+                    return redirect('/gouwuche')->with('success','此商品已存在');
+                }else{
+                    $car = new Car;
+                    $sp = Sp::findOrFail($id);
+                    $car->title = $sp->title;
+                    $car->image = $sp->image;
+                    $car->cheng = $sp->cheng;
+                    $car->money = $sp->money;
+                    $car->shangpin_id = $sp->id;
+                    $car->user_id = session('id'); 
+                    
+                    if ($car ->save()) {
+                        
+                        return redirect('/gouwuche')->with('success','成功');
+                        }else{
+                            return redirect('/gouwuche')->with('success','成功');
+                        }
+             
+                }
+           
+        
+
+        
+        // dd($car);
     }
 
     /**
@@ -79,6 +118,23 @@ class CarController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
+
+
+    public function che($id)
+    {
+        $shan = Car::findOrFail($id);
+        if($shan->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
+    }
+
+    public function dingdan()
+    {
+        
+    }
+
 }
