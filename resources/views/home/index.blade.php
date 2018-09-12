@@ -80,12 +80,12 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="{{$peizhi['pic1']}}" width="872" height="400" alt="...">
+                    <img src="{{$peizhi['pic2']}}" width="872" height="400" alt="...">
                     <div class="carousel-caption">
                     </div>
                 </div>
                 <div class="item">
-                    <img src="{{$peizhi['pic1']}}" width="872" height="400" alt="...">
+                    <img src="{{$peizhi['pic3']}}" width="872" height="400" alt="...">
                     <div class="carousel-caption">
                     </div>
                 </div>
@@ -226,10 +226,11 @@
 									</ul>
 								</div>
 								<div class="banner-area">
-									<a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
-								</div>
+                                    <a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
+                                </div>
 							</div>
 						</div>
+                              
 					</div>
 				</div>
 				

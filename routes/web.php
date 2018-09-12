@@ -119,7 +119,7 @@ Route::get('/wo/tui','HomeController@tui');
 Route::get('/juba/{id}','HomeController@destroy');
 
 //合作
-Route::get('hezuo/hz','HbController@hezuo');
+Route::get('/hezuo/hz','HbController@hezuo');
 
 
 //购物车
