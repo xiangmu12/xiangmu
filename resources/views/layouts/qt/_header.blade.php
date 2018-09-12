@@ -11,35 +11,37 @@
     <!-- Font ================================================== -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
-    <!-- Helpers ================================================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Home Market - Responsive HTML5 theme">
-    <meta property="og:image" content="//assets/assets/images/logo.png">
-    <meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
-    <meta property="og:url" content="#">
-    <meta property="og:site_name" content="Home Market Red">
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:card" content="summary">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- CSS ================================================== -->
-    <link href="/assets/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/assets/css/font-awesome.min.css">
-    <link href="/assets/assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/swatch.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/flexslider.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/timber.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/home_market.global.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/home_market.style.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
-    <!-- JS ================================================== -->
-    <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+
+	<!-- Helpers ================================================== -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Home Market - Responsive HTML5 theme">
+	<meta property="og:image" content="//assets/assets/images/logo.png">
+	<meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
+	<meta property="og:url" content="#">
+	<meta property="og:site_name" content="Home Market Red">
+	<meta name="twitter:site" content="@">
+	<meta name="twitter:card" content="summary">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- CSS ================================================== -->
+	<link href="/assets/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="/assets/assets/css/font-awesome.min.css">
+	<link href="/assets/assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/swatch.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/flexslider.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/timber.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/home_market.global.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/home_market.style.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
+	<!-- JS ================================================== -->
+	<!-- <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>	
+	<script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script> -->
+
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
@@ -377,7 +379,7 @@
                             <li class="header-account">
 
 
-                                    <img src="{{session::get('pic')}}" width="40px" alt="">
+                                    <img src="{{session('pic')}}" width="40px" alt="">
 
                                     <a href="#">{{Session::get('username')}}</a>
                                 <a href="/logout">退出</a>
@@ -431,11 +433,8 @@
                         $('#create_accountBox').css("display", 'none');
                     }
 
-                    function hideRecoverPasswordForm() {
-                        $('#recover-password').css("display", 'none');
-                        $('#lightboxlogin').css("display", 'block');
-                        $('#create_accountBox').css("display", 'none');
-                    }
+
+
 
                     function showCreateAccountForm() {
                         $('#recover-password').css("display", 'none');

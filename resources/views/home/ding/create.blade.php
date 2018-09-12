@@ -7,7 +7,8 @@
     <script type="text/javascript" src="/ding/static/js/jquery_cart.js"></script>
     <link rel="stylesheet" type="text/css" href="/ding/static/css/checkout.css" />
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+ 
+    <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
    
     <!--收货地址body部分开始-->
     <div class="border_top_cart">
@@ -394,8 +395,8 @@
                                             <label>地址<span>*</span></label>
                                             <div class="am-u-sm-9" id="city_china">
                                                 <select style="width:60px;float:left" class="province" name="province" id=""></select>
-                                                <select class="city" style="width:60px;float:left;background:white" name="city" id=""></select>
-                                                <select class="area" style="width:60px;float:left;background:white" name="area" id=""></select>
+                                                 <select class="city" style="width:60px;float:left;background:white" name="city" id=""></select>
+                                                 <select class="area" style="width:60px;float:left;background:white" name="area" id=""></select>
                                             </div>
                                             <textarea name="intro" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
                                             <p class="tip-msg tipMsg"></p>

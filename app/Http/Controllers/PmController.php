@@ -172,7 +172,7 @@ class PmController extends Controller
         $mai -> intro = $request->intro;
         $mai -> cheng = $request->cheng;
         $mai -> money = $request->money;
-        $mai -> jmoney = $request->money;
+        $mai -> jmoney = $request->jmoney;
         $mai -> opentime = $request->opentime;
         $mai -> overtime = $request->overtime;
 

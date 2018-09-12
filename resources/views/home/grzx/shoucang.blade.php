@@ -1,4 +1,3 @@
-﻿
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -57,42 +56,23 @@
 
                             <div class="am-g">
             
-            <div class="am-u-sm-12 am-u-md-3">
-                <form action="/huodong" method="get">
-                <div class="am-input-group am-input-group-sm">
-                    <input type="text" name="keywords" class="am-form-field" value="">
-                    <span class="am-input-group-btn">
-                        <button class="am-btn  am-btn-default am-btn-success tpl-am-btn-success am-icon-search"></button>
-                      </span>
-                </div>
-                </form>
-            </div>
+            
         </div>
         <div class="am-g">
             <div class="am-u-sm-12">
                 <table class="am-table  am-table-hover table-main" border="0" >
                     <tbody>
-                        @foreach($di as $v)
+                        @foreach($shoucang as $v)
+                        @foreach($shangpin as $vv)
+                        @if($v['shangpin_id'] == $vv['id'])
                         <tr>
-                            <td>{{$v['id']}}</td>
-                            <td class="am-hide-sm-only"><img src="{{$v['image']}}" width="50"></td>
-                            <td class="am-hide-sm-only">{{$v['title']}}</td>
-                            <td class="am-hide-sm-only">{{$v['intro']}}</td>
-                            <td class="am-hide-sm-only">{{$v['cheng']}}</td>
-                            <td class="am-hide-sm-only">{{$v['money']}}</td>
-                            <td>
-                                <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <a href="/huodong//edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
-                                        <form style="float:left" action="/huodong/" method="post">
-                                            
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
-                                        </form>
-
-                                    </div>
-                                </div>
-                            </td>
+                            <td><a href="/{{$vv['id']}}.html"><img src="{{$vv['image']}}" width="70">{{$vv['intro']}}</a></td>
+                            <td class="am-hide-sm-only">{{$vv['money']}}元</td>
+                            
+                           
                         </tr>
+                        @endif
+                        @endforeach
                         @endforeach
                     </tbody>
                 </table>

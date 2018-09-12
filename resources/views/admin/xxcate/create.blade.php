@@ -27,7 +27,7 @@
                     <option value="{{$v['id']}}">{{$v['name']}}</option>        
                         @endforeach
                 </select>
-                 <select class="second" data-am-selected="{searchBox: 1}" style="display:    none;" name="xcate_id" >
+                 <select class="second" data-am-selected="{searchBox: 1}"  name="xcate_id" size="10">
                                 <option value="">请选择二级分类</option>
                             @foreach($xcates as $v)
                     <option value="{{$v['id']}}">{{$v['name']}}</option>

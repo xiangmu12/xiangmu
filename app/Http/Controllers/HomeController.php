@@ -30,6 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
@@ -39,12 +40,14 @@ class HomeController extends Controller
         $gw = Car::all();
         $gg = Gg::all();
         $user = User::all();
+
         $youlians = Youlian::all();
         $users = Session()->get('id');
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
 
         return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin','women','tags','youlians','gg'));
+
     }
 
 
