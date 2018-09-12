@@ -100,119 +100,102 @@
                                         </div>
                                     </div>
                                 </div>
-                               
-
-            <!-- 分享 -->
-                                    </div>
-                                    <div class="grid__item product-info-right three-eighths">
-                                        <div class="product-extrainfo">
-                                            <ul>
-                                                <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-shield fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">保证<span class="sub">质量检查</span></span></li>
-                                                <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-truck fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">所有产品<span class="sub">免费送货</span></span></li>
-                                                <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-gift fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">特价礼品卡<span class="sub">特价礼品卡</span></span></li>
-                                                <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-reply fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">7天内<span class="sub"> 免费退货</span></span></li>
-                                                <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-tty fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">咨询<span class="sub">终身:13273131465</span></span></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="next-prev-button">
-                                    </div>
+                                <!-- 分享 -->
+                            </div>
+                            <div class="grid__item product-info-right three-eighths">
+                                <div class="product-extrainfo">
+                                    <ul>
+                                        <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-shield fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">保证<span class="sub">质量检查</span></span>
+                                        </li>
+                                        <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-truck fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">所有产品<span class="sub">免费送货</span></span>
+                                        </li>
+                                        <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-gift fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">特价礼品卡<span class="sub">特价礼品卡</span></span>
+                                        </li>
+                                        <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-reply fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">7天内<span class="sub"> 免费退货</span></span>
+                                        </li>
+                                        <li><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-tty fa-stack-1x fa-inverse"></i></span><span class="detail_more_info">咨询<span class="sub">终身:13273131465</span></span>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="product-information">
-                                <div id="tabs-information">
-                                    <ul class="nav nav-tabs tabs-left sideways">
-                                        <li class="description"><a href="#desc" data-toggle="tab" class="active">描述</a></li>
-                                        <li class="warranty"><a href="#size" data-toggle="tab">保证</a></li>
-                                        <li class="delivery"><a href="#delivery" data-toggle="tab">交货</a></li>
-                                        <li class="payment"><a href="#payment" data-toggle="tab">付款</a></li>
-                                        <li class="reviews"><a href="#customerreview" data-toggle="tab">客户评论</a></li>
-                                    </ul>
-                                    
-                                    <div class="tab-panel fade " id="size">
-                                        <h2>保修信息</h2>
-                                        <p>
-                                            有限担保
->>>>>>> 1b2010c2358b430c1b361479b561123769d636bd
-有限保修不可转让。以下有限保证给予以下Ashley Furniture Industries，Inc。的原始零售购买者。产品：
-
-用于软垫和皮革制品的框架
-有限终身保修
-有限终身保修适用于沙发，沙发，爱情座椅，软垫椅子，沙发椅，滑雪板和枕木中使用的所有框架。Ashley Furniture Industries，Inc。向原始零售购买者保证这些组件不会出现材料制造缺陷。
-                                        </p>
-                                        
-                                    </div>
-                                    <div class="tab-panel fade " id="delivery">
-                                        <h2>运输与交付</h2>
-        在您购买之前，了解您计划放置家具的区域的尺寸是有帮助的。您还应该测量家具通过的任何门道和走廊，以便到达最终目的地。
-                                        <h5>运输</h5>
-                                         要求所有产品在您带回家之前都要经过适当的检查，以确保没有任何意外。我们的团队很乐意打开所有包裹并协助检查过程。然后，我们将重新封装安全运输包裹。我们鼓励所有客户携带家具垫或毯子，以便在运输过程中保护物品以及绳索或系带。对于离开商店或运输途中发生的损坏不承担任何责任。购买者有责任确保拾取正确的物品并保持良好状态。
-                                        <h5>交付</h5>
-                                         客户可以选择最适合其日程安排的下一个可用交付日。但是，为了尽可能有效地路线停靠，将提供时间范围。客户将无法选择时间。我们会在您预定的时间范围之前通知您。请确保当时有责任的成年人（18岁或以上）回家。
-在准备交付时，请移除现有的家具，图片，镜子，配件等，以防止损坏。同时确保您希望放置家具的区域没有任何旧家具和任何其他可能妨碍交付团队通道的物品。将提供，组装和设置您购买的新家具，并从您家中取出所有包装材料。我们的送货工作人员不得移动您现有的家具或其他家居用品。送货人员将尝试以安全和受控的方式交付所购买的物品，但如果他们认为会损坏产品或家庭，则不会尝试放置家具。送货人员无法移除门，提升家具或携带超过3层楼梯的家具。
-                                    </div>
-                                    <div class="tab-panel fade " id="payment">
-                                        <h2>支付信息</h2>
-                                        每周用一次水浸湿的布擦拭或擦拭干净。切勿在表面留下水渍。这些水斑会变干，可能留下永久的痕迹。
-
-
-
-清洁污渍/斑点使用以下步骤：用湿法和液体洗碗洗涤剂混合一块柔软的布。尽可能多地拧碎布以除去多余的液体。以圆周运动轻轻地摩擦表面。用干净、柔软的毛巾立即擦干表面。
-                                    </div>
-                                    <div class="tab-panel fade " id="customerreview">
-                                        <div id="shopify-product-reviews" data-id="3008529923">
-                                            <div class="spr-container">
-                                                <h2 class="spr-header-title">留言</h2>
-                                                <div>如遇到以下情况可能是诈骗行为：<span style="color:red">1.宝贝价格异常低；2.卖家要求QQ沟通；3.卖家要求直接汇款。</span> 寻求防骗经验。</div>
-                                                <div class="spr-content">
-                                                    <div class="spr-form" id="form_3008529923" style="">
-                                                        <div class="spr-form-review-title">
-                                                                    @foreach($pingluns as $v)
-                                                                    <img src="{{$v->user->pic}}" style="width:45px;height:45px;margin:10px;float:left;border-radius:70%">   
-                                                                    <ul style="margin:0px;">
-                                                                        <p>{{$v->user->username}}</p>
-                                                                        <p>{{$v['content']}}</p><br><br>
-                                                                        @endforeach
-                                                                    </ul>
-                                                                    
-                                                        </div>
-                                                        <form method="post" action="/pinglun" id="new-review-form_3008529923" class="new-review-form" >
-                                                            
-                                                                <div class="spr-form-review-body">
-                                                                    <label class="spr-form-label" for="review_body_3008529923">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
-                                                                    <div class="spr-form-input">
-                                                                        <textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
-                                                                    </div>
-                                                                    <input type="hidden" name="shangpin_id" value="{{$shangpinss->id}}">
-                                                                    {{csrf_field()}}
-                                                                </div>
-                                                                <button  class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">留言</button>
-                                                        </form>
-                                                    </div>
-                                                    <div class="spr-reviews" id="reviews_3008529923" style="display: none">
-                                                    </div>
+                            <div class="next-prev-button">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-information">
+                        <div id="tabs-information">
+                            <ul class="nav nav-tabs tabs-left sideways">
+                                <li class="description"><a href="#desc" data-toggle="tab" class="active">描述</a></li>
+                                <li class="warranty"><a href="#size" data-toggle="tab">保证</a></li>
+                                <li class="delivery"><a href="#delivery" data-toggle="tab">交货</a></li>
+                                <li class="payment"><a href="#payment" data-toggle="tab">付款</a></li>
+                                <li class="reviews"><a href="#customerreview" data-toggle="tab">客户评论</a></li>
+                            </ul>
+                            <div class="tab-panel fade " id="size">
+                                <h2>保修信息</h2>
+                                <p>
+                                    有限担保 有限保修不可转让。以下有限保证给予以下Ashley Furniture Industries，Inc。的原始零售购买者。产品： 用于软垫和皮革制品的框架 有限终身保修 有限终身保修适用于沙发，沙发，爱情座椅，软垫椅子，沙发椅，滑雪板和枕木中使用的所有框架。Ashley Furniture Industries，Inc。向原始零售购买者保证这些组件不会出现材料制造缺陷。
+                                </p>
+                            </div>
+                            <div class="tab-panel fade " id="delivery">
+                                <h2>运输与交付</h2> 在您购买之前，了解您计划放置家具的区域的尺寸是有帮助的。您还应该测量家具通过的任何门道和走廊，以便到达最终目的地。
+                                <h5>运输</h5> 要求所有产品在您带回家之前都要经过适当的检查，以确保没有任何意外。我们的团队很乐意打开所有包裹并协助检查过程。然后，我们将重新封装安全运输包裹。我们鼓励所有客户携带家具垫或毯子，以便在运输过程中保护物品以及绳索或系带。对于离开商店或运输途中发生的损坏不承担任何责任。购买者有责任确保拾取正确的物品并保持良好状态。
+                                <h5>交付</h5> 客户可以选择最适合其日程安排的下一个可用交付日。但是，为了尽可能有效地路线停靠，将提供时间范围。客户将无法选择时间。我们会在您预定的时间范围之前通知您。请确保当时有责任的成年人（18岁或以上）回家。 在准备交付时，请移除现有的家具，图片，镜子，配件等，以防止损坏。同时确保您希望放置家具的区域没有任何旧家具和任何其他可能妨碍交付团队通道的物品。将提供，组装和设置您购买的新家具，并从您家中取出所有包装材料。我们的送货工作人员不得移动您现有的家具或其他家居用品。送货人员将尝试以安全和受控的方式交付所购买的物品，但如果他们认为会损坏产品或家庭，则不会尝试放置家具。送货人员无法移除门，提升家具或携带超过3层楼梯的家具。
+                            </div>
+                            <div class="tab-panel fade " id="payment">
+                                <h2>支付信息</h2> 每周用一次水浸湿的布擦拭或擦拭干净。切勿在表面留下水渍。这些水斑会变干，可能留下永久的痕迹。 清洁污渍/斑点使用以下步骤：用湿法和液体洗碗洗涤剂混合一块柔软的布。尽可能多地拧碎布以除去多余的液体。以圆周运动轻轻地摩擦表面。用干净、柔软的毛巾立即擦干表面。
+                            </div>
+                            <div class="tab-panel fade " id="customerreview">
+                                <div id="shopify-product-reviews" data-id="3008529923">
+                                    <div class="spr-container">
+                                        <h2 class="spr-header-title">留言</h2>
+                                        <div>如遇到以下情况可能是诈骗行为：<span style="color:red">1.宝贝价格异常低；2.卖家要求QQ沟通；3.卖家要求直接汇款。</span> 寻求防骗经验。</div>
+                                        <div class="spr-content">
+                                            <div class="spr-form" id="form_3008529923" style="">
+                                                <div class="spr-form-review-title">
+                                                    @foreach($pingluns as $v)
+                                                    <img src="{{$v->user->pic}}" style="width:45px;height:45px;margin:10px;float:left;border-radius:70%">
+                                                    <ul style="margin:0px;">
+                                                        <p>{{$v->user->username}}</p>
+                                                        <p>{{$v['content']}}</p>
+                                                        <br>
+                                                        <br> @endforeach
+                                                    </ul>
                                                 </div>
+                                                <form method="post" action="/pinglun" id="new-review-form_3008529923" class="new-review-form">
+                                                    <div class="spr-form-review-body">
+                                                        <label class="spr-form-label" for="review_body_3008529923">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
+                                                        <div class="spr-form-input">
+                                                            <textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
+
+                                                        </div>
+                                                        <input type="hidden" name="shangpin_id" value="{{$shangpinss->id}}"> {{csrf_field()}}
+                                                    </div>
+                                                    <button class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">留言</button>
+                                                </form>
+                                            </div>
+                                            <div class="spr-reviews" id="reviews_3008529923" style="display: none">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <script>
-                        $('#tabs-information').easytabs({animationSpeed: 'fast', updateHash: false});
-                      </script>
-                                <div id="product-additional-information">
-                                    <div class="related-products">
-                                        <h1 class="feature-title"><span>商品列表</span></h1>
-                                        <ul class="related-products-items grid-uniform">
-                                            @foreach($shangpins as $v)
-                                            <li class="realted-element">
-                                                
-                                                <div class="grid__item">
-                                                    <div class="grid__item_wrapper">
-                                                        <div class="grid__image product-image">
-                                                            <a href="/{{$v['id']}}.html">
+                            </div>
+                        </div>
+                        <script>
+                        $('#tabs-information').easytabs({ animationSpeed: 'fast', updateHash: false });
+                        </script>
+                        <div id="product-additional-information">
+                            <div class="related-products">
+                                <h1 class="feature-title"><span>商品列表</span></h1>
+                                <ul class="related-products-items grid-uniform">
+                                    @foreach($shangpins as $v)
+                                    <li class="realted-element">
+                                        <div class="grid__item">
+                                            <div class="grid__item_wrapper">
+                                                <div class="grid__image product-image">
+                                                    <a href="/{{$v['id']}}.html">
                                                                 <img src="{{$v['image']}}" width="100" alt="Demo Product Sample">
                                                             </a>
-
                                                     <div class="quickview">
                                                         <div class="product-ajax-cart hidden-xs hidden-sm">
                                                             <div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
@@ -270,13 +253,15 @@
                                 </ul>
                             </div>
                         </div>
+                                <!-- <script>
+                        $('#tabs-information').easytabs({animationSpeed: 'fast', updateHash: false});
+                      </script> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </main>
-
 </div>
 <div id="scroll-to-top" title="Scroll to Top" class="off">
     <i class="fa fa-caret-up"></i>
@@ -397,7 +382,4 @@ jQuery(document).ready(function($) {
     }
 });
 </script>
-
-		@include('layouts.qt._floor')
-
-
+@include('layouts.qt._floor')

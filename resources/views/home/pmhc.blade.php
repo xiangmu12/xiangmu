@@ -44,9 +44,9 @@
 										</p>
 										<p class="product-price">
 											<strong>On Sale</strong>
-											<span class="money" data-currency-usd="$19.99">{{$v['money']}}</span>
+											<span class="money" data-currency-usd="$19.99">起价：{{$v['money']}}</span>
 											<span class="visually-hidden">Regular price</span>
-											<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
+											
 										</p>
 									
 										<ul class="action-button">

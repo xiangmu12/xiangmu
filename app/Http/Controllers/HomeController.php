@@ -159,6 +159,19 @@ class HomeController extends Controller
         }
     }
 
+    //交易中
+    public function jiaoyi()
+    {
+        $peizhi = WzPeiZhi::first();
+        $shangpin = Sp::get();
+        $gw = Car::all();
+        $users = Session()->get('id');
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        // dd($res);die;
+        return view('home.wdxz.jiayizhong',compact('shang','peizhi','gw','pin','shangpin','users'));
+    }
+
 
     public function sp($id)
     {
@@ -465,6 +478,7 @@ class HomeController extends Controller
     }
 
 
+
     //搜索页面
 
       public function sou()
@@ -485,6 +499,7 @@ class HomeController extends Controller
         $youlians = Youlian::all();
 
         return view('home.sou',compact('sps','shang','pin','tags','women','gw','youlians','shangpin','peizhi','huobans'));
+
     }
 
 }

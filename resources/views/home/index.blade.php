@@ -1,10 +1,5 @@
 
- <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script> 
-    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+
 
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -82,7 +77,7 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox" style="width:872px;height:400px">
                 <div class="item active">
-                    <img src="{{$peizhi['pic1']}}" alt="狐狸王董事会.自小组成立以来团结合作,互利共赢共同营造美好的未来">
+                    <img src="{{$peizhi['pic1']}}" width="872" height="400" alt="狐狸王董事会.自小组成立以来团结合作,互利共赢共同营造美好的未来">
                     <div class="carousel-caption">
                     </div>
                 </div>
@@ -161,11 +156,7 @@
 														</a>
                                                 <div class="quickview">
                                                     <div class="product-ajax-cart hidden-xs hidden-sm">
-                                                        <div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-                                                            <a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-                                                        </div>
+                                                       
                                                     </div>
                                                 </div>
                                             </div>
@@ -233,10 +224,11 @@
 									</ul>
 								</div>
 								<div class="banner-area">
-									<a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
-								</div>
+                                    <a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
+                                </div>
 							</div>
 						</div>
+                              
 					</div>
 				</div>
 				

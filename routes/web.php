@@ -72,8 +72,6 @@ Route::group(['middleware'=>'admin'],function(){
 //位置
 Route::get('/weizhi', 'HomeController@weizhi');
 
-
-
 //前台页面
 Route::get('/', 'HomeController@index');
 
@@ -106,6 +104,9 @@ Route::get('/sou', 'HomeController@sou');
 
 //我的闲置
 Route::get('/collection', 'HomeController@list');
+
+//闲置交易
+Route::get('/jiaoyizhong','HomeController@jiaoyi');
 
 //登陆页面
 Route::get('/login','HomeController@login');
@@ -140,7 +141,7 @@ Route::get('/wo/tui','HomeController@tui');
 Route::get('/juba/{id}','HomeController@destroy');
 
 //合作
-Route::get('hezuo/hz','HbController@hezuo');
+Route::get('/hezuo/hz','HbController@hezuo');
 
 
 //购物车
@@ -168,14 +169,22 @@ Route::resource('pinglun','PlController');
 
 //购物车
 Route::resource('gouwuche','CarController');
+//结算
+Route::post('/dd','CarController@dd');
+
+//购物订单
+Route::post('/gwdingdan','CarController@gwdingdan');
 
 Route::get('/che/{id}','CarController@che');
 
+//后台购物车
+Route::get('/admin/gouwu','AdminController@gouwu');
 //个人中心
 Route::get('/geren','GrzhongController@geren');
 
 //个人订单
 Route::get('/gerendingdan','GrzhongController@gerendingdan');
+
 
 Route::post('/grdingdan','GrzhongController@grdingdan');
 //收货地址

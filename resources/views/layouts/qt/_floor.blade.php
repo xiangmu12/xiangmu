@@ -59,7 +59,7 @@
 						</div>
 						<div class="fi-tags grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
-								Product Tags
+								标签列表
 							</div>
 							<div class="fi-content">
 								<ul>

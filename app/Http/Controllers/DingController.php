@@ -85,14 +85,15 @@ class DingController extends Controller
         $tags = Tag::all();
         $women = WoMen::all();
         $shangpin = Sp::all();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $shangpinone = Sp::findOrFail($id);
+        $youlians = Youlian::all();
         $huo = Huo::orderBy('id','desc')->take(3)->get();
         $youlians = Youlian::all();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians','huobans','peizhi'));
 
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians','huobans','peizhi'));
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Car;
 use App\Jubao;
 use App\User;
 use Illuminate\Foundation\Testing\Concerns\session;
@@ -25,6 +26,26 @@ class AdminController extends Controller
     	$jubao = Jubao::get();
     	return view('admin.jubao.inde',compact('jubao'));
     }
+
+
+    public function gw()
+    {
+        return view('admin.gw');
+    }
+
+    //后台购物车
+    public function gouwu()
+    {
+        
+        $shangpins = Car::orderBy('id','desc')
+            ->where('shangpin_id','like', '%'.request()->keywords.'%')
+            ->paginate(5);
+            // dd($shangpins);
+        
+            
+        return view('admin.gouwu',compact('shangpins'));
+    }
+
 
     //后台登入页面
     //登陆
@@ -70,4 +91,5 @@ class AdminController extends Controller
 
         return redirect('/admin/login')->with('success','退出成功');
     }
+
 }

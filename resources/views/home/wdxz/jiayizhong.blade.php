@@ -27,7 +27,7 @@
             </table>
               <!--   <div><span style="margin-left:100px">商品信息</span><span style="margin-left:100px">商品图片</span><span style="margin-left:100px">商品标题</span><span style="margin-left:150px">商品价格</span><span style="margin-left:90px">商品成色</span><span style="margin-left:100px">商品操作</span></div> -->
                 @foreach($shangpin as $v)
-                @if($v['user_id'] == $users && $v['orlogin'] == 0)
+                @if($v['user_id'] == $users && $v['orlogin'] == 1)
                 <div id="J_ItemHolder_616577491345" class="item-holder" style="height:80px">
                     <table style="width:1000px;margin:0px auto;border-style:none">
                     <!-- <div id="J_Item_616577491345" class="J_ItemBody item-body clearfix item-act  first-item   " style="margin-top:30px;margin-left:100px;height:80px"> -->

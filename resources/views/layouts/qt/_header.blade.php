@@ -274,7 +274,7 @@
         <div id="top-header" class="grid--full grid--table">
             <div class="wrapper">
                 <div id="topother-header" class="grid--full grid--table">
-                    <div class="grid__item one-half top-header-left">
+                    <div class="grid__item one-half top-header-left" style="font-family: 楷体;font-size: 16px;">
                         欢迎来到狐狸王二手商场
                     </div>
                    
