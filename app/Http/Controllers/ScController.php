@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\DCate;
+use App\Hb;
 use App\Sc;
 use App\Sp;
 use App\Tag;
 use App\User;
 use App\WoMen;
+use App\WzPeiZhi;
 use App\XCate;
 use App\XxCate;
 use App\Youlian;
@@ -43,6 +45,8 @@ class ScController extends Controller
      */
     public function create()
     {   
+        $huobans = Hb::all(); 
+        $peizhi = WzPeiZhi::first();
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -56,7 +60,7 @@ class ScController extends Controller
         $shoucang = Sc::where('user_id',session('id'))->get();
         $youlians = Youlian::all();
        
-        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw','youlians'));
+        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw','youlians','peizhi','huobans'));
     }
 
     /**
