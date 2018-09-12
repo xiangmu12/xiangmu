@@ -1,5 +1,13 @@
 
+ <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script> 
+    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
+ 
 <main class="main-content">
     <div></div>
     @foreach($gg as $v)
@@ -18,8 +26,8 @@
                         <i class="fa fa-list"></i>
                         <span>主题市场</span>
                     </div>
-                    <div class="sdcollections-content">
-                        <ul class="sdcollections-list">
+                    <div class="sdcollections-content" >
+                        <ul class="sdcollections-list" >
                             @foreach($dcate as $v)
                             <li class="sdc-element vetical-menu1 site-nav--has-dropdown" aria-haspopup="true">
                                 <a href="collection.html" class="site-nav__link">
@@ -28,7 +36,7 @@
                                             <img src="/assets/assets/images/book.png" alt="collection icon">
                                         </div>
                                         <div class="collection-area have-icons">
-                                            <div class="collection-name">
+                                            <div class="collection-name" >
                                                 {{$v['name']}} ({{$v->xcate->count()}})
                                             </div>
                                         </div>
@@ -37,12 +45,12 @@
                                 </a>
                                 <ul class="site-nav__dropdown vetical__dropdown vetical__dropdown1">
                                     <li class="nav-links nav-links01 grid__item large--one-half">
-                                        <ul>
+                                        <ul >
                                             @foreach($xcate as $value) @if($v['id'] == $value['dcate_id'])
-                                            <li class="list-title">
+                                            <li class="list-title"  style="float: left">
                                                 {{$value['name']}} @foreach($xxcate as $val) @if($value['id'] == $val['xcate_id']) @if($v['id'] == $value['dcate_id'])
-                                                <li class="list-unstyled nav-sub-mega">
-                                                    <a href="collection.html">
+                                                <li class="list-unstyled nav-sub-mega" style="float: left">
+                                                    <a href="collection.html" >
 																				{{$val['name']}}
 																		</a>
                                                 </li>
@@ -58,12 +66,12 @@
                     </div>
                 </div>
             </div>
-            <div class="grid__item small--one-whole medium--one-whole three-quarters main-slideshow">
+            <div class="grid__item small--one-whole  medium--one-whole three-quarters main-slideshow">
                 <div class="main_slideshow_wrapper">
-                    <div id="slider" class="flexslider">
+                    <div id="slider" class="flexslider" >
                         <ul class="slides">
                             <li>
-                                <img src="/assets/assets/images/demo1_885x450.jpg" alt="" />
+                                <img src="/IMG_1527(20180906-014103).jpg"  alt="" style="width:885px;height:450px" />
                             </li>
                             <li>
                                 <img src="/assets/assets/images/demo2_885x450.jpg" alt="" />
@@ -86,9 +94,9 @@
                         <ul class="slides">
                             <li>
                                 <div>
-                                    <img src="/assets/assets/images/demo1_50x50.jpg" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Opening celebration 7th store</a></span>
-                                    <span class="cr-desc">Sale up to 70% from Nov 1, 2015 to Nov 7, 2015</span>
+                                    <img src="/IMG_1527(20180906-014103).jpg" style="width:50px;height:50px" alt="">
+                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">狐狸王二手商城董事会</a></span>
+                                    <span class="cr-desc">自2018年九月成立以来,团结协作,共求发展</span>
                                 </div>
                             </li>
                             <li>
@@ -150,8 +158,13 @@
                     <div class="grid__item three-quarters bh-left small--one-whole medium--one-whole">
                         <div class="home-slideshow-block bh-slideshow">
                             <div class="home-gallery-slider">
-                                @foreach($shangpin as $vvv)
+                                
+                                @foreach($v->xcate as $vxcate)
+                                @foreach($vxcate->xxcate as $vxxcate)
+                                @foreach($vxxcate->shangpin as $vvv)
                                 <div><a href="/{{$vvv->id}}.html"><img src="{{$vvv['image']}}" alt="" width="880" height="285"></a></div>
+                                @endforeach
+                                @endforeach
                                 @endforeach
                             </div>
                         </div>
@@ -211,7 +224,7 @@
 															</form>
 														</li>
 														<li class="wishlist">
-															<a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
+                                                            <a class="wish-list btn" href="/shoucang?shangpin={{$va['id']}}&user={{session('id')}}"><i class="fa fa-heart" title="Wishlist"></i></a>
 														</li>
 														<li class="email">
 															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
@@ -234,30 +247,11 @@
 							<div class="grid__item one-quarter bh-right small--one-whole medium--one-whole">
 								<div class="brands-area">
 									<ul class="brands-elements">
+                                        @foreach($v->logo as $vlogo)
 										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand1_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand2_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand3_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand4_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand5_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand6_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand7_123x64.png" alt=""></a>
-										</li>
-										<li class="">
-											<a href="collection.html"><img src="/assets/assets/images/demo1_brand8_123x64.png" alt=""></a>
-										</li>         
+											<a href="collection.html"><img src="{{$vlogo->image}}" alt="" width="70"></a>
+										</li>   
+                                         @endforeach
 									</ul>
 								</div>
 								<div class="banner-area">

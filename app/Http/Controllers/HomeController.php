@@ -7,6 +7,7 @@ use App\Car;
 use App\DCate;
 use App\Ding;
 use App\Gg;
+use App\Hb;
 use App\Jubao;
 use App\Pl;
 use App\Sp;
@@ -29,7 +30,9 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        $huobans = Hb::all();
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
@@ -39,12 +42,14 @@ class HomeController extends Controller
         $gw = Car::all();
         $gg = Gg::all();
         $user = User::all();
+
         $youlians = Youlian::all();
         $users = Session()->get('id');
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
 
-        return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin','women','tags','youlians','gg'));
+        return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin','women','tags','youlians','gg','huobans'));
+
     }
 
 
@@ -152,6 +157,7 @@ class HomeController extends Controller
 
     public function sp($id)
     {
+        $huobans = Hb::all();
         $users = Session()->get('id');
         $gw = Car::all();
         $shangpin = Sp::where('id',$id)->get();
@@ -165,7 +171,7 @@ class HomeController extends Controller
         $shangpinshangs = Sp::where('xxcate_id',$shangpin[0]['xxcate_id'])->get();
         $youlians = Youlian::all();
 
-        return view('home.shangpinone',compact('shangpin','shangpins','gw','shang','pin','users','women','tags','shangpinss','pingluns','youlians'));
+        return view('home.shangpinone',compact('shangpin','shangpins','gw','shang','pin','users','women','tags','shangpinss','pingluns','youlians','huobans'));
     }
 
     public function cateall(Request $request)
@@ -200,6 +206,7 @@ class HomeController extends Controller
 
     public function jiang()
     {   
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -208,7 +215,7 @@ class HomeController extends Controller
         $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.jiang',compact('sps','shang','pin','tags','women','gw','youlians'));
+        return view('home.jiang',compact('sps','shang','pin','tags','women','gw','youlians','huobans'));
     }
 
 
@@ -281,7 +288,8 @@ class HomeController extends Controller
 
 
     public function fabu()
-    {
+    {   
+        $huobans = Hb::all(); 
         $users = Session()->get('id');
         $gw = Car::all();
         $women = WoMen::all();
@@ -291,7 +299,7 @@ class HomeController extends Controller
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $xxcate = XxCate::all();
         $youlians = Youlian::all();
-        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags','gw','users','women','youlians'));
+        return view('home.fabuxianzhi.index',compact('xxcate','shangpin','shang','pin','tags','gw','users','women','youlians','huobans'));
     }
 
     public function fabuchuli(Request $request)
@@ -381,7 +389,7 @@ class HomeController extends Controller
 
       public function women()
     {
-
+        $huobans = Hb::all(); 
         $women = WoMen::all();
         $dcate = DCate::all();
         $xcate = XCate::all();
@@ -391,7 +399,7 @@ class HomeController extends Controller
         $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw'));
+        return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw','huoban'));
         
     }
 

@@ -210,7 +210,7 @@
                                                     <div class="grid__item_wrapper">
                                                         <div class="grid__image product-image">
                                                             <a href="/{{$v['id']}}.html">
-                                                                <img src="{{$v['image']}}" alt="Demo Product Sample">
+                                                                <img src="{{$v['image']}}" width="100" alt="Demo Product Sample">
                                                             </a>
 
                                                     <div class="quickview">

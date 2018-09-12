@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="Keywords" content="">
     <meta name="Description" content="">
-    <title>用户中心_唯品会模板,ECSHOP唯品会,ECSHOP唯品会模板,ECSHOP唯品会商城模板 - Powered by ECShop</title>
+
     <link rel="shortcut icon" href="http://weipin.ecshop119.com/favicon.ico">
     <link rel="icon" href="http://weipin.ecshop119.com/animated_favicon.gif" type="image/gif">
     <link href="css/style_5.css" rel="stylesheet" type="text/css">
@@ -33,6 +33,7 @@
     <script type="text/javascript" src="/ding/static/js/jquery_cart.js"></script>
     <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
 
+
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
 <body>
      <form action="/huo" method="post">
@@ -49,14 +50,18 @@
                                             <p class="tel-modify-tip" id="telModifyTip"></p>
                                             <p class="tip-msg tipMsg"></p>
                                         </div>
-                                        <input type="hidden" name="user_id" value="1">
+                                        
                                         <div class="item">
-                                            <label>地址<span>*</span></label>
+                                            
+                                            
+                                            <label for="user-name" class="am-u-sm-3 am-form-label">城市<span class="tpl-form-line-small-title"></span></label>
                                             <div class="am-u-sm-9" id="city_china">
-                                                <select style="width:60px;float:left" class="province" name="province" id=""></select>
-                                                <select class="city" style="width:60px;float:left;background:white" name="city" id=""></select>
-                                                <select class="area" style="width:60px;float:left;background:white" name="area" id=""></select>
-                                            </div>
+                                            <select style="width:60px;float:left" class="province" name="province" id=""></select>
+                                            <select class="city" style="width:60px;float:left;background:white" name="city" id=""></select>
+                                            <select class="area" style="width:60px;float:left;background:white" name="area" id=""></select>
+                                            
+                                        </div>
+
                                             <textarea name="intro" class="input-area" id="Street" placeholder="路名或街道地址，门牌号"></textarea>
                                             <p class="tip-msg tipMsg"></p>
                                         </div>
@@ -73,9 +78,8 @@
                                         </div>
                                     </div>
                                     <div class="ft clearfix">
-                                        <button type="button" name="end" class="btn btn-lineDake btn-small " id="J_editAddrCancel">取消</button>
-                                         
                                         <button  class="btn btn-primary  btn-small " >保存</button>
+                                         <button type="button" name="end" class="btn btn-lineDake btn-small " id="J_editAddrCancel">取消</button>
                                     </div>
                                     {{csrf_field()}}
                                 </div>
@@ -84,7 +88,7 @@
         <div class="contentBody">
             <div class="block_s">
               @include('home.grzx._liebiao')
-                <div class="content_body2" style="height:800px;">
+                <div class="content_body2" style="min-height:500px;">
                     <div>
                         <div class="memInfo_a">
                             <div class="memInfo">
@@ -148,43 +152,20 @@
                             $('#J_editAddrBox').show();
                         }
                     </script>
-
-                            </div>
+                    <script>
+                        var urlChina = '/ueditor/liandong/js/cityData.min.json';
+                        $.cxSelect.defaults.url = urlChina;
+                        $('#city_china').cxSelect({
+                                        selects: ['province', 'city', 'area']
+                        });
+                    </script>
+                           </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-                        var urlChina = '/ueditor/liandong/js/cityData.min.json';
-                        $.cxSelect.defaults.url = urlChina;
-                        $('#city_china').cxSelect({
-                            selects: ['province', 'city', 'area']
-                        });
-                    </script>
-               <script type="text/javascript">
-        var checkoutConfig = {
-            addressMatch: 'common',
-            addressMatchVarName: 'data',
-            hasPresales: false,
-            hasBigTv: false,
-            hasAir: false,
-            hasScales: false,
-            hasGiftcard: false,
-            totalPrice: 244.00,
-            postage: 10, //运费
-            postFree: true, //活动是否免邮了
-            bcPrice: 150, //计算界值
-            activityDiscountMoney: 0.00, //活动优惠
-            showCouponBox: 0,
-            invoice: {
-                NA: "0",
-                personal: "1",
-                company: "2",
-                electronic: "4"
-            }
-        };
-        var miniCartDisable = true;
-        </script>
+             
+        
 @include('layouts.qt._floor')

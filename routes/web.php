@@ -120,6 +120,9 @@ Route::get('/delete/{id}', 'HomeController@xiajia');
 
 //关于我们
 Route::get('/women','HomeController@women');
+
+//关于我们
+Route::get('/women','HomeController@women');
 //发货 退货
 Route::get('/wo/tui','HomeController@tui');
 
@@ -152,8 +155,7 @@ Route::resource('tag','TagController');
 //评论管理
 Route::resource('pinglun','PlController');
 
-//加入购物车
-Route::resource('car', 'CarController');
+
 
 
 //购物车
@@ -165,6 +167,8 @@ Route::resource('gouwuche','CarController');
 
 
 Route::get('/che/{id}','CarController@che');
+
+
 
 
 
@@ -188,6 +192,13 @@ Route::get('/wode','GrzhongController@wode');
 
 //修改用户中心
 Route::post('/wode','GrzhongController@wodegai');
+
+
+//logo管理
+Route::resource('logo','LogoController');
+
+//收藏管理
+Route::resource('shoucang','ScController');
 
 
 //发布拍卖

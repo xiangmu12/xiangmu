@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Hb;
 use App\Pl;
 use App\Pm;
 use App\Pml;
@@ -156,13 +157,14 @@ class PmController extends Controller
     //拍卖添加
     public function pm()
     {
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $women = WoMen::all();
         $tags = Tag::all();
         $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.fbpm',compact('gw','shang','pin','women','tags','youlians'));
+        return view('home.fbpm',compact('gw','shang','pin','women','tags','youlians','huobans'));
     }
 
     //执行拍卖
@@ -193,6 +195,7 @@ class PmController extends Controller
     //拍卖会场
     public function pmhc()
     {
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $shangpin = Sp::all();
         $women = WoMen::all();
@@ -201,7 +204,7 @@ class PmController extends Controller
         $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai','youlians'));
+        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai','youlians','huobans'));
     }
 
     //拍卖详情页

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\Ding;
+use App\Hb;
 use App\Huo;
 use App\Sp;
 use App\Tag;
@@ -76,6 +77,7 @@ class DingController extends Controller
      */
     public function show($id)
     {
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -86,7 +88,7 @@ class DingController extends Controller
         $huo = Huo::orderBy('id','desc')->take(3)->get();
         $youlians = Youlian::all();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians'));
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians','huobans'));
     }
 
     /**
