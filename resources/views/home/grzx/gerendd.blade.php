@@ -16,7 +16,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="Keywords" content="">
     <meta name="Description" content="">
-    <title>用户中心_唯品会模板,ECSHOP唯品会,ECSHOP唯品会模板,ECSHOP唯品会商城模板 - Powered by ECShop</title>
+
     <link rel="shortcut icon" href="http://weipin.ecshop119.com/favicon.ico">
     <link rel="icon" href="http://weipin.ecshop119.com/animated_favicon.gif" type="image/gif">
     <link href="css/style_5.css" rel="stylesheet" type="text/css">
@@ -149,7 +149,11 @@
             </div>
         </div>
 
-
+         <div class="am-cf">
+                    <div class="am-fr">
+                        {{ $di->appends(request()->all())->links() }}
+                    </div>
+                </div>
 
 
 

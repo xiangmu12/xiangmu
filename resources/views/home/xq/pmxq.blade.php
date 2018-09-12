@@ -50,28 +50,38 @@
                                             <div class="selector-wrapper">
                                                 成色: <b>@if ($shangpinss['cheng'] == 0 )全新 @else 非全新@endif</b>
                                             </div>
+                                            <div class="selector-wrapper" id="jia" value="{{$shangpinss['jmoney']}}">
+                                                {{$shangpinss['jmoney']}}
+                                            </div>
                                             <!-- <select name="id" id="productSelect" class="product-single__variants hide" style="display: none;">
                                                 <option selected="selected" data-sku="" value="8772462979">XS / Black - $89.00 USD</option>
                                             </select> -->
-                                            <hr> @if($pmlone)
-                                            <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$pmlone->endmoney}}">{{$pmlone->endmoney}}</span></span>
-                                            @endif @if(!$pmlone)
+                                            <hr> 
+                                            @if(!$pmlone)
+                                            当前价格：
                                             <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$shangpinss['money']}}">{{$shangpinss['money']}}</span></span>
+                                           
+                                            @endif 
+                                            @if($pmlone)
+                                            当前价格：
+                                             <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$pmlone->endmoney}}">{{$pmlone->endmoney}}</span></span>
                                             @endif
                                             <span class="visually-hidden">Regular price</span>
                                             <input type="hidden" name="shangpinid" value="{{$shangpinss['id']}}">
                                             <input type="hidden" name="endmoney" id="yincang" value="{{$pmliebiao[0]['endmoney']}}">
-                                            <button class="spr-button spr-button-primary button button-primary btn btn-primary" id="butt" value="竞拍">竞拍</button>
+                                            <button  class="spr-button spr-button-primary button button-primary btn btn-primary" id="butt" value="竞拍">竞拍</button>
                                             {{csrf_field()}}
                                             <script type="text/javascript">
                                             $('#butt').click(function() {
-                                                var b = $('#jinqian').html();
-                                                var c = parseInt(b);
-                                                var a = c += 5;
-                                                $('#yincang').val(a);
-                                                console.log(a);
-
+                                                var a = $('#jinqian').html();
+                                                var b = parseInt(a);
+                                                var c = $('#jia').html();
+                                                var d = parseInt(c);
+                                                var e = b += d;
+                                                $('#yincang').val(e);
+                                                console.log(e);
                                             })
+
                                             </script>
                                         </form>
                                         <div class="add-to-wishlist">
@@ -102,75 +112,85 @@
                         </div>
                     </div>
                     <div class="product-information">
-                        <div id="tabs-information">
-                            <ul class="nav nav-tabs tabs-left sideways">
-                                <li class="description"><a href="#desc" data-toggle="tab" class="active">描述</a></li>
-                                <li class="warranty"><a href="#size" data-toggle="tab">保证</a></li>
-                                <li class="delivery"><a href="#delivery" data-toggle="tab">交货</a></li>
-                                <li class="payment"><a href="#payment" data-toggle="tab">付款</a></li>
-                                <li class="reviews"><a href="#customerreview" data-toggle="tab">客户评论</a></li>
-                            </ul>
-                            <div class="tab-panel active" id="desc">
-                                <p>
-                                    Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet consectetur adipiscing elitos.X
-                                </p>
+                       
+                        <script>
+                        $('#tabs-information').easytabs({ animationSpeed: 'fast', updateHash: false });
+                        </script>
+                        <div id="product-additional-information">
+                            <div class="related-products">
+                                <ul class="related-products-items grid-uniform">
+                                   
+                                   
                             </div>
-                            <div class="tab-panel fade " id="size">
-                                <h2>保修信息</h2>
-                                <p>
-                                    有限担保 有限保修不可转让。以下有限保证给予以下Ashley Furniture Industries，Inc。的原始零售购买者。产品： 用于软垫和皮革制品的框架 有限终身保修 有限终身保修适用于沙发，沙发，爱情座椅，软垫椅子，沙发椅，滑雪板和枕木中使用的所有框架。Ashley Furniture Industries，Inc。向原始零售购买者保证这些组件不会出现材料制造缺陷。
-                                </p>
-                                <p>
-                                    Frames Used In Upholstered and Leather Products
-                                    <br> Limited Lifetime Warranty
-                                    <br> A Limited Lifetime Warranty applies to all frames used in sofas, couches, love seats, upholstered chairs, ottomans, sectionals, and sleepers. Ashley Furniture Industries,Inc. warrants these components to you, the original retail purchaser, to be free from material manufacturing defects.
-                                </p>
-                            </div>
-                            <div class="tab-panel fade " id="delivery">
-                                <h2>运输与交付</h2> 在您购买之前，了解您计划放置家具的区域的尺寸是有帮助的。您还应该测量家具通过的任何门道和走廊，以便到达最终目的地。
-                                <h5>运输</h5> Shopify Shop要求所有产品在您带回家之前都要经过适当的检查，以确保没有任何意外。我们的团队很乐意打开所有包裹并协助检查过程。然后，我们将重新封装安全运输包裹。我们鼓励所有客户携带家具垫或毯子，以便在运输过程中保护物品以及绳索或系带。Shopify Shop对于离开商店或运输途中发生的损坏不承担任何责任。购买者有责任确保拾取正确的物品并保持良好状态。
-                                <h5>交付</h5> 客户可以选择最适合其日程安排的下一个可用交付日。但是，为了尽可能有效地路线停靠，Shopify Shop将提供时间范围。客户将无法选择时间。我们会在您预定的时间范围之前通知您。请确保当时有责任的成年人（18岁或以上）回家。 在准备交付时，请移除现有的家具，图片，镜子，配件等，以防止损坏。同时确保您希望放置家具的区域没有任何旧家具和任何其他可能妨碍交付团队通道的物品。Shopify Shop将提供，组装和设置您购买的新家具，并从您家中取出所有包装材料。我们的送货工作人员不得移动您现有的家具或其他家居用品。送货人员将尝试以安全和受控的方式交付所购买的物品，但如果他们认为会损坏产品或家庭，则不会尝试放置家具。送货人员无法移除门，提升家具或携带超过3层楼梯的家具。
-                            </div>
-                            <div class="tab-panel fade " id="payment">
-                                <h2>支付信息</h2> 每周用一次水浸湿的布擦拭或擦拭干净。切勿在表面留下水渍。这些水斑会变干，可能留下永久的痕迹。 清洁污渍/斑点使用以下步骤：用湿法和液体洗碗洗涤剂混合一块柔软的布。尽可能多地拧碎布以除去多余的液体。以圆周运动轻轻地摩擦表面。用干净、柔软的毛巾立即擦干表面。
-                            </div>
-                            <div class="tab-panel fade " id="customerreview">
-                                <div id="shopify-product-reviews" data-id="3008529923">
-                                    <div class="spr-container">
-                                        <h2 class="spr-header-title">留言</h2>
-                                        <div class="spr-content">
-                                            <div class="spr-form" id="form_3008529923" style="">
-                                                <div class="spr-form-review-title">
-                                                    <label class="spr-form-label" for="review_title_3008529923">Review Title</label>
-                                                    <ul>
-                                                    </ul>
-                                                </div>
-                                                <form method="post" action="/pinglun" id="new-review-form_3008529923" class="new-review-form">
-                                                    <div class="spr-form-review-body">
-                                                        <label class="spr-form-label" for="review_body_3008529923">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
-                                                        <div class="spr-form-input">
-                                                            <textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
-                                                        </div>
-                                                        {{csrf_field()}}
+                        </div>
+                        <div class="product-information">
+                            <div id="tabs-information">
+                                <ul class="nav nav-tabs tabs-left sideways">
+                                    <li class="description"><a href="#desc" data-toggle="tab" class="active">描述</a></li>
+                                    <li class="warranty"><a href="#size" data-toggle="tab">保证</a></li>
+                                    <li class="delivery"><a href="#delivery" data-toggle="tab">交货</a></li>
+                                    <li class="payment"><a href="#payment" data-toggle="tab">付款</a></li>
+                                    <li class="reviews"><a href="#customerreview" data-toggle="tab">客户评论</a></li>
+                                </ul>
+                                <div class="tab-panel fade " id="size">
+                                    <h2>保修信息</h2>
+                                    <p>
+                                        有限担保 有限保修不可转让。以下有限保证给予以下Ashley Furniture Industries，Inc。的原始零售购买者。产品： 用于软垫和皮革制品的框架 有限终身保修 有限终身保修适用于沙发，沙发，爱情座椅，软垫椅子，沙发椅，滑雪板和枕木中使用的所有框架。Ashley Furniture Industries，Inc。向原始零售购买者保证这些组件不会出现材料制造缺陷。
+                                    </p>
+                                </div>
+                                <div class="tab-panel fade " id="delivery">
+                                    <h2>运输与交付</h2> 在您购买之前，了解您计划放置家具的区域的尺寸是有帮助的。您还应该测量家具通过的任何门道和走廊，以便到达最终目的地。
+                                    <h5>运输</h5> 要求所有产品在您带回家之前都要经过适当的检查，以确保没有任何意外。我们的团队很乐意打开所有包裹并协助检查过程。然后，我们将重新封装安全运输包裹。我们鼓励所有客户携带家具垫或毯子，以便在运输过程中保护物品以及绳索或系带。对于离开商店或运输途中发生的损坏不承担任何责任。购买者有责任确保拾取正确的物品并保持良好状态。
+                                    <h5>交付</h5> 客户可以选择最适合其日程安排的下一个可用交付日。但是，为了尽可能有效地路线停靠，将提供时间范围。客户将无法选择时间。我们会在您预定的时间范围之前通知您。请确保当时有责任的成年人（18岁或以上）回家。 在准备交付时，请移除现有的家具，图片，镜子，配件等，以防止损坏。同时确保您希望放置家具的区域没有任何旧家具和任何其他可能妨碍交付团队通道的物品。将提供，组装和设置您购买的新家具，并从您家中取出所有包装材料。我们的送货工作人员不得移动您现有的家具或其他家居用品。送货人员将尝试以安全和受控的方式交付所购买的物品，但如果他们认为会损坏产品或家庭，则不会尝试放置家具。送货人员无法移除门，提升家具或携带超过3层楼梯的家具。
+                                </div>
+                                <div class="tab-panel fade " id="payment">
+                                    <h2>支付信息</h2> 每周用一次水浸湿的布擦拭或擦拭干净。切勿在表面留下水渍。这些水斑会变干，可能留下永久的痕迹。 清洁污渍/斑点使用以下步骤：用湿法和液体洗碗洗涤剂混合一块柔软的布。尽可能多地拧碎布以除去多余的液体。以圆周运动轻轻地摩擦表面。用干净、柔软的毛巾立即擦干表面。
+                                </div>
+                                <div class="tab-panel fade " id="customerreview">
+                                    <div id="shopify-product-reviews" data-id="3008529923">
+                                        <div class="spr-container">
+                                            <h2 class="spr-header-title">留言</h2>
+                                            <div>如遇到以下情况可能是诈骗行为：<span style="color:red">1.宝贝价格异常低；2.卖家要求QQ沟通；3.卖家要求直接汇款。</span> 寻求防骗经验。</div>
+                                            <div class="spr-content">
+                                                <div class="spr-form" id="form_3008529923" style="">
+                                                    <div class="spr-form-review-title">
+                                                        @foreach($pingluns as $v)
+                                                        <img src="{{$v->user->pic}}" style="width:45px;height:45px;margin:10px;float:left;border-radius:70%">
+                                                        <ul style="margin:0px;">
+                                                            <p>{{$v->user->username}}</p>
+                                                            <p>{{$v['content']}}</p>
+                                                            <br>
+                                                            <br> @endforeach
+                                                        </ul>
                                                     </div>
-                                                    <button class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">留言</button>
-                                                </form>
-                                            </div>
-                                            <div class="spr-reviews" id="reviews_3008529923" style="display: none">
+                                                    <form method="post" action="/pinglun" id="new-review-form_3008529923" class="new-review-form">
+                                                        <div class="spr-form-review-body">
+                                                            <label class="spr-form-label" for="review_body_3008529923">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
+                                                            <div class="spr-form-input">
+                                                                <textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
+                                                            </div>
+                                                            <input type="hidden" name="shangpin_id" value="{{$shangpinss->id}}"> {{csrf_field()}}
+                                                        </div>
+                                                        <button class="spr-button spr-button-primary button button-primary btn btn-primary" value="Submit Review">留言</button>
+                                                    </form>
+                                                </div>
+                                                <div class="spr-reviews" id="reviews_3008529923" style="display: none">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <script>
+                            $('#tabs-information').easytabs({ animationSpeed: 'fast', updateHash: false });
+                            </script>
                         </div>
-                        <script>
-                        $('#tabs-information').easytabs({ animationSpeed: 'fast', updateHash: false });
-                        </script>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</main>
 </main>
 </div>
 <div id="scroll-to-top" title="Scroll to Top" class="off">
@@ -222,12 +242,10 @@ tada_newsletter = true;
                         </div>
                         <div class="description">
                             <div id="quick-shop-description" class="text-left">
-                                <p>
-                                    Quisque vel enim quis purus ultrices consequat, sed tincidunt massa blandit ipsum interdum tristique cras dictum, lacus eu molestie elementum nulla est auctor. Etiam dan lorem quis ligula elementum porttitor quisem. Duis eget purus urna fusce sed scelerisque ante. Lorem ipsum dolor sit amet conse...
-                                </p>
-                            </div>
+                              </div>
                         </div>
                     </div>
+                      </div>
                 </div>
             </div>
         </div>
@@ -252,6 +270,9 @@ jQuery(document).ready(function($) {
 </script>
 </body>
 </p>
+</div>
+</div>
+</li>
 </div>
 </div>
 </li>

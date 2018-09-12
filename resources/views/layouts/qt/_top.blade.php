@@ -36,7 +36,7 @@
 								)</a>
 								</li>
 								<li>
-								<a href="collection.html" class="site-nav__link">交易中(
+								<a href="jiaoyizhong" class="site-nav__link">交易中(
 									{{$pin}}
 								)</a>
 								</li>
@@ -64,14 +64,7 @@
 							</ul>
 						</li>
 					</ul>
-					<script>
-						  $(window).ready(function($) {
-							//$('.megamenu__dropdown').css("width",$('#main-header').innerWidth());
-						  });
-						  $( window ).resize(function() {
-							//$('.megamenu__dropdown').css("width",$('#main-header').innerWidth());
-						  });
-					</script>
+					
 				</div>
 			</div>
 		</nav>    <!-- Main Content -->

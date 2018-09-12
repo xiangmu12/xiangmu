@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DeleteUserId extends Migration
+class CreateTableYoulian extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class DeleteUserId extends Migration
      */
     public function up()
     {
-        Schema::table('pingluns', function (Blueprint $table) {
-            //
-                $table->dropColumn('user_id');
+        Schema::create('youlians', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('url')->nullable()->comment('链接地址');
+            $table->string('name')->nullable()->comment('链接名称');
+            $table->timestamps();
         });
     }
 
@@ -26,9 +28,6 @@ class DeleteUserId extends Migration
      */
     public function down()
     {
-        Schema::table('pingluns', function (Blueprint $table) {
-            //
-           $table->string('user_id');
-        });
+       Schema::dropIfExists('youlians');
     }
 }

@@ -15,7 +15,7 @@ class AddTagIdShangpin extends Migration
     {
         Schema::table('shangpins', function (Blueprint $table) {
             $table->string('views')->default(0)->comment('浏览量');
-            $table->string('tag_id')->comment('标签ID');
+            
         });
     }
 
@@ -28,7 +28,7 @@ class AddTagIdShangpin extends Migration
     {
         Schema::table('shangpins', function (Blueprint $table) {
              $table->dropColumn('views');
-             $table->dropColumn('tag_id');
+            
         });
     }
 }

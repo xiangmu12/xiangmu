@@ -3,8 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Ding;
+use App\Huo;
 use App\Sp;
+use App\Tag;
 use App\User;
+use App\WoMen;
+use App\Youlian;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
@@ -122,5 +127,54 @@ class CarController extends Controller
         }else{
             return back()->with('error','删除失败');
         }
+    }
+
+    //结算
+    public function dd(Request $request)
+    {
+        
+        
+        $jiesuan = Car::findOrFail($request->duo);
+
+        $youlians = Youlian::all();
+        $gw = Car::all();
+        $tags = Tag::all();
+        $women = WoMen::all();
+        $shangpin = Sp::all();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        $huo = Huo::orderBy('id','desc')->take(3)->get();
+        // $huo = Huo::all();
+        return view('home.ding.jiesuan',compact('youlians','shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','jiesuan','jiesuan'));
+    }
+
+      //购物订单
+    public function gwdingdan(Request $request)
+    {
+        
+        $huo = Huo::findOrFail($request->shouhuo_id);
+        $sp = Car::findOrFail($request->carid);
+        //dd($sp);
+        foreach ($sp as $key => $value) {
+            $ding = new Ding;
+            $ding->title = $value->title;
+            $ding->image = $value->image;
+            $ding->cheng = $value->cheng;
+            $ding->money = $value->money;
+            $ding->zhifu = $request->zhifu;
+            $ding->title = $value->title;
+            $ding->kuaidi = $request->kuaidi;
+            $ding->user_id = session('id');
+            $ding->shangpin_id = $value->shangpin_id;
+            $ding->shouhuo_id = $request->shouhuo_id;
+            $ding->save();
+        }
+        if($ding){
+            return redirect('/gerendingdan')->with('success','成功');
+        }else{
+            return back()->with('success','成功');
+        }
+        
+        
     }
 }

@@ -17,8 +17,9 @@ body {
     font-family: "proxima_nova_rgregular";
 }
 </style>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <div class="wrapper">
-    <form action="/cart" method="post" novalidate="" class="cart table-wrap">
+    <form action="/dd" method="post" novalidate="" class="cart table-wrap">
         <table class="cart-table full table--responsive">
             <thead class="cart__row cart__header-labels" style="width:60px">
                 <tr style="background:#eee;">
@@ -37,11 +38,11 @@ body {
                 </tr>
             </thead>
             <tbody>
-                <form action="" method="get">
+               
                 @foreach($gw as $v) @if($v['user_id'] == Session::get('id'))
                 <tr class="cart__row table__section" style="margin-left: 50px">
                     <td data-label="Quantity">
-                            <input class="J_CheckBoxItem" type="checkbox" id="gouwuche" name="duo[]" value="goumai" @change = change erro="{{$v['money']}}">
+                            <input class="J_CheckBoxItem" type="checkbox" id="gouwuche" name="duo[]" value="{{$v['id']}}" @change = change erro="{{$v['money']}}">
                     </td>
                     <td class="product-name" data-label="Product" style="width:400px;">
                         <div class="img_item">
@@ -58,7 +59,7 @@ body {
                     <td data-label="Price">
                         <span class="money">$ {{$v['money']}} .00</span>
                     </td>
-
+                    <input type="hidden" name="shangpin_id" id="shangpin_id" value="{{$v['shangpin_id']}}">
                     <td data-label="Total" class="text-center">
                             <a href="/che/{{$v['id']}}" class="btn btn2">移除</a>
                     </td>
@@ -73,18 +74,24 @@ body {
                     <span class="cart__subtotal-title" id="qwe" style="font-size: 20px">金额：</span>
                     
                 </p>
-                <a href="/dingdan" class="btn btn2" value="结算">结算</a>
+                <button class="btn" value="结算">结算</button>
                 <a href="/" class="btn">返回</a>
             </div>
         </div>
+        {{csrf_field()}}
     </form>
                     <script type="text/javascript">
                             var c = 0;
+
                         $('input[type=checkbox]').click(function(){  
                             if (this.checked == true) {
                             var a = $(this).attr('erro');
                             var b = parseInt(a);
                             var d = c += b;
+                            var e = $('#shangpin_id').val();
+                            console.log(e);
+                            
+                            // console.log(d);
                         }else if(this.checked == false){
                             this.checked == true;
                             var a = $(this).attr('erro');
@@ -99,4 +106,3 @@ body {
                     </script>
 </div>
 <img style="margin-left:600px" src="//gtd.alicdn.com/tps/i2/T1Q2BUXaxFXXXXXXXX-32-32.gif" class="find-similar-loading">
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>

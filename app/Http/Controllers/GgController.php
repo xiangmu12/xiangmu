@@ -20,8 +20,6 @@ class GgController extends Controller
     public function index()
     {
         //读取用户信息
-        
-        //dd($users);die;
         $xxcate = XxCate::all();
         //读取数据库 获取用户数据
         $Gg = Gg::where('user_id','like', '%'.request()->keywords.'%')
@@ -121,7 +119,9 @@ class GgController extends Controller
         $Gg -> xxcate_id = $request ->xxcate_id;
         $Gg -> cheng = $request ->cheng;
         $Gg -> money = $request ->money;
-        $Gg -> quyu = $request ->quyu;
+        $Gg -> province = $request->province;
+        $Gg -> city = $request->city;
+        $Gg -> area = $request->area;
         $Gg -> orby = $request ->orby;
         $Gg -> image = $request ->image;
         // dd ($Gg);
@@ -151,9 +151,4 @@ class GgController extends Controller
         }
     }
 
-    // public function ajax()
-    // {
-    //     $a = $_POST[];
-    //     return $a;
-    // }
 }

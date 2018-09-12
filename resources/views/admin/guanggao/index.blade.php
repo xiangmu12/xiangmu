@@ -54,8 +54,8 @@
                                 <input type="checkbox">
                             </td>
                             <td>{{$v['id']}}</td>
-                            <td>  
-                                {{Session::get('username')}}   
+                            <td>     
+                               {{$v->user['username']}}
                             </td>
                             <td>
                                 @if($v->xxcate)

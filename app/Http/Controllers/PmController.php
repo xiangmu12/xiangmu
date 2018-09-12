@@ -9,6 +9,7 @@ use App\Pml;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\Youlian;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -158,9 +159,10 @@ class PmController extends Controller
         $gw = Car::all();
         $women = WoMen::all();
         $tags = Tag::all();
+        $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.fbpm',compact('gw','shang','pin','women','tags'));
+        return view('home.fbpm',compact('gw','shang','pin','women','tags','youlians'));
     }
 
     //执行拍卖
@@ -170,7 +172,7 @@ class PmController extends Controller
         $mai -> intro = $request->intro;
         $mai -> cheng = $request->cheng;
         $mai -> money = $request->money;
-        $mai -> jmoney = $request->money;
+        $mai -> jmoney = $request->jmoney;
         $mai -> opentime = $request->opentime;
         $mai -> overtime = $request->overtime;
         $mai -> image = $request->image;
@@ -195,9 +197,11 @@ class PmController extends Controller
         $women = WoMen::all();
         $tags = Tag::all();
         $mai = Pm::all();
+        $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai'));
+        // $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
+        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai','youlians'));
     }
 
     //拍卖详情页
@@ -211,11 +215,15 @@ class PmController extends Controller
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $tags = Tag::all();
         $shangpinss = Pm::findOrFail($id);
+
         $pingluns = $shangpinss->pingluns()->get();
         $pmliebiao = Pml::all();
+        $youlians = Youlian::all();
         $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
+        // dd($pmlone->endmoney);
 
-        return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone'));
+
+        return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone','youlians'));
     }
 
     //竞拍
@@ -229,6 +237,7 @@ class PmController extends Controller
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $pm = Pm::all();
+        // dd($jingpai);
 
 
 
