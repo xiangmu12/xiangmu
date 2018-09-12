@@ -92,7 +92,9 @@
                                             @endif
                                             <span class="visually-hidden">Regular price</span>
                                             <input type="hidden" name="shangpinid" value="{{$shangpinss['id']}}">
+                                           @if($pmliebiao)
                                             <input type="hidden" name="endmoney" id="yincang" value="{{$pmliebiao[0]['endmoney']}}">
+                                           @endif
                                             <button class="spr-button spr-button-primary button button-primary btn btn-primary" id="butt" value="竞拍">竞拍</button>
                                             {{csrf_field()}}
                                             <script type="text/javascript">

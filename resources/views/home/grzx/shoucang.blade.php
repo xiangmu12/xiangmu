@@ -68,7 +68,19 @@
                         <tr>
                             <td><a href="/{{$vv['id']}}.html"><img src="{{$vv['image']}}" width="70">{{$vv['intro']}}</a></td>
                             <td class="am-hide-sm-only">{{$vv['money']}}元</td>
-                            
+                             <td>
+                                <div class="am-btn-toolbar">
+                                    
+                                        <form style="float:left" action="/shoucang/{{$vv['id']}}" method="post">
+                                            
+                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span>取消收藏</button>
+                                        {{method_field('DELETE')}}
+                                            {{csrf_field()}}
+                                        </form>
+
+                                    
+                                </div>
+                            </td>
                            
                         </tr>
                         @endif
