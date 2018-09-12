@@ -202,12 +202,12 @@ Route::resource('shoucang','ScController');
 
 
 //发布拍卖
-Route::get('fbpm','PmController@pm');
+Route::get('/fbpm','PmController@pm');
 
-Route::post('mai','PmController@mai');
+Route::post('/mai','PmController@mai');
 
 //拍卖会场
-Route::get('pmhc','PmController@pmhc');
+Route::get('/pmhc','PmController@pmhc');
 
 //拍卖详情页
 Route::get('/xtrttq/{id}','PmController@xq');
@@ -218,3 +218,5 @@ Route::post('/pai','PmController@jingpai');
 //我的拍卖
 Route::get('/wdpm','PmController@wdpm');
 
+//网站配置
+Route::resource('/wzpz','WzPeiZhiController');

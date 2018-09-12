@@ -60,6 +60,7 @@ class DingController extends Controller
         $ding->user_id = session('id');
         $ding->shangpin_id = $sp->spid;
         $ding->shouhuo_id = $request->shouhuo_id;
+        $sp->orlogin = 1;
          if($ding->save()){
             return redirect('/dingdan')->with('success','订单提交成功');
         }else{
@@ -77,6 +78,7 @@ class DingController extends Controller
      */
     public function show($id)
     {
+
         $huobans = Hb::all(); 
         $gw = Car::all();
         $tags = Tag::all();
@@ -88,7 +90,9 @@ class DingController extends Controller
         $huo = Huo::orderBy('id','desc')->take(3)->get();
         $youlians = Youlian::all();
         // $huo = Huo::all();
+
         return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians','huobans'));
+
     }
 
     /**
@@ -144,4 +148,7 @@ class DingController extends Controller
             return back()->with('error','删除失败');
         }
     }
+
+
+ 
 }

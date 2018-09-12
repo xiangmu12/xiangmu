@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Home Market - Responsive HTML5 theme – Red version</title>
+    <title>{{$peizhi['title']}}</title>
     <!-- Font ================================================== -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
@@ -310,7 +310,7 @@
                     <div class="grid__item small--one-whole medium--one-whole two-eighths">
                         <h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
                         <a href="index.html" itemprop="url" class="site-header__logo-link">
-                            <img src="/assets/assets/images/9bcbb5b9e830471c8b4701228203abe9.PNG" alt="Home Market Red" itemprop="logo">
+                            <img src="{{$peizhi['logo']}}" alt="Home Market Red" itemprop="logo">
                         </a>
                         </h1>
                     </div>

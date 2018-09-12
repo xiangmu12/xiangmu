@@ -29,14 +29,14 @@
 							
 							<ul class="site-nav__dropdown">
 								<li>
-								<a href="collection" class="site-nav__link">出售中(		
+								<a href="/collection" class="site-nav__link">出售中(		
 											
 										{{$shang}}
 								
 								)</a>
 								</li>
 								<li>
-								<a href="collection.html" class="site-nav__link">交易中(
+								<a href="/jiaoyizhong" class="site-nav__link">交易中(
 									{{$pin}}
 								)</a>
 								</li>
