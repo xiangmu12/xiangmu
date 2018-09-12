@@ -167,6 +167,7 @@
                                                         <label class="spr-form-label" for="review_body_3008529923">Body of Review <span class="spr-form-review-body-charactersremaining">(1500)</span></label>
                                                         <div class="spr-form-input">
                                                             <textarea class="spr-form-input spr-form-input-textarea " id="review_body_3008529923" data-product-id="3008529923" name="content" rows="10"></textarea>
+
                                                         </div>
                                                         <input type="hidden" name="shangpin_id" value="{{$shangpinss->id}}"> {{csrf_field()}}
                                                     </div>
@@ -252,6 +253,9 @@
                                 </ul>
                             </div>
                         </div>
+                                <!-- <script>
+                        $('#tabs-information').easytabs({animationSpeed: 'fast', updateHash: false});
+                      </script> -->
                     </div>
                 </div>
             </div>

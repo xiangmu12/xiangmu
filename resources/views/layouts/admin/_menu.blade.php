@@ -96,11 +96,7 @@
         </a>
         <ul class="tpl-left-nav-sub-menu" style="display: none">
             <li>
-                <a href="/shangpin/create">
-                    <i class="am-icon-angle-right"></i>
-                    <span>商品添加</span>
-                    <i class="tpl-left-nav-content-ico am-fr am-margin-right"></i>
-                </a>
+              
                 <a href="/shangpin">
                     <i class="am-icon-angle-right"></i>
                     <span>商品列表</span>
@@ -368,3 +364,16 @@
     </li>
 </ul>
 
+<ul class="tpl-left-nav-menu">
+  <li class="tpl-left-nav-item">
+        
+
+         <li class="tpl-left-nav-item">
+        <a href="/wzpz" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>网站配置</span>
+        </a>
+    </li>
+
+    </li>
+</ul>

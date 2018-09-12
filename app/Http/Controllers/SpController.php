@@ -65,8 +65,8 @@ class SpController extends Controller
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
         $shangpins -> money = $request->money;
-        $shangpins -> quyu = $request->quyu;
-        $shangpins -> quyu = $request->quyu;
+        $shangpins -> title = $request->title;
+        
         $shangpins -> xxcate_id = $request ->xxcate_id;
         $shangpins -> user_id = Session('id');
         //文件上传

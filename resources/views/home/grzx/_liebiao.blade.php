@@ -19,7 +19,7 @@
                     <dd>
                         <ul>
                             <li> <a href="/wode"> 用户信息</a></li>
-                            <li> <a href="http://weipin.ecshop119.com/user.php?act=collection_list"> 我的收藏</a></li>
+                            <li> <a href="/shoucang/create"> 我的收藏</a></li>
                             <li> <a href="http://weipin.ecshop119.com/user.php?act=message_list"> 我的留言</a></li>
                             <li> <a href="http://weipin.ecshop119.com/user.php?act=tag_list">我的标签</a></li>
                             <li> <a href="http://weipin.ecshop119.com/user.php?act=affiliate"> 我的推荐</a></li>

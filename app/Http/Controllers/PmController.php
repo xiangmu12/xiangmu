@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Car;
+use App\Hb;
 use App\Pl;
 use App\Pm;
 use App\Pml;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\WzPeiZhi;
 use App\Youlian;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
@@ -156,13 +158,15 @@ class PmController extends Controller
     //拍卖添加
     public function pm()
     {
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $women = WoMen::all();
         $tags = Tag::all();
         $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.fbpm',compact('gw','shang','pin','women','tags','youlians'));
+        $peizhi = WzPeiZhi::first();
+        return view('home.fbpm',compact('gw','shang','pin','women','tags','youlians','huobans','peizhi'));
     }
 
     //执行拍卖
@@ -176,10 +180,9 @@ class PmController extends Controller
         $mai -> opentime = $request->opentime;
         $mai -> overtime = $request->overtime;
         $mai -> image = $request->image;
-
         // dd($request->hasFile('image'));
-       if ($request->hasFile('image')) {
-            $mai->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        if($request->hasFile('image')){
+             $mai->image ='/'.$request->image->store('uploads/'.date('Ymd'));
         }
 
         if($mai -> save()){
@@ -192,6 +195,7 @@ class PmController extends Controller
     //拍卖会场
     public function pmhc()
     {
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $shangpin = Sp::all();
         $women = WoMen::all();
@@ -200,15 +204,19 @@ class PmController extends Controller
         $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+
         // $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
-        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai','youlians'));
+        $peizhi = WzPeiZhi::first();
+        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai','youlians','huobans','peizhi'));
     }
 
     //拍卖详情页
     public function xq($id)
-    {
+    {   
+        $huobans = Hb::all();
+        $peizhi = WzPeiZhi::first();
+        $pm = Pm::all();
         $gw = Car::all();
-        $pm = Pm::get();
         $shangpin = Sp::all();
         $women = WoMen::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
@@ -220,10 +228,12 @@ class PmController extends Controller
         $pmliebiao = Pml::all();
         $youlians = Youlian::all();
         $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
+
         // dd($pmlone->endmoney);
-
-
-        return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone','youlians'));
+        // dd($shangpinss);
+        // $endmoney = array_column(array($pmliebiao), 'endmoney');
+        // dd($endmoney);
+        return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone','youlians','peizhi','huobans'));
     }
 
     //竞拍
@@ -251,13 +261,17 @@ class PmController extends Controller
 
     //我的拍卖
     public function wdpm()
-    {
+    {   
+         $peizhi = WzPeiZhi::first();
         $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $pmliebiao = Pml::get();
         $paimai = Pm::all();
-
-        return view('home.wdpm',compact('gw','shang','pin','pmliebiao','paimai'));
+        // $lie = DB::table('pmliebiao')->pluck('endmoney');
+        // $pmliebiao = Pml::where('uuser_id',session('id'))->get();
+        // dd($lie);
+        // dd($paimai);
+        return view('home.wdpm',compact('gw','shang','pin','pmliebiao','paimai','peizhi'));
     }
 }

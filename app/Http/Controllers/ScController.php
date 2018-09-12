@@ -4,13 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\DCate;
+use App\Hb;
 use App\Sc;
 use App\Sp;
 use App\Tag;
 use App\User;
 use App\WoMen;
+use App\WzPeiZhi;
 use App\XCate;
 use App\XxCate;
+use App\Youlian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -42,6 +45,8 @@ class ScController extends Controller
      */
     public function create()
     {   
+        $peizhi = WzPeiZhi::first();
+        $huobans = Hb::all();
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -53,9 +58,9 @@ class ScController extends Controller
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $shoucang = Sc::where('user_id',session('id'))->get();
-         
+        $youlians = Youlian::all();
        
-        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw'));
+        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','huobans','peizhi','tags','gw','youlians'));
     }
 
     /**
@@ -111,6 +116,13 @@ class ScController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sp = Sp::findOrFail($id);
+        $shoucang = Sc::where('shangpin_id',$id);
+
+        if($sp->delete() && $shoucang->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }

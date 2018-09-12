@@ -19,7 +19,6 @@
 								<div itemprop="offers " itemscope=" " itemtype="http://schema.org/Offer " stylr="background-image:url(/ueditor/images/1.jpg) ">
 											<meta itemprop="priceCurrency " content="USD ">
 											<link itemprop="availability " href="http://schema.org/InStock ">
-												<form action="/mai" method="post"  id="contact_form " class="contact-form "  enctype="multipart/form-data">
 												<form action="/mai" method="post"  id="contact_form " class="contact-form"  enctype="multipart/form-data">
 													<label for="productSelect-option-0 ">描述:</label><textarea cols="50" name="intro"></textarea></br></br>
 													<div class="am-form-group ">

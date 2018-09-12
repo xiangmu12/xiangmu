@@ -10,6 +10,7 @@ use App\Tag;
 use App\User;
 use App\WoMen;
 use App\Youlian;
+use App\WzPeiZhi;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
@@ -22,12 +23,13 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+         $peizhi = WzPeiZhi::first();
         // $shangpin = Sp::all();
         $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.gouwuche',compact('gw','shang','pin'));
+        return view('home.gouwuche',compact('gw','shang','pin','peizhi'));
         }
    
 
@@ -128,6 +130,7 @@ class CarController extends Controller
             return back()->with('error','删除失败');
         }
     }
+
 
     //结算
     public function dd(Request $request)

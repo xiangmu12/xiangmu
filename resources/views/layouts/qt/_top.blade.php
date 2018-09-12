@@ -11,7 +11,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="jiang" class="site-nav__link">
+							<a href="/jiang" class="site-nav__link">
 								<span>降降降</span>
 								<span class="special_label sale_label">促销</span>
 							</a>
@@ -29,14 +29,15 @@
 							
 							<ul class="site-nav__dropdown">
 								<li>
-								<a href="collection" class="site-nav__link">出售中(		
+								<a href="/collection" class="site-nav__link">出售中(		
 											
 										{{$shang}}
 								
 								)</a>
 								</li>
 								<li>
-								<a href="jiaoyizhong" class="site-nav__link">交易中(
+
+								<a href="/jiaoyizhong" class="site-nav__link">交易中(
 									{{$pin}}
 								)</a>
 								</li>

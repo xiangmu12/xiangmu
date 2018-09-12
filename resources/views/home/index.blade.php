@@ -1,10 +1,11 @@
- <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script> 
-    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+
+
+
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
+ <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/holder/2.9.4/holder.min.js"></script>
  
 <main class="main-content">
     <div></div>
@@ -22,13 +23,13 @@
                 <div class="sidebar-collections">
                     <div class="sdcollections-title sb-title">
                         <i class="fa fa-list"></i>
-                        <span>萨达撒大家撒</span>
+                        <span>主题市场</span>
                     </div>
                     <div class="sdcollections-content" >
                         <ul class="sdcollections-list" >
                             @foreach($dcate as $v)
                             <li class="sdc-element vetical-menu1 site-nav--has-dropdown" aria-haspopup="true">
-                                <a href="collection.html" class="site-nav__link">
+                                <a href="/dcateall" class="site-nav__link">
                                     <div class="element-main">
                                         <div class="collection-icon">
                                             <img src="/assets/assets/images/book.png" alt="collection icon">
@@ -48,7 +49,7 @@
                                             <li class="list-title"  style="float: left">
                                                 {{$value['name']}} @foreach($xxcate as $val) @if($value['id'] == $val['xcate_id']) @if($v['id'] == $value['dcate_id'])
                                                 <li class="list-unstyled nav-sub-mega" style="float: left">
-                                                    <a href="collection.html" >
+                                                    <a href="/dcateall?xxcate_id={{$v->id}}" >
 																				{{$val['name']}}
 																		</a>
                                                 </li>
@@ -64,77 +65,44 @@
                     </div>
                 </div>
             </div>
-            <div class="grid__item small--one-whole  medium--one-whole three-quarters main-slideshow">
-                <div class="main_slideshow_wrapper">
-                    <div id="slider" class="flexslider" >
-                        <ul class="slides">
-                            <li>
-                                <img src="/IMG_1527(20180906-014103).jpg"  alt="" style="width:885px;height:450px" />
-                            </li>
-                            <li>
-                                <img src="/assets/assets/images/demo2_885x450.jpg" alt="" />
-                            </li>
-                            <li>
-                                <img src="/assets/assets/images/demo3_885x450.jpg" alt="" />
-                            </li>
-                            <li>
-                                <img src="/assets/assets/images/demo4_885x450.jpg" alt="" />
-                            </li>
-                            <li>
-                                <img src="/assets/assets/images/demo5_885x450.jpg" alt="" />
-                            </li>
-                            <li>
-                                <img src="/assets/assets/images/demo6_885x450.jpg" alt="" />
-                            </li>
-                        </ul>
+            
+          <div class="container" style="width:900px;height:400px;margin-right:0px">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox" style="width:872px;height:400px">
+                <div class="item active">
+                    <img src="{{$peizhi['pic1']}}" width="872" height="400" alt="狐狸王董事会.自小组成立以来团结合作,互利共赢共同营造美好的未来">
+                    <div class="carousel-caption">
                     </div>
-                    <div id="carousel" class="flexslider">
-                        <ul class="slides">
-                            <li>
-                                <div>
-                                    <img src="/IMG_1527(20180906-014103).jpg" style="width:50px;height:50px" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">狐狸王二手商城董事会</a></span>
-                                    <span class="cr-desc">自2018年九月成立以来,团结协作,共求发展</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="/assets/assets/images/demo2_50x50.jpg" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Beautiful woman 2015</a></span>
-                                    <span class="cr-desc">high-end products cosmetics &amp; mackup</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="/assets/assets/images/demo3_50x50.jpg" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Sony Xperia Z5</a></span>
-                                    <span class="cr-desc">buy now only today sale 60% for all colour</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="/assets/assets/images/demo4_50x50.jpg" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">New Lego collection</a></span>
-                                    <span class="cr-desc">best seller 2015</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="/assets/assets/images/demo5_50x50.jpg" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Christmas 2015</a></span>
-                                    <span class="cr-desc">Merry Christmas</span>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <img src="/assets/assets/images/demo6_50x50.jpg" alt="">
-                                    <span class="cr-title"><a href="collection.html" onclick="location.href = 'collection.html'">Happy New Year</a></span>
-                                    <span class="cr-desc">Happy New Year</span>
-                                </div>
-                            </li>
+                </div>
+                <div class="item">
+                    <img src="{{$peizhi['pic2']}}" width="872" height="400" alt="...">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{$peizhi['pic3']}}" width="872" height="400" alt="...">
+                    <div class="carousel-caption">
                     </div>
                 </div>
             </div>
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
         </div>
         @foreach($dcate as $v)
         <div id="beauty-health-blocks" class="beauty-health-wrapper grid--full grid--table grid-block-full">
@@ -146,14 +114,21 @@
                     <div class="collection-tags">
                         <ul class="bh-tags">
                             @foreach($xcate as $value) @if($v['id'] == $value['dcate_id'])
-                            <li class=""><a href="/cate/{{$v->id}}">{{$value['name']}}</a></li>
+                            <li class=""><a href="/dcateall">{{$value['name']}}</a></li>
                             @endif @endforeach
                             <li class="link-to"><a href="/dcateall">查看全部</a></li>
                         </ul>
                     </div>
                 </div>
+                <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script> 
+    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
+    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
                 <div class="bh-btm">
                     <div class="grid__item three-quarters bh-left small--one-whole medium--one-whole">
+
                         <div class="home-slideshow-block bh-slideshow">
                             <div class="home-gallery-slider">
                                 
@@ -181,11 +156,7 @@
 														</a>
                                                 <div class="quickview">
                                                     <div class="product-ajax-cart hidden-xs hidden-sm">
-                                                        <div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
-                                                            <a href="#quick-shop-modal" class="btn quick_shop">
-																		<i class="fa fa-eye" title="Quick View"></i>																
-																	</a>
-                                                        </div>
+                                                       
                                                     </div>
                                                 </div>
                                             </div>
