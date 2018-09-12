@@ -21,5 +21,9 @@ class DCate extends Model
 	{
 		return $this->hasMany('App\XCate','dcate_id','id');
 	}
+	public function logo()
+	{
+		return $this->hasMany('App\Logo','dcate_id','id');
+	}
 	 
 }

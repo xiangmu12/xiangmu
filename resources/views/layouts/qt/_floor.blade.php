@@ -29,14 +29,9 @@
 								</ul>
 								@endforeach
 							</div>
-							<div class="fi-content inline-list social-icons">
-								<a href="index.html" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-								<a href="index.html" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-								<a href="index.html" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-								<a href="index.html" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-								<a href="index.html" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-								<a href="index.html" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-							</div>
+							<div class="newsview" style="float:right">
+     						 <div class="share-component" data-disabled="google,twitter,facebook" data-description="Share.js - 一键分享到微博，QQ空间，腾讯微博，人人，豆瓣"></div>
+    						</div>
 						</div>
 						<div class="fi-links grid__item one-quarter small--one-whole medium--one-whole">
 							<div class="fi-title">
@@ -55,30 +50,11 @@
 										<a href="/wo/tui"><span>{{$v['songtui']}}</span></a>
 									</li>
 									<li>
-										<a href="#"><span>{{$v['juphone']}}</span></a>
-									</li>
-									<li>
 										<a href="#"><span>Online support</span></a>
 									</li>
 								</ul>
 									
-								<ul class="grid__item one-half">
-									<li>
-										<a href="account.html"><span>My Account</span></a>
-									</li>
-									<li>
-									<a href="#"><span>Order History</span></a>
-									</li>
-									<li>
-									<a href="#"><span>Help &amp; FAQs</span></a>
-									</li>
-									<li>
-									<a href="contact-us.html"><span>Contact us</span></a>
-									</li>
-									<li>
-									<a href="#"><span>Manufacturers</span></a>
-									</li>
-								</ul>
+
 							</div>
 						</div>
 						<div class="fi-tags grid__item one-quarter small--one-whole medium--one-whole">
@@ -207,6 +183,8 @@ tada_block1gallery = true;
 tada_block1product = true;
 tada_newsletter = true;
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 <script src="/assets/assets/js/modernizr.min.js" type="text/javascript"></script>
 <script src="/assets/assets/js/timber.js" type="text/javascript"></script>
 <div id="quick-shop-modal" class="modal quick-shop" style="display:none;">

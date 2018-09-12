@@ -11,35 +11,37 @@
     <!-- Font ================================================== -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
-    <!-- Helpers ================================================== -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Home Market - Responsive HTML5 theme">
-    <meta property="og:image" content="//assets/assets/images/logo.png">
-    <meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
-    <meta property="og:url" content="#">
-    <meta property="og:site_name" content="Home Market Red">
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:card" content="summary">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <!-- CSS ================================================== -->
-    <link href="/assets/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="/assets/assets/css/font-awesome.min.css">
-    <link href="/assets/assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/swatch.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/flexslider.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/timber.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/home_market.global.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/home_market.style.scss.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
-    <link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
-    <!-- JS ================================================== -->
-    <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
-    <script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script>
+
+	<!-- Helpers ================================================== -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Home Market - Responsive HTML5 theme">
+	<meta property="og:image" content="//assets/assets/images/logo.png">
+	<meta property="og:image:secure_url" content="//assets/assets/images/logo.png">
+	<meta property="og:url" content="#">
+	<meta property="og:site_name" content="Home Market Red">
+	<meta name="twitter:site" content="@">
+	<meta name="twitter:card" content="summary">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- CSS ================================================== -->
+	<link href="/assets/assets/css/jquery.fancybox.css" rel="stylesheet" type="text/css" media="all">
+	<link rel="stylesheet" href="/assets/assets/css/font-awesome.min.css">
+	<link href="/assets/assets/css/animate.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/swatch.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/owl.carousel.min.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/flexslider.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/timber.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/home_market.global.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/home_market.style.scss.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/tada.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/assets/css/spr.css" rel="stylesheet" type="text/css" media="all">
+	<!-- JS ================================================== -->
+	<!-- <script src="/assets/assets/js/jquery.min.js" type="text/javascript"></script>	
+	<script src="/assets/assets/js/jquery.fancybox.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/owl.carousel.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.tweet.min.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.optionSelect.js" type="text/javascript"></script>
+	<script src="/assets/assets/js/jquery.flexslider-min.js" type="text/javascript"></script> -->
+
 </head>
 
 <body id="home-market-responsive-shopify-theme" class="index1 template-index">
@@ -275,30 +277,7 @@
                     <div class="grid__item one-half top-header-left">
                         欢迎来到狐狸王二手商场
                     </div>
-                    <div class="grid__item one-half top-header-right">
-                        <div class="currency-picker">
-                            <label class="currency-picker__wrapper">
-                                <span class="currency-picker__label">Currency</span>
-                                <select class="currency-picker" name="currencies" style="display: inline; width: auto; vertical-align: inherit;">
-                                    <option value="USD" selected="selected">USD</option>
-                                    <option value="INR">INR</option>
-                                    <option value="GBP">GBP</option>
-                                    <option value="CAD">CAD</option>
-                                    <option value="AUD">AUD</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="JPY">JPY</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="fi-content inline-list social-icons">
-                            <a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-                            <a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-                            <a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-                            <a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-                            <a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-                            <a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -326,24 +305,14 @@
                             </div>
                         </div>
                         <div class="site-header__search">
-                            <form action="./search.html" method="get" class="input-group search-bar">
+                            <form action="/sou" method="get" class="input-group search-bar">
                                 <div class="collections-selector">
                                     <select class="single-option-selector" data-option="collection-option" id="collection-option" name="collection">
-                                        <option value="all">All Collections</option>
-                                        <option value="beauty-health">Beauty &amp; Health</option>
-                                        <option value="book">Book</option>
-                                        <option value="camera">Camera - Camcorder</option>
-                                        <option value="clothing">Clothing</option>
-                                        <option value="appliances">Home Appliances</option>
-                                        <option value="homelife">Homelife</option>
-                                        <option value="kids-baby">Kids &amp; Baby</option>
-                                        <option value="smartphones">Smartphones &amp; Cell Phones</option>
-                                        <option value="sport">Sport &amp; Outdoor</option>
-                                        <option value="stationery">Stationery</option>
+                                        <option value="all">商品名称</option>
                                     </select>
                                 </div>
                                 <input type="hidden" name="type" value="product">
-                                <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field st-default-search-input" aria-label="Search our store">
+                                <input type="search" name="keywords" value="{{request()->keywords}}" placeholder="搜什么出什么" class="input-group-field st-default-search-input" aria-label="Search our store">
                                 <span class="input-group-btn">
                                 <button type="submit" class="btn icon-fallback-text">
                                 <i class="fa fa-search"></i>
@@ -377,7 +346,7 @@
                             <li class="header-account">
 
 
-                                    <img src="{{session::get('pic')}}" width="40px" alt="">
+                                    <img src="{{session('pic')}}" width="40px" alt="">
 
                                     <a href="#">{{Session::get('username')}}</a>
                                 <a href="/logout">退出</a>
@@ -431,11 +400,8 @@
                         $('#create_accountBox').css("display", 'none');
                     }
 
-                    function hideRecoverPasswordForm() {
-                        $('#recover-password').css("display", 'none');
-                        $('#lightboxlogin').css("display", 'block');
-                        $('#create_accountBox').css("display", 'none');
-                    }
+
+
 
                     function showCreateAccountForm() {
                         $('#recover-password').css("display", 'none');

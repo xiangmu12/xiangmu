@@ -127,7 +127,9 @@ class SpController extends Controller
         $shangpins -> intro = $request->intro;
         $shangpins -> cheng = $request->cheng;
         $shangpins -> money = $request->money;
-        $shangpins -> quyu = $request->quyu;
+        $shangpins -> province = $request->province;
+        $shangpins -> city = $request->city;
+        $shangpins -> area = $request->area;
         $shangpins -> image = $request->image;
         //文件上传
         //检测是否有文件上传

@@ -76,4 +76,9 @@ class User extends Authenticatable
 
 
     }
+
+    public function shoucangs()
+    {
+        return $this->belongsToMany('App\Sc','user_shangpin','shangpin_id','user_id');
+    }
 }

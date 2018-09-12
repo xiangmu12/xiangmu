@@ -9,6 +9,7 @@ use App\Pml;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\Youlian;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -158,9 +159,10 @@ class PmController extends Controller
         $gw = Car::all();
         $women = WoMen::all();
         $tags = Tag::all();
+        $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.fbpm',compact('gw','shang','pin','women','tags'));
+        return view('home.fbpm',compact('gw','shang','pin','women','tags','youlians'));
     }
 
     //执行拍卖
@@ -197,9 +199,10 @@ class PmController extends Controller
         $women = WoMen::all();
         $tags = Tag::all();
         $mai = Pm::all();
+        $youlians = Youlian::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai'));
+        return view('home.pmhc',compact('gw','shangpin','shang','pin','women','tags','mai','youlians'));
     }
 
     //拍卖详情页
@@ -215,9 +218,12 @@ class PmController extends Controller
         $shangpinss = Pm::findOrFail($id);
         $pingluns = $shangpinss->pingluns()->get();
         $pmliebiao = Pml::all();
+        $youlians = Youlian::all();
         $pmlone = DB::table('pmliebiao')->where('shangpin_id',$id)->orderBy('id','desc')->first();
-
-        return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone'));
+        // dd($shangpinss);
+        // $endmoney = array_column(array($pmliebiao), 'endmoney');
+        // dd($endmoney);
+        return view('home.xq.pmxq',compact('gw','shang','shangpin','pin','women','shangpinss','tags','pm','pingluns','pmliebiao','pmlone','youlians'));
     }
 
     //竞拍

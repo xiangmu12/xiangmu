@@ -30,6 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $dcate = DCate::all();
@@ -39,12 +40,14 @@ class HomeController extends Controller
         $gw = Car::all();
         $gg = Gg::all();
         $user = User::all();
+
         $youlians = Youlian::all();
         $users = Session()->get('id');
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
 
         return view('home.index',compact('dcate','xcate','xxcate','shangpin','gw','user','users','shang','pin','women','tags','youlians','gg'));
+
     }
 
 
@@ -200,6 +203,7 @@ class HomeController extends Controller
 
     public function jiang()
     {   
+        $shangpin = Sp::all(); 
         $tags = Tag::all();
         $women = WoMen::all();
         $sps = Sp::all();
@@ -208,7 +212,8 @@ class HomeController extends Controller
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $gw = Car::all();
-        return view('home.jiang',compact('sps','shang','pin','tags','women','gw'));
+        $youlians = Youlian::all();
+        return view('home.jiang',compact('sps','shang','pin','tags','women','gw','youlians','shangpin'));
     }
 
 
@@ -388,6 +393,7 @@ class HomeController extends Controller
         $xxcate = XxCate::all();
         $shangpin = Sp::all();
         $user = User::all();
+        $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         return view('home.women',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw'));
@@ -407,6 +413,7 @@ class HomeController extends Controller
         $xxcate = XxCate::all();
         $shangpin = Sp::all();
         $user = User::all();
+        $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw'));
@@ -437,6 +444,25 @@ class HomeController extends Controller
     }
 
 
+    //搜索页面
 
+      public function sou()
+    {   
+
+         $shangpin = Sp::orderBy('id','desc')
+            ->where('intro','like','%'.request()->keywords.'%')
+            ->paginate(30);
+        $tags = Tag::all();
+        $women = WoMen::all();
+        $sps = Sp::all();
+
+        $youlians = Youlian::all();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        $gw = Car::all();
+        $youlians = Youlian::all();
+
+        return view('home.sou',compact('sps','shang','pin','tags','women','gw','youlians','shangpin'));
+    }
 
 }

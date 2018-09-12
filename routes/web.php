@@ -11,8 +11,19 @@
 |
 */
 
+/*
+*后台
+ */
+//登陆页面
+Route::get('/admin/login','AdminController@login');
 
 
+//登陆操作
+Route::post('/admin/login','AdminController@dologin');
+
+
+//退出登入
+Route::get('/admin/logout','AdminController@logout');
 
 
 //位置
@@ -86,6 +97,9 @@ Route::get('/', 'HomeController@index');
 //前台降降降页面
 Route::get('/jiang', 'HomeController@jiang');
 
+//前台搜索页面
+Route::get('/sou', 'HomeController@sou');
+
 //我的闲置
 Route::get('/collection', 'HomeController@list');
 
@@ -145,8 +159,7 @@ Route::resource('tag','TagController');
 //评论管理
 Route::resource('pinglun','PlController');
 
-//加入购物车
-Route::resource('car', 'CarController');
+
 
 
 //购物车
@@ -181,6 +194,13 @@ Route::get('/wode','GrzhongController@wode');
 
 //修改用户中心
 Route::post('/wode','GrzhongController@wodegai');
+
+
+//logo管理
+Route::resource('logo','LogoController');
+
+//收藏管理
+Route::resource('shoucang','ScController');
 
 
 //发布拍卖
