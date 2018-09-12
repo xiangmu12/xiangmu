@@ -47,7 +47,7 @@ class GrzhongController extends Controller
     {
     	 $ding = new Ding;
         $huo = Huo::findOrFail($request->shouhuo_id);
-        $sp = Sp::findOrFail($request->spid);
+        $sp = Sp::where('id',$request->spid)->first();
         $ding->title = $sp->title;
         $ding->image = $sp->image;
         $ding->cheng = $sp->cheng;
@@ -58,7 +58,9 @@ class GrzhongController extends Controller
         $ding->user_id = session('id');
         $ding->shangpin_id = $sp->spid;
         $ding->shouhuo_id = $request->shouhuo_id;
-         if($ding->save()){
+        $sp->orlogin = 1;
+        
+         if($ding->save() && $sp->save()){
             return redirect('/gerendingdan')->with('success','订单提交成功');
         }else{
             return back()->with('error','订单提交失败');
@@ -155,5 +157,7 @@ class GrzhongController extends Controller
             return back()->with('error','修改失败');
         }
     }
+
+   
 
 }

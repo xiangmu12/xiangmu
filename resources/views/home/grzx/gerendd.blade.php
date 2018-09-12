@@ -82,14 +82,15 @@
                             <td class="am-hide-sm-only">{{$v['money']}}</td>
                             <td>
                                 <div class="am-btn-toolbar">
-                                    <div class="am-btn-group am-btn-group-xs">
-                                        <a href="/huodong//edit" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-pencil-square-o"></span> 编辑</a>
-                                        <form style="float:left" action="/huodong/" method="post">
+                                    
+                                        <form style="float:left" action="/dingdan/{{$v['id']}}" method="post">
                                             
-                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span> 删除</button>
+                                            <button class="am-btn am-btn-default am-btn-xs am-text-danger am-hide-sm-only"><span class="am-icon-trash-o"></span>取消订单</button>
+                                        {{method_field('DELETE')}}
+                                            {{csrf_field()}}
                                         </form>
 
-                                    </div>
+                                    
                                 </div>
                             </td>
                         </tr>
