@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <title>Home Market - Responsive HTML5 theme – Red version</title>
+    <title>{{$peizhi['title']}}</title>
     <!-- Font ================================================== -->
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300,400,500,600,700">
@@ -287,7 +287,7 @@
                     <div class="grid__item small--one-whole medium--one-whole two-eighths">
                         <h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
                         <a href="index.html" itemprop="url" class="site-header__logo-link">
-                            <img src="/assets/assets/images/9bcbb5b9e830471c8b4701228203abe9.PNG" alt="Home Market Red" itemprop="logo">
+                            <img src="{{$peizhi['logo']}}" alt="Home Market Red" itemprop="logo">
                         </a>
                         </h1>
                     </div>
@@ -348,6 +348,7 @@
 
                                     <img src="{{session('pic')}}" width="40px" alt="">
 
+
                                     <a href="#">{{Session::get('username')}}</a>
                                 <a href="/logout">退出</a>
                             </li>
@@ -372,47 +373,74 @@
                             @endif
                         </ul>
                     </div>
-                    <div id="recover-password" style="display:none;">
-                        <h3>Reset your password</h3>
-                        <p class="note">
-                            We will send you an email to reset your password.
-                        </p>
-                        <form method="post" action="recover.html" accept-charset="UTF-8">
-                            <input type="hidden" value="recover_customer_password" name="form_type">
-                            <input type="hidden" name="utf8" value="✓">
-                            <p>
-                                <label for="recover-email" class="label">Email</label>
-                            </p>
-                            <input type="email" value="" size="30" name="email" id="recover-email" class="text">
-                            <div class="action_bottom">
-                                <input class="btn btn2" type="submit" value="Submit">
-                                <a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
-                            </div>
-                            <p class="close">
-                                <a href="#" onclick="$.fancybox.close();">Close</a>
-                            </p>
-                        </form>
+                   <div id="recover-password" style="display:none;">
+                                        <h3>Reset your password</h3>
+                                        <p class="note">
+                                            We will send you an email to reset your password.
+                                        </p>
+                                        <form method="post" action="recover.html" accept-charset="UTF-8">
+                                            <input type="hidden" value="recover_customer_password" name="form_type"><input type="hidden" name="utf8" value="✓">
+                                            <p>
+                                                <label for="recover-email" class="label">Email</label>
+                                            </p>
+                                            <input type="email" value="" size="30" name="email" id="recover-email" class="text">
+                                            <div class="action_bottom">
+                                                <input class="btn btn2" type="submit" value="Submit">
+                                                <a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
+                                            </div>
+                                            <p class="close">
+                                                <a href="#" onclick="$.fancybox.close();">Close</a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                    <div id="create_accountBox" style="display:none;">
+                                        <h3>Create Account</h3>
+                                        <div class="form-vertical">
+                                            <form method="post" action="./account.html" id="create_customer" accept-charset="UTF-8">
+                                                <input type="hidden" value="create_customer" name="form_type"><input type="hidden" name="utf8" value="✓">
+                                                <label for="FirstName" class="hidden-label">First Name</label>
+                                                <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
+                                                <label for="LastName" class="hidden-label">Last Name</label>
+                                                <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
+                                                <label for="Email" class="hidden-label">Email</label>
+                                                <input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email">
+                                                <label for="CreatePassword" class="hidden-label">Password</label>
+                                                <input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
+                                                <p>
+                                                    <input type="submit" value="Create" class="btn btn2 btn--full">
+                                                </p>
+                                                <p>
+                                                    <span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
+                                                </p>
+                                                <p class="close">
+                                                    <a href="#" onclick="$.fancybox.close();">Close</a>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <script>
+                                            function showRecoverPasswordForm() {
+                                              $('#recover-password').css("display",'block');
+                                              $('#lightboxlogin').css("display",'none');
+                                              $('#create_accountBox').css("display",'none');
+                                            }
+                                            function hideRecoverPasswordForm() {
+                                              $('#recover-password').css("display",'none');
+                                              $('#lightboxlogin').css("display",'block');
+                                              $('#create_accountBox').css("display",'none');
+                                            }
+                                            function showCreateAccountForm(){
+                                              $('#recover-password').css("display",'none');
+                                              $('#lightboxlogin').css("display",'none');
+                                              $('#create_accountBox').css("display",'block');
+                                            }
+                                          </script>
+                                </div>
+                            </li>
+                            
+                        </ul>
                     </div>
-                    <script>
-                    function showRecoverPasswordForm() {
-                        $('#recover-password').css("display", 'block');
-                        $('#lightboxlogin').css("display", 'none');
-                        $('#create_accountBox').css("display", 'none');
-                    }
 
-
-
-
-                    function showCreateAccountForm() {
-                        $('#recover-password').css("display", 'none');
-                        $('#lightboxlogin').css("display", 'none');
-                        $('#create_accountBox').css("display", 'block');
-                    }
-                    </script>
-                </div>
-                </li>
-                </ul>
+                </div>       
             </div>
-    </div>
-    </div>
-    </header>
+

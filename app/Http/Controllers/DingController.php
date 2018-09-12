@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\Ding;
+use App\Hb;
 use App\Huo;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\WzPeiZhi;
 use App\Youlian;
 use Illuminate\Http\Request;
 
@@ -59,6 +61,7 @@ class DingController extends Controller
         $ding->user_id = session('id');
         $ding->shangpin_id = $sp->spid;
         $ding->shouhuo_id = $request->shouhuo_id;
+        $sp->orlogin = 1;
          if($ding->save()){
             return redirect('/dingdan')->with('success','订单提交成功');
         }else{
@@ -76,7 +79,8 @@ class DingController extends Controller
      */
     public function show($id)
     {
-        $youlians = Youlian::all();
+        $peizhi = WzPeiZhi::first();
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
@@ -85,8 +89,10 @@ class DingController extends Controller
         $pin = Sp::where('orlogin','1')->count();
         $shangpinone = Sp::findOrFail($id);
         $huo = Huo::orderBy('id','desc')->take(3)->get();
+        $youlians = Youlian::all();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians'));
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians','huobans','peizhi'));
+
     }
 
     /**
@@ -142,4 +148,7 @@ class DingController extends Controller
             return back()->with('error','删除失败');
         }
     }
+
+
+ 
 }

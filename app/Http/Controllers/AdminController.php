@@ -8,11 +8,13 @@ use Illuminate\Foundation\Testing\Concerns\session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+
 class AdminController extends Controller
 {
     public function index()
     {
     	$user = User::find(\Session::get('id'));
+
     	return view('admin',compact('user'));
 
     }
@@ -30,31 +32,21 @@ class AdminController extends Controller
     {   
         return view('admin.login');
 
-
     }
-
 
     //登录操作
     public function dologin(Request $request)
     {   
-
-
-        // dd($request);
-        //获取用户的数据
-
-
         $user = DB::table('users')->where('username',$request->username)->first();
         
         if(!$user){
             return back()->with('error','登录失败');
         }
 
-
         //检查是否是管理员
         if($user->oradmin==0){
             return back()->with('success','登录成功');
         }
-
 
         if($user->oradmin==1){
             //校验密码
@@ -70,14 +62,11 @@ class AdminController extends Controller
     }
 
 
-
-
     //退出登入
     public function logout(Request $request)
     {
         //
         $request->Session()->flush();
-
 
         return redirect('/admin/login')->with('success','退出成功');
     }

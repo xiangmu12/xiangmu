@@ -11,6 +11,7 @@ use App\User;
 use App\WoMen;
 use App\XCate;
 use App\XxCate;
+use App\Youlian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -53,9 +54,9 @@ class ScController extends Controller
         $shang = Sp::where('orlogin','0')->count();
         $pin = Sp::where('orlogin','1')->count();
         $shoucang = Sc::where('user_id',session('id'))->get();
-         
+        $youlians = Youlian::all();
        
-        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw'));
+        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw','youlians'));
     }
 
     /**
@@ -111,6 +112,13 @@ class ScController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sp = Sp::findOrFail($id);
+        $shoucang = Sc::where('shangpin_id',$id);
+
+        if($sp->delete() && $shoucang->delete()){
+            return back()->with('success','删除成功');
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }

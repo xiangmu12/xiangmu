@@ -53,4 +53,9 @@
 <script type="text/javascript" charset="utf-8" src="/dengru/js/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8" src="/dengru/js/web_method/method.js"></script>
 <script type="text/javascript" charset="utf-8" src="/dengru/js/login_register/login.js~v=1"></script>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+>>>>>>> 13e000c6f9c3f120dcba8e0d0f31972c4a82f1e0
