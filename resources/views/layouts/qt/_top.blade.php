@@ -11,7 +11,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="jiang" class="site-nav__link">
+							<a href="/jiang" class="site-nav__link">
 								<span>降降降</span>
 								<span class="special_label sale_label">促销</span>
 							</a>
@@ -22,7 +22,7 @@
 							</a>
 						</li>
 						<li class="site-nav--has-dropdown" aria-haspopup="true">
-							<a href="collection" class="site-nav__link">
+							<a href="/collection" class="site-nav__link">
 								<span>我的闲置</span>
 								<span class="icon icon-arrow-down" aria-hidden="true"></span>
 							</a>
@@ -36,6 +36,7 @@
 								)</a>
 								</li>
 								<li>
+
 								<a href="/jiaoyizhong" class="site-nav__link">交易中(
 									{{$pin}}
 								)</a>
@@ -50,31 +51,21 @@
 						</li>
 
 						<li class="site-nav--has-dropdown" aria-haspopup="true">
-							<a href="pmhc" class="site-nav__link">
+							<a href="/pmhc" class="site-nav__link">
 								<span>拍卖会场</span>
 								<span class="icon icon-arrow-down" aria-hidden="true"></span>
 							</a>
 							<ul class="site-nav__dropdown">
 								<li>
-								<a href="pmhc" class="site-nav__link">拍卖会(0
-								)</a>
+								<a href="/pmhc" class="site-nav__link">拍 卖 会</a>
 								</li>
 								<li>
-								<a href="/wdpm" class="site-nav__link">拍卖记录(
-								0
-								)</a>
+								<a href="/wdpm" class="site-nav__link">拍卖记录</a>
 								</li>
 							</ul>
 						</li>
 					</ul>
-					<script>
-						  $(window).ready(function($) {
-							//$('.megamenu__dropdown').css("width",$('#main-header').innerWidth());
-						  });
-						  $( window ).resize(function() {
-							//$('.megamenu__dropdown').css("width",$('#main-header').innerWidth());
-						  });
-					</script>
+					
 				</div>
 			</div>
 		</nav>    <!-- Main Content -->

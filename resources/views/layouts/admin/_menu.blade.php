@@ -181,8 +181,17 @@
 
 <ul class="tpl-left-nav-menu">
   <li class="tpl-left-nav-item">
-        
 
+        <a href="/admin/gouwu" class="nav-link tpl-left-nav-link-list">
+            <i class="am-icon-wpforms"></i>
+            <span>购物车</span>
+
+            <i class="am-icon-angle-right tpl-left-nav-more-ico am-fr am-margin-right tpl-left-nav-more-ico-rotate"></i>
+        </a>
+  </li>
+</ul>
+
+<ul class="tpl-left-nav-menu">
          <li class="tpl-left-nav-item">
         <a href="/admin/gy" class="nav-link tpl-left-nav-link-list">
             <i class="am-icon-wpforms"></i>
@@ -190,7 +199,7 @@
         </a>
     </li>
 
-    </li>
+    
 </ul>
 <ul class="tpl-left-nav-menu">
   <li class="tpl-left-nav-item">

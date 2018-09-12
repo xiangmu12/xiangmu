@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\Ding;
+use App\Hb;
 use App\Huo;
 use App\Sp;
 use App\Tag;
 use App\WoMen;
+use App\WzPeiZhi;
 use App\Youlian;
 use Illuminate\Http\Request;
 
@@ -77,17 +79,21 @@ class DingController extends Controller
      */
     public function show($id)
     {
-        $youlians = Youlian::all();
+        $peizhi = WzPeiZhi::first();
+        $huobans = Hb::all(); 
         $gw = Car::all();
         $tags = Tag::all();
         $women = WoMen::all();
         $shangpin = Sp::all();
-        $shang = Sp::where('orlogin','0')->count();
-        $pin = Sp::where('orlogin','1')->count();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $shangpinone = Sp::findOrFail($id);
+        $youlians = Youlian::all();
         $huo = Huo::orderBy('id','desc')->take(3)->get();
+        $youlians = Youlian::all();
         // $huo = Huo::all();
-        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians'));
+
+        return view('home.ding.create',compact('shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','youlians','huobans','peizhi'));
     }
 
     /**

@@ -5,7 +5,7 @@
 
 		<!-- Main Content -->
     	<main class="main-content">
-			<div class="breadcrumb-wrapper" style="background-image:url(/ueditor/images/3.jpg);>
+			<div class="breadcrumb-wrapper" style="height:200px;background-image:url(/ueditor/images/4.jpg);>
 				<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
 					<a href="/" title="Back to the frontpage">首页</a>
 					<span aria-hidden="true">&rsaquo;</span>

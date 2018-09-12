@@ -29,7 +29,7 @@ body {
                         商品价格
                     </th>
                     <th class="text-center">
-                        商品移出
+                        商品编码
                     </th>
                 </tr>
             </thead>
@@ -41,9 +41,8 @@ body {
                 
                 <tr class="cart__row table__section" style="margin-left: 50px">
                     <td class="product-name" data-label="Product" style="width:400px;">
-                        <img style="float:right" src="{{$v->paimais->image}}" width="200px" height="100px">
+                        <a href="/{{$v['shangpin_id']}}.html"><img style="float:right" src="{{$v->paimais->image}}" width="200px" height="100px"></a>
                         <p class="product-title">
-                            <h6>商品ID：{{$v['shangpin_id']}}</h6></a>
                             <h6 >竞拍人ID：{{$v['uuser_id']}}</h6>
                             <h6>商品标题：{{$v->paimais['intro']}}</h6>
                         </p>
@@ -52,8 +51,8 @@ body {
                         <span class="money">${{$v['endmoney']}}.00元</span>
                     </td>
 
-                    <td data-label="Total" class="text-center">
-                            <a href="/che" class="btn btn2">移除</a>
+                    <td data-label="Price" class="text-center">
+                           <h6>商品编码：{{$v['shangpin_id']}}</h6>
                     </td>
             
                 @endforeach

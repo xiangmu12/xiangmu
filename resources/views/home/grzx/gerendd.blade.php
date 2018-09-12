@@ -150,7 +150,11 @@
             </div>
         </div>
 
-
+         <div class="am-cf">
+                    <div class="am-fr">
+                        {{ $di->appends(request()->all())->links() }}
+                    </div>
+                </div>
 
 
 

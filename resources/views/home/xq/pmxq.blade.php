@@ -1,5 +1,5 @@
  @include('layouts.qt._header') @show @include('layouts.qt._top') @show
- <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <main class="main-content">
     <div class="breadcrumb-wrapper">
         <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
@@ -18,34 +18,6 @@
                             <div class="product-single__photos" id="ProductPhoto">
                                 <img src="{{$shangpinss['image']}}" alt="Corporis suscipit laboriosam" id="ProductPhotoImg" data-image-id="7500291971" height="500" width="500">
                             </div>
-                            <!-- 商品图片 -->
-                            <!-- <ul class="product-single__thumbnails grid-uniform" id="ProductThumbs">
-                                        <li class="thumb__element">
-                                            <a href="/assets/assets/images/demo1_detail1_135x135.jpg" class="product-single__thumbnail">
-                                                <img src="/assets/assets/images/demo1_detail1_135x135.jpg" alt="Corporis suscipit laboriosam">
-                                            </a>
-                                        </li>
-                                        <li class="thumb__element">
-                                            <a href="/assets/assets/images/demo1_detail2_135x135.jpg" class="product-single__thumbnail">
-                                                <img src="/assets/assets/images/demo1_detail2_135x135.jpg" alt="Corporis suscipit laboriosam">
-                                            </a>
-                                        </li>
-                                        <li class="thumb__element">
-                                            <a href="/assets/assets/images/demo1_detail3_135x135.jpg" class="product-single__thumbnail">
-                                                <img src="/assets/assets/images/demo1_detail3_135x135.jpg" alt="Corporis suscipit laboriosam">
-                                            </a>
-                                        </li>
-                                        <li class="thumb__element">
-                                            <a href="/assets/assets/images/demo1_detail4_135x135.jpg" class="product-single__thumbnail">
-                                                <img src="/assets/assets/images/demo1_detail4_135x135.jpg" alt="Corporis suscipit laboriosam">
-                                            </a>
-                                        </li>
-                                        <li class="thumb__element">
-                                            <a href="/assets/assets/images/demo1_detail5_135x135.jpg" class="product-single__thumbnail">
-                                                <img src="/assets/assets/images/demo1_detail5_135x135.jpg" alt="Corporis suscipit laboriosam">
-                                            </a>
-                                        </li>                                       
-                                    </ul> -->
                         </div>
                         <div class="grid__item large--one-half">
                             <div class="product-info-left grid__item five-eighths">
@@ -78,33 +50,40 @@
                                             <div class="selector-wrapper">
                                                 成色: <b>@if ($shangpinss['cheng'] == 0 )全新 @else 非全新@endif</b>
                                             </div>
+                                            <div class="selector-wrapper" id="jia" value="{{$shangpinss['jmoney']}}">
+                                                {{$shangpinss['jmoney']}}
+                                            </div>
                                             <!-- <select name="id" id="productSelect" class="product-single__variants hide" style="display: none;">
                                                 <option selected="selected" data-sku="" value="8772462979">XS / Black - $89.00 USD</option>
                                             </select> -->
-                                            <hr>
-                                            
-                                            @if($pmlone)
-                                            <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$pmlone->endmoney}}">{{$pmlone->endmoney}}</span></span>
-                                            @endif
-                                            @if(!$pmlone) 
+                                            <hr> 
+                                            @if(!$pmlone)
+                                            当前价格：
                                             <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$shangpinss['money']}}">{{$shangpinss['money']}}</span></span>
-
+                                           
+                                            @endif 
+                                            @if($pmlone)
+                                            当前价格：
+                                             <span id="ProductPrice" class="" itemprop="price"><span class="money" data-currency-usd="$89.00 USD" data-currency="USD" id="jinqian" value="{{$pmlone->endmoney}}">{{$pmlone->endmoney}}</span></span>
                                             @endif
                                             <span class="visually-hidden">Regular price</span>
                                             <input type="hidden" name="shangpinid" value="{{$shangpinss['id']}}">
+                                           @if($pmliebiao)
                                             <input type="hidden" name="endmoney" id="yincang" value="{{$pmliebiao[0]['endmoney']}}">
+                                           @endif
                                             <button class="spr-button spr-button-primary button button-primary btn btn-primary" id="butt" value="竞拍">竞拍</button>
                                             {{csrf_field()}}
                                             <script type="text/javascript">
-                                                
-                                                $('#butt').click(function(){
-                                                    var b = $('#jinqian').html();
-                                                    var c = parseInt(b);
-                                                    var a = c+=5;
-                                                    $('#yincang').val(a);
-                                                    console.log(a);  
-                                                   
-                                                })
+                                            $('#butt').click(function() {
+                                                var a = $('#jinqian').html();
+                                                var b = parseInt(a);
+                                                var c = $('#jia').html();
+                                                var d = parseInt(c);
+                                                var e = b += d;
+                                                $('#yincang').val(e);
+                                                console.log(e);
+                                            })
+
                                             </script>
                                         </form>
                                         <div class="add-to-wishlist">
@@ -212,8 +191,9 @@
                 </div>
             </div>
         </div>
+    </div>
 </main>
-
+</main>
 </div>
 <div id="scroll-to-top" title="Scroll to Top" class="off">
     <i class="fa fa-caret-up"></i>
@@ -266,6 +246,7 @@ tada_newsletter = true;
                             <div id="quick-shop-description" class="text-left">
                               </div>
                         </div>
+                    </div>
                       </div>
                 </div>
             </div>
@@ -291,12 +272,12 @@ jQuery(document).ready(function($) {
 </script>
 </body>
 </p>
-
-
 </div>
 </div>
 </li>
-
+</div>
+</div>
+</li>
 </ul>
 </div>
 </div>

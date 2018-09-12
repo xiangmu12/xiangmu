@@ -274,33 +274,10 @@
         <div id="top-header" class="grid--full grid--table">
             <div class="wrapper">
                 <div id="topother-header" class="grid--full grid--table">
-                    <div class="grid__item one-half top-header-left">
+                    <div class="grid__item one-half top-header-left" style="font-family: 楷体;font-size: 16px;">
                         欢迎来到狐狸王二手商场
                     </div>
-                    <div class="grid__item one-half top-header-right">
-                        <div class="currency-picker">
-                            <label class="currency-picker__wrapper">
-                                <span class="currency-picker__label">Currency</span>
-                                <select class="currency-picker" name="currencies" style="display: inline; width: auto; vertical-align: inherit;">
-                                    <option value="USD" selected="selected">USD</option>
-                                    <option value="INR">INR</option>
-                                    <option value="GBP">GBP</option>
-                                    <option value="CAD">CAD</option>
-                                    <option value="AUD">AUD</option>
-                                    <option value="EUR">EUR</option>
-                                    <option value="JPY">JPY</option>
-                                </select>
-                            </label>
-                        </div>
-                        <div class="fi-content inline-list social-icons">
-                            <a href="#" title="Twitter" class="icon-social twitter" data-toggle="tooltip" data-placement="top"><i class="fa fa-twitter-square"></i></a>
-                            <a href="#" title="Facebook" class="icon-social facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook-square"></i></a>
-                            <a href="#" title="Google+" class="icon-social google" data-toggle="tooltip" data-placement="top"><i class="fa fa-google-plus-square"></i></a>
-                            <a href="#" title="Pinterest" class="icon-social pinterest" data-toggle="tooltip" data-placement="top"><i class="fa fa-pinterest-square"></i></a>
-                            <a href="#" title="Youtube" class="icon-social youtube" data-toggle="tooltip" data-placement="top"><i class="fa fa-youtube-square"></i></a>
-                            <a href="#" title="Vimeo" class="icon-social vimeo" data-toggle="tooltip" data-placement="top"><i class="fa fa-vimeo-square"></i></a>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -328,24 +305,14 @@
                             </div>
                         </div>
                         <div class="site-header__search">
-                            <form action="./search.html" method="get" class="input-group search-bar">
+                            <form action="/sou" method="get" class="input-group search-bar">
                                 <div class="collections-selector">
                                     <select class="single-option-selector" data-option="collection-option" id="collection-option" name="collection">
-                                        <option value="all">All Collections</option>
-                                        <option value="beauty-health">Beauty &amp; Health</option>
-                                        <option value="book">Book</option>
-                                        <option value="camera">Camera - Camcorder</option>
-                                        <option value="clothing">Clothing</option>
-                                        <option value="appliances">Home Appliances</option>
-                                        <option value="homelife">Homelife</option>
-                                        <option value="kids-baby">Kids &amp; Baby</option>
-                                        <option value="smartphones">Smartphones &amp; Cell Phones</option>
-                                        <option value="sport">Sport &amp; Outdoor</option>
-                                        <option value="stationery">Stationery</option>
+                                        <option value="all">商品名称</option>
                                     </select>
                                 </div>
                                 <input type="hidden" name="type" value="product">
-                                <input type="search" name="q" value="" placeholder="Search our store" class="input-group-field st-default-search-input" aria-label="Search our store">
+                                <input type="search" name="keywords" value="{{request()->keywords}}" placeholder="搜什么出什么" class="input-group-field st-default-search-input" aria-label="Search our store">
                                 <span class="input-group-btn">
                                 <button type="submit" class="btn icon-fallback-text">
                                 <i class="fa fa-search"></i>
@@ -381,6 +348,7 @@
 
                                     <img src="{{session('pic')}}" width="40px" alt="">
 
+
                                     <a href="#">{{Session::get('username')}}</a>
                                 <a href="/logout">退出</a>
                             </li>
@@ -405,47 +373,74 @@
                             @endif
                         </ul>
                     </div>
-                    <div id="recover-password" style="display:none;">
-                        <h3>Reset your password</h3>
-                        <p class="note">
-                            We will send you an email to reset your password.
-                        </p>
-                        <form method="post" action="recover.html" accept-charset="UTF-8">
-                            <input type="hidden" value="recover_customer_password" name="form_type">
-                            <input type="hidden" name="utf8" value="✓">
-                            <p>
-                                <label for="recover-email" class="label">Email</label>
-                            </p>
-                            <input type="email" value="" size="30" name="email" id="recover-email" class="text">
-                            <div class="action_bottom">
-                                <input class="btn btn2" type="submit" value="Submit">
-                                <a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
-                            </div>
-                            <p class="close">
-                                <a href="#" onclick="$.fancybox.close();">Close</a>
-                            </p>
-                        </form>
+                   <div id="recover-password" style="display:none;">
+                                        <h3>Reset your password</h3>
+                                        <p class="note">
+                                            We will send you an email to reset your password.
+                                        </p>
+                                        <form method="post" action="recover.html" accept-charset="UTF-8">
+                                            <input type="hidden" value="recover_customer_password" name="form_type"><input type="hidden" name="utf8" value="✓">
+                                            <p>
+                                                <label for="recover-email" class="label">Email</label>
+                                            </p>
+                                            <input type="email" value="" size="30" name="email" id="recover-email" class="text">
+                                            <div class="action_bottom">
+                                                <input class="btn btn2" type="submit" value="Submit">
+                                                <a class="btn back" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a>
+                                            </div>
+                                            <p class="close">
+                                                <a href="#" onclick="$.fancybox.close();">Close</a>
+                                            </p>
+                                        </form>
+                                    </div>
+                                    <div id="create_accountBox" style="display:none;">
+                                        <h3>Create Account</h3>
+                                        <div class="form-vertical">
+                                            <form method="post" action="./account.html" id="create_customer" accept-charset="UTF-8">
+                                                <input type="hidden" value="create_customer" name="form_type"><input type="hidden" name="utf8" value="✓">
+                                                <label for="FirstName" class="hidden-label">First Name</label>
+                                                <input type="text" name="customer[first_name]" id="FirstName" class="input-full" placeholder="First Name">
+                                                <label for="LastName" class="hidden-label">Last Name</label>
+                                                <input type="text" name="customer[last_name]" id="LastName" class="input-full" placeholder="Last Name">
+                                                <label for="Email" class="hidden-label">Email</label>
+                                                <input type="email" name="customer[email]" id="Email" class="input-full" placeholder="Email">
+                                                <label for="CreatePassword" class="hidden-label">Password</label>
+                                                <input type="password" name="customer[password]" id="CreatePassword" class="input-full" placeholder="Password">
+                                                <p>
+                                                    <input type="submit" value="Create" class="btn btn2 btn--full">
+                                                </p>
+                                                <p>
+                                                    <span><a class="btn" href="#" onclick="hideRecoverPasswordForm();return false;">Back to Login</a></span>
+                                                </p>
+                                                <p class="close">
+                                                    <a href="#" onclick="$.fancybox.close();">Close</a>
+                                                </p>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <script>
+                                            function showRecoverPasswordForm() {
+                                              $('#recover-password').css("display",'block');
+                                              $('#lightboxlogin').css("display",'none');
+                                              $('#create_accountBox').css("display",'none');
+                                            }
+                                            function hideRecoverPasswordForm() {
+                                              $('#recover-password').css("display",'none');
+                                              $('#lightboxlogin').css("display",'block');
+                                              $('#create_accountBox').css("display",'none');
+                                            }
+                                            function showCreateAccountForm(){
+                                              $('#recover-password').css("display",'none');
+                                              $('#lightboxlogin').css("display",'none');
+                                              $('#create_accountBox').css("display",'block');
+                                            }
+                                          </script>
+                                </div>
+                            </li>
+                            
+                        </ul>
                     </div>
-                    <script>
-                    function showRecoverPasswordForm() {
-                        $('#recover-password').css("display", 'block');
-                        $('#lightboxlogin').css("display", 'none');
-                        $('#create_accountBox').css("display", 'none');
-                    }
 
-
-
-
-                    function showCreateAccountForm() {
-                        $('#recover-password').css("display", 'none');
-                        $('#lightboxlogin').css("display", 'none');
-                        $('#create_accountBox').css("display", 'block');
-                    }
-                    </script>
-                </div>
-                </li>
-                </ul>
+                </div>       
             </div>
-    </div>
-    </div>
-    </header>
+

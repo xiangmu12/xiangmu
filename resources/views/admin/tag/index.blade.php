@@ -24,7 +24,7 @@
             </div>
             
             <div class="am-u-sm-12 am-u-md-3">
-            	<form action="/xcate" method="get">
+            	<form action="/tag" method="get">
                 <div class="am-input-group am-input-group-sm">
                     <input type="text" name="keywords" class="am-form-field" value="{{request()->keywords}}">
                     <span class="am-input-group-btn">

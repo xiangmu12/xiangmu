@@ -1,4 +1,4 @@
-﻿@include('layouts.qt._header')
+@include('layouts.qt._header')
         @show
         @include('layouts.qt._top')
         @show
@@ -7,7 +7,7 @@
     <script type="text/javascript" src="/ding/static/js/jquery_cart.js"></script>
     <link rel="stylesheet" type="text/css" href="/ding/static/css/checkout.css" />
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-
+ 
     <script src="/ueditor/liandong/js/jquery.cxselect.js"></script>
    
     <!--收货地址body部分开始-->
@@ -38,7 +38,7 @@
         </script>
         <div class="container">
             <div class="checkout-box" >
-                <form id="checkoutForm" action="/grdingdan" method="post">
+                <form id="checkoutForm" action="/gwdingdan" method="post">
                     <div class="checkout-box-bd ">
                         <!-- 地址状态 0：默认选择；1：新增地址；2：修改地址 -->
                         <input type="hidden" name="Checkout[addressState]" id="addrState" value="0">
@@ -71,7 +71,7 @@
                                         <span class="iconfont icon-add"><img src="/ding/static/picture/add_cart.png" /></span> 使用新地址
                                     </div>
                                 </div>
-                                <input type="hidden" name="spid" id="newType" value="{{$shangpinone['id']}}">
+                                <input type="hidden" name="spid" id="newType" value="">
                 
                                 <div class="xm-edit-addr-backdrop" id="J_editAddrBackdrop"></div>
                             </div>
@@ -234,6 +234,7 @@
                                 <div class="box-hd">
                                     <h2 class="title">确认订单信息</h2>
                                 </div>
+                                @foreach($jiesuan as $v)
                                 <div class="box-bd">
                                     <dl class="checkout-goods-list">
                                         <dt class="clearfix">
@@ -242,19 +243,19 @@
                                             <span class="col col-3">购买数量</span>
                                             <span class="col col-4">小计（元）</span>
                                         </dt>
+                                        <input type="hidden" name="carid[]" value="{{$v['id']}}">
                                         <dd class="item clearfix">
                                             <div class="item-row">
                                                 <div class="col col-1">
-                                                    
-                                                        <img src="{{$shangpinone['image']}}" style="width:200px">
+
+                                                        <img src="{{$v['image']}}" style="width:200px">
                                                   
-                                                        <a href="#">{{$shangpinone['title']}}</a>
-                                                        <a href="#">{{$shangpinone['intro']}}</a>
-                                                    
+                                                        <a href="#">{{$v['title']}}</a>
+                                                        <a href="#"></a>
                                                 </div>
-                                                <div class="col col-2">{{$shangpinone['money']}}元</div>
+                                                <div class="col col-2">{{$v['money']}}元</div>
                                                 <div class="col col-3">1</div>
-                                                <div class="col col-4">{{$shangpinone['money']}}元</div>
+                                                <div class="col col-4">{{$v['money']}}元</div>
                                             </div>
                                         </dd>
                                     </dl>
@@ -269,17 +270,18 @@
                                 <ul>
 
                                     <li>
-                                       订单总额：<span id="dingdan">{{$shangpinone['money']}}元</span>
+                                       订单总额：<span id="dingdan">{{$v['money']}}元</span>
                                     </li>
                                     <li>
                                         运费：<span id="yunfei">0元</span>
                                     </li>
                                 </ul>
-                                <p class="checkout-total">应付总额：<span id="zongjia">{{$shangpinone['money']}}元</span></p>
+                                <p class="checkout-total">应付总额：<span id="zongjia">{{$v['money']}}元</span></p>
                             </div>
                             <!--  -->
                         </div>
                     </div>
+                    @endforeach
                 </div>
 
     <!--S 加价购 产品选择弹框 -->

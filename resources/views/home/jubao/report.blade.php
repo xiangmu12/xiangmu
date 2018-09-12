@@ -168,20 +168,33 @@
                         
                         <p>&nbsp;</p>
                         <p><strong><em>【填写举报内容】</em></strong></p>
-                        <form action="/jubao" method="post">
-                          <input type="hidden" name="shangpin_id" value="{{$id}}">
-                          <textarea name="content"></textarea>
-                          {{csrf_field()}}
+                      
 
+                        <script>
+            function CheckPl(obj)
+            {
+              if(obj.saytext.value=="")
+              {
+                alert("您没什么话要说吗？");
+                obj.saytext.focus();
+                return false;
+              }
+              return true;
+            }
+          </script>
+          <form action="/jubao" method="post" name="saypl" id="saypl" onsubmit="return CheckPl(document.saypl)">
+            <div id="plpost">
+             
 
-                          <div class="am-form-group">
-                            <div class="am-u-sm-9 am-u-sm-push-3">
-                                <button class="am-btn am-btn-primary tpl-btn-bg-color-success ">提交</button>
-                            </div>
-                        </div>
-                          
-
-                        </form>
+              {{csrf_field()}}
+              <!-- <input name="nomember" id="nomember" value="1" checked="checked" type="hidden"> -->
+              <textarea name="content" rows="6" id="saytext"></textarea>
+               <input type="hidden" name="shangpin_id" value="{{$id}}">
+         
+              <input name="imageField" value="提交" type="submit">
+              
+            </div>
+          </form>
 
                         <p>&nbsp;</p>
                     </td>

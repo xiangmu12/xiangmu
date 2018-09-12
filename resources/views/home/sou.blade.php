@@ -17,7 +17,7 @@
 					<div class="grid__item">
 						<div class="page-content">      
 							<div class="sale-products grid-uniform-category">
-								@foreach($sps as $v)
+								@foreach($shangpin as $v)
 								<div class="grid__item large--one-fifth medium--one-quarter">
 									<div class="grid__item_wrapper">
 										<div class="grid__image product-image">
@@ -25,7 +25,7 @@
 											<a href="/{{$v['id']}}.html">
 												<img src="{{$v['image']}}" alt="Demo Product Sample">
 											</a>
-											<span class="sale-icon">20%</span>
+											
 											<div class="quickview">
 												<div class="product-ajax-cart hidden-xs hidden-sm">
 													<div data-handle="consequuntur-magni-dolores" class="quick_shop-div">
@@ -49,13 +49,12 @@
 											</span>
 										</div>
 										<p class="h6 product-title">
-											<a href="product.html">演示产品样本</a>
+											<a href="product.html"></a>
 										</p>
 										<p class="product-price">
 											<strong>On Sale</strong>
 											<span class="money" data-currency-usd="$19.99">{{$v['money']}}</span>
 											<span class="visually-hidden">Regular price</span>
-											<s><span class="money" data-currency-usd="$24.99">$24.99</span></s>
 										</p>
 										<div class="list-mode-description">
 											{{$v['intro']}}
