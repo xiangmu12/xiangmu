@@ -24,7 +24,7 @@ class CarController extends Controller
      */
     public function index()
     {   
-         $peizhi = WzPeiZhi::first();
+        $peizhi = WzPeiZhi::first();
         // $shangpin = Sp::all();
         $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
@@ -74,7 +74,7 @@ class CarController extends Controller
                     $car->money = $sp->money;
                     $car->shangpin_id = $sp->id;
                     $car->user_id = session('id'); 
-                    
+                    // dd($car);
                     if ($car ->save()) {
                         
                         return redirect('/gouwuche')->with('success','成功');

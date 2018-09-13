@@ -67,6 +67,34 @@ Route::group(['middleware'=>'admin'],function(){
 
 	//举报后台显示
 	Route::get('/jubao','AdminController@inde');
+
+	//网站配置
+	Route::resource('/wzpz','WzPeiZhiController');
+
+	//友链管理
+	Route::resource('youlian','YoulianController');
+
+	//商品标签
+	Route::resource('tag','TagController');
+
+	//评论管理
+	Route::resource('pinglun','PlController');
+
+	//后台购物车
+	Route::get('/admin/gouwu','AdminController@gouwu');
+
+	//合作伙伴
+	Route::resource('huoban','HbController');
+
+	//关于我们
+	Route::get('/admin/gy','HomeController@gy');
+
+	//关于我们修改
+	Route::post('/admin/gy','HomeController@xiu');
+
+	//logo管理
+	Route::resource('logo','LogoController');
+
 });
 
 //位置
@@ -81,14 +109,6 @@ Route::get('/{id}.html','HomeController@sp');
 //获取所有分类信息
 Route::get('/dcateall','HomeController@cateall');
 
-//关于我们
-Route::get('/admin/gy','HomeController@gy');
-
-//关于我们修改
-Route::post('/admin/gy','HomeController@xiu');
-
-//友链管理
-Route::resource('youlian','YoulianController');
 /**
  * 前台
  */
@@ -101,12 +121,6 @@ Route::get('/jiang', 'HomeController@jiang');
 
 //前台搜索页面
 Route::get('/sou', 'HomeController@sou');
-
-//我的闲置
-Route::get('/collection', 'HomeController@list');
-
-//闲置交易
-Route::get('/jiaoyizhong','HomeController@jiaoyi');
 
 //登陆页面
 Route::get('/login','HomeController@login');
@@ -123,107 +137,101 @@ Route::get('/zhuce','HomeController@zhuce');
 //注册提交
 Route::post('/zhuce','HomeController@register');
 
-//发布闲置
-Route::get('/fabu','HomeController@fabu');
-Route::post('/fabu','HomeController@fabuchuli');
 
-//下架闲置
-Route::get('/delete/{id}', 'HomeController@xiajia');
+Route::group(['middleware'=>'login'],function(){
+	//我的闲置
+	Route::get('/collection', 'HomeController@list');
 
-//关于我们
-Route::get('/women','HomeController@women');
-
-//关于我们
-Route::get('/women','HomeController@women');
-//发货 退货
-Route::get('/wo/tui','HomeController@tui');
-
-Route::get('/juba/{id}','HomeController@destroy');
-
-//合作
-Route::get('/hezuo/hz','HbController@hezuo');
+	//闲置交易
+	Route::get('/jiaoyizhong','HomeController@jiaoyi');
 
 
-//购物车
-Route::resource('car','CarController');
+	//发布闲置
+	Route::get('/fabu','HomeController@fabu');
+	Route::post('/fabu','HomeController@fabuchuli');
 
-//合作伙伴
-Route::resource('huoban','HbController');
+	//下架闲置
+	Route::get('/delete/{id}', 'HomeController@xiajia');
 
-//举报管理
-Route::get('/jubao/{id}','HomeController@jubao');
-Route::post('/jubao','HomeController@jubaologin');
+	//关于我们
+	Route::get('/women','HomeController@women');
+	//发货 退货
+	Route::get('/wo/tui','HomeController@tui');
 
+	Route::get('/juba/{id}','HomeController@destroy');
 
-//订单管理
-Route::resource('dingdan','DingController');
-
-//收货地址管理
-Route::resource('huo','HuoController');
-
-//商品标签
-Route::resource('tag','TagController');
-
-//评论管理
-Route::resource('pinglun','PlController');
-
-//购物车
-Route::resource('gouwuche','CarController');
-//结算
-Route::post('/dd','CarController@dd');
-
-//购物订单
-Route::post('/gwdingdan','CarController@gwdingdan');
-
-Route::get('/che/{id}','CarController@che');
-
-//后台购物车
-Route::get('/admin/gouwu','AdminController@gouwu');
-//个人中心
-Route::get('/geren','GrzhongController@geren');
-
-//个人订单
-Route::get('/gerendingdan','GrzhongController@gerendingdan');
+	//合作
+	Route::get('/hezuo/hz','HbController@hezuo');
 
 
-Route::post('/grdingdan','GrzhongController@grdingdan');
-//收货地址
-Route::get('/shdz','GrzhongController@shouhuodizhi');
-Route::post('/shdz','GrzhongController@shouhuodz');
-
-//测试
-Route::get('/test','GrzhongController@test');
-
-//用户中心
-Route::get('/wode','GrzhongController@wode');
-
-//修改用户中心
-Route::post('/wode','GrzhongController@wodegai');
+	//购物车
+	Route::resource('car','CarController');
 
 
-//logo管理
-Route::resource('logo','LogoController');
-
-//收藏管理
-Route::resource('shoucang','ScController');
+	//举报管理
+	Route::get('/jubao/{id}','HomeController@jubao');
+	Route::post('/jubao','HomeController@jubaologin');
 
 
-//发布拍卖
-Route::get('/fbpm','PmController@pm');
+	//订单管理
+	Route::resource('dingdan','DingController');
 
-Route::post('/mai','PmController@mai');
+	//收货地址管理
+	Route::resource('huo','HuoController');
 
-//拍卖会场
-Route::get('/pmhc','PmController@pmhc');
+	//购物车
+	Route::resource('gouwuche','CarController');
 
-//拍卖详情页
-Route::get('/xtrttq/{id}','PmController@xq');
+	//结算
+	Route::post('/dd','CarController@dd');
 
-//竞拍
-Route::post('/pai','PmController@jingpai');
+	//购物订单
+	Route::post('/gwdingdan','CarController@gwdingdan');
 
-//我的拍卖
-Route::get('/wdpm','PmController@wdpm');
 
-//网站配置
-Route::resource('/wzpz','WzPeiZhiController');
+	Route::get('/che/{id}','CarController@che');
+
+
+	//个人中心
+	Route::get('/geren','GrzhongController@geren');
+
+	//个人订单
+	Route::get('/gerendingdan','GrzhongController@gerendingdan');
+
+
+	Route::post('/grdingdan','GrzhongController@grdingdan');
+	//收货地址
+	Route::get('/shdz','GrzhongController@shouhuodizhi');
+	Route::post('/shdz','GrzhongController@shouhuodz');
+
+	//测试
+	Route::get('/test','GrzhongController@test');
+
+	//用户中心
+	Route::get('/wode','GrzhongController@wode');
+
+	//修改用户中心
+	Route::post('/wode','GrzhongController@wodegai');
+
+	//收藏管理
+	Route::resource('shoucang','ScController');
+
+
+	//发布拍卖
+	Route::get('/fbpm','PmController@pm');
+
+	Route::post('/mai','PmController@mai');
+
+	//拍卖会场
+	Route::get('/pmhc','PmController@pmhc');
+
+	//拍卖详情页
+	Route::get('/xtrttq/{id}','PmController@xq');
+
+	//竞拍
+	Route::post('/pai','PmController@jingpai');
+
+	//我的拍卖
+	Route::get('/wdpm','PmController@wdpm');
+});
+
