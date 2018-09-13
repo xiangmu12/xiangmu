@@ -213,7 +213,7 @@ class HomeController extends Controller
          if(empty($request->xxcate_id ) && empty($request->tag_id)){
            $shangpin = Sp::all(); 
         } 
-     
+        $huobans = Hb::all(); 
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $women = WoMen::all();
@@ -222,7 +222,6 @@ class HomeController extends Controller
         $youlians = Youlian::all();
         $gw = Car::all();
         $peizhi = WzPeiZhi::first();
-        $huobans = Hb::all();
         return view('home.cateall',compact('shangpin','xxcate','shang','pin','tags','women','youlians','gw','peizhi','huobans'));
     }
 
@@ -503,7 +502,8 @@ class HomeController extends Controller
         $gw = Car::all();
         $youlians = Youlian::all();
 
-        return view('home.sou',compact('sps','huobans','peizhi','shang','pin','tags','women','gw','youlians','shangpin'));
+        return view('home.sou',compact('sps','shang','pin','tags','women','gw','youlians','shangpin','peizhi','huobans'));
+
     }
 
 }

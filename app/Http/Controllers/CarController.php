@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Car;
 use App\Ding;
+use App\Hb;
 use App\Huo;
 use App\Sp;
 use App\Tag;
 use App\User;
 use App\WoMen;
-use App\Youlian;
 use App\WzPeiZhi;
+use App\Youlian;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
@@ -24,12 +25,14 @@ class CarController extends Controller
      */
     public function index()
     {   
-        $peizhi = WzPeiZhi::first();
+
+          $huobans = Hb::all(); 
+         $peizhi = WzPeiZhi::first();
         // $shangpin = Sp::all();
         $gw = Car::all();
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
-        return view('home.gouwuche',compact('gw','shang','pin','peizhi'));
+        return view('home.gouwuche',compact('gw','shang','pin','peizhi','huobans'));
         }
    
 
@@ -136,9 +139,9 @@ class CarController extends Controller
     public function dd(Request $request)
     {
         
-        
+          $huobans = Hb::all(); 
         $jiesuan = Car::findOrFail($request->duo);
-
+        $peizhi = WzPeiZhi::first();
         $youlians = Youlian::all();
         $gw = Car::all();
         $tags = Tag::all();
@@ -148,7 +151,7 @@ class CarController extends Controller
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $huo = Huo::orderBy('id','desc')->take(3)->get();
         // $huo = Huo::all();
-        return view('home.ding.jiesuan',compact('youlians','shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','jiesuan','jiesuan'));
+        return view('home.ding.jiesuan',compact('youlians','shangpin','shang','pin','id','shangpinone','huo','tags','women','gw','jiesuan','jiesuan','peizhi','huobans'));
     }
 
       //购物订单

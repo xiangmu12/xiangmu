@@ -45,6 +45,7 @@ class ScController extends Controller
      */
     public function create()
     {   
+        $huobans = Hb::all(); 
         $peizhi = WzPeiZhi::first();
         $huobans = Hb::all();
         $gw = Car::all();
@@ -60,7 +61,8 @@ class ScController extends Controller
         $shoucang = Sc::where('user_id',session('id'))->get();
         $youlians = Youlian::all();
        
-        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','huobans','peizhi','tags','gw','youlians'));
+        return view('home.grzx.shoucang',compact('shoucang','dcate','xcate','xxcate','shangpin','user','shang','pin','women','tags','gw','youlians','peizhi','huobans'));
+
     }
 
     /**
