@@ -11,15 +11,6 @@
 |
 */
 
-/*
-*后台
- */
-
-//登陆操作
-Route::post('/admin/login','AdminController@dologin');
-
-//退出登入
-Route::get('/admin/logout','AdminController@logout');
 
 /*
 *后台
