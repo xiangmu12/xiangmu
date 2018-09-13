@@ -25,6 +25,7 @@ class CarController extends Controller
      */
     public function index()
     {   
+
           $huobans = Hb::all(); 
          $peizhi = WzPeiZhi::first();
         // $shangpin = Sp::all();
@@ -76,7 +77,7 @@ class CarController extends Controller
                     $car->money = $sp->money;
                     $car->shangpin_id = $sp->id;
                     $car->user_id = session('id'); 
-                    
+                    // dd($car);
                     if ($car ->save()) {
                         
                         return redirect('/gouwuche')->with('success','成功');

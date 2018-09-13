@@ -286,9 +286,9 @@
                 <div id="main-header" class="grid--full grid--table">
                     <div class="grid__item small--one-whole medium--one-whole two-eighths">
                         <h1 class="site-header__logo large--left" itemscope="" itemtype="http://schema.org/Organization">
-                        <a href="index.html" itemprop="url" class="site-header__logo-link">
+                        
                             <img src="{{$peizhi['logo']}}" alt="Home Market Red" itemprop="logo">
-                        </a>
+                        
                         </h1>
                     </div>
                     <div class="grid__item small--one-whole medium--one-whole four-eighths mobile-bottom">

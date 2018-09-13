@@ -144,7 +144,9 @@ class HomeController extends Controller
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         // dd($res);die;
         $peizhi = WzPeiZhi::first();
-        return view('home.wdxz.collection',compact('shang','gw','pin','shangpin','users','peizhi'));
+        $huobans = Hb::all();
+        $peizhi = WzPeiZhi::first();
+        return view('home.wdxz.collection',compact('shang','gw','pin','shangpin','users','peizhi','huobans','peizhi'));
     }
 
     //闲置下架
@@ -162,6 +164,8 @@ class HomeController extends Controller
     //交易中
     public function jiaoyi()
     {
+        $huobans = Hb::all();
+        $peizhi = WzPeiZhi::first();
         $peizhi = WzPeiZhi::first();
         $shangpin = Sp::get();
         $gw = Car::all();
@@ -169,7 +173,7 @@ class HomeController extends Controller
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         // dd($res);die;
-        return view('home.wdxz.jiayizhong',compact('shang','peizhi','gw','pin','shangpin','users'));
+        return view('home.wdxz.jiayizhong',compact('shang','peizhi','gw','pin','shangpin','users','huobans','peizhi'));
     }
 
 
@@ -228,7 +232,6 @@ class HomeController extends Controller
     {   
 
         $shangpin = Sp::all(); 
-
         $huobans = Hb::all(); 
         $tags = Tag::all();
         $women = WoMen::all();
@@ -450,7 +453,8 @@ class HomeController extends Controller
         $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
         $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
         $peizhi = WzPeiZhi::first();
-        return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw','peizhi'));
+        $huobans = Hb::all();
+        return view('home.wo.tui',compact('dcate','xcate','xxcate','shangpin','user','shang','pin','women','gw','peizhi','huobans'));
         
     }
     //举报

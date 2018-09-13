@@ -2,13 +2,7 @@
 <footer class="site-footer">
     <div class="grid__item footer_newsletter">
         <div class="wrapper">
-            <h3><i class="fa fa-envelope"></i> Make sure you don't miss interesting happenings by joining our newsletter program</h3>
-            <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" class="input-group">
-                <input type="email" value="" placeholder="Enter your email here ..." name="EMAIL" id="mail" class="input-group-field" aria-label="email@example.com">
-                <span class="input-group-btn">
-						<input type="submit" class="btn" name="subscribe" id="subscribe" value="subscribe">
-						</span>
-					</form>
+            
 				</div>
 			</div>
 			<div class="grid__item footer_information">

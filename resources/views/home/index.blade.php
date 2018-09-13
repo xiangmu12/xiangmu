@@ -186,9 +186,9 @@
 															<form action="#" method="post" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">							
 																<div class="effect-ajax-cart">
 																	<input type="hidden" name="quantity" value="1">
-																	<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="购买">
+																	<a href="/dingdan/{{$va['id']}}"  id="AddToCart" class="btn btn-1 add-to-cart" title="购买">
 																		<span id="AddToCartText"><i class="fa fa-shopping-cart"></i> 立即购买 </span>
-																	</button>
+																	</a>
 																</div>
 															</form>
 														</li>
@@ -218,13 +218,13 @@
 									<ul class="brands-elements">
                                         @foreach($v->logo as $vlogo)
 										<li class="">
-											<a href="collection.html"><img src="{{$vlogo->image}}" alt="" width="70"></a>
+											<img src="{{$vlogo->image}}" alt="" width="70">
 										</li>   
                                          @endforeach
 									</ul>
 								</div>
 								<div class="banner-area">
-                                    <a href="collection.html"><img src="/assets/assets/images/demo1_banner1_185x345.png" alt=""></a>
+                                    <img src="/assets/assets/images/demo1_banner1_185x345.png" alt="">
                                 </div>
 							</div>
 						</div>
