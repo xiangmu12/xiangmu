@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\HuoDong;
+use Illuminate\Http\Concerns\hasFile;
 use Illuminate\Http\Request;
 
 class HuoDongController extends Controller
@@ -45,8 +46,14 @@ class HuoDongController extends Controller
         
         $huodong -> title = $request -> title;
         $huodong -> content = $request -> content;
+        $huodong -> cont = $request -> cont;
         $huodong -> opentime = date('Y-m-d H:i:s',strtotime($request->opentime));
         $huodong -> overtime = date('Y-m-d H:i:s',strtotime($request->overtime));
+
+
+        if ($request->hasFile('image')) {
+            $huodong->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
 
         if($huodong->save()){
             return back()->with('success','发布活动成功');
@@ -93,9 +100,13 @@ class HuoDongController extends Controller
         
         $huodong -> title = $request -> title;
         $huodong -> content = $request -> content;
+        $huodong -> cont = $request -> cont;
         $huodong -> opentime = $request->opentime;
         $huodong -> overtime = $request->overtime;
 
+        if ($request->hasFile('image')) {
+            $user->image = '/'.$request->image->store('uploads/'.date('Ymd'));
+        }
         if($huodong->save()){
             return redirect('/huodong')->with('success','修改活动成功');
         }else{

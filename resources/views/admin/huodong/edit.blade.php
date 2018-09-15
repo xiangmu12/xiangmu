@@ -4,6 +4,9 @@
 
 @section('content')
 <hr>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/ueditor/lang/zh-cn/zh-cn.js"></script>
 <div class="tpl-portlet-components">
     <div class="portlet-title">
         <div class="caption font-green bold">
@@ -13,7 +16,7 @@
     <div class="tpl-block">
         <div class="am-g">
             <div class="tpl-form-body tpl-form-line">
-                <form class="am-form tpl-form-line-form" method="post" action="/huodong/{{$huodong['id']}}">
+                <form class="am-form tpl-form-line-form" method="post" action="/huodong/{{$huodong['id']}}" enctype="multipart/form-data">
                     <div class="am-form-group">
                         <label for="user-name" class="am-u-sm-3 am-form-label">用户名 <span class="tpl-form-line-small-title"></span></label>
                         <div class="am-u-sm-9">
@@ -24,6 +27,20 @@
                         <label class="am-u-sm-3 am-form-label">活动内容</label>
                         <div class="am-u-sm-9">
                             <textarea class="" name="content" rows="5" >{{$huodong['content']}}</textarea>
+                        </div>
+                    </div>
+                    <div class="am-form-group">
+                        <label class="am-u-sm-3 am-form-label">活动图片</label>
+                        <div class="am-u-sm-9">
+                             <input type="file" name="image" class="tpl-form-input" id="user-name" placeholder="">  
+                             <img src="{{$huodong['image']}}">
+                        </div>
+                    </div>
+                     <div class="am-form-group">
+                        <label class="am-u-sm-3 am-form-label">内容</label>
+                        <div class="am-u-sm-9">
+                            <script id="editor" type="text/plain" name="cont" style="width:100%;height:350px;"> {!!$huodong['cont']!!}</script>
+
                         </div>
                     </div>
                     <div class="am-form-group">
@@ -46,6 +63,9 @@
                         </div>
                     </div>
                 </form>
+                <script>
+                    var ue = UE.getEditor('editor');
+                </script>
             </div>
         </div>
     </div>

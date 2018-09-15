@@ -65,14 +65,14 @@
 												<form action="/dingdan/{{$shangpin[0]['id']}}" method="get" enctype="multipart/form-data" id="AddToCartForm" class="form-vertical">					{{csrf_field()}}		
 													<div class="effect-ajax-cart">
 														<input type="hidden" name="quantity" value="1">
-														<button type="submit" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="立即购买">
+														<a href="/dingdan/{{$v['id']}}" name="add" id="AddToCart" class="btn btn-1 add-to-cart" title="立即购买">
 															<span id="AddToCartText"><i class="fa fa-shopping-cart"></i>立即购买</span>
-														</button>
+														</a>
 													</div>
 												</form>
 											</li>
 											<li class="wishlist">
-												<a class="wish-list btn" href="wishlist.html"><i class="fa fa-heart" title="Wishlist"></i></a>
+												<a class="wish-list btn" href="/shoucang?shangpin={{$v['id']}}&user={{session('id')}}"><i class="fa fa-heart" title="Wishlist"></i></a>
 											</li>
 											<li class="email">
 												<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>

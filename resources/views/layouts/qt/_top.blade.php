@@ -21,6 +21,11 @@
 								<span>发布闲置</span>			
 							</a>
 						</li>
+						<li>
+							<a href="/huodon" class="site-nav__link">
+								<span>活动</span>			
+							</a>
+						</li>
 						<li class="site-nav--has-dropdown" aria-haspopup="true">
 							<a href="/collection" class="site-nav__link">
 								<span>我的闲置</span>

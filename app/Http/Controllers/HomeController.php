@@ -8,6 +8,7 @@ use App\DCate;
 use App\Ding;
 use App\Gg;
 use App\Hb;
+use App\HuoDong;
 use App\Jubao;
 use App\Pl;
 use App\Sp;
@@ -503,6 +504,52 @@ class HomeController extends Controller
         $youlians = Youlian::all();
 
         return view('home.sou',compact('sps','shang','pin','tags','women','gw','youlians','shangpin','peizhi','huobans'));
+
+    }
+    //活动页面
+       public function huodon()
+    {   
+
+        $huo = HuoDong::all();
+        $huobans = Hb::all();
+        $peizhi = WzPeiZhi::first();
+         $shangpin = Sp::orderBy('id','desc')
+            ->where('intro','like','%'.request()->keywords.'%')
+            ->paginate(30);
+        $tags = Tag::all();
+        $women = WoMen::all();
+        $sps = Sp::all();
+
+        $youlians = Youlian::all();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        $gw = Car::all();
+        $youlians = Youlian::all();
+
+        return view('home.hd.huodon',compact('sps','shang','pin','tags','women','gw','youlians','shangpin','peizhi','huobans','huo'));
+
+    }
+    //活动第二页面
+       public function huoh($id)
+    {   
+
+        $huo = HuoDong::findOrFail($id);
+        $huobans = Hb::all();
+        $peizhi = WzPeiZhi::first();
+         $shangpin = Sp::orderBy('id','desc')
+            ->where('intro','like','%'.request()->keywords.'%')
+            ->paginate(30);
+        $tags = Tag::all();
+        $women = WoMen::all();
+        $sps = Sp::all();
+
+        $youlians = Youlian::all();
+        $shang = Sp::where('orlogin','0')->where('user_id',session('id'))->count();
+        $pin = Sp::where('orlogin','1')->where('user_id',session('id'))->count();
+        $gw = Car::all();
+        $youlians = Youlian::all();
+
+        return view('home.hd.huoh',compact('sps','shang','pin','tags','women','gw','youlians','shangpin','peizhi','huobans','huo'));
 
     }
 

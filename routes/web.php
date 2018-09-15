@@ -136,6 +136,8 @@ Route::group(['middleware'=>'login'],function(){
 	//闲置交易
 	Route::get('/jiaoyizhong','HomeController@jiaoyi');
 
+	//前台活动
+	Route::get('/huodon', 'HomeController@huodon');
 
 	//发布闲置
 	Route::get('/fabu','HomeController@fabu');
@@ -158,7 +160,8 @@ Route::group(['middleware'=>'login'],function(){
 	//购物车
 	Route::resource('car','CarController');
 
-
+	//活动详情页
+	Route::get('/huoh/{id}','HomeController@huoh');
 	//举报管理
 	Route::get('/jubao/{id}','HomeController@jubao');
 	Route::post('/jubao','HomeController@jubaologin');

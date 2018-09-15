@@ -45,6 +45,7 @@
                             <th class="table-id">ID</th>
                             <th class="table-title">活动标题</th>
                             <th class="table-title">活动内容</th>
+                             <th class="table-title">活动图片</th>
                             <th class="table-title">活动开始</th>
                             <th class="table-title">活动结束</th>
                             <th class="table-set">操作</th>
@@ -59,6 +60,7 @@
                             <td>{{$v['id']}}</td>
                             <td class="am-hide-sm-only">{{$v['title']}}</td>
                             <td class="am-hide-sm-only">{{$v['content']}}</td>
+                            <td class="am-hide-sm-only">{{$v['image']}}</td>
                             <td class="am-hide-sm-only">{{$v['opentime']}}</td>
                             <td class="am-hide-sm-only">{{$v['overtime']}}</td>
                             <td>
