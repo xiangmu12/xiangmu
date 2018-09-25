@@ -188,10 +188,11 @@
 
               {{csrf_field()}}
               <!-- <input name="nomember" id="nomember" value="1" checked="checked" type="hidden"> -->
-              <textarea name="content" rows="6" id="saytext"></textarea>
-               <input type="hidden" name="shangpin_id" value="{{$id}}">
+              <textarea name="content" rows="16" cols="30" id="saytext"></textarea>
+               <input type="hidden" name="shangpin_id" value="{{$id}}"><br>
          
-              <input name="imageField" value="提交" type="submit">
+              <input name="imageField" value="提交" type="submit" style="margin:0px auto;">
+              <button type="button" class="btn btn-primary">（首选项）Primary</button>
               
             </div>
           </form>
@@ -204,11 +205,11 @@
         <!-- /zh_cn/etc/channelfoot.shtml Start -->
         <div class="footer">网上不良信息举报电话：(010)52598588-8758
             <br />
-            <a href="" target="_blank">关于二手网</a> |
-            <a href="" target="_blank">广告服务</a> |
-            <a href="" target="_blank">联系我们</a> |
-            <a href="" target="_blank">招聘信息</a> |
-            <a href="" target="_blank">版权声明</a> |
+            <a href="#" target="_blank">关于二手网</a> |
+            <a href="#" target="_blank">广告服务</a> |
+            <a href="#" target="_blank">联系我们</a> |
+            <a href="#" target="_blank">招聘信息</a> |
+            <a href="#" target="_blank">版权声明</a> |
             <div class="copyright">版权所有 </div>
         </div>
         <!-- /zh_cn/etc/channelfoot.shtml End -->

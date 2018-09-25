@@ -73,6 +73,7 @@
 											</li>
 											<li class="wishlist">
 												<a class="wish-list btn" href="/shoucang?shangpin={{$v['id']}}&user={{session('id')}}"><i class="fa fa-heart" title="Wishlist"></i></a>
+
 											</li>
 											
 										</ul>

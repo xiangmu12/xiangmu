@@ -506,7 +506,7 @@ class HomeController extends Controller
         return view('home.sou',compact('sps','shang','pin','tags','women','gw','youlians','shangpin','peizhi','huobans'));
 
     }
-    //活动页面
+   //活动页面
        public function huodon()
     {   
 
@@ -560,5 +560,4 @@ class HomeController extends Controller
 
 
     }
-
 }

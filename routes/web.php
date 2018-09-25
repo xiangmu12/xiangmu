@@ -11,15 +11,6 @@
 |
 */
 
-/*
-*后台
- */
-
-//登陆操作
-Route::post('/admin/login','AdminController@dologin');
-
-//退出登入
-Route::get('/admin/logout','AdminController@logout');
 
 /*
 *后台
@@ -145,6 +136,8 @@ Route::group(['middleware'=>'login'],function(){
 	//闲置交易
 	Route::get('/jiaoyizhong','HomeController@jiaoyi');
 
+	//前台活动
+	Route::get('/huodon', 'HomeController@huodon');
 
 	//发布闲置
 	Route::get('/fabu','HomeController@fabu');
@@ -167,7 +160,8 @@ Route::group(['middleware'=>'login'],function(){
 	//购物车
 	Route::resource('car','CarController');
 
-
+	//活动详情页
+	Route::get('/huoh/{id}','HomeController@huoh');
 	//举报管理
 	Route::get('/jubao/{id}','HomeController@jubao');
 	Route::post('/jubao','HomeController@jubaologin');
