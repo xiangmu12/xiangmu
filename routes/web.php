@@ -235,3 +235,8 @@ Route::group(['middleware'=>'login'],function(){
 	Route::get('/wdpm','PmController@wdpm');
 });
 
+//前台活动
+	Route::get('/huodon', 'HomeController@huodon');
+
+//活动详情页
+	Route::get('/huoh/{id}','HomeController@huoh');

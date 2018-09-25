@@ -17,6 +17,11 @@
 							</a>
 						</li>
 						<li>
+							<a href="/huodon" class="site-nav__link">
+								<span>最新活动</span>			
+							</a>
+						</li>
+						<li>
 							<a href="/fabu" class="site-nav__link">
 								<span>发布闲置</span>			
 							</a>

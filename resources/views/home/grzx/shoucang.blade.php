@@ -59,9 +59,9 @@
             
         </div>
         <div class="am-g">
-            <div class="am-u-sm-12">
-                <table class="am-table  am-table-hover table-main" border="0" >
-                    <tbody>
+            <div class="am-u-sm-12" >
+                <table class="am-table  am-table-hover table-main " border="0">
+                    <tbody >
                         @foreach($shoucang as $v)
                         @foreach($shangpin as $vv)
                         @if($v['shangpin_id'] == $vv['id'])

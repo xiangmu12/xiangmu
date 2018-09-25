@@ -195,9 +195,7 @@
 														<li class="wishlist">
                                                             <a class="wish-list btn" href="/shoucang?shangpin={{$va['id']}}&user={{session('id')}}"><i class="fa fa-heart" title="Wishlist"></i></a>
 														</li>
-														<li class="email">
-															<a target="_blank" class="btn email-to-friend" href="#"><i class="fa fa-envelope" title="Email to friend"></i></a>
-														</li>
+														
 														</div>
 													</ul>
 												</div>

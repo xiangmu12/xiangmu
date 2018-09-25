@@ -349,7 +349,7 @@
                                     <img src="{{session('pic')}}" width="40px" alt="">
 
 
-                                    <a href="#">{{Session::get('username')}}</a>
+                                    <a href="#">{{substr(Session::get('username'),0,3)}}...</a>
                                 <a href="/logout">退出</a>
                             </li>
                             <li class="header-account">
